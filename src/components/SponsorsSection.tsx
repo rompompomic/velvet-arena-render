@@ -12,14 +12,14 @@ const SponsorsSection = () => {
   ];
 
   return (
-    <section className="py-16 bg-background border-t border-neutral-200">
-      <div className="container mx-auto px-4">
+    <section className="py-20 bg-background border-t border-neutral-200">
+      <div className="container mx-auto px-4 max-w-7xl">
         <div className="text-center mb-12">
           <h2 className="text-2xl font-semibold mb-4 text-muted-foreground">
-            Наши партнеры
+            Mūsu partneri
           </h2>
           <p className="text-muted-foreground">
-            Мы сотрудничаем с лучшими компаниями в области конного спорта
+            Mēs sadarbojas ar labākajiem uzņēmumiem jāšanas sporta jomā
           </p>
         </div>
 
@@ -27,7 +27,7 @@ const SponsorsSection = () => {
           {sponsors.map((sponsor, index) => (
             <div
               key={index}
-              className="sponsor-logo flex items-center justify-center p-6 bg-light rounded-xl border border-transparent hover:border-primary/20 cursor-pointer"
+              className="sponsor-logo flex items-center justify-center p-6 bg-light rounded-xl border border-transparent hover:border-primary/20 cursor-pointer transition-all duration-300"
             >
               {/* Placeholder logo - in real implementation this would be an actual image */}
               <div className="flex items-center justify-center w-16 h-16 bg-muted rounded-lg text-muted-foreground font-semibold text-lg">
@@ -39,9 +39,9 @@ const SponsorsSection = () => {
 
         <div className="text-center mt-8">
           <p className="text-sm text-muted-foreground">
-            Заинтересованы в сотрудничестве?{" "}
-            <a href="/ru/kontakti/" className="text-primary hover:text-primary-700 font-medium">
-              Свяжитесь с нами
+            Interesē sadarbība?{" "}
+            <a href="/lv/kontakti/" className="text-primary hover:text-primary-700 font-medium transition-colors duration-300">
+              Sazinieties ar mums
             </a>
           </p>
         </div>

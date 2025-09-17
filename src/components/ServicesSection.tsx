@@ -3,38 +3,38 @@ import horseWatermark from "@/assets/horse-watermark.png";
 const ServicesSection = () => {
   const services = [
     {
-      title: "Учиться ездить",
-      description: "Профессиональные уроки верховой езды для всех уровней подготовки",
-      badge: "Обучение",
-      href: "/ru/pakalpojumi/jasanas-trenini/",
+      title: "Mācīties jāt",
+      description: "Profesionālas jāšanas nodarbības visiem sagatavotības līmeņiem",
+      badge: "Apmācība",
+      href: "/lv/pakalpojumi/jasanas-trenini/",
     },
     {
-      title: "Владельцам лошадей", 
-      description: "Содержание лошадей в комфортных условиях с профессиональным уходом",
-      badge: "Содержание",
-      href: "/ru/pakalpojumi/zirgu-uzturesana/",
+      title: "Zirgu īpašniekiem", 
+      description: "Zirgu turēšana komfortablā vidē ar profesionālu aprūpi",
+      badge: "Turēšana",
+      href: "/lv/pakalpojumi/zirgu-uzturesana/",
     },
     {
-      title: "Посетителям",
-      description: "Экскурсии и знакомство с лошадьми для всей семьи",
-      badge: "Экскурсии", 
-      href: "/ru/pakalpojumi/ekskursijas/",
+      title: "Apmeklētājiem",
+      description: "Ekskursijas un iepazīšanās ar zirgiem visai ģimenei",
+      badge: "Ekskursijas", 
+      href: "/lv/pakalpojumi/ekskursijas/",
     },
     {
-      title: "Компаниям",
-      description: "Корпоративные мероприятия и тимбилдинг в уникальной атмосфере",
-      badge: "Корпоратив",
-      href: "/ru/pakalpojumi/korporativie-pasakumi/",
+      title: "Uzņēmumiem",
+      description: "Korporatīvi pasākumi un komandas veidošana unikālā atmosfērā",
+      badge: "Korporatīvs",
+      href: "/lv/pakalpojumi/korporativie-pasakumi/",
     },
   ];
 
   return (
-    <section className="py-20 bg-light">
-      <div className="container mx-auto px-4">
+    <section className="py-24 bg-light">
+      <div className="container mx-auto px-4 max-w-7xl">
         <div className="text-center mb-16">
-          <h2 className="text-section mb-4">Найдите свой путь к лошадям</h2>
+          <h2 className="text-section mb-4">Atrodiet savu ceļu pie zirgiem</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Мы предлагаем разнообразные услуги для всех, кто любит лошадей
+            Mēs piedāvājam dažādus pakalpojumus visiem, kas mīl zirgus
           </p>
         </div>
 
@@ -71,9 +71,9 @@ const ServicesSection = () => {
 
               <a
                 href={service.href}
-                className="inline-flex items-center text-primary font-medium group-hover:text-primary-700 transition-colors duration-300"
+                className="inline-flex items-center text-primary font-medium group-hover:text-primary-700 transition-all duration-300"
               >
-                Подробнее
+                Uzzināt vairāk
                 <svg
                   className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300"
                   fill="none"

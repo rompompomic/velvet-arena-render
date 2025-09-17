@@ -3,40 +3,40 @@ import eventImage from "@/assets/event-showjumping.jpg";
 const EventsSection = () => {
   const events = [
     {
-      title: "Юношеский кубок по конкуру — Финал",
+      title: "Jauniešu kauss konkūrā — Fināls",
       date: "19–21",
-      month: "СЕН",
+      month: "SEP",
       year: "2025",
-      description: "Финальные соревнования по конкуру среди юных всадников"
+      description: "Fināla sacensības konkūrā starp jaunajiem jātniekiem"
     },
     {
-      title: "Зимний кубок — 1 этап",
+      title: "Ziemas kauss — 1. posms",
       date: "25–26", 
-      month: "ОКТ",
+      month: "OKT",
       year: "2025",
-      description: "Открытие зимнего сезона соревнований по выездке"
+      description: "Ziemas sacensību sezonas atklāšana dresūrā"
     },
     {
-      title: "Зимний кубок — 2 этап",
+      title: "Ziemas kauss — 2. posms",
       date: "15–16",
-      month: "НОЯ", 
+      month: "NOV", 
       year: "2025",
-      description: "Продолжение зимнего турнира с новыми вызовами"
+      description: "Ziemas turnīra turpinājums ar jauniem izaicinājumiem"
     }
   ];
 
   return (
-    <section className="py-20 bg-text text-white relative overflow-hidden">
+    <section className="py-24 bg-text text-white relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/10" />
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 relative z-10 max-w-7xl">
         <div className="text-center mb-16">
-          <h2 className="text-section mb-4">Предстоящие события</h2>
+          <h2 className="text-section mb-4">Gaidāmie pasākumi</h2>
           <p className="text-xl opacity-80 max-w-2xl mx-auto">
-            Присоединяйтесь к нашим соревнованиям и мероприятиям
+            Pievienojieties mūsu sacensībām un pasākumiem
           </p>
         </div>
 
@@ -65,10 +65,10 @@ const EventsSection = () => {
               </p>
 
               <a
-                href="/ru/pasakumi/"
-                className="inline-flex items-center text-primary-50 font-medium group-hover:text-white transition-colors duration-300"
+                href="/lv/pasakumi/"
+                className="inline-flex items-center text-primary-50 font-medium group-hover:text-white transition-all duration-300"
               >
-                Подробнее
+                Sīkāk
                 <svg
                   className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300"
                   fill="none"
@@ -90,10 +90,10 @@ const EventsSection = () => {
         {/* View All Button */}
         <div className="text-center mt-12">
           <a
-            href="/ru/pasakumi/"
+            href="/lv/pasakumi/"
             className="inline-flex items-center px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-medium rounded-xl transition-all duration-300 hover:scale-105"
           >
-            Смотреть все события
+            Skatīt visus pasākumus
             <svg
               className="ml-2 w-5 h-5"
               fill="none"

@@ -2,23 +2,23 @@ import { Button } from "@/components/ui/button";
 
 const GiftCardSection = () => {
   const features = [
-    "Онлайн-оплата",
-    "Гибкая сумма", 
-    "Подарочная упаковка"
+    "Tiešsaistes maksājums",
+    "Elastīga summa", 
+    "Dāvanu iesaiņošana"
   ];
 
   return (
-    <section className="py-20 bg-background">
-      <div className="container mx-auto px-4">
+    <section className="py-24 bg-background">
+      <div className="container mx-auto px-4 max-w-7xl">
         <div className="velvet-bg rounded-3xl p-12 md:p-16 text-center text-white relative overflow-hidden">
           {/* Content */}
           <div className="relative z-10 max-w-4xl mx-auto">
             <h2 className="text-section mb-6">
-              Подарите эмоции — дарите поездку к лошадям
+              Dāviniet emocijas — dāviniet braucienu pie zirgiem
             </h2>
             
             <p className="text-xl mb-8 opacity-95 max-w-2xl mx-auto">
-              Электронная или печатная, действует 12 месяцев
+              Elektroniska vai drukāta, derīga 12 mēnešus
             </p>
 
             {/* Trust Features */}
@@ -39,8 +39,8 @@ const GiftCardSection = () => {
               asChild
               className="bg-white text-primary hover:bg-white/90 hover:text-primary-700 text-lg px-12 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
             >
-              <a href="/ru/davanu-kartes/">
-                Купить подарочную карту
+              <a href="/lv/davanu-kartes/">
+                Pirkt dāvanu karti
               </a>
             </Button>
           </div>

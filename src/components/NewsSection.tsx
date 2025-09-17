@@ -4,35 +4,35 @@ import eventImage from "@/assets/event-showjumping.jpg";
 const NewsSection = () => {
   const news = [
     {
-      title: "Зимний сезон: подготовка лошадей к холодам",
-      excerpt: "Рассказываем о том, как правильно подготовить лошадей к зимнему периоду и обеспечить им комфортные условия содержания.",
+      title: "Ziemas sezona: zirgu sagatavošana aukstumam",
+      excerpt: "Stāstām par to, kā pareizi sagatavot zirgus ziemas periodam un nodrošināt tiem komfortablus turēšanas apstākļus.",
       image: winterImage,
-      date: "15 сентября 2025",
-      href: "/ru/jaunumi/winter-preparation"
+      date: "15. septembris 2025",
+      href: "/lv/jaunumi/winter-preparation"
     },
     {
-      title: "Успехи наших учеников на соревнованиях",
-      excerpt: "Поздравляем наших учеников с отличными результатами на недавних соревнованиях по конкуру и выездке.",
+      title: "Mūsu audzēkņu panākumi sacensībās",
+      excerpt: "Apsveicam mūsu audzēkņus ar lieliskajiem rezultātiem nesenajās konkūra un dresūras sacensībās.",
       image: eventImage,
-      date: "10 сентября 2025", 
-      href: "/ru/jaunumi/student-success"
+      date: "10. septembris 2025", 
+      href: "/lv/jaunumi/student-success"
     },
     {
-      title: "Новые программы для детей от 4 лет",
-      excerpt: "Специально разработанные программы для самых маленьких любителей лошадей с учетом возрастных особенностей.",
+      title: "Jaunas programmas bērniem no 4 gadiem",
+      excerpt: "Speciāli izstrādātas programmas vismazākajiem zirgu mīļotājiem, ņemot vērā vecuma īpatnības.",
       image: winterImage,
-      date: "5 сентября 2025",
-      href: "/ru/jaunumi/kids-programs"
+      date: "5. septembris 2025",
+      href: "/lv/jaunumi/kids-programs"
     }
   ];
 
   return (
-    <section className="py-20 bg-light">
-      <div className="container mx-auto px-4">
+    <section className="py-24 bg-light">
+      <div className="container mx-auto px-4 max-w-7xl">
         <div className="text-center mb-16">
-          <h2 className="text-section mb-4">Новости и статьи</h2>
+          <h2 className="text-section mb-4">Jaunumi un raksti</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Следите за последними новостями из мира конного спорта
+            Sekojiet līdzi jaunākajām ziņām no jāšanas sporta pasaules
           </p>
         </div>
 
@@ -67,9 +67,9 @@ const NewsSection = () => {
 
                 <a
                   href={article.href}
-                  className="inline-flex items-center text-primary font-medium group-hover:text-primary-700 transition-colors duration-300"
+                  className="inline-flex items-center text-primary font-medium group-hover:text-primary-700 transition-all duration-300"
                 >
-                  Читать
+                  Lasīt
                   <svg
                     className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300"
                     fill="none"
@@ -92,10 +92,10 @@ const NewsSection = () => {
         {/* View All Button */}
         <div className="text-center mt-12">
           <a
-            href="/ru/jaunumi/"
-            className="inline-flex items-center btn-outline-velvet"
+            href="/lv/jaunumi/"
+            className="inline-flex items-center btn-outline-velvet hover:bg-primary-50"
           >
-            Все новости
+            Visi jaunumi
             <svg
               className="ml-2 w-5 h-5"
               fill="none"

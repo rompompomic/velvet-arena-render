@@ -2,18 +2,18 @@ import { Button } from "@/components/ui/button";
 
 const Header = () => {
   const navigation = [
-    { name: 'Услуги', href: '/ru/pakalpojumi/' },
-    { name: 'События', href: '/ru/pasakumi/' },
-    { name: 'Цены', href: '/ru/cenas/' },
-    { name: 'Галерея', href: '/ru/galerija/' },
-    { name: 'О нас', href: '/ru/par-mums/' },
-    { name: 'Контакты', href: '/ru/kontakti/' },
+    { name: 'Pakalpojumi', href: '/lv/pakalpojumi/' },
+    { name: 'Pasākumi', href: '/lv/pasakumi/' },
+    { name: 'Cenas', href: '/lv/cenas/' },
+    { name: 'Galerija', href: '/lv/galerija/' },
+    { name: 'Par mums', href: '/lv/par-mums/' },
+    { name: 'Kontakti', href: '/lv/kontakti/' },
   ];
 
   const languages = [
-    { code: 'LV', name: 'Latviešu' },
+    { code: 'LV', name: 'Latviešu', active: true },
     { code: 'EN', name: 'English' },
-    { code: 'RU', name: 'Русский', active: true },
+    { code: 'RU', name: 'Русский' },
   ];
 
   return (
@@ -46,16 +46,18 @@ const Header = () => {
             <div className="hidden sm:flex items-center space-x-2 text-sm">
               {languages.map((lang, index) => (
                 <div key={lang.code} className="flex items-center">
-                  <a
-                    href="#"
-                    className={`px-2 py-1 rounded transition-colors duration-200 ${
-                      lang.active
-                        ? 'bg-primary text-white'
-                        : 'text-muted-foreground hover:text-foreground'
-                    }`}
-                  >
-                    {lang.code}
-                  </a>
+                  {lang.active ? (
+                    <span className="px-2 py-1 rounded font-bold text-primary">
+                      {lang.code}
+                    </span>
+                  ) : (
+                    <a
+                      href="#"
+                      className="px-2 py-1 rounded transition-colors duration-300 text-muted-foreground hover:text-primary"
+                    >
+                      {lang.code}
+                    </a>
+                  )}
                   {index < languages.length - 1 && (
                     <span className="text-muted-foreground mx-1">/</span>
                   )}
@@ -65,7 +67,7 @@ const Header = () => {
 
             {/* CTA Button */}
             <Button className="btn-velvet hidden sm:inline-flex">
-              Купить подарочную карту
+              Pirkt dāvanu karti
             </Button>
           </div>
 
