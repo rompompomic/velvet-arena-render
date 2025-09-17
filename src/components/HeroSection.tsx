@@ -1,16 +1,10 @@
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-equestrian.jpg";
-
 const HeroSection = () => {
-  return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <img
-          src={heroImage}
-          alt="Лошадь и всадник на арене на закате"
-          className="w-full h-full object-cover"
-        />
+        <img src={heroImage} alt="Лошадь и всадник на арене на закате" className="w-full h-full object-cover" />
         {/* Overlay Gradient */}
         <div className="absolute inset-0 bg-gradient-to-b from-text/70 via-text/40 to-text/0" />
       </div>
@@ -43,13 +37,11 @@ const HeroSection = () => {
 
         {/* Scroll Hint */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
+          <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center my-[15px]">
             <div className="w-1 h-3 bg-white rounded-full mt-2 animate-pulse" />
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
