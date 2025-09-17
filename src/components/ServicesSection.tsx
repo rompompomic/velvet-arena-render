@@ -45,13 +45,14 @@ const ServicesSection = () => {
               className="glass-card p-8 hover-lift group cursor-pointer relative overflow-hidden"
             >
               {/* Watermark */}
-              <div className="absolute top-4 right-4 w-16 h-16 opacity-50 group-hover:opacity-80 transition-all duration-300">
+              <div className="absolute top-4 right-4 w-16 h-16 opacity-50 group-hover:opacity-80 transition-colors duration-300">
                 <img
                 src={horseWatermark}
                 alt=""
-                className="w-full h-full object-contain filter grayscale brightness-0 group-hover:grayscale-0 group-hover:brightness-0 group-hover:invert-0"
+                className="w-full h-full object-contain text-gray-400 group-hover:text-black"
                 />
               </div>
+
 
 
               {/* Badge */}
