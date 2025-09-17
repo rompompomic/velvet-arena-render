@@ -1,14 +1,14 @@
 <!doctype html>
-<html lang="en">
-  <head>
+<html lang="lv">
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Latvian Horses - Место, где люди встречаются с лошадьми</title>
-    <meta name="description" content="Профессиональные тренировки, события и отдых рядом с природой для детей и взрослых. Конный клуб в Инчукалнсе, Латвия." />
+    <title>Latvian Horses - Vieta, kur cilvēki satiekas ar zirgiem</title>
+    <meta name="description" content="Profesionālas apmācības, pasākumi un atpūta dabas tuvumā bērniem un pieaugušajiem. Jāšanas klubs Inčukalnā, Latvijā." />
     <meta name="author" content="Latvian Horses" />
 
-    <meta property="og:title" content="Latvian Horses - Место, где люди встречаются с лошадьми" />
-    <meta property="og:description" content="Профессиональные тренировки, события и отдых рядом с природой для детей и взрослых." />
+    <meta property="og:title" content="Latvian Horses - Vieta, kur cilvēki satiekas ar zirgiem" />
+    <meta property="og:description" content="Profesionālas apmācības, pasākumi un atpūta dabas tuvumā bērniem un pieaugušajiem." />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
 
@@ -23,20 +23,1600 @@
       "@type": "Organization", 
       "name": "Latvian Horses",
       "url": "https://latvianhorses.lv",
-      "description": "Конный клуб и центр верховой езды в Латвии",
+      "description": "Jāšanas klubs un jāšanas centrs Latvijā",
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "Инчукалнс",
-        "addressCountry": "Латвия"
+        "addressLocality": "Inčukalns",
+        "addressCountry": "Latvija"
       },
       "telephone": "+371-2X-XXX-XXX",
       "email": "info@latvianhorses.lv"
     }
     </script>
-  </head>
 
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+    /* Velvet Arena Design System - Equestrian Noir Luxury */
+    :root {
+        /* Velvet Arena Core Palette */
+        --primary: #963026;
+        --primary-700: #7A251F;
+        --primary-50: #FCECEA;
+        
+        --accent: #995856;
+        --accent-700: #7D4647;
+        --accent-50: #F9F2F2;
+        
+        --text: #06030d;
+        --bg: #FFFFFF;
+        --light: #FAFAFA;
+        --neutral-200: #EDEDED;
+        
+        /* Shadows */
+        --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+        --shadow-md: 0 6px 16px rgba(0,0,0,0.08);
+        --shadow-velvet: 0 8px 24px rgba(150,48,38,0.28);
+        --shadow-glass: inset 0 0 0 1px rgba(255,255,255,0.12);
+        
+        /* Radius */
+        --radius-card: 12px;
+        --radius-banner: 20px;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        line-height: 1.6;
+        color: var(--text);
+        background: var(--bg);
+    }
+
+    /* Container */
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+
+    @media (min-width: 640px) {
+        .container {
+            padding: 0 1.5rem;
+        }
+    }
+
+    /* Typography */
+    h1 {
+        font-size: clamp(2.5rem, 5vw, 3.5rem);
+        line-height: 1.1;
+        font-weight: 600;
+        letter-spacing: -0.025em;
+    }
+
+    h2 {
+        font-size: clamp(2rem, 4vw, 2.5rem);
+        line-height: 1.2;
+        font-weight: 600;
+        letter-spacing: -0.025em;
+    }
+
+    h3 {
+        font-size: 1.75rem;
+        line-height: 1.3;
+        font-weight: 500;
+        letter-spacing: -0.025em;
+    }
+
+    /* Buttons */
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem 2rem;
+        border-radius: var(--radius-card);
+        font-weight: 500;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+        font-size: 1rem;
+        gap: 0.5rem;
+    }
+
+    .btn-primary {
+        background: var(--primary);
+        color: white;
+        box-shadow: var(--shadow-glass), var(--shadow-velvet);
+    }
+
+    .btn-primary:hover {
+        background: var(--primary-700);
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-glass), 0 12px 32px rgba(150,48,38,0.4);
+    }
+
+    .btn-outline {
+        background: transparent;
+        color: var(--primary);
+        border: 1px solid var(--primary);
+    }
+
+    .btn-outline:hover {
+        background: var(--primary-50);
+        transform: translateY(-2px);
+    }
+
+    .btn-outline.white {
+        color: white;
+        border-color: white;
+    }
+
+    .btn-outline.white:hover {
+        background: white;
+        color: var(--primary);
+    }
+
+    /* Glass Cards */
+    .glass-card {
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        background: linear-gradient(135deg, rgba(255,255,255,0.7), rgba(255,255,255,0.5));
+        border: 1px solid rgba(6,3,13,0.08);
+        box-shadow: var(--shadow-md);
+        border-radius: var(--radius-card);
+        transition: all 0.3s ease;
+    }
+
+    .glass-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-md), 0 8px 24px rgba(0,0,0,0.12);
+    }
+
+    /* Grid */
+    .grid {
+        display: grid;
+        gap: 2rem;
+    }
+
+    .grid-1 { grid-template-columns: 1fr; }
+    
+    @media (min-width: 768px) {
+        .grid-2 { grid-template-columns: repeat(2, 1fr); }
+        .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    }
+    
+    @media (min-width: 1024px) {
+        .grid-4 { grid-template-columns: repeat(4, 1fr); }
+    }
+
+    /* Section Spacing */
+    section {
+        padding: 5rem 0;
+    }
+
+    @media (min-width: 768px) {
+        section {
+            padding: 6rem 0;
+        }
+    }
+
+    /* Header */
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        background: rgba(255, 255, 255, 0.9);
+        border-bottom: 1px solid rgba(6,3,13,0.1);
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 0;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--primary);
+        text-decoration: none;
+        letter-spacing: -0.025em;
+    }
+
+    .nav-links {
+        display: none;
+        align-items: center;
+        gap: 2rem;
+        list-style: none;
+    }
+
+    @media (min-width: 768px) {
+        .nav-links {
+            display: flex;
+        }
+    }
+
+    .nav-links a {
+        color: var(--text);
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+        color: var(--primary);
+    }
+
+    .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .lang-switch {
+        display: none;
+        align-items: center;
+        gap: 0.25rem;
+        font-size: 0.875rem;
+    }
+
+    @media (min-width: 640px) {
+        .lang-switch {
+            display: flex;
+        }
+    }
+
+    .lang-link {
+        padding: 0.25rem 0.5rem;
+        border-radius: 0.25rem;
+        text-decoration: none;
+        transition: all 0.2s;
+    }
+
+    .lang-link.active {
+        background: var(--primary);
+        color: white;
+        font-weight: 600;
+        cursor: default;
+    }
+
+    .lang-link:not(.active) {
+        color: #6b7280;
+    }
+
+    .lang-link:not(.active):hover {
+        color: var(--text);
+    }
+
+    /* Hero Section */
+    .hero {
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        color: white;
+        text-align: center;
+    }
+
+    .hero-bg {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+    }
+
+    .hero-bg img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .hero-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(6,3,13,0.7), rgba(6,3,13,0.4) 40%, rgba(6,3,13,0) 100%);
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 10;
+        max-width: 64rem;
+        margin: 0 auto;
+        padding: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.25rem;
+        line-height: 1.5;
+        max-width: 32rem;
+        margin: 2rem auto;
+        font-weight: 300;
+        opacity: 0.95;
+    }
+
+    @media (min-width: 768px) {
+        .hero-subtitle {
+            font-size: 1.5rem;
+        }
+    }
+
+    .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 3rem;
+        align-items: center;
+    }
+
+    @media (min-width: 640px) {
+        .hero-buttons {
+            flex-direction: row;
+            justify-content: center;
+        }
+    }
+
+    .scroll-hint {
+        position: absolute;
+        bottom: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        animation: bounce 2s infinite;
+    }
+
+    .scroll-hint-inner {
+        width: 1.5rem;
+        height: 2.5rem;
+        border: 2px solid white;
+        border-radius: 1.25rem;
+        display: flex;
+        justify-content: center;
+        position: relative;
+    }
+
+    .scroll-hint-dot {
+        width: 0.25rem;
+        height: 0.75rem;
+        background: white;
+        border-radius: 0.125rem;
+        margin-top: 0.5rem;
+        animation: pulse 2s infinite;
+    }
+
+    @keyframes bounce {
+        0%, 20%, 53%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+        40%, 43% { transform: translateX(-50%) translateY(-30px); }
+        70% { transform: translateX(-50%) translateY(-15px); }
+    }
+
+    @keyframes pulse {
+        0%, 100% { opacity: 0; }
+        50% { opacity: 1; }
+    }
+
+    /* Services Section */
+    .services-grid {
+        position: relative;
+    }
+
+    .service-card {
+        position: relative;
+        padding: 2rem;
+        overflow: hidden;
+        cursor: pointer;
+    }
+
+    .service-watermark {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        width: 4rem;
+        height: 4rem;
+        opacity: 0.1;
+        transition: opacity 0.3s ease;
+    }
+
+    .service-card:hover .service-watermark {
+        opacity: 0.3;
+    }
+
+    .service-badge {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.25rem 0.75rem;
+        border-radius: 999px;
+        font-size: 0.875rem;
+        font-weight: 500;
+        background: var(--primary-50);
+        color: var(--primary);
+        margin-bottom: 1rem;
+    }
+
+    .service-title {
+        color: var(--text);
+        margin-bottom: 1rem;
+        transition: color 0.3s ease;
+    }
+
+    .service-card:hover .service-title {
+        color: var(--primary);
+    }
+
+    .service-description {
+        color: #6b7280;
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+    }
+
+    .service-link {
+        display: inline-flex;
+        align-items: center;
+        color: var(--primary);
+        font-weight: 500;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    .service-link:hover {
+        color: var(--primary-700);
+    }
+
+    .service-link svg {
+        margin-left: 0.5rem;
+        width: 1rem;
+        height: 1rem;
+        transition: transform 0.3s ease;
+    }
+
+    .service-link:hover svg {
+        transform: translateX(0.25rem);
+    }
+
+    /* Gift Card Section */
+    .gift-section {
+        background: linear-gradient(135deg, var(--primary), var(--accent));
+        border-radius: var(--radius-banner);
+        padding: 4rem 2rem;
+        text-align: center;
+        color: white;
+        position: relative;
+        overflow: hidden;
+        margin: 0 1rem;
+    }
+
+    @media (min-width: 768px) {
+        .gift-section {
+            padding: 5rem 4rem;
+            margin: 0;
+        }
+    }
+
+    .gift-content {
+        position: relative;
+        z-index: 10;
+        max-width: 64rem;
+        margin: 0 auto;
+    }
+
+    .gift-features {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.5rem;
+        margin: 2rem 0;
+    }
+
+    .gift-feature {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.875rem;
+        font-weight: 500;
+    }
+
+    .gift-dot {
+        width: 0.5rem;
+        height: 0.5rem;
+        background: white;
+        border-radius: 50%;
+        opacity: 0.75;
+    }
+
+    .gift-decoration {
+        position: absolute;
+        background: rgba(255,255,255,0.05);
+        border-radius: 50%;
+    }
+
+    .gift-decoration-1 {
+        top: 0;
+        left: 0;
+        width: 8rem;
+        height: 8rem;
+        transform: translate(-4rem, -4rem);
+    }
+
+    .gift-decoration-2 {
+        bottom: 0;
+        right: 0;
+        width: 10rem;
+        height: 10rem;
+        transform: translate(5rem, 5rem);
+    }
+
+    /* Events Section */
+    .events-section {
+        background: var(--text);
+        color: white;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .events-bg {
+        position: absolute;
+        inset: 0;
+        opacity: 0.05;
+        background: linear-gradient(135deg, rgba(150,48,38,0.2), rgba(153,88,86,0.1));
+    }
+
+    .events-content {
+        position: relative;
+        z-index: 10;
+    }
+
+    .event-card {
+        background: rgba(255,255,255,0.05);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: var(--radius-card);
+        padding: 2rem;
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+
+    .event-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    }
+
+    .event-header {
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+        margin-bottom: 1.5rem;
+    }
+
+    .date-badge {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        border-radius: var(--radius-card);
+        padding: 1rem;
+        background: rgba(150,48,38,0.2);
+        border: 1px solid rgba(150,48,38,0.3);
+        min-width: 4rem;
+    }
+
+    .date-number {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: white;
+        line-height: 1;
+    }
+
+    .date-month {
+        font-size: 0.75rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: rgba(255,255,255,0.8);
+        margin-top: 0.25rem;
+    }
+
+    .event-year {
+        font-size: 0.875rem;
+        color: rgba(255,255,255,0.6);
+        font-weight: 500;
+    }
+
+    .event-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        line-height: 1.3;
+        transition: color 0.3s ease;
+    }
+
+    .event-card:hover .event-title {
+        color: var(--primary-50);
+    }
+
+    .event-description {
+        color: rgba(255,255,255,0.7);
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+    }
+
+    .event-link {
+        display: inline-flex;
+        align-items: center;
+        color: var(--primary-50);
+        font-weight: 500;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    .event-link:hover {
+        color: white;
+    }
+
+    .event-link svg {
+        margin-left: 0.5rem;
+        width: 1rem;
+        height: 1rem;
+        transition: transform 0.3s ease;
+    }
+
+    .event-link:hover svg {
+        transform: translateX(0.25rem);
+    }
+
+    /* News Section */
+    .news-section {
+        background: var(--light);
+    }
+
+    .news-card {
+        background: white;
+        border-radius: var(--radius-card);
+        overflow: hidden;
+        box-shadow: var(--shadow-sm);
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+
+    .news-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-md);
+    }
+
+    .news-image {
+        aspect-ratio: 16/9;
+        overflow: hidden;
+    }
+
+    .news-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: grayscale(100%) contrast(1.1) brightness(0.9);
+        transition: all 0.5s ease;
+    }
+
+    .news-card:hover .news-image img {
+        filter: none;
+        transform: scale(1.05);
+    }
+
+    .news-content {
+        padding: 1.5rem;
+    }
+
+    .news-date {
+        font-size: 0.875rem;
+        color: #6b7280;
+        font-weight: 500;
+        margin-bottom: 0.75rem;
+    }
+
+    .news-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 0.75rem;
+        line-height: 1.3;
+        transition: color 0.3s ease;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .news-card:hover .news-title {
+        color: var(--primary);
+    }
+
+    .news-excerpt {
+        color: #6b7280;
+        margin-bottom: 1rem;
+        line-height: 1.6;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .news-link {
+        display: inline-flex;
+        align-items: center;
+        color: var(--primary);
+        font-weight: 500;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    .news-link:hover {
+        color: var(--primary-700);
+    }
+
+    .news-link svg {
+        margin-left: 0.5rem;
+        width: 1rem;
+        height: 1rem;
+        transition: transform 0.3s ease;
+    }
+
+    .news-link:hover svg {
+        transform: translateX(0.25rem);
+    }
+
+    /* Sponsors Section */
+    .sponsors-section {
+        border-top: 1px solid var(--neutral-200);
+    }
+
+    .sponsor-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+        .sponsor-grid {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .sponsor-grid {
+            grid-template-columns: repeat(8, 1fr);
+        }
+    }
+
+    .sponsor-logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1.5rem;
+        background: var(--light);
+        border-radius: var(--radius-card);
+        border: 1px solid transparent;
+        opacity: 0.8;
+        filter: grayscale(100%);
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+
+    .sponsor-logo:hover {
+        opacity: 1;
+        filter: grayscale(0%);
+        border-color: rgba(150,48,38,0.2);
+        box-shadow: 0 0 0 1px rgba(150,48,38,0.2);
+    }
+
+    .sponsor-placeholder {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 4rem;
+        height: 4rem;
+        background: #e5e7eb;
+        border-radius: 0.5rem;
+        color: #6b7280;
+        font-weight: 600;
+        font-size: 1.125rem;
+    }
+
+    /* Footer */
+    footer {
+        background: var(--text);
+        color: white;
+    }
+
+    .footer-main {
+        padding: 4rem 0;
+    }
+
+    .footer-grid {
+        display: grid;
+        gap: 3rem;
+    }
+
+    @media (min-width: 768px) {
+        .footer-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .footer-grid {
+            grid-template-columns: 2fr 1fr 1fr;
+        }
+    }
+
+    .footer-brand h3 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+
+    .footer-brand p {
+        color: rgba(255,255,255,0.8);
+        line-height: 1.6;
+        max-width: 24rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .footer-contact {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .contact-item {
+        display: flex;
+        align-items: start;
+        gap: 0.75rem;
+    }
+
+    .contact-item svg {
+        width: 1.25rem;
+        height: 1.25rem;
+        color: var(--primary-50);
+        margin-top: 0.125rem;
+        flex-shrink: 0;
+    }
+
+    .contact-text {
+        color: rgba(255,255,255,0.9);
+    }
+
+    .footer-section h4 {
+        font-size: 1.125rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+    }
+
+    .footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .footer-links a {
+        color: rgba(255,255,255,0.8);
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+        color: white;
+    }
+
+    .footer-gift {
+        margin-bottom: 2rem;
+    }
+
+    .footer-gift-btn {
+        display: block;
+        padding: 0.5rem 1rem;
+        background: var(--primary);
+        color: white;
+        border-radius: 0.5rem;
+        text-decoration: none;
+        text-align: center;
+        font-weight: 500;
+        transition: background 0.2s;
+        margin-bottom: 1rem;
+    }
+
+    .footer-gift-btn:hover {
+        background: var(--primary-700);
+    }
+
+    .footer-gift-info {
+        font-size: 0.875rem;
+        color: rgba(255,255,255,0.7);
+    }
+
+    .footer-legal a {
+        font-size: 0.875rem;
+        color: rgba(255,255,255,0.7);
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+
+    .footer-legal a:hover {
+        color: rgba(255,255,255,0.9);
+    }
+
+    .footer-bottom {
+        border-top: 1px solid rgba(255,255,255,0.1);
+        padding: 2rem 0;
+    }
+
+    .footer-bottom-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    @media (min-width: 768px) {
+        .footer-bottom-content {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+
+    .footer-copyright {
+        color: rgba(255,255,255,0.7);
+        font-size: 0.875rem;
+    }
+
+    .footer-social {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .footer-social a {
+        color: rgba(255,255,255,0.7);
+        transition: color 0.2s;
+    }
+
+    .footer-social a:hover {
+        color: white;
+    }
+
+    .footer-social svg {
+        width: 1.25rem;
+        height: 1.25rem;
+    }
+
+    /* Utility Classes */
+    .text-center { text-align: center; }
+    .mb-4 { margin-bottom: 1rem; }
+    .mb-6 { margin-bottom: 1.5rem; }
+    .mb-8 { margin-bottom: 2rem; }
+    .mb-12 { margin-bottom: 3rem; }
+    .mb-16 { margin-bottom: 4rem; }
+    .mt-8 { margin-top: 2rem; }
+    .mt-12 { margin-top: 3rem; }
+    .max-w-2xl { max-width: 32rem; }
+    .max-w-4xl { max-width: 56rem; }
+    .mx-auto { margin-left: auto; margin-right: auto; }
+
+    /* Focus Styles */
+    *:focus-visible {
+        outline: 2px solid var(--primary);
+        outline-offset: 2px;
+    }
+
+    /* Mobile Menu Button */
+    .mobile-menu-btn {
+        display: block;
+        background: none;
+        border: none;
+        color: var(--text);
+        cursor: pointer;
+        padding: 0.5rem;
+    }
+
+    @media (min-width: 768px) {
+        .mobile-menu-btn {
+            display: none;
+        }
+    }
+
+    .mobile-menu-btn svg {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    /* Hidden on mobile utility */
+    .hidden-mobile {
+        display: none;
+    }
+
+    @media (min-width: 640px) {
+        .hidden-mobile {
+            display: inline-flex;
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <!-- Logo -->
+                <a href="/" class="logo">Latvian Horses</a>
+
+                <!-- Desktop Navigation -->
+                <ul class="nav-links">
+                    <li><a href="/lv/pakalpojumi/">Pakalpojumi</a></li>
+                    <li><a href="/lv/pasakumi/">Pasākumi</a></li>
+                    <li><a href="/lv/cenas/">Cenas</a></li>
+                    <li><a href="/lv/galerija/">Galerija</a></li>
+                    <li><a href="/lv/par-mums/">Par mums</a></li>
+                    <li><a href="/lv/kontakti/">Kontakti</a></li>
+                </ul>
+
+                <!-- Language Switch & CTA -->
+                <div class="nav-right">
+                    <!-- Language Switch -->
+                    <div class="lang-switch">
+                        <a href="#" class="lang-link active">LV</a>
+                        <span>/</span>
+                        <a href="#" class="lang-link">EN</a>
+                        <span>/</span>
+                        <a href="#" class="lang-link">RU</a>
+                    </div>
+
+                    <!-- CTA Button -->
+                    <a href="/lv/davanu-kartes/" class="btn btn-primary hidden-mobile">
+                        Iegādāties dāvanu karti
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-bg">
+                <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?ixlib=rb-4.0.3&auto=format&fit=crop&w=2832&q=80" alt="Zirgs un jātnieks arēnā saulrietā" />
+                <div class="hero-overlay"></div>
+            </div>
+
+            <div class="hero-content">
+                <h1>Vieta, kur cilvēki satiekas ar zirgiem</h1>
+                
+                <p class="hero-subtitle">
+                    Apmācības, pasākumi un atpūta dabas tuvumā — bērniem un pieaugušajiem
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="/lv/pakalpojumi/jasanas-trenini/" class="btn btn-primary">
+                        Pierakstīties apmācībām
+                    </a>
+                    <a href="/lv/pasakumi/" class="btn btn-outline white">
+                        Skatīt pasākumus
+                    </a>
+                </div>
+            </div>
+
+            <div class="scroll-hint">
+                <div class="scroll-hint-inner">
+                    <div class="scroll-hint-dot"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services-section">
+            <div class="container">
+                <div class="text-center mb-16">
+                    <h2 class="mb-4">Atrodiet savu ceļu pie zirgiem</h2>
+                    <p style="font-size: 1.25rem; color: #6b7280; max-width: 32rem; margin: 0 auto;">
+                        Mēs piedāvājam dažādus pakalpojumus visiem, kas mīl zirgus
+                    </p>
+                </div>
+
+                <div class="grid grid-1 grid-2 grid-4 services-grid">
+                    <div class="glass-card service-card">
+                        <svg class="service-watermark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                        </svg>
+
+                        <div class="service-badge">Apmācība</div>
+                        
+                        <h3 class="service-title">Mācīties jāt</h3>
+                        
+                        <p class="service-description">
+                            Profesionālas jāšanas stundas visiem prasmju līmeņiem
+                        </p>
+
+                        <a href="/lv/pakalpojumi/jasanas-trenini/" class="service-link">
+                            Uzzināt vairāk
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="glass-card service-card">
+                        <svg class="service-watermark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m0 0V11a1 1 0 011-1h2a1 1 0 011 1v10m0 0h3a1 1 0 001-1V10M9 21h6" />
+                        </svg>
+
+                        <div class="service-badge">Uzturēšana</div>
+                        
+                        <h3 class="service-title">Zirgu īpašniekiem</h3>
+                        
+                        <p class="service-description">
+                            Zirgu uzturēšana komfortablā vidē ar profesionālu aprūpi
+                        </p>
+
+                        <a href="/lv/pakalpojumi/zirgu-uzturesana/" class="service-link">
+                            Uzzināt vairāk
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="glass-card service-card">
+                        <svg class="service-watermark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                        </svg>
+
+                        <div class="service-badge">Ekskursijas</div>
+                        
+                        <h3 class="service-title">Apmeklētājiem</h3>
+                        
+                        <p class="service-description">
+                            Ekskursijas un iepazīšanās ar zirgiem visai ģimenei
+                        </p>
+
+                        <a href="/lv/pakalpojumi/ekskursijas/" class="service-link">
+                            Uzzināt vairāk
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="glass-card service-card">
+                        <svg class="service-watermark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+
+                        <div class="service-badge">Korporatīvs</div>
+                        
+                        <h3 class="service-title">Uzņēmumiem</h3>
+                        
+                        <p class="service-description">
+                            Korporatīvie pasākumi un komandas saliedēšana unikālā atmosfērā
+                        </p>
+
+                        <a href="/lv/pakalpojumi/korporativie-pasakumi/" class="service-link">
+                            Uzzināt vairāk
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gift Card Section -->
+        <section>
+            <div class="container">
+                <div class="gift-section">
+                    <div class="gift-content">
+                        <h2 class="mb-6">Dāviniet emocijas — dāviniet braucienu pie zirgiem</h2>
+                        
+                        <p style="font-size: 1.25rem; margin-bottom: 2rem; opacity: 0.95; max-width: 32rem; margin-left: auto; margin-right: auto;">
+                            Elektroniskā vai drukātā, derīga 12 mēnešus
+                        </p>
+
+                        <div class="gift-features">
+                            <div class="gift-feature">
+                                <div class="gift-dot"></div>
+                                <span>Tiešsaistes maksājums</span>
+                            </div>
+                            <div class="gift-feature">
+                                <div class="gift-dot"></div>
+                                <span>Elastīga summa</span>
+                            </div>
+                            <div class="gift-feature">
+                                <div class="gift-dot"></div>
+                                <span>Dāvanu iepakojums</span>
+                            </div>
+                        </div>
+
+                        <a href="/lv/davanu-kartes/" class="btn" style="background: white; color: var(--primary); font-size: 1.125rem; padding: 1rem 3rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transform: scale(1); transition: all 0.3s ease;">
+                            Iegādāties dāvanu karti
+                        </a>
+                    </div>
+
+                    <div class="gift-decoration gift-decoration-1"></div>
+                    <div class="gift-decoration gift-decoration-2"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Events Section -->
+        <section class="events-section">
+            <div class="events-bg"></div>
+            
+            <div class="container events-content">
+                <div class="text-center mb-16">
+                    <h2 class="mb-4">Gaidāmie pasākumi</h2>
+                    <p style="font-size: 1.25rem; opacity: 0.8; max-width: 32rem; margin: 0 auto;">
+                        Pievienojieties mūsu sacensībām un pasākumiem
+                    </p>
+                </div>
+
+                <div class="grid grid-1 grid-2 grid-3">
+                    <div class="event-card">
+                        <div class="event-header">
+                            <div class="date-badge">
+                                <div class="date-number">19–21</div>
+                                <div class="date-month">SEP</div>
+                            </div>
+                            <div class="event-year">2025</div>
+                        </div>
+
+                        <h3 class="event-title">
+                            Jauniešu kauss šķēršļu jāšanā — Fināls
+                        </h3>
+                        
+                        <p class="event-description">
+                            Finālsacensības šķēršļu jāšanā starp jaunajiem jātniekiem
+                        </p>
+
+                        <a href="/lv/pasakumi/" class="event-link">
+                            Uzzināt vairāk
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="event-card">
+                        <div class="event-header">
+                            <div class="date-badge">
+                                <div class="date-number">25–26</div>
+                                <div class="date-month">OKT</div>
+                            </div>
+                            <div class="event-year">2025</div>
+                        </div>
+
+                        <h3 class="event-title">
+                            Ziemas kauss — 1. posms
+                        </h3>
+                        
+                        <p class="event-description">
+                            Ziemas sacensību sezōnas atklāšana dresūras sacensībās
+                        </p>
+
+                        <a href="/lv/pasakumi/" class="event-link">
+                            Uzzināt vairāk
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="event-card">
+                        <div class="event-header">
+                            <div class="date-badge">
+                                <div class="date-number">15–16</div>
+                                <div class="date-month">NOV</div>
+                            </div>
+                            <div class="event-year">2025</div>
+                        </div>
+
+                        <h3 class="event-title">
+                            Ziemas kauss — 2. posms
+                        </h3>
+                        
+                        <p class="event-description">
+                            Ziemas turnīra turpinājums ar jauniem izaicinājumiem
+                        </p>
+
+                        <a href="/lv/pasakumi/" class="event-link">
+                            Uzzināt vairāk
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="text-center mt-12">
+                    <a href="/lv/pasakumi/" class="btn" style="background: rgba(255,255,255,0.1); color: white; border: none;">
+                        Skatīt visus pasākumus
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width: 1.25rem; height: 1.25rem; margin-left: 0.5rem;">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- News Section -->
+        <section class="news-section">
+            <div class="container">
+                <div class="text-center mb-16">
+                    <h2 class="mb-4">Jaunumi un raksti</h2>
+                    <p style="font-size: 1.25rem; color: #6b7280; max-width: 32rem; margin: 0 auto;">
+                        Sekojiet līdzi jaunākajiem jaunumiem no zirgu sporta pasaules
+                    </p>
+                </div>
+
+                <div class="grid grid-1 grid-2 grid-3">
+                    <article class="news-card">
+                        <div class="news-image">
+                            <img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Ziemas sezona: zirgu sagatavošana aukstumam" />
+                        </div>
+
+                        <div class="news-content">
+                            <div class="news-date">15. septembris, 2025</div>
+                            
+                            <h3 class="news-title">
+                                Ziemas sezona: zirgu sagatavošana aukstumam
+                            </h3>
+                            
+                            <p class="news-excerpt">
+                                Stāstām par to, kā pareizi sagatavot zirgus ziemas periodam un nodrošināt tiem komfortablus uzturēšanas apstākļus.
+                            </p>
+
+                            <a href="/lv/jaunumi/winter-preparation" class="news-link">
+                                Lasīt
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="news-card">
+                        <div class="news-image">
+                            <img src="https://images.unsplash.com/photo-1574781330855-d0db56925d65?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Mūsu audzēkņu panākumi sacensībās" />
+                        </div>
+
+                        <div class="news-content">
+                            <div class="news-date">10. septembris, 2025</div>
+                            
+                            <h3 class="news-title">
+                                Mūsu audzēkņu panākumi sacensībās
+                            </h3>
+                            
+                            <p class="news-excerpt">
+                                Apsveicam mūsu audzēkņus ar izcilajiem rezultātiem nesenajās šķēršļu jāšanas un dresūras sacensībās.
+                            </p>
+
+                            <a href="/lv/jaunumi/student-success" class="news-link">
+                                Lasīt
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="news-card">
+                        <div class="news-image">
+                            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Jaunas programmas bērniem no 4 gadu vecuma" />
+                        </div>
+
+                        <div class="news-content">
+                            <div class="news-date">5. septembris, 2025</div>
+                            
+                            <h3 class="news-title">
+                                Jaunas programmas bērniem no 4 gadu vecuma
+                            </h3>
+                            
+                            <p class="news-excerpt">
+                                Speciāli izstrādātas programmas mazākajiem zirgu mīļotājiem, ņemot vērā vecuma īpatnības.
+                            </p>
+
+                            <a href="/lv/jaunumi/kids-programs" class="news-link">
+                                Lasīt
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="text-center mt-12">
+                    <a href="/lv/jaunumi/" class="btn btn-outline">
+                        Visi jaunumi
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width: 1.25rem; height: 1.25rem; margin-left: 0.5rem;">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sponsors Section -->
+        <section class="sponsors-section">
+            <div class="container">
+                <div class="text-center mb-12">
+                    <h2 class="mb-4" style="color: #6b7280;">Mūsu partneri</h2>
+                    <p style="color: #6b7280;">
+                        Mēs sadarbojamies ar labākajiem uzņēmumiem zirgu sporta jomā
+                    </p>
+                </div>
+
+                <div class="sponsor-grid">
+                    <div class="sponsor-logo">
+                        <div class="sponsor-placeholder">EF</div>
+                    </div>
+                    <div class="sponsor-logo">
+                        <div class="sponsor-placeholder">HC</div>
+                    </div>
+                    <div class="sponsor-logo">
+                        <div class="sponsor-placeholder">SE</div>
+                    </div>
+                    <div class="sponsor-logo">
+                        <div class="sponsor-placeholder">VS</div>
+                    </div>
+                    <div class="sponsor-logo">
+                        <div class="sponsor-placeholder">FN</div>
+                    </div>
+                    <div class="sponsor-logo">
+                        <div class="sponsor-placeholder">AC</div>
+                    </div>
+                    <div class="sponsor-logo">
+                        <div class="sponsor-placeholder">IP</div>
+                    </div>
+                    <div class="sponsor-logo">
+                        <div class="sponsor-placeholder">TS</div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-8">
+                    <p style="font-size: 0.875rem; color: #6b7280;">
+                        Interesē sadarbība? 
+                        <a href="/lv/kontakti/" style="color: var(--primary); font-weight: 500;">
+                            Sazinieties ar mums
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-main">
+                <div class="footer-grid">
+                    <!-- Company Info -->
+                    <div>
+                        <div class="footer-brand">
+                            <h3>Latvian Horses</h3>
+                            <p>
+                                Vieta, kur cilvēki satiekas ar zirgiem. Profesionālas apmācības, 
+                                pasākumi un atpūta harmonijā ar dabu.
+                            </p>
+                        </div>
+
+                        <div class="footer-contact">
+                            <div class="contact-item">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21L6.16 10.928c-.67.359-1.006 1.121-.839 1.876.147.667.505 1.297 1.068 1.86s1.193.92 1.86 1.068c.755.167 1.517-.169 1.876-.839l1.541-4.064a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.948V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                                </svg>
+                                <span class="contact-text">+371 2X XXX XXX</span>
+                            </div>
+
+                            <div class="contact-item">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
+                                <span class="contact-text">info@latvianhorses.lv</span>
+                            </div>
+
+                            <div class="contact-item">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                                <span class="contact-text">
+                                    Inčukalns, Latvija<br />
+                                    Piemēra iela 123
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div class="footer-section">
+                        <h4>Ātrās saites</h4>
+                        <nav class="footer-links">
+                            <a href="/lv/pakalpojumi/">Pakalpojumi</a>
+                            <a href="/lv/pasakumi/">Pasākumi</a>
+                            <a href="/lv/cenas/">Cenas</a>
+                            <a href="/lv/galerija/">Galerija</a>
+                            <a href="/lv/par-mums/">Par mums</a>
+                            <a href="/lv/kontakti/">Kontakti</a>
+                        </nav>
+                    </div>
+
+                    <!-- Gift Cards & Legal -->
+                    <div class="footer-section">
+                        <div class="footer-gift">
+                            <h4>Dāvanu kartes</h4>
+                            <a href="/lv/davanu-kartes/" class="footer-gift-btn">
+                                Iegādāties karti
+                            </a>
+                            <p class="footer-gift-info">
+                                Derīga 12 mēnešus<br />
+                                Elektroniska piegāde
+                            </p>
+                        </div>
+
+                        <h4>Juridiskā informācija</h4>
+                        <nav class="footer-links footer-legal">
+                            <a href="/lv/privatuma-politika/">Privātuma politika</a>
+                            <a href="/lv/noteikumi/">Lietošanas noteikumi</a>
+                            <a href="/lv/drosibu-noteikumi/">Drošības noteikumi</a>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p class="footer-copyright">
+                        © 2025 Latvian Horses. Visas tiesības aizsargātas.
+                    </p>
+                    
+                    <div class="footer-social">
+                        <a href="#">
+                            <svg fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                            </svg>
+                        </a>
+                        <a href="#">
+                            <svg fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
+                            </svg>
+                        </a>
+                        <a href="#">
+                            <svg fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.346-.09.375-.293 1.199-.334 1.363-.053.225-.174.271-.402.165-1.499-.698-2.436-2.888-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.357-.631-2.749-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001.012.001z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
 </html>
