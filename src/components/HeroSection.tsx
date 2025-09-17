@@ -33,7 +33,7 @@ const HeroSection = () => {
                 Записаться на тренировки
               </a>
             </Button>
-            <Button variant="outline" asChild className="btn-outline-velvet text-lg px-10 py-4 border-2 border-white text-white hover:bg-white hover:text-primary">
+            <Button variant="outline" asChild className="inline-flex items-center justify-center rounded-[12px] border-2 border-white/90 px-10 py-4 text-lg font-medium text-white no-underline transition-colors duration-200 hover:bg-white hover:text-[#963026] focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-white/80">
               <a href="/ru/pasakumi/">
                 Смотреть события
               </a>
