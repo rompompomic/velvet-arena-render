@@ -40,12 +40,13 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-neutral-200">
       <div className="w-full">
-        {/* ===== Top utility bar: languages + contacts (one row) ===== */}
+        {/* ===== Top utility bar: languages + contacts ===== */}
         <div className="border-b border-neutral-200">
           <div className="container mx-auto max-w-7xl px-4">
-            <div className="flex items-center justify-between py-1.5">
-              {/* Languages inline */}
-              <nav className="flex items-center gap-2 text-xs whitespace-nowrap">
+            {/* На мобильном — в столбик; с sm — в строку */}
+            <div className="flex flex-col gap-1 py-1.5 sm:flex-row sm:items-center sm:justify-between">
+              {/* Languages */}
+              <nav className="flex items-center gap-2 text-xs flex-wrap">
                 {languages.map((l, i) => (
                   <span key={l.code} className="flex items-center">
                     {l.active ? (
@@ -62,8 +63,8 @@ const Header = () => {
                 ))}
               </nav>
 
-              {/* Contacts inline */}
-              <div className="flex items-center gap-5 text-xs text-text/80 whitespace-nowrap">
+              {/* Contacts */}
+              <div className="flex items-center gap-4 text-xs text-text/80 flex-wrap">
                 <span className="flex items-center gap-1">
                   <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h2.6a1 1 0 01.95.69l1.2 3.6a1 1 0 01-.51 1.2l-1.6.8a12 12 0 006.32 6.32l.8-1.6a1 1 0 011.2-.51l3.6 1.2a1 1 0 01.69.95V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -82,8 +83,9 @@ const Header = () => {
         </div>
 
         {/* ===== Main bar: logo + centered nav + Main Sponsor + CTA ===== */}
+        {/* Скрываем на мобильном, чтобы ничего не налезало */}
         <div className="container mx-auto max-w-7xl px-4">
-          <div className="grid grid-cols-3 items-center py-4 md:py-5">
+          <div className="hidden md:grid grid-cols-3 items-center py-4 md:py-5">
             {/* Left: Logo */}
             <div className="flex items-center">
               <a
@@ -94,7 +96,7 @@ const Header = () => {
               </a>
             </div>
 
-            {/* Center: Main navigation (no-wrap items) */}
+            {/* Center: Main navigation */}
             <nav className="hidden lg:flex justify-center">
               <ul className="flex items-center gap-6">
                 {mainNavigation.map((item) =>
@@ -132,14 +134,14 @@ const Header = () => {
               </ul>
             </nav>
 
-            {/* Right: Main Sponsor + CTA (no-wrap) */}
-            <div className="flex items-center justify-end gap-4 whitespace-nowrap">
+            {/* Right: Main Sponsor + CTA */}
+            <div className="hidden md:flex items-center justify-end gap-4 whitespace-nowrap">
               <div className="flex items-center h-8">
                 <span className="text-lg md:text-xl font-semibold text-muted-foreground leading-none whitespace-nowrap">
                   Main Sponsor
                 </span>
               </div>
-            
+
               <a
                 href="/lv/pasakumi/"
                 className="inline-flex items-center rounded-md px-4 py-2 text-sm md:text-[15px] font-semibold text-white bg-[var(--primary)] hover:bg-[var(--primary-700)] transition-colors whitespace-nowrap"
@@ -151,8 +153,8 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Mobile row (burger) */}
-      <div className="lg:hidden container mx-auto max-w-7xl px-4 py-2 border-t border-neutral-200">
+      {/* Mobile row (burger) — только для мобильного */}
+      <div className="md:hidden container mx-auto max-w-7xl px-4 py-2 border-t border-neutral-200">
         <div className="flex items-center justify-between">
           <a href="/" className="text-base font-semibold text-[var(--primary)] whitespace-nowrap">
             Latvian Horses
