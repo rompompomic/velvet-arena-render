@@ -28,33 +28,28 @@ const HeroSection = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-3 justify-center items-center pt-8">
-            {/* Основная кнопка — ВСЕГДА красная (с фолбэком) */}
+            {/* Основная кнопка — красная по умолчанию, черная при hover */}
             <Button
               asChild
-              className="group relative overflow-hidden h-11 px-6 rounded-[12px] font-semibold text-white
-                         shadow-md transition-all duration-300
-                         hover:-translate-y-0.5 hover:shadow-xl active:translate-y-0
-                         flex items-center justify-center focus:outline-none"
-              style={{ backgroundColor: "var(--primary, #963026)" }} // <-- принудительный фон
+              variant="default"
+              className="group relative overflow-hidden h-11 px-6 rounded-lg font-semibold
+                         bg-[#963026] text-white shadow-md transition-all duration-300
+                         hover:bg-neutral-900 hover:-translate-y-0.5 hover:shadow-xl active:translate-y-0
+                         flex items-center justify-center
+                         focus:outline-none focus:ring-2 focus:ring-[#963026]/40"
             >
-                <a
-                  href="/lv/pakalpojumi/jasanas-trenini/"
-                  className="h-11 px-6 rounded-lg font-semibold text-white
-                             bg-[#963026]  /* красная по токену */
-                             flex items-center justify-center gap-2
-                             shadow-md transition-all duration-300
-                             hover:bg-neutral-900 hover:-translate-y-0.5 hover:shadow-xl active:translate-y-0"
+              <a href="/lv/pakalpojumi/jasanas-trenini/" className="inline-flex items-center gap-2">
+                <span>Pieteikties treniņiem</span>
+                <svg
+                  className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
                 >
-                  <span>Pieteikties treniņiem</span>
-                  <svg
-                    className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </a>
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+                <span className="pointer-events-none absolute inset-0 -translate-x-full group-hover:translate-x-full shine-mask" />
+              </a>
             </Button>
 
             {/* Вторая кнопка — тёмная, те же размеры и центрирование */}
