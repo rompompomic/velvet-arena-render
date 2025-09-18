@@ -5,8 +5,6 @@ const DonateSection: React.FC = () => {
 
   // проще: храню сумму как строку (input всегда строка)
   const [amount, setAmount] = useState<string>("");
-  const [freq, setFreq] = useState<"one" | "monthly">("one");
-  const [method, setMethod] = useState<"card" | "bank">("card");
   const [agree, setAgree] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
@@ -25,7 +23,6 @@ const DonateSection: React.FC = () => {
       className="py-16"
       style={
         {
-          // дизайн-токены (можно вынести в :root/global css)
           ["--primary" as any]: "#963026",
           ["--primary-700" as any]: "#7A251F",
           ["--primary-50" as any]: "#FCECEA",
@@ -53,7 +50,8 @@ const DonateSection: React.FC = () => {
             Atbalsti Latvian Horses
           </h2>
           <p className="text-sm text-[rgba(6,3,13,0.7)] max-w-xl mx-auto">
-            Neliels atbalsts palīdz nodrošināt zirgu labturību un aktivitātes. Paldies par jebkuru ieguldījumu.
+            Neliels atbalsts palīdz nodrošināt zirgu labturību un aktivitātes.
+            Paldies par jebkuru ieguldījumu.
           </p>
         </div>
 
@@ -75,18 +73,35 @@ const DonateSection: React.FC = () => {
                   background: "var(--primary-50)",
                 }}
               >
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ color: "var(--primary)" }}>
+                <svg
+                  width="28"
+                  height="28"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  style={{ color: "var(--primary)" }}
+                >
                   <path d="M20 6L9 17l-5-5" />
                 </svg>
               </div>
-              <h3 style={{ fontSize: 20, fontWeight: 600, color: "var(--text)" }}>Paldies par atbalstu!</h3>
-              <p className="text-sm text-[rgba(6,3,13,0.7)] mt-2">Mēs nosūtīsim apstiprinājumu uz e-pastu (ja norādīts).</p>
+              <h3
+                style={{ fontSize: 20, fontWeight: 600, color: "var(--text)" }}
+              >
+                Paldies par atbalstu!
+              </h3>
+              <p className="text-sm text-[rgba(6,3,13,0.7)] mt-2">
+                Mēs nosūtīsim apstiprinājumu uz e-pastu (ja norādīts).
+              </p>
             </div>
           ) : (
             <form onSubmit={onSubmit} className="space-y-6">
               {/* Amount presets */}
               <div>
-                <label className="block text-sm font-medium mb-2" style={{ color: "var(--text)" }}>
+                <label
+                  className="block text-sm font-medium mb-2"
+                  style={{ color: "var(--text)" }}
+                >
                   Ziedojuma summa
                 </label>
 
@@ -98,9 +113,16 @@ const DonateSection: React.FC = () => {
                       onClick={() => handlePreset(p)}
                       className={`rounded-md px-3 h-10 inline-flex items-center justify-center text-sm border`}
                       style={{
-                        borderColor: Number(amount) === p ? "var(--primary)" : "var(--neutral-200)",
-                        background: Number(amount) === p ? "var(--primary)" : "transparent",
-                        color: Number(amount) === p ? "#fff" : "var(--text)",
+                        borderColor:
+                          Number(amount) === p
+                            ? "var(--primary)"
+                            : "var(--neutral-200)",
+                        background:
+                          Number(amount) === p
+                            ? "var(--primary)"
+                            : "transparent",
+                        color:
+                          Number(amount) === p ? "#fff" : "var(--text)",
                         minWidth: 64,
                       }}
                     >
@@ -125,90 +147,20 @@ const DonateSection: React.FC = () => {
                         color: "var(--text)",
                       }}
                     />
-                    <span style={{ position: "absolute", right: 10, top: "50%", transform: "translateY(-50%)", color: "rgba(6,3,13,0.6)", fontSize: 14 }}>
+                    <span
+                      style={{
+                        position: "absolute",
+                        right: 10,
+                        top: "50%",
+                        transform: "translateY(-50%)",
+                        color: "rgba(6,3,13,0.6)",
+                        fontSize: 14,
+                      }}
+                    >
                       €
                     </span>
                   </div>
                 </div>
-              </div>
-
-              {/* Frequency */}
-              <div>
-                <div className="inline-flex rounded-md overflow-hidden border" style={{ borderColor: "var(--neutral-200)" }}>
-                  <button
-                    type="button"
-                    onClick={() => setFreq("one")}
-                    className="px-3 py-2 text-sm"
-                    style={{
-                      background: freq === "one" ? "var(--primary)" : "transparent",
-                      color: freq === "one" ? "#fff" : "var(--text)",
-                      minWidth: 120,
-                    }}
-                  >
-                    Vienreizējs
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setFreq("monthly")}
-                    className="px-3 py-2 text-sm"
-                    style={{
-                      background: freq === "monthly" ? "var(--primary)" : "transparent",
-                      color: freq === "monthly" ? "#fff" : "var(--text)",
-                      minWidth: 120,
-                      borderLeft: "1px solid var(--neutral-200)",
-                    }}
-                  >
-                    Ik mēnesi
-                  </button>
-                </div>
-              </div>
-
-              {/* Payment method */}
-              <div>
-                <label className="block text-sm font-medium mb-2" style={{ color: "var(--text)" }}>
-                  Apmaksas veids
-                </label>
-                <div className="flex gap-3">
-                  <button
-                    type="button"
-                    onClick={() => setMethod("card")}
-                    className="px-3 h-10 rounded-md border text-sm"
-                    style={{
-                      borderColor: method === "card" ? "var(--primary)" : "var(--neutral-200)",
-                      background: method === "card" ? "var(--primary-50)" : "transparent",
-                      color: method === "card" ? "var(--primary)" : "var(--text)",
-                      minWidth: 120,
-                    }}
-                  >
-                    Bankas karte
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setMethod("bank")}
-                    className="px-3 h-10 rounded-md border text-sm"
-                    style={{
-                      borderColor: method === "bank" ? "var(--primary)" : "var(--neutral-200)",
-                      background: method === "bank" ? "var(--primary-50)" : "transparent",
-                      color: method === "bank" ? "var(--primary)" : "var(--text)",
-                      minWidth: 120,
-                    }}
-                  >
-                    Pārskaitījums
-                  </button>
-                </div>
-
-                {method === "bank" && (
-                  <div className="mt-3 p-3 rounded-md" style={{ background: "var(--light)", border: "1px solid var(--neutral-200)" }}>
-                    <div className="text-sm font-medium" style={{ color: "var(--text)" }}>
-                      Pārskaitījuma rekvizīti
-                    </div>
-                    <div className="text-sm text-[rgba(6,3,13,0.7)] mt-1">
-                      Saņēmējs: Latvian Horses
-                      <br />
-                      IBAN: —
-                    </div>
-                  </div>
-                )}
               </div>
 
               {/* Contact (optional) */}
@@ -217,13 +169,19 @@ const DonateSection: React.FC = () => {
                   type="text"
                   placeholder="Vārds (nav obligāti)"
                   className="w-full h-10 px-3 rounded-md border text-sm"
-                  style={{ borderColor: "var(--neutral-200)", color: "var(--text)" }}
+                  style={{
+                    borderColor: "var(--neutral-200)",
+                    color: "var(--text)",
+                  }}
                 />
               </div>
 
               {/* Consent + Submit */}
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-                <label className="flex items-center gap-3 text-sm" style={{ color: "var(--text)" }}>
+                <label
+                  className="flex items-center gap-3 text-sm"
+                  style={{ color: "var(--text)" }}
+                >
                   <input
                     type="checkbox"
                     checked={agree}
@@ -233,7 +191,10 @@ const DonateSection: React.FC = () => {
                   />
                   <span>
                     Piekrītu personas datu apstrādei saskaņā ar{" "}
-                    <a href="/lv/privatuma-politika/" className="underline">
+                    <a
+                      href="/lv/privatuma-politika/"
+                      className="underline"
+                    >
                       Privātuma politiku
                     </a>
                     .
@@ -246,19 +207,30 @@ const DonateSection: React.FC = () => {
                   disabled={!amount || Number(amount) <= 0 || !agree}
                   className="h-10 px-4 rounded-md text-sm font-semibold"
                   style={{
-                    background: !amount || Number(amount) <= 0 || !agree ? "var(--neutral-200)" : "var(--primary)",
-                    color: !amount || Number(amount) <= 0 || !agree ? "rgba(6,3,13,0.5)" : "#fff",
+                    background:
+                      !amount || Number(amount) <= 0 || !agree
+                        ? "var(--neutral-200)"
+                        : "var(--primary)",
+                    color:
+                      !amount || Number(amount) <= 0 || !agree
+                        ? "rgba(6,3,13,0.5)"
+                        : "#fff",
                     border: "none",
                     minWidth: 160,
-                    cursor: !amount || Number(amount) <= 0 || !agree ? "not-allowed" : "pointer",
+                    cursor:
+                      !amount || Number(amount) <= 0 || !agree
+                        ? "not-allowed"
+                        : "pointer",
                   }}
                 >
                   Ziedot {amount ? `${amount} €` : ""}
-                  {freq === "monthly" && <span className="ml-2">/ mēnesī</span>}
                 </button>
               </div>
 
-              <p className="text-xs text-[rgba(6,3,13,0.6)] text-center mt-2">Pēc ziedojuma saņemšanas nosūtīsim apstiprinājumu uz e-pastu (ja norādīts).</p>
+              <p className="text-xs text-[rgba(6,3,13,0.6)] text-center mt-2">
+                Pēc ziedojuma saņemšanas nosūtīsim apstiprinājumu uz e-pastu
+                (ja norādīts).
+              </p>
             </form>
           )}
         </div>
