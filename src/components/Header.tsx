@@ -1,8 +1,17 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 
 const Header = () => {
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [openSection, setOpenSection] = useState<string | null>(null);
+
+  const toggleMobile = () => setMobileOpen((v) => !v);
+  const toggleSection = (key: string) =>
+    setOpenSection((cur) => (cur === key ? null : key));
+
   const mainNavigation = [
     {
+      key: "pakalpojumi",
       name: "Pakalpojumi",
       href: "/lv/pakalpojumi/",
       hasDropdown: true,
@@ -16,8 +25,9 @@ const Header = () => {
         { name: "Citi pakalpojumi", href: "/lv/pakalpojumi/citi-pakalpojumi/" },
       ],
     },
-    { name: "Cenas", href: "/lv/cenas/" },
+    { key: "cenas", name: "Cenas", href: "/lv/cenas/" },
     {
+      key: "galerija",
       name: "Galerija",
       href: "/lv/galerija/",
       hasDropdown: true,
@@ -27,8 +37,8 @@ const Header = () => {
         { name: "Jauno jātnieku skola", href: "/lv/galerija/jauno-jatnieku-skola/" },
       ],
     },
-    { name: "Par mums", href: "/lv/par-mums/" },
-    { name: "Kontakti", href: "/lv/kontakti/" },
+    { key: "par", name: "Par mums", href: "/lv/par-mums/" },
+    { key: "kontakti", name: "Kontakti", href: "/lv/kontakti/" },
   ];
 
   const languages = [
@@ -40,10 +50,9 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-neutral-200">
       <div className="w-full">
-        {/* ===== Top utility bar: languages + contacts ===== */}
+        {/* ===== Top utility bar ===== */}
         <div className="border-b border-neutral-200">
           <div className="container mx-auto max-w-7xl px-4">
-            {/* На мобильном — в столбик; с sm — в строку */}
             <div className="flex flex-col gap-1 py-1.5 sm:flex-row sm:items-center sm:justify-between">
               {/* Languages */}
               <nav className="flex items-center gap-2 text-xs flex-wrap">
@@ -56,9 +65,7 @@ const Header = () => {
                         {l.code}
                       </a>
                     )}
-                    {i < languages.length - 1 && (
-                      <span className="mx-1 text-text/30">/</span>
-                    )}
+                    {i < languages.length - 1 && <span className="mx-1 text-text/30">/</span>}
                   </span>
                 ))}
               </nav>
@@ -82,8 +89,7 @@ const Header = () => {
           </div>
         </div>
 
-        {/* ===== Main bar: logo + centered nav + Main Sponsor + CTA ===== */}
-        {/* Скрываем на мобильном, чтобы ничего не налезало */}
+        {/* ===== Main bar: desktop ===== */}
         <div className="container mx-auto max-w-7xl px-4">
           <div className="hidden md:grid grid-cols-3 items-center py-4 md:py-5">
             {/* Left: Logo */}
@@ -101,7 +107,7 @@ const Header = () => {
               <ul className="flex items-center gap-6">
                 {mainNavigation.map((item) =>
                   item.hasDropdown ? (
-                    <li key={item.name} className="relative group">
+                    <li key={item.key} className="relative group">
                       <button className="text-[15px] text-text/90 hover:text-[var(--primary)] font-medium flex items-center gap-1 whitespace-nowrap">
                         {item.name}
                         <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -121,7 +127,7 @@ const Header = () => {
                       </div>
                     </li>
                   ) : (
-                    <li key={item.name}>
+                    <li key={item.key}>
                       <a
                         href={item.href}
                         className="relative text-[15px] text-text/90 hover:text-[var(--primary)] font-medium whitespace-nowrap after:block after:h-[2px] after:bg-transparent after:w-0 hover:after:bg-[var(--primary)] hover:after:w-full after:transition-all after:duration-200"
@@ -153,19 +159,173 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Mobile row (burger) — только для мобильного */}
+      {/* ===== Mobile row ===== */}
       <div className="md:hidden container mx-auto max-w-7xl px-4 py-2 border-t border-neutral-200">
         <div className="flex items-center justify-between">
           <a href="/" className="text-base font-semibold text-[var(--primary)] whitespace-nowrap">
             Latvian Horses
           </a>
-          <button className="p-2 text-text/80" aria-label="Menu">
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
+
+          {/* Burger */}
+          <button
+            className="p-2 text-text/80"
+            aria-label="Open menu"
+            aria-expanded={mobileOpen}
+            onClick={toggleMobile}
+          >
+            {mobileOpen ? (
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            ) : (
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            )}
           </button>
         </div>
       </div>
+
+      {/* ===== Mobile Drawer + Overlay ===== */}
+      {/* Overlay */}
+      <div
+        className={`md:hidden fixed inset-0 z-[49] bg-black/40 backdrop-blur-[1px] transition-opacity ${mobileOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
+        onClick={() => setMobileOpen(false)}
+      />
+
+      {/* Drawer */}
+      <aside
+        className={`md:hidden fixed top-0 right-0 h-screen w-[88%] max-w-[360px] z-[50] bg-white border-l border-neutral-200 shadow-[0_6px_16px_rgba(0,0,0,0.08)] transition-transform duration-300 ${
+          mobileOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+        role="dialog"
+        aria-modal="true"
+      >
+        {/* Drawer header */}
+        <div className="flex items-center justify-between px-4 py-3 border-b border-neutral-200">
+          <a href="/" className="text-base font-semibold text-[var(--primary)]">Latvian Horses</a>
+          <button className="p-2 text-text/80" aria-label="Close menu" onClick={toggleMobile}>
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+
+        {/* Drawer content */}
+        <div className="px-2 py-2 overflow-y-auto">
+          <nav className="divide-y divide-neutral-200">
+            {mainNavigation.map((item) =>
+              item.hasDropdown ? (
+                <div key={item.key} className="py-1">
+                  <button
+                    className="w-full flex items-center justify-between px-2 py-3 text-[15px] font-medium text-text/90 hover:text-[var(--primary)]"
+                    onClick={() => toggleSection(item.key)}
+                    aria-expanded={openSection === item.key}
+                  >
+                    <span>{item.name}</span>
+                    <svg
+                      className={`w-4 h-4 transition-transform ${openSection === item.key ? "rotate-180" : ""}`}
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+
+                  {/* Subitems */}
+                  <div
+                    className={`grid transition-[grid-template-rows] duration-300 ease-in-out px-2 ${
+                      openSection === item.key ? "grid-rows-[1fr] pb-2" : "grid-rows-[0fr]"
+                    }`}
+                  >
+                    <div className="overflow-hidden">
+                      <ul className="pl-2">
+                        {item.subItems?.map((sub) => (
+                          <li key={sub.name}>
+                            <a
+                              href={sub.href}
+                              onClick={() => setMobileOpen(false)}
+                              className="block px-3 py-2 text-sm text-text/90 rounded-md hover:bg-[var(--light)] hover:text-[var(--primary)]"
+                            >
+                              {sub.name}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <a
+                  key={item.key}
+                  href={item.href}
+                  onClick={() => setMobileOpen(false)}
+                  className="block px-2 py-3 text-[15px] font-medium text-text/90 hover:text-[var(--primary)]"
+                >
+                  {item.name}
+                </a>
+              )
+            )}
+          </nav>
+
+          {/* Divider */}
+          <div className="my-3 border-t border-neutral-200" />
+
+          {/* Languages (mobile) */}
+          <div className="px-2 py-2">
+            <div className="text-xs uppercase tracking-wide text-text/50 mb-2">Valodas</div>
+            <div className="flex items-center gap-2">
+              {languages.map((l) =>
+                l.active ? (
+                  <span key={l.code} className="px-2 py-1 text-xs rounded-md bg-[var(--primary-50)] text-[var(--primary)] font-semibold">
+                    {l.code}
+                  </span>
+                ) : (
+                  <a
+                    key={l.code}
+                    href={l.href}
+                    className="px-2 py-1 text-xs rounded-md hover:bg-[var(--light)]"
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    {l.code}
+                  </a>
+                )
+              )}
+            </div>
+          </div>
+
+          {/* Contacts (mobile) */}
+          <div className="px-2 py-2">
+            <div className="text-xs uppercase tracking-wide text-text/50 mb-2">Kontakti</div>
+            <div className="space-y-2 text-[15px]">
+              <a href="tel:+37128677177" className="flex items-center gap-2 hover:text-[var(--primary)]">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h2.6a1 1 0 01.95.69l1.2 3.6a1 1 0 01-.51 1.2l-1.6.8a12 12 0 006.32 6.32l.8-1.6a1 1 0 011.2-.51l3.6 1.2a1 1 0 01.69.95V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+                +37128677177
+              </a>
+              <a href="mailto:info@latvianhorses.lv" className="flex items-center gap-2 hover:text-[var(--primary)]">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                info@latvianhorses.lv
+              </a>
+            </div>
+          </div>
+
+          {/* CTA in drawer */}
+          <div className="px-2 py-4">
+            <a
+              href="/lv/pasakumi/"
+              onClick={() => setMobileOpen(false)}
+              className="inline-flex w-full items-center justify-center rounded-md px-4 py-3 font-semibold text-white bg-[var(--primary)] hover:bg-[var(--primary-700)] transition-colors"
+            >
+              Pasākumi
+            </a>
+          </div>
+        </div>
+      </aside>
     </header>
   );
 };
