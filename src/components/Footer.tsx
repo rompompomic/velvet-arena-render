@@ -1,18 +1,19 @@
 const Footer = () => {
   const quickLinks = [
-    { name: 'Услуги', href: '/ru/pakalpojumi/' },
-    { name: 'События', href: '/ru/pasakumi/' },
-    { name: 'Цены', href: '/ru/cenas/' },
-    { name: 'Галерея', href: '/ru/galerija/' },
-    { name: 'О нас', href: '/ru/par-mums/' },
-    { name: 'Контакты', href: '/ru/kontakti/' },
+    { name: 'Pakalpojumi', href: '/lv/pakalpojumi/' },
+    { name: 'Pasākumi', href: '/lv/pasakumi/' },
+    { name: 'Cenas', href: '/lv/cenas/' },
+    { name: 'Galerija', href: '/lv/galerija/' },
+    { name: 'Par mums', href: '/lv/par-mums/' },
+    { name: 'Kontakti', href: '/lv/kontakti/' },
   ];
 
   const legalLinks = [
-    { name: 'Конфиденциальность', href: '/ru/privatuma-politika/' },
-    { name: 'Условия использования', href: '/ru/noteikumi/' },
-    { name: 'Правила безопасности', href: '/ru/drosibu-noteikumi/' },
+    { name: 'Privātuma politika', href: '/lv/privatuma-politika/' },
+    { name: 'Lietošanas noteikumi', href: '/lv/noteikumi/' },
+    { name: 'Drošības noteikumi', href: '/lv/drosibu-noteikumi/' },
   ];
+
 
   return (
     <footer className="bg-text text-white">
