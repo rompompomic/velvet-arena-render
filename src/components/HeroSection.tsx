@@ -29,17 +29,16 @@ const HeroSection = () => {
           </a>
         </Button>
       
-        {/* Контрастная кнопка */}
+        {/* Альтернативная кнопка (outline-light) */}
         <Button
           asChild
-          className="bg-white text-[var(--primary)] text-lg px-10 py-4 border border-[var(--primary)] hover:bg-[var(--primary)] hover:text-white transition-colors font-semibold rounded-lg shadow-sm"
+          className="text-lg px-10 py-4 border border-white/50 text-white hover:bg-white/10 hover:border-white hover:text-white transition-colors rounded-lg"
         >
           <a href="/lv/pasakumi/">
             Skatīt pasākumus
           </a>
         </Button>
       </div>
-
           
         </div>
       </div>
