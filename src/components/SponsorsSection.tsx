@@ -67,7 +67,7 @@ const SponsorsSection: React.FC = () => {
       </div>
 
       {/* Local styles */}
-      <style jsx>{`
+      <style>{`
         @keyframes fadePop {
           0% { opacity: 0; transform: scale(.92) translateY(14px); }
           55% { opacity: 1; transform: scale(1.02) translateY(-2px); }
