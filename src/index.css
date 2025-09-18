@@ -220,6 +220,17 @@
     transform: translateY(-4px);
     box-shadow: var(--shadow-md), 0 8px 24px rgba(0,0,0,0.12);
   }
+
+  .shine-mask {
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.35) 45%,
+    rgba(255, 255, 255, 0) 90%
+  );
+  mix-blend-mode: screen;
+  transition: transform 0.8s ease;
+  }
   
   /* Image Effects */
   .image-duotone {
