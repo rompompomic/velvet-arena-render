@@ -12,7 +12,7 @@ const EventsSection = () => {
     {
       title: "Ziemas kauss — 1. posms",
       date: "25–26", 
-      month: "OCT",
+      month: "OKT",
       year: "2025",
       description: "Ziemas sacensību sezonas atklāšana dresūrā"
     },
