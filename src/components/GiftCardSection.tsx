@@ -27,7 +27,7 @@ const GiftCardSection = () => {
             {/* Trust Features */}
             <div className="flex flex-wrap justify-center gap-8 mb-10">
               {features.map((feature, index) => <div key={index} className="flex items-center gap-2 text-sm font-medium">
-                  <feature.icon className="w-5 h-5 rounded-none" />
+                  <feature.icon className="w-10 h-10" />
                   <span>{feature.text}</span>
                 </div>)}
             </div>
