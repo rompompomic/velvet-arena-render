@@ -20,23 +20,26 @@ const HeroSection = () => {
             Apmācības, pasākumi un atpūta dabas tuvumā — bērniem un pieaugušajiem
           </p>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
-            <Button asChild className="btn-velvet text-lg px-10 py-4">
-              <a href="/lv/pakalpojumi/jasanas-trenini/">
-                Pieteikties treniņiem
-              </a>
-            </Button>
-            <Button asChild className=":bg-white hover:text-[var(--primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-white/80">
-              <a href="/lv/pasakumi/">
-                Skatīt pasākumus
-              </a>
-            </Button>
-          </div>
-        </div>
+      {/* CTA Buttons */}
+      <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
+        {/* Основная кнопка */}
+        <Button asChild className="btn-velvet text-lg px-10 py-4">
+          <a href="/lv/pakalpojumi/jasanas-trenini/">
+            Pieteikties treniņiem
+          </a>
+        </Button>
+      
+        {/* Контрастная кнопка */}
+        <Button
+          asChild
+          className="bg-white text-[var(--primary)] text-lg px-10 py-4 border border-[var(--primary)] hover:bg-[var(--primary)] hover:text-white transition-colors font-semibold rounded-lg shadow-sm"
+        >
+          <a href="/lv/pasakumi/">
+            Skatīt pasākumus
+          </a>
+        </Button>
+      </div>
 
-        {/* Scroll Hint */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
           
         </div>
       </div>
