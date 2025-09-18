@@ -32,7 +32,7 @@ const HeroSection = () => {
         {/* Альтернативная кнопка (outline-light) */}
         <Button
           asChild
-          className="text-lg px-10 py-4 border border-white/50 text-white hover:bg-white/10 hover:border-white hover:text-white transition-colors rounded-lg"
+          className="bg-neutral-900 text-white text-lg px-10 py-4 rounded-lg hover:bg-neutral-800 transition-colors shadow-md"
         >
           <a href="/lv/pasakumi/">
             Skatīt pasākumus
