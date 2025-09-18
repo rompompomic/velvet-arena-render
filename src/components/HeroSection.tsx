@@ -28,14 +28,17 @@ const HeroSection = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-3 justify-center items-center pt-8">
-            {/* Основная кнопка — красная по токену */}
+            {/* Основная кнопка — ВСЕГДА красная (с фолбэком) */}
             <Button
               asChild
+              variant="default"
               className="group relative overflow-hidden h-11 px-6 rounded-lg font-semibold
-                         text-white bg-[color:var(--primary)] 
+                         text-white
+                         bg-[color:var(--primary,_#963026)]
                          shadow-md transition-all duration-300
                          hover:bg-neutral-900 hover:-translate-y-0.5 hover:shadow-xl active:translate-y-0
-                         flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-[color:var(--primary)]/40"
+                         flex items-center justify-center
+                         focus:outline-none focus:ring-2 focus:ring-[color:var(--primary,_#963026)]/40"
             >
               <a href="/lv/pakalpojumi/jasanas-trenini/" className="inline-flex items-center gap-2">
                 <span>Pieteikties treniņiem</span>
@@ -51,14 +54,16 @@ const HeroSection = () => {
                 <span className="pointer-events-none absolute inset-0 -translate-x-full group-hover:translate-x-full shine-mask" />
               </a>
             </Button>
-          
-            {/* Вторая кнопка — тёмная */}
+
+            {/* Вторая кнопка — тёмная, те же размеры и центрирование */}
             <Button
               asChild
+              variant="default"
               className="group relative overflow-hidden h-11 px-6 rounded-lg font-semibold
                          bg-neutral-900 text-white shadow-md transition-all duration-300
                          hover:-translate-y-0.5 hover:shadow-xl active:translate-y-0
-                         flex items-center justify-center"
+                         flex items-center justify-center
+                         focus:outline-none focus:ring-2 focus:ring-white/30"
             >
               <a href="/lv/pasakumi/" className="inline-flex items-center gap-2">
                 <span>Skatīt pasākumus</span>
