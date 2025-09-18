@@ -29,18 +29,27 @@ const HeroSection = () => {
           </a>
         </Button>
       
-        {/* Альтернативная кнопка (outline-light) */}
+        {/* Вторая кнопка — тёмная с анимацией */}
         <Button
           asChild
-          className="bg-neutral-900 text-white text-lg px-10 py-4 rounded-lg hover:bg-neutral-800 transition-colors shadow-md"
+          className="group relative overflow-hidden bg-neutral-900 text-white text-lg px-10 py-4 rounded-lg shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl active:translate-y-0"
         >
-          <a href="/lv/pasakumi/">
-            Skatīt pasākumus
+          <a href="/lv/pasakumi/" className="inline-flex items-center gap-2">
+            <span>Skatīt pasākumus</span>
+            {/* стрелка слегка уезжает вправо при ховере */}
+            <svg
+              className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+      
+            {/* shine-блик */}
+            <span className="pointer-events-none absolute inset-0 -translate-x-full group-hover:translate-x-full shine-mask" />
           </a>
         </Button>
-      </div>
-          
-        </div>
       </div>
     </section>;
 };
