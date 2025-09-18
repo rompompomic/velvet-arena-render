@@ -12,7 +12,7 @@ const EventsSection = () => {
     {
       title: "Ziemas kauss — 1. posms",
       date: "25–26", 
-      month: "OKT",
+      month: "OCT",
       year: "2025",
       description: "Ziemas sacensību sezonas atklāšana dresūrā"
     },
@@ -26,10 +26,10 @@ const EventsSection = () => {
   ];
 
   return (
-    <section className="py-24 bg-gradient-to-br from-text/85 to-text/95 text-white relative overflow-hidden">
+    <section className="py-24 bg-text text-white relative overflow-hidden">
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-accent/20" />
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/10" />
       </div>
 
       <div className="container mx-auto px-4 relative z-10 max-w-7xl">
