@@ -50,11 +50,10 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-neutral-200">
       <div className="w-full">
-        {/* ===== Top utility bar (HIDDEN on mobile) ===== */}
+        {/* ===== Top utility bar (hidden on mobile) ===== */}
         <div className="border-b border-neutral-200 hidden md:block">
           <div className="container mx-auto max-w-7xl px-4">
             <div className="flex items-center justify-between py-1.5">
-              {/* Languages */}
               <nav className="flex items-center gap-2 text-xs">
                 {languages.map((l, i) => (
                   <span key={l.code} className="flex items-center">
@@ -70,7 +69,6 @@ const Header = () => {
                 ))}
               </nav>
 
-              {/* Contacts */}
               <div className="flex items-center gap-4 text-xs text-text/80">
                 <span className="flex items-center gap-1">
                   <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -89,10 +87,9 @@ const Header = () => {
           </div>
         </div>
 
-        {/* ===== Main bar: desktop ===== */}
+        {/* ===== Main bar (desktop) ===== */}
         <div className="container mx-auto max-w-7xl px-4">
           <div className="hidden md:grid grid-cols-3 items-center py-4 md:py-5">
-            {/* Left: Logo */}
             <div className="flex items-center">
               <a
                 href="/"
@@ -102,7 +99,6 @@ const Header = () => {
               </a>
             </div>
 
-            {/* Center: Main navigation */}
             <nav className="hidden lg:flex justify-center">
               <ul className="flex items-center gap-6">
                 {mainNavigation.map((item) =>
@@ -140,7 +136,6 @@ const Header = () => {
               </ul>
             </nav>
 
-            {/* Right: Main Sponsor + CTA */}
             <div className="hidden md:flex items-center justify-end gap-4 whitespace-nowrap">
               <div className="flex items-center h-8">
                 <span className="text-lg md:text-xl font-semibold text-muted-foreground leading-none whitespace-nowrap">
@@ -165,8 +160,6 @@ const Header = () => {
           <a href="/" className="text-base font-semibold text-[var(--primary)] whitespace-nowrap">
             Latvian Horses
           </a>
-
-          {/* Burger */}
           <button
             className="p-2 text-text/80"
             aria-label="Open menu"
@@ -266,11 +259,12 @@ const Header = () => {
             )}
           </nav>
 
+          {/* Divider */}
           <div className="my-3 border-t border-neutral-200" />
 
-          {/* Languages (mobile drawer) */}
+          {/* Languages (mobile) */}
           <div className="px-2 py-2">
-            <div className="text-xs uppercase tracking-wide text-text/50 mb-2">Valodas</div>
+            <div className="text-xs uppercase tracking-wide text-text/50 mb-2">VALODAS</div>
             <div className="flex items-center gap-2">
               {languages.map((l) =>
                 l.active ? (
@@ -291,9 +285,9 @@ const Header = () => {
             </div>
           </div>
 
-          {/* Contacts (mobile drawer) */}
+          {/* Contacts (mobile) */}
           <div className="px-2 py-2">
-            <div className="text-xs uppercase tracking-wide text-text/50 mb-2">Kontakti</div>
+            <div className="text-xs uppercase tracking-wide text-text/50 mb-2">KONTAKTI</div>
             <div className="space-y-2 text-[15px]">
               <a href="tel:+37128677177" className="flex items-center gap-2 hover:text-[var(--primary)]">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -308,6 +302,36 @@ const Header = () => {
                 info@latvianhorses.lv
               </a>
             </div>
+          </div>
+
+          {/* ==== MAIN SPONSOR (mobile only) ==== */}
+          <div className="px-2 pt-4 pb-2">
+            <div className="text-xs uppercase tracking-wide text-text/50 mb-2">GALVENAIS SPONSORS</div>
+
+            {/* Карточка спонсора — замени href и src на реальные */}
+            <a
+              href="https://example.com" // ← ссылка на спонсора
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 rounded-md border border-neutral-200 bg-[var(--light)]
+                         px-3 py-3 hover:bg-[var(--primary-50)] transition-colors"
+            >
+              {/* Лого спонсора */}
+              <div className="flex-shrink-0">
+                {/* если есть логотип, замени блок ниже на <img src="/sponsor/main.svg" alt="Main Sponsor" className="h-8 w-auto" /> */}
+                <div className="h-8 w-20 rounded bg-white border border-neutral-200 flex items-center justify-center text-[10px] text-text/60">
+                  LOGO
+                </div>
+              </div>
+
+              {/* Текст */}
+              <div className="min-w-0">
+                <div className="text-sm font-semibold text-text truncate">Main Sponsor</div>
+                <div className="text-xs text-text/60 truncate">
+                  Atbalsta Latvian Horses
+                </div>
+              </div>
+            </a>
           </div>
 
           {/* CTA in drawer */}
