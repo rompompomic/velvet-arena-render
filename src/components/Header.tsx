@@ -50,12 +50,12 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-neutral-200">
       <div className="w-full">
-        {/* ===== Top utility bar ===== */}
-        <div className="border-b border-neutral-200">
+        {/* ===== Top utility bar (HIDDEN on mobile) ===== */}
+        <div className="border-b border-neutral-200 hidden md:block">
           <div className="container mx-auto max-w-7xl px-4">
-            <div className="flex flex-col gap-1 py-1.5 sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex items-center justify-between py-1.5">
               {/* Languages */}
-              <nav className="flex items-center gap-2 text-xs flex-wrap">
+              <nav className="flex items-center gap-2 text-xs">
                 {languages.map((l, i) => (
                   <span key={l.code} className="flex items-center">
                     {l.active ? (
@@ -71,7 +71,7 @@ const Header = () => {
               </nav>
 
               {/* Contacts */}
-              <div className="flex items-center gap-4 text-xs text-text/80 flex-wrap">
+              <div className="flex items-center gap-4 text-xs text-text/80">
                 <span className="flex items-center gap-1">
                   <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h2.6a1 1 0 01.95.69l1.2 3.6a1 1 0 01-.51 1.2l-1.6.8a12 12 0 006.32 6.32l.8-1.6a1 1 0 011.2-.51l3.6 1.2a1 1 0 01.69.95V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -160,7 +160,7 @@ const Header = () => {
       </div>
 
       {/* ===== Mobile row ===== */}
-      <div className="md:hidden container mx-auto max-w-7xl px-4 py-2 border-t border-neutral-200">
+      <div className="md:hidden container mx-auto max-w-7xl px-4 py-2">
         <div className="flex items-center justify-between">
           <a href="/" className="text-base font-semibold text-[var(--primary)] whitespace-nowrap">
             Latvian Horses
@@ -187,13 +187,10 @@ const Header = () => {
       </div>
 
       {/* ===== Mobile Drawer + Overlay ===== */}
-      {/* Overlay */}
       <div
         className={`md:hidden fixed inset-0 z-[49] bg-black/40 backdrop-blur-[1px] transition-opacity ${mobileOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
         onClick={() => setMobileOpen(false)}
       />
-
-      {/* Drawer */}
       <aside
         className={`md:hidden fixed top-0 right-0 h-screen w-[88%] max-w-[360px] z-[50] bg-white border-l border-neutral-200 shadow-[0_6px_16px_rgba(0,0,0,0.08)] transition-transform duration-300 ${
           mobileOpen ? "translate-x-0" : "translate-x-full"
@@ -269,10 +266,9 @@ const Header = () => {
             )}
           </nav>
 
-          {/* Divider */}
           <div className="my-3 border-t border-neutral-200" />
 
-          {/* Languages (mobile) */}
+          {/* Languages (mobile drawer) */}
           <div className="px-2 py-2">
             <div className="text-xs uppercase tracking-wide text-text/50 mb-2">Valodas</div>
             <div className="flex items-center gap-2">
@@ -295,7 +291,7 @@ const Header = () => {
             </div>
           </div>
 
-          {/* Contacts (mobile) */}
+          {/* Contacts (mobile drawer) */}
           <div className="px-2 py-2">
             <div className="text-xs uppercase tracking-wide text-text/50 mb-2">Kontakti</div>
             <div className="space-y-2 text-[15px]">
