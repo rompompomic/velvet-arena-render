@@ -18,7 +18,7 @@ const PricesSection = () => {
     name: "Fotosesija ar zirgu (JJS teritorijā, līdz 1 h)",
     price: "30 €"
   }];
-  return <section className="py-20 bg-gray-200">
+  return <section className="py-20 bg-[#2f2f2f]/[0.08]">
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="text-center mb-12">
           <h2 className="text-section mb-6">

@@ -46,11 +46,11 @@ const DonateSection = () => {
         {/* Content grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
           {/* Left: Highlights (card radius 12px) */}
-          <div className="p-8 border bg-[color:var(--light)]" style={{
+          <div style={{
           borderColor: "var(--neutral-200)",
           borderRadius: 12,
           boxShadow: "var(--shadow-sm)"
-        }}>
+        }} className="p-8 border bg-[color:var(--light)] bg-[#000a00]/0">
             <ul className="space-y-5">
               <li className="flex items-start gap-3">
                 <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-[color:var(--primary)] text-white text-[12px] leading-none my-[7px]">

@@ -26,7 +26,7 @@ const ServicesSection = () => {
     badge: "Korporatīvs",
     href: "/lv/pakalpojumi/korporativie-pasakumi/"
   }];
-  return <section className="py-24 bg-gray-200">
+  return <section className="py-24 bg-[#2f2f2f]/[0.08]">
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="text-center mb-16">
           <h2 className="text-section mb-4">Atrodiet savu ceļu pie zirgiem</h2>
