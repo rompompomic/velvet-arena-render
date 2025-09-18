@@ -1,13 +1,13 @@
 const PricesSection = () => {
   const services = [
-    { name: "Individuālā trenera nodarbība", price: "25€/h" },
-    { name: "Grupas nodarbība (3-4 dalībnieki)", price: "15€/h" },
-    { name: "Zirga īre brīvajai jāšanai", price: "20€/h" },
-    { name: "Ekskursija ar zirgu iepazīšanu", price: "10€" },
-    { name: "Korporatīvs pasākums (līdz 10 pers.)", price: "200€" },
-    { name: "Bērnu dzimšanas dienas svinības", price: "150€" }
+    { name: "Individuālais treniņš (ar JJS zirgu)", price: "60 €/h" },
+    { name: "Treniņs ar savu zirgu pie JJS treneres", price: "45 €/h" },
+    { name: "Manēžas / laukuma īre par zirgu", price: "25 €/h" },
+    { name: "Ekskursija teritorijā ar zirgu barošanu (līdz 4 pers.)", price: "20 €" },
+    { name: "Ekskursijas grupām (no 10 pers.)", price: "3 €/pers." },
+    { name: "Fotosesija ar zirgu (JJS teritorijā, līdz 1 h)", price: "30 €" }
   ];
-
+  
   return (
     <section className="py-20 bg-light">
       <div className="container mx-auto px-4 max-w-7xl">
