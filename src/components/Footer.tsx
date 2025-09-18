@@ -101,7 +101,7 @@ const Footer = () => {
             </div>
             {/* Правая колонка прижата вправо */}
             <div className="ml-auto min-w-[170px] text-right shrink-0">
-              <h4 className="text-lg font-semibold mb-2 whitespace-nowrap">Dāvanu kartes</h4>
+              <h4 className="text-lg font-semibold mb-1 whitespace-nowrap">Dāvanu kartes</h4>
               <a href="/lv/davanu-kartes/" className="inline-block px-4 py-2 bg-primary rounded-lg text-white hover:bg-primary-700 transition-colors duration-300 font-medium whitespace-nowrap">Pirkt karti</a>
               <p className="text-sm text-white/70 mt-2">Derīga 12 mēnešus • Elektroniska piegāde</p>
             </div>
