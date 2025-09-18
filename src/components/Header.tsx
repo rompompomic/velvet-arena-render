@@ -88,7 +88,7 @@ const Header = () => {
             <div className="flex items-center">
               <a
                 href="/"
-                className="text-[18px] md:text-[20px] font-semibold text-[var(--primary)] tracking-tight leading-none h-8 flex items-center whitespace-nowrap"
+                className="text-lg md:text-xl font-semibold text-[var(--primary)] tracking-tight leading-none h-8 flex items-center whitespace-nowrap"
               >
                 Latvian Horses
               </a>
@@ -135,12 +135,11 @@ const Header = () => {
             {/* Right: Main Sponsor + CTA (no-wrap) */}
             <div className="flex items-center justify-end gap-4 whitespace-nowrap">
               <div className="flex items-center h-8">
-                {/* Если будет логотип — помести <img className="h-8 w-auto" /> */}
-                <span className="text-sm md:text-base font-medium text-muted-foreground leading-none">
+                <span className="text-lg md:text-xl font-semibold text-muted-foreground leading-none whitespace-nowrap">
                   Main Sponsor
                 </span>
               </div>
-
+            
               <a
                 href="/lv/pasakumi/"
                 className="inline-flex items-center rounded-md px-4 py-2 text-sm md:text-[15px] font-semibold text-white bg-[var(--primary)] hover:bg-[var(--primary-700)] transition-colors whitespace-nowrap"
