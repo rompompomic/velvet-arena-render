@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Button } from "@/components/ui/button";
 
 const DonateSection = () => {
   const presets = [10, 20, 30, 50];
@@ -8,14 +9,12 @@ const DonateSection = () => {
   const [agree, setAgree] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
-  const handlePreset = (v: number) => {
-    setAmount(v);
-  };
+  const handlePreset = (v: number) => setAmount(v);
 
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!amount || Number(amount) <= 0 || !agree) return;
-    // Здесь могла бы быть интеграция (Stripe/MakeCommerce/etc.)
+    // TODO: Integrate (Stripe/MakeCommerce/EveryPay) here
     setSubmitted(true);
   };
 
@@ -30,7 +29,7 @@ const DonateSection = () => {
           </p>
         </div>
 
-        {/* Content grid */}
+        {/* Content */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
           {/* Left: Highlights */}
           <div className="rounded-3xl p-8 bg-[var(--light)]/60 border border-neutral-200">
@@ -86,7 +85,8 @@ const DonateSection = () => {
                 </svg>
                 <h3 className="text-xl font-semibold mb-2">Paldies par atbalstu!</h3>
                 <p className="text-muted-foreground">
-                  Mēs novērtējam tavu ieguldījumu. Ja vajadzīgs rēķins, sazinies ar <a href="mailto:info@latvianhorses.lv" className="underline">info@latvianhorses.lv</a>.
+                  Mēs novērtējam tavu ieguldījumu. Ja vajadzīgs rēķins, sazinies ar{" "}
+                  <a href="mailto:info@latvianhorses.lv" className="underline">info@latvianhorses.lv</a>.
                 </p>
               </div>
             ) : (
@@ -96,18 +96,19 @@ const DonateSection = () => {
                   <label className="block text-sm font-medium mb-2">Ziedojuma summa</label>
                   <div className="flex flex-wrap gap-3">
                     {presets.map((p) => (
-                      <button
+                      <Button
                         type="button"
                         key={p}
                         onClick={() => handlePreset(p)}
-                        className={`px-4 py-2 rounded-lg border transition-all ${
+                        variant="outline"
+                        className={`h-[42px] px-4 rounded-lg border transition-all ${
                           amount === p
                             ? "border-[var(--primary)] bg-[var(--primary)]/10 text-[var(--primary)]"
                             : "border-neutral-200 hover:border-neutral-300"
                         }`}
                       >
                         {p} €
-                      </button>
+                      </Button>
                     ))}
                     <div className="relative">
                       <input
@@ -124,22 +125,29 @@ const DonateSection = () => {
                       <span className="absolute right-2 top-1/2 -translate-y-1/2 text-muted-foreground">€</span>
                     </div>
                   </div>
+
                   {/* Frequency */}
                   <div className="mt-4 inline-flex rounded-lg border border-neutral-200 overflow-hidden">
-                    <button
+                    <Button
                       type="button"
                       onClick={() => setFreq("one")}
-                      className={`px-3 py-2 text-sm ${freq === "one" ? "bg-[var(--primary)] text-white" : "hover:bg-neutral-50"}`}
+                      variant="ghost"
+                      className={`px-3 py-2 text-sm rounded-none ${
+                        freq === "one" ? "bg-[var(--primary)] text-white" : "hover:bg-neutral-50"
+                      }`}
                     >
                       Vienreizējs
-                    </button>
-                    <button
+                    </Button>
+                    <Button
                       type="button"
                       onClick={() => setFreq("monthly")}
-                      className={`px-3 py-2 text-sm border-l border-neutral-200 ${freq === "monthly" ? "bg-[var(--primary)] text-white" : "hover:bg-neutral-50"}`}
+                      variant="ghost"
+                      className={`px-3 py-2 text-sm border-l border-neutral-200 rounded-none ${
+                        freq === "monthly" ? "bg-[var(--primary)] text-white" : "hover:bg-neutral-50"
+                      }`}
                     >
                       Ik mēnesi
-                    </button>
+                    </Button>
                   </div>
                 </div>
 
@@ -167,9 +175,10 @@ const DonateSection = () => {
                 <div>
                   <label className="block text-sm font-medium mb-2">Apmaksas veids</label>
                   <div className="flex gap-3">
-                    <button
+                    <Button
                       type="button"
                       onClick={() => setMethod("card")}
+                      variant="outline"
                       className={`px-4 py-2 rounded-lg border transition-all ${
                         method === "card"
                           ? "border-[var(--primary)] bg-[var(--primary)]/10 text-[var(--primary)]"
@@ -177,10 +186,11 @@ const DonateSection = () => {
                       }`}
                     >
                       Bankas karte
-                    </button>
-                    <button
+                    </Button>
+                    <Button
                       type="button"
                       onClick={() => setMethod("bank")}
+                      variant="outline"
                       className={`px-4 py-2 rounded-lg border transition-all ${
                         method === "bank"
                           ? "border-[var(--primary)] bg-[var(--primary)]/10 text-[var(--primary)]"
@@ -188,7 +198,7 @@ const DonateSection = () => {
                       }`}
                     >
                       Bankas pārskaitījums
-                    </button>
+                    </Button>
                   </div>
 
                   {/* Method details */}
@@ -212,7 +222,8 @@ const DonateSection = () => {
                         <div>Ziedojums Latvian Horses</div>
                       </div>
                       <p className="mt-3 text-xs text-muted-foreground">
-                        * Ja vajadzīgi precīzi rekvizīti rēķinam, raksti: <a href="mailto:info@latvianhorses.lv" className="underline">info@latvianhorses.lv</a>.
+                        * Ja vajadzīgi precīzi rekvizīti rēķinam, raksti:{" "}
+                        <a href="mailto:info@latvianhorses.lv" className="underline">info@latvianhorses.lv</a>.
                       </p>
                     </div>
                   )}
@@ -232,15 +243,15 @@ const DonateSection = () => {
                   </span>
                 </label>
 
-                {/* Submit */}
-                <button
+                {/* Submit — shadcn Button, принудительно брендовый */}
+                <Button
                   type="submit"
                   disabled={!amount || Number(amount) <= 0 || !agree}
-                  className="inline-flex w-full items-center justify-center rounded-lg bg-[var(--primary)] px-5 py-3 font-semibold text-white transition-colors hover:bg-[var(--primary-700)] disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full bg-[var(--primary)] text-white hover:bg-[var(--primary-700)] disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   Ziedot {amount ? `${amount} €` : ""}
                   {freq === "monthly" && <span className="ml-1 opacity-90">/ mēnesī</span>}
-                </button>
+                </Button>
 
                 {/* Note */}
                 <p className="text-xs text-muted-foreground text-center">
