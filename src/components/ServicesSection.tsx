@@ -1,6 +1,11 @@
-import horseWatermark from "@/assets/horse-watermark.png";
+import Horse1 from "@/assets/Horse1.png";
+import Horse2 from "@/assets/Horse2.png";
+import Horse3 from "@/assets/Horse3.png";
+import Horse4 from "@/assets/Horse4.png";
 
 const ServicesSection = () => {
+  const horseIcons = [Horse1, Horse2, Horse3, Horse4];
+  
   const services = [
     {
       title: "Mācīties jāt",
@@ -47,7 +52,7 @@ const ServicesSection = () => {
               {/* Watermark */}
               <div className="absolute top-4 right-4 w-16 h-16 opacity-50 group-hover:opacity-80 transition-colors duration-300">
                 <img
-                src={horseWatermark}
+                src={horseIcons[index]}
                 alt=""
                 className="w-full h-full object-contain text-gray-400 group-hover:text-black"
                 />
