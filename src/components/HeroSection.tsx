@@ -27,19 +27,18 @@ const HeroSection = () => {
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 justify-center items-center pt-10">
-            {/* Основная кнопка — красная → чёрная + shine */}
+          <div className="flex flex-col sm:flex-row gap-3 justify-center items-center pt-8">
+            {/* Основная кнопка — красная по токену */}
             <Button
               asChild
-              className="group relative overflow-hidden h-12 md:h-14 px-8 md:px-10 rounded-lg
-                         font-semibold text-white bg-[color:var(--primary)]
+              className="group relative overflow-hidden h-11 px-6 rounded-lg font-semibold text-white
+                         bg-[color:var(--primary)]
                          shadow-md transition-all duration-300
-                         hover:-translate-y-0.5 hover:shadow-xl active:translate-y-0
-                         hover:bg-neutral-900 focus:outline-none focus:ring-2 focus:ring-[color:var(--primary)]/40"
+                         hover:bg-neutral-900 hover:-translate-y-0.5 hover:shadow-xl active:translate-y-0
+                         flex items-center justify-center"
             >
               <a href="/lv/pakalpojumi/jasanas-trenini/" className="inline-flex items-center gap-2">
                 <span>Pieteikties treniņiem</span>
-                {/* аккуратная стрелка, как у второй */}
                 <svg
                   className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
                   fill="none"
@@ -48,18 +47,18 @@ const HeroSection = () => {
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
-          
                 {/* shine-блик */}
                 <span className="pointer-events-none absolute inset-0 -translate-x-full group-hover:translate-x-full shine-mask" />
               </a>
             </Button>
           
-            {/* Вторая кнопка — тёмная, выровнял размеры и тени под первую */}
+            {/* Вторая кнопка — тёмная */}
             <Button
               asChild
-              className="group relative overflow-hidden h-12 md:h-14 px-8 md:px-10 rounded-lg
-                         font-semibold bg-neutral-900 text-white shadow-md transition-all duration-300
-                         hover:-translate-y-0.5 hover:shadow-xl active:translate-y-0"
+              className="group relative overflow-hidden h-11 px-6 rounded-lg font-semibold
+                         bg-neutral-900 text-white shadow-md transition-all duration-300
+                         hover:-translate-y-0.5 hover:shadow-xl active:translate-y-0
+                         flex items-center justify-center"
             >
               <a href="/lv/pasakumi/" className="inline-flex items-center gap-2">
                 <span>Skatīt pasākumus</span>
@@ -71,7 +70,6 @@ const HeroSection = () => {
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
-          
                 <span className="pointer-events-none absolute inset-0 -translate-x-full group-hover:translate-x-full shine-mask" />
               </a>
             </Button>
