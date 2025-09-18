@@ -22,15 +22,9 @@ const GiftCardSection = () => {
             </p>
 
             {/* Trust Features */}
-            <div className="flex flex-wrap justify-center gap-6 mb-10">
+            <div className="flex flex-wrap justify-center gap-6 mb-10 text-sm font-medium">
               {features.map((feature, index) => (
-                <div
-                  key={index}
-                  className="flex items-center space-x-2 text-sm font-medium"
-                >
-                  <div className="w-2 h-2 bg-white rounded-full opacity-75" />
-                  <span>{feature}</span>
-                </div>
+                <span key={index}>{feature}</span>
               ))}
             </div>
 
@@ -45,13 +39,6 @@ const GiftCardSection = () => {
             </Button>
           </div>
 
-          {/* Decorative Elements */}
-          <div className="absolute top-0 left-0 w-32 h-32 bg-white/5 rounded-full -translate-x-16 -translate-y-16" />
-          <div className="absolute bottom-0 right-0 w-40 h-40 bg-white/5 rounded-full translate-x-20 translate-y-20" />
-          
-          {/* Sparkle Effect */}
-          <div className="absolute top-1/4 right-1/4 w-1 h-8 bg-white/30 rounded-full transform rotate-45" />
-          <div className="absolute bottom-1/3 left-1/3 w-1 h-6 bg-white/30 rounded-full transform -rotate-45" />
         </div>
       </div>
     </section>
