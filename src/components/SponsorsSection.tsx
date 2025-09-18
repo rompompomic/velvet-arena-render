@@ -25,7 +25,7 @@ const SponsorsSection = () => {
     name: "Transport Solutions",
     logo: "TS"
   }];
-  return <section className="py-20 border-t border-neutral-200 bg-gray-300">
+  return <section className="py-20 border-t border-neutral-200 bg-gray-200">
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="text-center mb-12">
           <h2 className="text-2xl font-semibold mb-4 text-muted-foreground">
