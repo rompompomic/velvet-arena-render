@@ -31,17 +31,14 @@ const HeroSection = () => {
             {/* Основная кнопка — ВСЕГДА красная (с фолбэком) */}
             <Button
               asChild
-              variant="default"
-              className="group relative overflow-hidden h-11 px-6 rounded-lg font-semibold
-                         text-white
-                         bg-[color:var(--primary,_#963026)]
+              className="group relative overflow-hidden h-11 px-6 rounded-[12px] font-semibold text-white
                          shadow-md transition-all duration-300
-                         hover:bg-neutral-900 hover:-translate-y-0.5 hover:shadow-xl active:translate-y-0
-                         flex items-center justify-center
-                         focus:outline-none focus:ring-2 focus:ring-[color:var(--primary,_#963026)]/40"
+                         hover:-translate-y-0.5 hover:shadow-xl active:translate-y-0
+                         flex items-center justify-center focus:outline-none"
+              style={{ backgroundColor: "var(--primary, #963026)" }} // <-- принудительный фон
             >
-              <a href="/lv/pakalpojumi/jasanas-trenini/" className="inline-flex items-center gap-2">
-                <span>Pieteikties treniņiem</span>
+              <a href="/lv/pakalpojumi/jasanas-trenini/" className="inline-flex items-center justify-center gap-2">
+                <span className="leading-none">Pieteikties treniņiem</span>
                 <svg
                   className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
                   fill="none"
@@ -50,7 +47,7 @@ const HeroSection = () => {
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
-                {/* shine-блик */}
+                {/* Shine */}
                 <span className="pointer-events-none absolute inset-0 -translate-x-full group-hover:translate-x-full shine-mask" />
               </a>
             </Button>
