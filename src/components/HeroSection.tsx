@@ -31,11 +31,11 @@ const HeroSection = () => {
             {/* Основная кнопка — красная по токену */}
             <Button
               asChild
-              className="group relative overflow-hidden h-11 px-6 rounded-lg font-semibold text-white
-                         bg-[color:var(--primary)]
+              className="group relative overflow-hidden h-11 px-6 rounded-lg font-semibold
+                         text-white bg-[color:var(--primary)] 
                          shadow-md transition-all duration-300
                          hover:bg-neutral-900 hover:-translate-y-0.5 hover:shadow-xl active:translate-y-0
-                         flex items-center justify-center"
+                         flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-[color:var(--primary)]/40"
             >
               <a href="/lv/pakalpojumi/jasanas-trenini/" className="inline-flex items-center gap-2">
                 <span>Pieteikties treniņiem</span>
