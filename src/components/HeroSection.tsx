@@ -27,7 +27,7 @@ const HeroSection = () => {
                 Pieteikties treniņiem
               </a>
             </Button>
-            <Button asChild className="btn-outline-velvet text-lg px-10 py-4 text-white transition-colors duration-200 hover:text-[var(--primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[var(--primary)]/60">
+            <Button asChild className="ne focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-white/60">
               <a href="/lv/pasakumi/">
                 Skatīt pasākumus
               </a>
