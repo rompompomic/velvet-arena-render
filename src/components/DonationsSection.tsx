@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 const DonateSection = () => {
   const presets = [10, 20, 30, 50];
   const [amount, setAmount] = useState<number | "">("");
