@@ -4,6 +4,7 @@ import Horse3 from "@/assets/Horse3.png";
 import Horse4 from "@/assets/Horse4.png";
 
 const ServicesSection = () => {
+  // Custom horse icons for each service card
   const horseIcons = [Horse1, Horse2, Horse3, Horse4];
   
   const services = [
