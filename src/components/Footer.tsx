@@ -90,19 +90,20 @@ const Footer = () => {
                   </a>
                 ))}
               </nav>
-              
-              <div className="mt-8">
-                <h4 className="text-lg font-semibold mb-4">Dāvanu kartes</h4>
-                <a
-                  href="/lv/davanu-kartes/"
-                  className="inline-block px-4 py-2 bg-primary rounded-lg text-white hover:bg-primary-700 transition-colors duration-300 text-center font-medium"
-                >
-                  Pirkt karti
-                </a>
-                <p className="text-sm text-white/70 mt-2">
-                  Derīga 12 mēnešus • Elektroniska piegāde
-                </p>
-              </div>
+            </div>
+
+            {/* Gift Cards */}
+            <div>
+              <h4 className="text-lg font-semibold mb-6">Dāvanu kartes</h4>
+              <a
+                href="/lv/davanu-kartes/"
+                className="inline-block px-4 py-2 bg-primary rounded-lg text-white hover:bg-primary-700 transition-colors duration-300 text-center font-medium"
+              >
+                Pirkt karti
+              </a>
+              <p className="text-sm text-white/70 mt-2">
+                Derīga 12 mēnešus • Elektroniska piegāde
+              </p>
             </div>
           </div>
         </div>
@@ -116,24 +117,24 @@ const Footer = () => {
             
             <div className="flex items-center space-x-6">
               {/* Social Links */}
-              <a href="#" className="text-white/70 hover:text-white transition-colors duration-300" title="Facebook">
+              <a href="#" className="text-white/70 hover:text-white transition-all duration-300" title="Facebook">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                 </svg>
               </a>
-              <a href="#" className="text-white/70 hover:text-white transition-colors duration-300" title="X (Twitter)">
+              <a href="#" className="text-white/70 hover:text-white transition-all duration-300" title="X">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
                 </svg>
               </a>
-              <a href="#" className="text-white/70 hover:text-white transition-colors duration-300" title="Instagram">
+              <a href="#" className="text-white/70 hover:text-white transition-all duration-300" title="Instagram">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12.017 0C8.396 0 7.989.013 7.041.072 6.094.131 5.45.278 4.898.525c-.577.254-1.067.594-1.556 1.083-.488.489-.829.979-1.083 1.556-.247.552-.394 1.196-.453 2.143C.013 6.255 0 6.662 0 10.283v3.434c0 3.621.013 4.028.072 4.976.059.947.206 1.591.453 2.143.254.577.594 1.067 1.083 1.556.489.488.979.829 1.556 1.083.552.247 1.196.394 2.143.453.948.059 1.355.072 4.976.072h3.434c3.621 0 4.028-.013 4.976-.072.947-.059 1.591-.206 2.143-.453.577-.254 1.067-.594 1.556-1.083.488-.489.829-.979 1.083-1.556.247-.552.394-1.196.453-2.143.059-.948.072-1.355.072-4.976V10.283c0-3.621-.013-4.028-.072-4.976-.059-.947-.206-1.591-.453-2.143-.254-.577-.594-1.067-1.083-1.556-.489-.488-.979-.829-1.556-1.083-.552-.247-1.196-.394-2.143-.453C16.045.013 15.638 0 12.017 0zM12.017 2.17c3.557 0 3.98.013 5.384.072.945.045 1.504.207 1.857.344.465.181.797.398 1.146.747.35.35.566.682.747 1.147.137.353.299.912.344 1.857.059 1.404.072 1.827.072 5.384 0 3.557-.013 3.98-.072 5.384-.045.945-.207 1.504-.344 1.857-.181.465-.398.797-.747 1.146-.35.35-.682.566-1.147.747-.353.137-.912.299-1.857.344-1.404.059-1.827.072-5.384.072-3.557 0-3.98-.013-5.384-.072-.945-.045-1.504-.207-1.857-.344-.465-.181-.797-.398-1.146-.747-.35-.35-.566-.682-.747-1.147-.137-.353-.299-.912-.344-1.857-.059-1.404-.072-1.827-.072-5.384 0-3.557.013-3.98.072-5.384.045-.945.207-1.504.344-1.857.181-.465.398-.797.747-1.146.35-.35.682-.566 1.147-.747.353-.137.912-.299 1.857-.344 1.404-.059 1.827-.072 5.384-.072z"/>
                   <circle cx="12.017" cy="12.017" r="3.13"/>
                   <circle cx="18.408" cy="5.608" r="1.048"/>
                 </svg>
               </a>
-              <a href="#" className="text-white/70 hover:text-white transition-colors duration-300" title="TikTok">
+              <a href="#" className="text-white/70 hover:text-white transition-all duration-300" title="TikTok">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02 0 1.84-.11 3.69.07 5.52.73 2.24 3.23 3.29 5.52 3.39V9.8c-1.57.07-3.23-.15-4.61-.88-1.19-.65-2.07-1.64-2.55-2.85-.07-.16-.08-.33-.13-.49-.01-1.89 0-3.78 0-5.66zM8.56 9.8c1.15-.11 2.32-.02 3.46.14.59.09 1.19.27 1.66.64.76.58 1.27 1.44 1.43 2.37.13.7.06 1.42-.1 2.11-.42 1.64-1.97 2.82-3.67 2.78-1.36.01-2.74-.73-3.52-1.86-.77-1.07-.82-2.55-.26-3.71.53-1.08 1.51-1.91 2.67-2.08 0-.81 0-1.62 0-2.43-2.93.02-5.75 2.07-6.96 4.85-.91 2.11-.79 4.58.37 6.58 1.18 2.11 3.35 3.51 5.67 3.93 2.21.42 4.55-.08 6.31-1.41 1.97-1.46 3.15-3.83 3.15-6.3V4.81c1.39.85 3.07 1.24 4.71 1.33V.02h-9.3z"/>
                 </svg>

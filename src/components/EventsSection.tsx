@@ -27,9 +27,9 @@ const EventsSection = () => {
 
   return (
     <section className="py-24 bg-text text-white relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/10" />
+      {/* Background Pattern - Brighter for readability */}
+      <div className="absolute inset-0 opacity-15">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-accent/20" />
       </div>
 
       <div className="container mx-auto px-4 relative z-10 max-w-7xl">

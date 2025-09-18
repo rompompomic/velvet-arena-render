@@ -13,14 +13,14 @@ const MapSection = () => {
         
         <div className="w-full aspect-video rounded-3xl overflow-hidden shadow-md">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2168.8234!2d24.1339!3d57.1089!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTfCsDA2JzMyLjAiTiAyNMKwMDgnMDIuMCJF!5e0!3m2!1sen!2slv!4v1234567890"
+            src="https://maps.google.com/maps?q=57.087131,24.734054&z=15&t=k&hl=lv&output=embed"
             width="100%"
             height="100%"
             style={{ border: 0 }}
             allowFullScreen={true}
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            title="Latvian Horses atrašanās vieta kartē"
+            title="Latvian Horses atrašanās vieta kartē - satelīta skats"
           />
         </div>
       </div>

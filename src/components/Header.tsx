@@ -1,19 +1,38 @@
 import { Button } from "@/components/ui/button";
 
 const Header = () => {
-  const navigation = [
-    { name: 'Pakalpojumi', href: '/lv/pakalpojumi/' },
+  const mainNavigation = [
+    { 
+      name: 'Pakalpojumi', 
+      href: '/lv/pakalpojumi/',
+      hasDropdown: true,
+      subItems: [
+        { name: 'Visi pakalpojumi', href: '/lv/pakalpojumi/' },
+        { name: 'Jāšanas treniņi', href: '/lv/pakalpojumi/jasanas-trenini/' },
+        { name: 'Zirgu uzturēšana', href: '/lv/pakalpojumi/zirgu-uzturesana/' },
+        { name: 'Laukumu īre', href: '/lv/pakalpojumi/laukumu-ire/' },
+        { name: 'Ekskursijas', href: '/lv/pakalpojumi/ekskursijas/' },
+        { name: 'Korporatīvie pasākumi', href: '/lv/pakalpojumi/korporativie-pasakumi/' },
+        { name: 'Citi pakalpojumi', href: '/lv/pakalpojumi/citi-pakalpojumi/' },
+      ]
+    },
     { name: 'Pasākumi', href: '/lv/pasakumi/' },
     { name: 'Cenas', href: '/lv/cenas/' },
-    { name: 'Galerija', href: '/lv/galerija/' },
-    { name: 'Par mums', href: '/lv/par-mums/' },
+    { 
+      name: 'Galerija', 
+      href: '/lv/galerija/',
+      hasDropdown: true,
+      subItems: [
+        { name: 'Visu galerija', href: '/lv/galerija/' },
+        { name: 'Pasākumi', href: '/lv/galerija/pasakumi/' },
+        { name: 'Jauno jātnieku skola', href: '/lv/galerija/jauno-jatnieku-skola/' },
+      ]
+    },
+    { 
+      name: 'Par mums', 
+      href: '/lv/par-mums/',
+    },
     { name: 'Kontakti', href: '/lv/kontakti/' },
-  ];
-
-  const languages = [
-    { code: 'LV', name: 'Latviešu', active: true },
-    { code: 'EN', name: 'English' },
-    { code: 'RU', name: 'Русский' },
   ];
 
   return (
@@ -22,38 +41,52 @@ const Header = () => {
         <nav className="flex items-center justify-between py-4">
           {/* Logo */}
           <div className="flex items-center">
-            <a href="/" className="text-2xl font-semibold text-primary tracking-tight">
+            <a href="/" className="text-2xl font-semibold text-primary tracking-tight h-8 flex items-center">
               Latvian Horses
             </a>
           </div>
 
-          {/* Desktop Navigation - Dropdown */}
-          <div className="hidden md:block relative group">
-            <button className="text-foreground hover:text-primary transition-colors duration-200 font-medium px-4 py-2">
-              Izvēlne
-              <svg className="w-4 h-4 inline-block ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
-            <div className="absolute top-full left-0 mt-1 w-48 bg-white rounded-lg shadow-md border border-neutral-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
-              {navigation.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="block px-4 py-3 text-foreground hover:text-primary hover:bg-light transition-colors duration-200"
-                >
-                  {item.name}
-                </a>
-              ))}
-            </div>
+          {/* Desktop Navigation */}
+          <div className="hidden lg:flex items-center space-x-8">
+            {mainNavigation.map((item) => (
+              <div key={item.name} className="relative group">
+                {item.hasDropdown ? (
+                  <>
+                    <button className="text-foreground hover:text-primary transition-colors duration-200 font-medium flex items-center">
+                      {item.name}
+                      <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+                    <div className="absolute top-full left-0 mt-1 w-56 bg-white rounded-lg shadow-md border border-neutral-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                      {item.subItems?.map((subItem) => (
+                        <a
+                          key={subItem.name}
+                          href={subItem.href}
+                          className="block px-4 py-3 text-foreground hover:text-primary hover:bg-light transition-colors duration-200 first:rounded-t-lg last:rounded-b-lg"
+                        >
+                          {subItem.name}
+                        </a>
+                      ))}
+                    </div>
+                  </>
+                ) : (
+                  <a
+                    href={item.href}
+                    className="text-foreground hover:text-primary transition-colors duration-200 font-medium"
+                  >
+                    {item.name}
+                  </a>
+                )}
+              </div>
+            ))}
           </div>
 
           {/* Right Side - Contact & Language */}
           <div className="flex items-center space-x-6">
-            {/* Contact Info */}
-            <div className="hidden lg:flex items-center space-x-2 text-sm text-foreground">
+            {/* Contact Info - Stacked */}
+            <div className="hidden lg:flex flex-col text-sm text-foreground text-right">
               <span>+371 2X XXX XXX</span>
-              <span className="text-muted-foreground">·</span>
               <span>info@latvianhorses.lv</span>
             </div>
 
@@ -65,7 +98,7 @@ const Header = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
-              <div className="absolute top-full right-0 mt-1 w-24 bg-white rounded-lg shadow-md border border-neutral-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+              <div className="absolute top-full right-0 mt-1 w-24 bg-white rounded-lg shadow-md border border-neutral-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                 <span className="block px-3 py-2 text-sm font-bold text-primary cursor-default">LV</span>
                 <a href="#" className="block px-3 py-2 text-sm text-foreground hover:text-primary transition-colors duration-200">EN</a>
                 <a href="#" className="block px-3 py-2 text-sm text-foreground hover:text-primary transition-colors duration-200">RU</a>
@@ -73,13 +106,13 @@ const Header = () => {
             </div>
 
             {/* Main Sponsor */}
-            <div className="hidden md:block text-sm text-muted-foreground">
+            <div className="hidden md:flex items-center h-8 text-2xl font-semibold text-muted-foreground">
               Main Sponsor
             </div>
           </div>
 
           {/* Mobile Menu Button */}
-          <button className="md:hidden p-2 text-foreground">
+          <button className="lg:hidden p-2 text-foreground">
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
             </svg>

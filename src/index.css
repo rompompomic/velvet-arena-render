@@ -180,24 +180,10 @@
     border-radius: var(--radius-card);
   }
   
-  /* Velvet Background with Grain */
+  /* Velvet Background - Clean Gradient */
   .velvet-bg {
     background: var(--gradient-velvet);
     position: relative;
-  }
-  
-  .velvet-bg::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: 
-      radial-gradient(circle at 25% 25%, rgba(255,255,255,0.1) 2px, transparent 2px),
-      radial-gradient(circle at 75% 75%, rgba(255,255,255,0.05) 1px, transparent 1px);
-    background-size: 24px 24px, 16px 16px;
-    pointer-events: none;
   }
 
   /* Date Badge */
