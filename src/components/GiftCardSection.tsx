@@ -1,10 +1,10 @@
 import { Button } from "@/components/ui/button";
-import { CreditCard, DollarSign, Gift } from "lucide-react";
+import { CreditCard, EuroSign, Gift } from "lucide-react";
 
 const GiftCardSection = () => {
   const features = [
     { text: "Tiešsaistes maksājums", icon: CreditCard },
-    { text: "Elastīga summa", icon: DollarSign }, 
+    { text: "Elastīga summa", icon: EuroSign }, 
     { text: "Dāvanu iesaiņošana", icon: Gift }
   ];
 
