@@ -37,19 +37,24 @@ const HeroSection = () => {
                          flex items-center justify-center focus:outline-none"
               style={{ backgroundColor: "var(--primary, #963026)" }} // <-- принудительный фон
             >
-              <a href="/lv/pakalpojumi/jasanas-trenini/" className="inline-flex items-center justify-center gap-2">
-                <span className="leading-none">Pieteikties treniņiem</span>
-                <svg
-                  className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
+                <a
+                  href="/lv/pakalpojumi/jasanas-trenini/"
+                  className="h-11 px-6 rounded-lg font-semibold text-white
+                             bg-[#963026]  /* красная по токену */
+                             flex items-center justify-center gap-2
+                             shadow-md transition-all duration-300
+                             hover:bg-neutral-900 hover:-translate-y-0.5 hover:shadow-xl active:translate-y-0"
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-                {/* Shine */}
-                <span className="pointer-events-none absolute inset-0 -translate-x-full group-hover:translate-x-full shine-mask" />
-              </a>
+                  <span>Pieteikties treniņiem</span>
+                  <svg
+                    className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </a>
             </Button>
 
             {/* Вторая кнопка — тёмная, те же размеры и центрирование */}
