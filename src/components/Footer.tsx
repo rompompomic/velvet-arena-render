@@ -1,21 +1,34 @@
 const Footer = () => {
-  const quickLinks = [
-    { name: "Pakalpojumi", href: "/lv/pakalpojumi/" },
-    { name: "Pasākumi", href: "/lv/pasakumi/" },
-    { name: "Cenas", href: "/lv/cenas/" },
-    { name: "Galerija", href: "/lv/galerija/" },
-    { name: "Par mums", href: "/lv/par-mums/" },
-    { name: "Kontakti", href: "/lv/kontakti/" },
-  ];
-
-  const legalLinks = [
-    { name: "Privātuma politika", href: "/lv/privatuma-politika/" },
-    { name: "Lietošanas noteikumi", href: "/lv/noteikumi/" },
-    { name: "Drošības noteikumi", href: "/lv/drosibu-noteikumi/" },
-  ];
-
-  return (
-    <footer className="bg-text text-white">
+  const quickLinks = [{
+    name: "Pakalpojumi",
+    href: "/lv/pakalpojumi/"
+  }, {
+    name: "Pasākumi",
+    href: "/lv/pasakumi/"
+  }, {
+    name: "Cenas",
+    href: "/lv/cenas/"
+  }, {
+    name: "Galerija",
+    href: "/lv/galerija/"
+  }, {
+    name: "Par mums",
+    href: "/lv/par-mums/"
+  }, {
+    name: "Kontakti",
+    href: "/lv/kontakti/"
+  }];
+  const legalLinks = [{
+    name: "Privātuma politika",
+    href: "/lv/privatuma-politika/"
+  }, {
+    name: "Lietošanas noteikumi",
+    href: "/lv/noteikumi/"
+  }, {
+    name: "Drošības noteikumi",
+    href: "/lv/drosibu-noteikumi/"
+  }];
+  return <footer className="bg-text text-white">
       <div className="container mx-auto px-4 max-w-7xl">
         {/* Main Footer Content */}
         <div className="py-14">
@@ -56,11 +69,9 @@ const Footer = () => {
             <div className="min-w-0">
               <h4 className="text-base font-semibold mb-5 whitespace-nowrap">Ātrās saites</h4>
               <nav className="space-y-2.5">
-                {quickLinks.map((l) => (
-                  <a key={l.name} href={l.href} className="block text-white/80 hover:text-white transition-colors duration-200">
+                {quickLinks.map(l => <a key={l.name} href={l.href} className="block text-white/80 hover:text-white transition-colors duration-200">
                     {l.name}
-                  </a>
-                ))}
+                  </a>)}
               </nav>
             </div>
 
@@ -68,24 +79,16 @@ const Footer = () => {
             <div className="min-w-0">
               <h4 className="text-base font-semibold mb-5 whitespace-nowrap">Juridiskā informācija</h4>
               <nav className="space-y-2.5">
-                {legalLinks.map((l) => (
-                  <a key={l.name} href={l.href} className="block text-white/80 hover:text-white transition-colors duration-200">
+                {legalLinks.map(l => <a key={l.name} href={l.href} className="block text-white/80 hover:text-white transition-colors duration-200">
                     {l.name}
-                  </a>
-                ))}
+                  </a>)}
               </nav>
             </div>
 
             {/* 4 - Gift card (mobile/tablet) — слева, компактно */}
             <div className="min-w-0">
               <h4 className="text-base font-semibold mb-3 whitespace-nowrap">Dāvanu kartes</h4>
-              <a
-                href="/lv/davanu-kartes/"
-                className="inline-flex items-center justify-center
-                           px-4 py-2 rounded-lg bg-primary text-white font-medium
-                           hover:bg-primary-700 transition-colors
-                           w-auto min-w-[160px] max-w-full"
-              >
+              <a href="/lv/davanu-kartes/" className="inline-flex items-center justify-center px-4 py-2 rounded-lg bg-primary text-white font-medium hover:bg-primary-700 transition-colors w-auto -top-1.5">
                 Pirkt karti
               </a>
               <p className="text-sm text-white/70 mt-2">Derīga 12 mēnešus • Elektroniska piegāde</p>
@@ -123,21 +126,17 @@ const Footer = () => {
               <div className="min-w-[150px]">
                 <h4 className="text-base font-semibold mb-5 whitespace-nowrap">Ātrās saites</h4>
                 <nav className="space-y-2.5 text-sm leading-relaxed">
-                  {quickLinks.map((l) => (
-                    <a key={l.name} href={l.href} className="block text-white/80 hover:text-white transition-colors duration-200">
+                  {quickLinks.map(l => <a key={l.name} href={l.href} className="block text-white/80 hover:text-white transition-colors duration-200">
                       {l.name}
-                    </a>
-                  ))}
+                    </a>)}
                 </nav>
               </div>
               <div className="min-w-[180px]">
                 <h4 className="text-base font-semibold mb-5 whitespace-nowrap">Juridiskā informācija</h4>
                 <nav className="space-y-2.5 text-sm leading-relaxed">
-                  {legalLinks.map((l) => (
-                    <a key={l.name} href={l.href} className="block text-white/80 hover:text-white transition-colors duration-200">
+                  {legalLinks.map(l => <a key={l.name} href={l.href} className="block text-white/80 hover:text-white transition-colors duration-200">
                       {l.name}
-                    </a>
-                  ))}
+                    </a>)}
                 </nav>
               </div>
             </div>
@@ -145,13 +144,10 @@ const Footer = () => {
             {/* Right column */}
             <div className="ml-auto min-w-[190px] text-right shrink-0">
               <h4 className="text-base font-semibold mb-2 whitespace-nowrap">Dāvanu kartes</h4>
-              <a
-                href="/lv/davanu-kartes/"
-                className="inline-flex justify-center
+              <a href="/lv/davanu-kartes/" className="inline-flex justify-center
                            w-auto min-w-[170px] px-5 py-2.5
                            bg-primary rounded-lg text-white font-medium
-                           hover:bg-primary-700 transition-colors whitespace-nowrap"
-              >
+                           hover:bg-primary-700 transition-colors whitespace-nowrap">
                 Pirkt karti
               </a>
               <p className="text-sm text-white/70 mt-2">Derīga 12 mēnešus • Elektroniska piegāde</p>
@@ -168,8 +164,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
