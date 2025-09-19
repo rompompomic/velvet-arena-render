@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Button } from "@/components/ui/button";
 
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -10,11 +9,11 @@ const Header = () => {
     setOpenSection((cur) => (cur === key ? null : key));
 
   useEffect(() => {
-    if (mobileOpen) document.body.style.overflow = "hidden";
-    else document.body.style.overflow = "";
+    document.body.style.overflow = mobileOpen ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
   }, [mobileOpen]);
 
+  // Добавил Pasākumi в основную навигацию, чтобы стиль был как у всех
   const mainNavigation = [
     {
       key: "pakalpojumi",
@@ -45,6 +44,8 @@ const Header = () => {
     },
     { key: "par", name: "Par mums", href: "/lv/par-mums/" },
     { key: "kontakti", name: "Kontakti", href: "/lv/kontakti/" },
+    // ← вот он, как обычный пункт меню
+    { key: "pasakumi", name: "Pasākumi", href: "/lv/pasakumi/" },
   ];
 
   const languages = [
@@ -64,14 +65,9 @@ const Header = () => {
                 {languages.map((l, i) => (
                   <span key={l.code} className="flex items-center">
                     {l.active ? (
-                      <span className="font-semibold text-[hsl(var(--primary))] link-underline">
-                        {l.code}
-                      </span>
+                      <span className="font-semibold text-[hsl(var(--primary))] link-underline">{l.code}</span>
                     ) : (
-                      <a
-                        href={l.href}
-                        className="text-text/70 hover:text-[hsl(var(--primary))] transition-colors link-underline"
-                      >
+                      <a href={l.href} className="text-text/70 hover:text-[hsl(var(--primary))] transition-colors link-underline">
                         {l.code}
                       </a>
                     )}
@@ -87,10 +83,7 @@ const Header = () => {
                   </svg>
                   +37128677177
                 </a>
-                <a
-                  href="mailto:info@latvianhorses.lv"
-                  className="flex items-center gap-1 hover:text-[hsl(var(--primary))] transition-colors link-underline"
-                >
+                <a href="mailto:info@latvianhorses.lv" className="flex items-center gap-1 hover:text-[hsl(var(--primary))] transition-colors link-underline">
                   <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
@@ -104,6 +97,7 @@ const Header = () => {
         {/* Main bar (desktop) */}
         <div className="container mx-auto max-w-7xl px-4">
           <div className="hidden md:grid grid-cols-[auto,1fr,auto] items-center py-4 md:py-5">
+            {/* Левый логотип */}
             <div className="flex items-center">
               <a
                 href="/"
@@ -113,7 +107,7 @@ const Header = () => {
               </a>
             </div>
 
-            {/* Центр не ломает правый блок */}
+            {/* Центр — все пункты в одну линию, без переносов */}
             <nav className="hidden lg:flex justify-center min-w-0">
               <ul className="flex items-center lg:gap-4 xl:gap-6 flex-nowrap overflow-x-visible">
                 {mainNavigation.map((item) =>
@@ -155,22 +149,11 @@ const Header = () => {
               </ul>
             </nav>
 
-            {/* Правый блок фиксируем, CTA всегда бордовый, не белый */}
+            {/* Правый блок — только текст, чтобы ничего не «выталкивало» */}
             <div className="hidden md:flex items-center justify-end gap-4 whitespace-nowrap shrink-0">
-              <div className="items-center h-8 hidden xl:flex">
-                <span className="text-lg md:text-xl font-semibold text-muted-foreground leading-none whitespace-nowrap">
-                  Main Sponsor
-                </span>
-              </div>
-
-              <a
-                href="/lv/pasakumi/"
-                className="inline-flex items-center rounded-md px-4 py-2 text-sm md:text-[15px] font-semibold
-                           text-white bg-[hsl(var(--primary))] hover:bg-[hsl(var(--primary-700))]
-                           transition-colors whitespace-nowrap shrink-0 link-underline"
-              >
-                Pasākumi
-              </a>
+              <span className="hidden xl:inline text-lg md:text-xl font-semibold text-muted-foreground leading-none whitespace-nowrap">
+                Main Sponsor
+              </span>
             </div>
           </div>
         </div>
@@ -275,89 +258,6 @@ const Header = () => {
               )
             )}
           </nav>
-
-          <div className="my-3 border-t border-neutral-200" />
-
-          <div className="px-2 py-2">
-            <div className="text-xs uppercase tracking-wide text-text/50 mb-2">VALODAS</div>
-            <div className="flex items-center gap-2">
-              {languages.map((l) =>
-                l.active ? (
-                  <span
-                    key={l.code}
-                    className="px-2 py-1 text-xs rounded-md bg-[hsl(var(--primary-50))] text-[hsl(var(--primary))] font-semibold link-underline"
-                  >
-                    {l.code}
-                  </span>
-                ) : (
-                  <a
-                    key={l.code}
-                    href={l.href}
-                    className="px-2 py-1 text-xs rounded-md hover:bg-[hsl(var(--primary-50))] link-underline"
-                    onClick={() => setMobileOpen(false)}
-                  >
-                    {l.code}
-                  </a>
-                )
-              )}
-            </div>
-          </div>
-
-          <div className="px-2 py-2">
-            <div className="text-xs uppercase tracking-wide text-text/50 mb-2">KONTAKTI</div>
-            <div className="space-y-2 text-[15px]">
-              <a
-                href="tel:+37128677177"
-                className="flex items-center gap-2 hover:text-[hsl(var(--primary))] link-underline"
-                onClick={() => setMobileOpen(false)}
-              >
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h2.6a1 1 0 01.95.69l1.2 3.6a1 1 0 01-.51 1.2l-1.6.8a12 12 0 006.32 6.32l.8-1.6a1 1 0 011.2-.51l3.6 1.2a1 1 0 01.69.95V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
-                +37128677177
-              </a>
-              <a
-                href="mailto:info@latvianhorses.lv"
-                className="flex items-center gap-2 hover:text-[hsl(var(--primary))] link-underline"
-                onClick={() => setMobileOpen(false)}
-              >
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-                info@latvianhorses.lv
-              </a>
-            </div>
-          </div>
-
-          <div className="px-2 pt-4 pb-2">
-            <div className="text-xs uppercase tracking-wide text-text/50 mb-2">GALVENAIS SPONSORS</div>
-            <a
-              href="https://example.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-3 rounded-md border border-neutral-200 bg-[hsl(var(--primary-50))] px-3 py-3 hover:bg-[hsl(var(--primary-50))] transition-colors link-underline"
-            >
-              <div className="flex-shrink-0">
-                <div className="h-8 w-20 rounded bg-white border border-neutral-200 flex items-center justify-center text-[10px] text-text/60">
-                  LOGO
-                </div>
-              </div>
-              <div className="min-w-0">
-                <div className="text-sm font-semibold text-text truncate">Main Sponsor</div>
-                <div className="text-xs text-text/60 truncate">Atbalsta Latvian Horses</div>
-              </div>
-            </a>
-          </div>
-
-          <div className="px-2 py-4">
-            <a
-              href="/lv/pasakumi/"
-              onClick={() => setMobileOpen(false)}
-              className="inline-flex w-full items-center justify-center rounded-md px-4 py-3 font-semibold text-white bg-[hsl(var(--primary))] hover:bg-[hsl(var(--primary-700))] transition-colors link-underline"
-            >
-              Pasākumi
-            </a>
-          </div>
         </div>
       </div>
     </header>
