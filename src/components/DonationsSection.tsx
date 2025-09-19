@@ -144,7 +144,7 @@ const DonateSection = () => {
           border: "1px solid var(--neutral-200)",
           borderRadius: 12,
           boxShadow: "var(--shadow-md)"
-        }} className="p-6 md:p-8 bg-[color:var(--bg)] flex flex-col px-[31px] py-0">
+        }} className="p-6 md:p-8 bg-[color:var(--bg)] flex flex-col py-0 px-[32px]">
             {submitted ? <div className="text-center py-10">
                 <svg className="w-10 h-10 mx-auto mb-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{
               color: "var(--primary)"
