@@ -53,14 +53,10 @@ const Header = () => {
     { code: "RU", active: false, href: "/ru/" },
   ];
 
-  // утилита как строка для читаемости (НЕ переменная Tailwind) — всё равно вставляем прямо в элементы
-  const u =
-    "relative after:content-[''] after:absolute after:left-0 after:-bottom-[2px] after:h-[2px] after:bg-[var(--primary)] after:w-0 hover:after:w-full after:transition-all after:duration-200";
-
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-neutral-200">
       <div className="w-full">
-        {/* ===== Top utility bar (hidden on mobile) ===== */}
+        {/* Top utility bar */}
         <div className="border-b border-neutral-200 hidden md:block">
           <div className="container mx-auto max-w-7xl px-4">
             <div className="flex items-center justify-between py-1.5">
@@ -68,9 +64,14 @@ const Header = () => {
                 {languages.map((l, i) => (
                   <span key={l.code} className="flex items-center">
                     {l.active ? (
-                      <span className={`font-semibold text-[var(--primary)] ${u}`}>{l.code}</span>
+                      <span className="font-semibold text-[hsl(var(--primary))] link-underline">
+                        {l.code}
+                      </span>
                     ) : (
-                      <a href={l.href} className={`text-text/70 hover:text-[var(--primary)] transition-colors ${u}`}>
+                      <a
+                        href={l.href}
+                        className="text-text/70 hover:text-[hsl(var(--primary))] transition-colors link-underline"
+                      >
                         {l.code}
                       </a>
                     )}
@@ -80,13 +81,16 @@ const Header = () => {
               </nav>
 
               <div className="flex items-center gap-4 text-xs text-text/80">
-                <span className="flex items-center gap-1">
+                <a href="tel:+37128677177" className="flex items-center gap-1 link-underline">
                   <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h2.6a1 1 0 01.95.69l1.2 3.6a1 1 0 01-.51 1.2l-1.6.8a12 12 0 006.32 6.32l.8-1.6a1 1 0 011.2-.51l3.6 1.2a1 1 0 01.69.95V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
                   +37128677177
-                </span>
-                <a href="mailto:info@latvianhorses.lv" className={`flex items-center gap-1 hover:text-[var(--primary)] transition-colors ${u}`}>
+                </a>
+                <a
+                  href="mailto:info@latvianhorses.lv"
+                  className="flex items-center gap-1 hover:text-[hsl(var(--primary))] transition-colors link-underline"
+                >
                   <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
@@ -97,29 +101,28 @@ const Header = () => {
           </div>
         </div>
 
-        {/* ===== Main bar (desktop) ===== */}
+        {/* Main bar (desktop) */}
         <div className="container mx-auto max-w-7xl px-4">
-          {/* ВАЖНО: кастомная сетка, центр растяжимый, боки авто */}
           <div className="hidden md:grid grid-cols-[auto,1fr,auto] items-center py-4 md:py-5">
             <div className="flex items-center">
               <a
                 href="/"
-                className="text-lg md:text-xl font-semibold text-[var(--primary)] tracking-tight leading-none h-8 flex items-center whitespace-nowrap"
+                className="text-lg md:text-xl font-semibold text-[hsl(var(--primary))] tracking-tight leading-none h-8 flex items-center whitespace-nowrap link-underline"
               >
                 Latvian Horses
               </a>
             </div>
 
-            {/* центр не раздувается сверх контейнера, не ломает правый блок */}
+            {/* Центр не ломает правый блок */}
             <nav className="hidden lg:flex justify-center min-w-0">
               <ul className="flex items-center lg:gap-4 xl:gap-6 flex-nowrap overflow-x-visible">
                 {mainNavigation.map((item) =>
                   item.hasDropdown ? (
                     <li key={item.key} className="relative group shrink-0">
                       <button
-                        className={`text-[15px] text-text/90 hover:text-[var(--primary)] font-medium flex items-center gap-1 whitespace-nowrap ${u}`}
+                        className="text-[15px] text-text/90 hover:text-[hsl(var(--primary))] font-medium flex items-center gap-1 whitespace-nowrap link-underline"
                         aria-haspopup="menu"
-                        aria-expanded="false"
+                        aria-expanded={openSection === item.key}
                       >
                         {item.name}
                         <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -131,7 +134,7 @@ const Header = () => {
                           <a
                             key={sub.name}
                             href={sub.href}
-                            className={`block px-3 py-2 text-sm text-text/90 hover:text-[var(--primary)] hover:bg-[var(--light)] first:rounded-t-md last:rounded-b-md whitespace-nowrap ${u}`}
+                            className="block px-3 py-2 text-sm text-text/90 hover:text-[hsl(var(--primary))] hover:bg-[hsl(var(--primary-50))] first:rounded-t-md last:rounded-b-md whitespace-nowrap link-underline"
                           >
                             {sub.name}
                           </a>
@@ -142,7 +145,7 @@ const Header = () => {
                     <li key={item.key} className="shrink-0">
                       <a
                         href={item.href}
-                        className={`text-[15px] text-text/90 hover:text-[var(--primary)] font-medium whitespace-nowrap ${u}`}
+                        className="text-[15px] text-text/90 hover:text-[hsl(var(--primary))] font-medium whitespace-nowrap link-underline"
                       >
                         {item.name}
                       </a>
@@ -152,7 +155,7 @@ const Header = () => {
               </ul>
             </nav>
 
-            {/* правый блок фиксируем, текст Main Sponsor показываем с xl */}
+            {/* Правый блок фиксируем, CTA всегда бордовый, не белый */}
             <div className="hidden md:flex items-center justify-end gap-4 whitespace-nowrap shrink-0">
               <div className="items-center h-8 hidden xl:flex">
                 <span className="text-lg md:text-xl font-semibold text-muted-foreground leading-none whitespace-nowrap">
@@ -162,7 +165,9 @@ const Header = () => {
 
               <a
                 href="/lv/pasakumi/"
-                className="inline-flex items-center rounded-md px-4 py-2 text-sm md:text-[15px] font-semibold text-white bg-[var(--primary)] hover:bg-[var(--primary-700)] transition-colors whitespace-nowrap shrink-0"
+                className="inline-flex items-center rounded-md px-4 py-2 text-sm md:text-[15px] font-semibold
+                           text-white bg-[hsl(var(--primary))] hover:bg-[hsl(var(--primary-700))]
+                           transition-colors whitespace-nowrap shrink-0 link-underline"
               >
                 Pasākumi
               </a>
@@ -171,10 +176,10 @@ const Header = () => {
         </div>
       </div>
 
-      {/* ===== Mobile top row (burger) ===== */}
+      {/* Mobile top row */}
       <div className="md:hidden container mx-auto max-w-7xl px-4 py-2">
         <div className="flex items-center justify-between">
-          <a href="/" className="text-base font-semibold text-[var(--primary)] whitespace-nowrap">
+          <a href="/" className="text-base font-semibold text-[hsl(var(--primary))] whitespace-nowrap link-underline">
             Latvian Horses
           </a>
           <button
@@ -196,7 +201,7 @@ const Header = () => {
         </div>
       </div>
 
-      {/* ===== Mobile Fullscreen Menu ===== */}
+      {/* Mobile Fullscreen Menu */}
       <div
         className={`md:hidden fixed inset-0 z-[60] bg-white transition-opacity duration-200 ${
           mobileOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
@@ -205,10 +210,10 @@ const Header = () => {
         aria-modal="true"
       >
         <div className="flex items-center justify-between px-4 py-3 border-b border-neutral-200">
-          <a href="/" className="text-base font-semibold text-[var(--primary)]" onClick={() => setMobileOpen(false)}>
+          <a href="/" className="text-base font-semibold text-[hsl(var(--primary))] link-underline" onClick={() => setMobileOpen(false)}>
             Latvian Horses
           </a>
-        <button className="p-2 text-text/80" aria-label="Close menu" onClick={toggleMobile}>
+          <button className="p-2 text-text/80" aria-label="Close menu" onClick={toggleMobile}>
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             </svg>
@@ -221,7 +226,7 @@ const Header = () => {
               item.hasDropdown ? (
                 <div key={item.key} className="py-1">
                   <button
-                    className={`w-full flex items-center justify-between px-2 py-3 text-[15px] font-medium text-text/90 hover:text-[var(--primary)] ${u}`}
+                    className="w-full flex items-center justify-between px-2 py-3 text-[15px] font-medium text-text/90 hover:text-[hsl(var(--primary))] link-underline"
                     onClick={() => toggleSection(item.key)}
                     aria-expanded={openSection === item.key}
                   >
@@ -248,7 +253,7 @@ const Header = () => {
                             <a
                               href={sub.href}
                               onClick={() => setMobileOpen(false)}
-                              className={`block px-3 py-2 text-sm text-text/90 rounded-md hover:bg-[var(--light)] hover:text-[var(--primary)] whitespace-nowrap ${u}`}
+                              className="block px-3 py-2 text-sm text-text/90 rounded-md hover:bg-[hsl(var(--primary-50))] hover:text-[hsl(var(--primary))] whitespace-nowrap link-underline"
                             >
                               {sub.name}
                             </a>
@@ -263,7 +268,7 @@ const Header = () => {
                   key={item.key}
                   href={item.href}
                   onClick={() => setMobileOpen(false)}
-                  className={`block px-2 py-3 text-[15px] font-medium text-text/90 hover:text-[var(--primary)] whitespace-nowrap ${u}`}
+                  className="block px-2 py-3 text-[15px] font-medium text-text/90 hover:text-[hsl(var(--primary))] whitespace-nowrap link-underline"
                 >
                   {item.name}
                 </a>
@@ -278,14 +283,17 @@ const Header = () => {
             <div className="flex items-center gap-2">
               {languages.map((l) =>
                 l.active ? (
-                  <span key={l.code} className={`px-2 py-1 text-xs rounded-md bg-[var(--primary-50)] text-[var(--primary)] font-semibold ${u}`}>
+                  <span
+                    key={l.code}
+                    className="px-2 py-1 text-xs rounded-md bg-[hsl(var(--primary-50))] text-[hsl(var(--primary))] font-semibold link-underline"
+                  >
                     {l.code}
                   </span>
                 ) : (
                   <a
                     key={l.code}
                     href={l.href}
-                    className={`px-2 py-1 text-xs rounded-md hover:bg-[var(--light)] ${u}`}
+                    className="px-2 py-1 text-xs rounded-md hover:bg-[hsl(var(--primary-50))] link-underline"
                     onClick={() => setMobileOpen(false)}
                   >
                     {l.code}
@@ -300,7 +308,7 @@ const Header = () => {
             <div className="space-y-2 text-[15px]">
               <a
                 href="tel:+37128677177"
-                className={`flex items-center gap-2 hover:text-[var(--primary)] ${u}`}
+                className="flex items-center gap-2 hover:text-[hsl(var(--primary))] link-underline"
                 onClick={() => setMobileOpen(false)}
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -310,7 +318,7 @@ const Header = () => {
               </a>
               <a
                 href="mailto:info@latvianhorses.lv"
-                className={`flex items-center gap-2 hover:text-[var(--primary)] ${u}`}
+                className="flex items-center gap-2 hover:text-[hsl(var(--primary))] link-underline"
                 onClick={() => setMobileOpen(false)}
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -327,7 +335,7 @@ const Header = () => {
               href="https://example.com"
               target="_blank"
               rel="noopener noreferrer"
-              className={`flex items-center gap-3 rounded-md border border-neutral-200 bg-[var(--light)] px-3 py-3 hover:bg-[var(--primary-50)] transition-colors ${u}`}
+              className="flex items-center gap-3 rounded-md border border-neutral-200 bg-[hsl(var(--primary-50))] px-3 py-3 hover:bg-[hsl(var(--primary-50))] transition-colors link-underline"
             >
               <div className="flex-shrink-0">
                 <div className="h-8 w-20 rounded bg-white border border-neutral-200 flex items-center justify-center text-[10px] text-text/60">
@@ -345,7 +353,7 @@ const Header = () => {
             <a
               href="/lv/pasakumi/"
               onClick={() => setMobileOpen(false)}
-              className={`inline-flex w-full items-center justify-center rounded-md px-4 py-3 font-semibold text-white bg-[var(--primary)] hover:bg-[var(--primary-700)] transition-colors ${u}`}
+              className="inline-flex w-full items-center justify-center rounded-md px-4 py-3 font-semibold text-white bg-[hsl(var(--primary))] hover:bg-[hsl(var(--primary-700))] transition-colors link-underline"
             >
               Pasākumi
             </a>
