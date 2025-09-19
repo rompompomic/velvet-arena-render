@@ -1,4 +1,5 @@
 import { useState } from "react";
+import donateHorse from "@/assets/donate-horse-new.png"; // 16:9 иллюстрация
 
 const DonateSection = () => {
   const presets = [10, 20, 30, 50];
@@ -17,6 +18,21 @@ const DonateSection = () => {
     // TODO: интеграция (Stripe/MakeCommerce u.c.)
     setSubmitted(true);
   };
+
+  const points = [
+    {
+      title: "Zirgu labturība",
+      desc: "Barība, veterinārā aprūpe un droša infrastruktūra ikdienai.",
+    },
+    {
+      title: "Jauno jātnieku attīstība",
+      desc: "Treniņi, nometnes un sacensību pieredze bērniem un jauniešiem.",
+    },
+    {
+      title: "Kvalitatīvi pasākumi",
+      desc: "Vietējās sacensības, atvērto durvju dienas un izglītojošas ekskursijas.",
+    },
+  ];
 
   return (
     <section
@@ -41,8 +57,8 @@ const DonateSection = () => {
     >
       <div className="container mx-auto px-4 max-w-7xl">
         {/* Header */}
-        <div className="text-center mb-10">
-          <h2 className="mb-3 text-[36px] leading-[44px] font-semibold text-[color:var(--text)]">
+        <div className="text-center mb-6">
+          <h2 className="mb-2 text-[36px] leading-[44px] font-semibold text-[color:var(--text)]">
             Atbalsti Latvian Horses
           </h2>
           <p className="text-[16px] leading-[24px] text-[rgba(6,3,13,0.7)] max-w-2xl mx-auto">
@@ -50,77 +66,85 @@ const DonateSection = () => {
           </p>
         </div>
 
-        {/* Content grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
-          {/* Left: Highlights */}
-          <div
-            className="p-8 border bg-[color:var(--light)]"
-            style={{ borderColor: "var(--neutral-200)", borderRadius: 12, boxShadow: "var(--shadow-sm)" }}
-          >
-            <ul className="space-y-5">
-              <li className="flex items-start gap-3">
-                <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-[color:var(--primary)] text-white text-[12px] leading-none my-[7px]">
-                  1
-                </span>
-                <div>
-                  <h3 className="text-[28px] leading-[36px] font-medium text-[color:var(--text)]">
-                    Zirgu labturība
-                  </h3>
-                  <p className="text-[14px] leading-[20px] text-[rgba(6,3,13,0.7)]">
-                    Barība, veterinārā aprūpe un droša infrastruktūra ikdienai.
-                  </p>
-                </div>
-              </li>
-
-              <li className="flex items-start gap-3">
-                <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-[color:var(--primary)] text-white text-[12px] leading-none my-[7px]">
-                  2
-                </span>
-                <div>
-                  <h3 className="text-[28px] leading-[36px] font-medium text-[color:var(--text)]">
-                    Jauno jātnieku attīstība
-                  </h3>
-                  <p className="text-[14px] leading-[20px] text-[rgba(6,3,13,0.7)]">
-                    Treniņi, nometnes un sacensību pieredze bērniem un jauniešiem.
-                  </p>
-                </div>
-              </li>
-
-              <li className="flex items-start gap-3">
-                <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-[color:var(--primary)] text-white text-[12px] leading-none mx-0 my-[5px]">
-                  3
-                </span>
-                <div>
-                  <h3 className="text-[28px] leading-[36px] font-medium text-[color:var(--text)]">
-                    Kvalitatīvi pasākumi
-                  </h3>
-                  <p className="text-[14px] leading-[20px] text-[rgba(6,3,13,0.7)]">
-                    Vietējās sacensības, atvērto durvju dienas un izglītojošas ekskursijas.
-                  </p>
-                </div>
-              </li>
+        {/* Список + Цитата */}
+        <div
+          className="mb-10 rounded-xl border bg-[var(--bg)]"
+          style={{ borderColor: "var(--neutral-200)", boxShadow: "var(--shadow-sm)" }}
+        >
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-6 p-5 sm:p-6 md:p-7">
+            {/* Список слева */}
+            <ul className="space-y-4">
+              {points.map((p, idx) => (
+                <li key={p.title} className="flex items-start gap-3 my-[25px]">
+                  <span
+                    className="flex-shrink-0 inline-flex items-center justify-center rounded-full text-white font-semibold"
+                    style={{ width: 26, height: 26, background: "var(--primary)", lineHeight: "26px", fontSize: 14 }}
+                  >
+                    {idx + 1}
+                  </span>
+                  <div className="min-w-0">
+                    <div
+                      className="leading-snug"
+                      style={{ color: "var(--text)", fontWeight: 600, fontSize: 20, lineHeight: "28px" }}
+                    >
+                      {p.title}
+                    </div>
+                    <div className="text-[13px] text-[rgba(6,3,13,0.7)] mt-0.5">{p.desc}</div>
+                  </div>
+                </li>
+              ))}
             </ul>
 
-            {/* Trust badges */}
-            <div className="mt-8 grid grid-cols-2 gap-4 text-[14px] leading-[20px]">
-              <div
-                className="p-4 bg-[color:var(--bg)]"
-                style={{ border: "1px solid var(--neutral-200)", borderRadius: 12, boxShadow: "var(--shadow-sm)" }}
+            {/* Цитата справа */}
+            <div className="mt-6 md:mt-0">
+              <figure
+                className="relative h-full rounded-xl border overflow-hidden"
+                style={{ borderColor: "var(--neutral-200)", background: "linear-gradient(180deg,#FFF 0%,#FAFAFA 100%)" }}
               >
-                <p className="font-medium text-[color:var(--text)]">Drošs atbalsts</p>
-                <p className="text-[rgba(6,3,13,0.7)] text-[12px] leading-[20px]">Norēķini vai pārskaitījums</p>
-              </div>
-              <div
-                className="p-4 bg-[color:var(--bg)]"
-                style={{ border: "1px solid var(--neutral-200)", borderRadius: 12, boxShadow: "var(--shadow-sm)" }}
-              >
-                <p className="font-medium text-[color:var(--text)]">Pārskatāmība</p>
-                <p className="text-[rgba(6,3,13,0.7)] text-[12px] leading-[20px]">Rēķins pēc pieprasījuma</p>
-              </div>
+                <div className="absolute inset-y-0 left-0 w-1.5" style={{ background: "var(--primary)" }} />
+                <div className="p-5 sm:p-6 md:p-7">
+                  <div
+                    className="mb-4 inline-flex items-center justify-center rounded-full"
+                    style={{ width: 40, height: 40, background: "var(--primary-50)", color: "var(--primary)" }}
+                    aria-hidden
+                  >
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M7.2 11.2c0-3.1 1.9-5.6 4.7-6.4v2.7c-1.1.5-1.9 1.8-1.9 3.2 1.1 0 2 .9 2 2 0 2.2-1.8 4-4 4-2.1 0-3.8-1.7-3.8-3.8zM15.2 11.2c0-3.1 1.9-5.6 4.7-6.4v2.7c-1.1.5-1.9 1.8-1.9 3.2 1.1 0 2 .9 2 2 0 2.2-1.8 4-4 4-2.1 0-3.8-1.7-3.8-3.8z" />
+                    </svg>
+                  </div>
+
+                  <blockquote className="text-[15px] leading-7 text-[rgba(6,3,13,0.9)]">
+                    “Šeit es iemācījos ne tikai jāt, bet arī rūpēties par dzīvniekiem. Treneri ir pacietīgi, bet zirgi —
+                    mierīgi un droši. Katru nedēļu es gaidu nodarbības ar smaidu.”
+                  </blockquote>
+
+                  <figcaption className="mt-5 flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full flex items-center justify-center font-semibold"
+                         style={{ background: "var(--primary-50)", color: "var(--primary)" }}>
+                      E
+                    </div>
+                    <div className="min-w-0">
+                      <div className="font-semibold" style={{ color: "var(--text)" }}>Elīna, 12 gadi</div>
+                      <div className="text-xs text-[rgba(6,3,13,0.7)]">Skolniece, sākuma grupa</div>
+                    </div>
+                  </figcaption>
+                </div>
+              </figure>
             </div>
           </div>
+        </div>
 
-          {/* Right: Form */}
+        {/* Иллюстрация + Форма доната (обновлённая) */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-stretch">
+          {/* Иллюстрация слева */}
+          <div
+            className="w-full rounded-[12px] border bg-[var(--light)] shadow-sm overflow-hidden h-full lg:min-h-[360px]"
+            style={{ borderColor: "var(--neutral-200)" }}
+          >
+            <img src={donateHorse} alt="Ziedojums zirgiem — dāvanu tēma" className="w-full h-full object-contain" />
+          </div>
+
+          {/* Форма доната справа — как в твоём новом примере */}
           <div
             className="p-6 md:p-8 bg-[color:var(--bg)]"
             style={{ border: "1px solid var(--neutral-200)", borderRadius: 12, boxShadow: "var(--shadow-md)" }}
@@ -135,15 +159,12 @@ const DonateSection = () => {
                 </h3>
                 <p className="text-[14px] leading-[20px] text-[rgba(6,3,13,0.7)]">
                   Mēs novērtējam tavu ieguldījumu. Ja vajadzīgs rēķins, sazinies ar{" "}
-                  <a href="mailto:info@latvianhorses.lv" className="underline">
-                    info@latvianhorses.lv
-                  </a>
-                  .
+                  <a href="mailto:info@latvianhorses.lv" className="underline">info@latvianhorses.lv</a>.
                 </p>
               </div>
             ) : (
               <form onSubmit={onSubmit} className="space-y-6">
-                {/* Amount presets */}
+                {/* Сумма */}
                 <div>
                   <label className="block text-[14px] leading-[20px] font-medium mb-2 text-[color:var(--text)]">
                     Ziedojuma summa
@@ -151,8 +172,8 @@ const DonateSection = () => {
                   <div className="flex flex-wrap gap-3">
                     {presets.map((p) => (
                       <button
-                        type="button"
                         key={p}
+                        type="button"
                         onClick={() => handlePreset(p)}
                         className="px-4 h-[42px] inline-flex items-center justify-center rounded-lg border transition-all"
                         style={{
@@ -183,7 +204,7 @@ const DonateSection = () => {
                     </div>
                   </div>
 
-                  {/* Frequency toggle */}
+                  {/* Частота */}
                   <div className="mt-4 inline-flex overflow-hidden" style={{ border: "1px solid var(--neutral-200)", borderRadius: 12 }}>
                     <button
                       type="button"
@@ -204,29 +225,19 @@ const DonateSection = () => {
                   </div>
                 </div>
 
-                {/* Contact fields */}
+                {/* Контакты */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-[14px] leading-[20px] font-medium mb-1 text-[color:var(--text)]">Vārds (nav obligāti)</label>
-                    <input
-                      type="text"
-                      className="w-full rounded-lg px-3 py-2 focus:outline-none"
-                      placeholder="Vārds, uzvārds"
-                      style={{ border: "1px solid var(--neutral-200)" }}
-                    />
+                    <input type="text" className="w-full rounded-lg px-3 py-2 focus:outline-none" placeholder="Vārds, uzvārds" style={{ border: "1px solid var(--neutral-200)" }} />
                   </div>
                   <div>
                     <label className="block text-[14px] leading-[20px] font-medium mb-1 text-[color:var(--text)]">E-pasts (rēķinam)</label>
-                    <input
-                      type="email"
-                      className="w-full rounded-lg px-3 py-2 focus:outline-none"
-                      placeholder="name@example.com"
-                      style={{ border: "1px solid var(--neutral-200)" }}
-                    />
+                    <input type="email" className="w-full rounded-lg px-3 py-2 focus:outline-none" placeholder="name@example.com" style={{ border: "1px solid var(--neutral-200)" }} />
                   </div>
                 </div>
 
-                {/* Payment method */}
+                {/* Способ оплаты */}
                 <div>
                   <label className="block text-[14px] leading-[20px] font-medium mb-2 text-[color:var(--text)]">Apmaksas veids</label>
                   <div className="flex gap-3">
@@ -256,7 +267,7 @@ const DonateSection = () => {
                     </button>
                   </div>
 
-                  {/* Method details */}
+                  {/* Детали метода */}
                   {method === "card" ? (
                     <p className="mt-3 text-[14px] leading-[20px] text-[rgba(6,3,13,0.7)]">Norēķini ar karti tiks pievienoti drīzumā.</p>
                   ) : (
@@ -265,31 +276,24 @@ const DonateSection = () => {
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-[14px] leading-[20px]">
                         <div className="text-[rgba(6,3,13,0.7)]">Saņēmējs</div>
                         <div className="text-[color:var(--text)]">Latvian Horses</div>
-
                         <div className="text-[rgba(6,3,13,0.7)]">Reģ. Nr.</div>
                         <div className="text-[color:var(--text)]">—</div>
-
                         <div className="text-[rgba(6,3,13,0.7)]">IBAN</div>
                         <div className="text-[color:var(--text)]">—</div>
-
                         <div className="text-[rgba(6,3,13,0.7)]">Banka</div>
                         <div className="text-[color:var(--text)]">—</div>
-
                         <div className="text-[rgba(6,3,13,0.7)]">Mērķis</div>
                         <div className="text-[color:var(--text)]">Ziedojums Latvian Horses</div>
                       </div>
                       <p className="mt-3 text-[12px] leading-[20px] text-[rgba(6,3,13,0.7)]">
                         * Ja vajadzīgi precīzi rekvizīti rēķinam, raksti:{" "}
-                        <a href="mailto:info@latvianhorses.lv" className="underline">
-                          info@latvianhorses.lv
-                        </a>
-                        .
+                        <a href="mailto:info@latvianhorses.lv" className="underline">info@latvianhorses.lv</a>.
                       </p>
                     </div>
                   )}
                 </div>
 
-                {/* Consent */}
+                {/* Согласие */}
                 <label className="flex items-start gap-3 text-[14px] leading-[20px]">
                   <input
                     type="checkbox"
@@ -300,14 +304,11 @@ const DonateSection = () => {
                   />
                   <span className="text-[color:var(--text)]">
                     Piekrītu personas datu apstrādei saskaņā ar{" "}
-                    <a href="/lv/privatuma-politika/" className="underline">
-                      Privātuma politiku
-                    </a>
-                    .
+                    <a href="/lv/privatuma-politika/" className="underline">Privātuma politiku</a>.
                   </span>
                 </label>
 
-                {/* Submit */}
+                {/* Отправка */}
                 <button
                   type="submit"
                   disabled={!amount || Number(amount) <= 0 || !agree}
@@ -321,7 +322,6 @@ const DonateSection = () => {
                   {freq === "monthly" && <span className="ml-1 opacity-90">/ mēnesī</span>}
                 </button>
 
-                {/* Note */}
                 <p className="text-[12px] leading-[20px] text-center text-[rgba(6,3,13,0.7)]">
                   Pēc ziedojuma saņemšanas nosūtīsim apstiprinājumu uz e-pastu (ja norādīts).
                 </p>
