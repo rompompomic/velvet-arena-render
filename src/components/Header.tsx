@@ -9,16 +9,10 @@ const Header = () => {
   const toggleSection = (key: string) =>
     setOpenSection((cur) => (cur === key ? null : key));
 
-  // Блокируем скролл фона, когда открыт фуллскрин-меню
   useEffect(() => {
-    if (mobileOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-    return () => {
-      document.body.style.overflow = "";
-    };
+    if (mobileOpen) document.body.style.overflow = "hidden";
+    else document.body.style.overflow = "";
+    return () => { document.body.style.overflow = ""; };
   }, [mobileOpen]);
 
   const mainNavigation = [
@@ -59,14 +53,10 @@ const Header = () => {
     { code: "RU", active: false, href: "/ru/" },
   ];
 
-  // Общие utility-классы для анимации подчёркивания
-  const underlineAnim =
-    "relative after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:bg-[var(--primary)] after:w-0 hover:after:w-full after:transition-all after:duration-200 after:content-['']";
-
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-neutral-200">
       <div className="w-full">
-        {/* ===== Top utility bar (hidden on mobile) ===== */}
+        {/* Top utility bar */}
         <div className="border-b border-neutral-200 hidden md:block">
           <div className="container mx-auto max-w-7xl px-4">
             <div className="flex items-center justify-between py-1.5">
@@ -74,13 +64,13 @@ const Header = () => {
                 {languages.map((l, i) => (
                   <span key={l.code} className="flex items-center">
                     {l.active ? (
-                      <span className={`font-semibold text-[var(--primary)] ${underlineAnim}`}>
+                      <span className="font-semibold text-[var(--primary)] link-underline">
                         {l.code}
                       </span>
                     ) : (
                       <a
                         href={l.href}
-                        className={`text-text/70 hover:text-[var(--primary)] transition-colors ${underlineAnim}`}
+                        className="text-text/70 hover:text-[var(--primary)] transition-colors link-underline"
                       >
                         {l.code}
                       </a>
@@ -99,7 +89,7 @@ const Header = () => {
                 </span>
                 <a
                   href="mailto:info@latvianhorses.lv"
-                  className={`flex items-center gap-1 hover:text-[var(--primary)] transition-colors ${underlineAnim}`}
+                  className="flex items-center gap-1 hover:text-[var(--primary)] transition-colors link-underline"
                 >
                   <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -111,7 +101,7 @@ const Header = () => {
           </div>
         </div>
 
-        {/* ===== Main bar (desktop) ===== */}
+        {/* Main bar (desktop) */}
         <div className="container mx-auto max-w-7xl px-4">
           <div className="hidden md:grid grid-cols-3 items-center py-4 md:py-5">
             <div className="flex items-center">
@@ -123,13 +113,14 @@ const Header = () => {
               </a>
             </div>
 
-            <nav className="hidden lg:flex justify-center">
+            {/* центр не даём раздуваться за рамки */}
+            <nav className="hidden lg:flex justify-center min-w-0">
               <ul className="flex items-center lg:gap-4 xl:gap-6 flex-nowrap overflow-x-visible">
                 {mainNavigation.map((item) =>
                   item.hasDropdown ? (
                     <li key={item.key} className="relative group shrink-0">
                       <button
-                        className={`text-[15px] text-text/90 hover:text-[var(--primary)] font-medium flex items-center gap-1 whitespace-nowrap ${underlineAnim}`}
+                        className="text-[15px] text-text/90 hover:text-[var(--primary)] font-medium flex items-center gap-1 link-underline"
                         aria-haspopup="menu"
                         aria-expanded="false"
                       >
@@ -143,7 +134,7 @@ const Header = () => {
                           <a
                             key={sub.name}
                             href={sub.href}
-                            className={`block px-3 py-2 text-sm text-text/90 hover:text-[var(--primary)] hover:bg-[var(--light)] first:rounded-t-md last:rounded-b-md whitespace-nowrap ${underlineAnim}`}
+                            className="block px-3 py-2 text-sm text-text/90 hover:text-[var(--primary)] hover:bg-[var(--light)] first:rounded-t-md last:rounded-b-md link-underline"
                           >
                             {sub.name}
                           </a>
@@ -154,7 +145,7 @@ const Header = () => {
                     <li key={item.key} className="shrink-0">
                       <a
                         href={item.href}
-                        className={`text-[15px] text-text/90 hover:text-[var(--primary)] font-medium whitespace-nowrap ${underlineAnim}`}
+                        className="text-[15px] text-text/90 hover:text-[var(--primary)] font-medium link-underline"
                       >
                         {item.name}
                       </a>
@@ -164,8 +155,9 @@ const Header = () => {
               </ul>
             </nav>
 
-            <div className="hidden md:flex items-center justify-end gap-4 whitespace-nowrap">
-              <div className="flex items-center h-8">
+            {/* правый блок не даём сжимать/переносить */}
+            <div className="hidden md:flex items-center justify-end gap-4 whitespace-nowrap shrink-0">
+              <div className="items-center h-8 max-lg:hidden md:flex">
                 <span className="text-lg md:text-xl font-semibold text-muted-foreground leading-none whitespace-nowrap">
                   Main Sponsor
                 </span>
@@ -173,7 +165,7 @@ const Header = () => {
 
               <a
                 href="/lv/pasakumi/"
-                className={`inline-flex items-center rounded-md px-4 py-2 text-sm md:text-[15px] font-semibold text-white bg-[var(--primary)] hover:bg-[var(--primary-700)] transition-colors whitespace-nowrap ${underlineAnim}`}
+                className="inline-flex items-center rounded-md px-4 py-2 text-sm md:text-[15px] font-semibold text-white bg-[var(--primary)] hover:bg-[var(--primary-700)] transition-colors link-underline"
               >
                 Pasākumi
               </a>
@@ -182,7 +174,7 @@ const Header = () => {
         </div>
       </div>
 
-      {/* ===== Mobile top row (burger) ===== */}
+      {/* Mobile top row */}
       <div className="md:hidden container mx-auto max-w-7xl px-4 py-2">
         <div className="flex items-center justify-between">
           <a href="/" className="text-base font-semibold text-[var(--primary)] whitespace-nowrap">
@@ -207,7 +199,7 @@ const Header = () => {
         </div>
       </div>
 
-      {/* ===== Mobile Fullscreen Menu ===== */}
+      {/* Mobile fullscreen menu */}
       <div
         className={`md:hidden fixed inset-0 z-[60] bg-white transition-opacity duration-200 ${
           mobileOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
@@ -215,7 +207,6 @@ const Header = () => {
         role="dialog"
         aria-modal="true"
       >
-        {/* Header inside fullscreen panel */}
         <div className="flex items-center justify-between px-4 py-3 border-b border-neutral-200">
           <a href="/" className="text-base font-semibold text-[var(--primary)]" onClick={() => setMobileOpen(false)}>
             Latvian Horses
@@ -227,18 +218,17 @@ const Header = () => {
           </button>
         </div>
 
-        {/* Scrollable content */}
         <div className="h-[calc(100vh-56px)] overflow-y-auto px-2 py-2">
           <nav className="divide-y divide-neutral-200">
             {mainNavigation.map((item) =>
               item.hasDropdown ? (
                 <div key={item.key} className="py-1">
                   <button
-                    className={`w-full flex items-center justify-between px-2 py-3 text-[15px] font-medium text-text/90 hover:text-[var(--primary)] ${underlineAnim}`}
+                    className="w-full flex items-center justify-between px-2 py-3 text-[15px] font-medium text-text/90 hover:text-[var(--primary)] link-underline"
                     onClick={() => toggleSection(item.key)}
                     aria-expanded={openSection === item.key}
                   >
-                    <span className="whitespace-nowrap">{item.name}</span>
+                    <span>{item.name}</span>
                     <svg
                       className={`w-4 h-4 transition-transform ${openSection === item.key ? "rotate-180" : ""}`}
                       fill="none"
@@ -249,7 +239,6 @@ const Header = () => {
                     </svg>
                   </button>
 
-                  {/* Subitems */}
                   <div
                     className={`grid transition-[grid-template-rows] duration-300 ease-in-out px-2 ${
                       openSection === item.key ? "grid-rows-[1fr] pb-2" : "grid-rows-[0fr]"
@@ -262,7 +251,7 @@ const Header = () => {
                             <a
                               href={sub.href}
                               onClick={() => setMobileOpen(false)}
-                              className={`block px-3 py-2 text-sm text-text/90 rounded-md hover:bg-[var(--light)] hover:text-[var(--primary)] whitespace-nowrap ${underlineAnim}`}
+                              className="block px-3 py-2 text-sm text-text/90 rounded-md hover:bg-[var(--light)] hover:text-[var(--primary)] link-underline"
                             >
                               {sub.name}
                             </a>
@@ -277,7 +266,7 @@ const Header = () => {
                   key={item.key}
                   href={item.href}
                   onClick={() => setMobileOpen(false)}
-                  className={`block px-2 py-3 text-[15px] font-medium text-text/90 hover:text-[var(--primary)] whitespace-nowrap ${underlineAnim}`}
+                  className="block px-2 py-3 text-[15px] font-medium text-text/90 hover:text-[var(--primary)] link-underline"
                 >
                   {item.name}
                 </a>
@@ -285,10 +274,8 @@ const Header = () => {
             )}
           </nav>
 
-          {/* Divider */}
           <div className="my-3 border-t border-neutral-200" />
 
-          {/* Languages (mobile) */}
           <div className="px-2 py-2">
             <div className="text-xs uppercase tracking-wide text-text/50 mb-2">VALODAS</div>
             <div className="flex items-center gap-2">
@@ -296,7 +283,7 @@ const Header = () => {
                 l.active ? (
                   <span
                     key={l.code}
-                    className={`px-2 py-1 text-xs rounded-md bg-[var(--primary-50)] text-[var(--primary)] font-semibold ${underlineAnim}`}
+                    className="px-2 py-1 text-xs rounded-md bg-[var(--primary-50)] text-[var(--primary)] font-semibold link-underline"
                   >
                     {l.code}
                   </span>
@@ -304,7 +291,7 @@ const Header = () => {
                   <a
                     key={l.code}
                     href={l.href}
-                    className={`px-2 py-1 text-xs rounded-md hover:bg-[var(--light)] ${underlineAnim}`}
+                    className="px-2 py-1 text-xs rounded-md hover:bg-[var(--light)] link-underline"
                     onClick={() => setMobileOpen(false)}
                   >
                     {l.code}
@@ -314,13 +301,12 @@ const Header = () => {
             </div>
           </div>
 
-          {/* Contacts (mobile) */}
           <div className="px-2 py-2">
             <div className="text-xs uppercase tracking-wide text-text/50 mb-2">KONTAKTI</div>
             <div className="space-y-2 text-[15px]">
               <a
                 href="tel:+37128677177"
-                className={`flex items-center gap-2 hover:text-[var(--primary)] ${underlineAnim}`}
+                className="flex items-center gap-2 hover:text-[var(--primary)] link-underline"
                 onClick={() => setMobileOpen(false)}
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -330,7 +316,7 @@ const Header = () => {
               </a>
               <a
                 href="mailto:info@latvianhorses.lv"
-                className={`flex items-center gap-2 hover:text-[var(--primary)] ${underlineAnim}`}
+                className="flex items-center gap-2 hover:text-[var(--primary)] link-underline"
                 onClick={() => setMobileOpen(false)}
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -341,14 +327,13 @@ const Header = () => {
             </div>
           </div>
 
-          {/* ==== MAIN SPONSOR (mobile only) ==== */}
           <div className="px-2 pt-4 pb-2">
             <div className="text-xs uppercase tracking-wide text-text/50 mb-2">GALVENAIS SPONSORS</div>
             <a
               href="https://example.com"
               target="_blank"
               rel="noopener noreferrer"
-              className={`flex items-center gap-3 rounded-md border border-neutral-200 bg-[var(--light)] px-3 py-3 hover:bg-[var(--primary-50)] transition-colors ${underlineAnim}`}
+              className="flex items-center gap-3 rounded-md border border-neutral-200 bg-[var(--light)] px-3 py-3 hover:bg-[var(--primary-50)] transition-colors link-underline"
             >
               <div className="flex-shrink-0">
                 <div className="h-8 w-20 rounded bg-white border border-neutral-200 flex items-center justify-center text-[10px] text-text/60">
@@ -362,12 +347,11 @@ const Header = () => {
             </a>
           </div>
 
-          {/* CTA */}
           <div className="px-2 py-4">
             <a
               href="/lv/pasakumi/"
               onClick={() => setMobileOpen(false)}
-              className={`inline-flex w-full items-center justify-center rounded-md px-4 py-3 font-semibold text-white bg-[var(--primary)] hover:bg-[var(--primary-700)] transition-colors ${underlineAnim}`}
+              className="inline-flex w-full items-center justify-center rounded-md px-4 py-3 font-semibold text-white bg-[var(--primary)] hover:bg-[var(--primary-700)] transition-colors link-underline"
             >
               Pasākumi
             </a>
