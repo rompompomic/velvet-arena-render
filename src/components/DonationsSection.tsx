@@ -16,6 +16,21 @@ const DonateSection: React.FC = () => {
     setSubmitted(true);
   };
 
+  const points = [
+    {
+      title: "Zirgu labturība",
+      desc: "Barība, veterinārā aprūpe un droša infrastruktūra ikdienai.",
+    },
+    {
+      title: "Jauno jātnieku attīstība",
+      desc: "Treniņi, nometnes un sacensību pieredze bērniem un jauniešiem.",
+    },
+    {
+      title: "Kvalitatīvi pasākumi",
+      desc: "Vietējās sacensības, atvērto durvju dienas un izglītojošas ekskursijas.",
+    },
+  ];
+
   return (
     <section
       className="py-16"
@@ -34,7 +49,7 @@ const DonateSection: React.FC = () => {
     >
       <div className="container mx-auto px-4 max-w-6xl">
         {/* Заголовок */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-6">
           <h2
             className="mb-2"
             style={{
@@ -54,6 +69,47 @@ const DonateSection: React.FC = () => {
           </p>
         </div>
 
+        {/* Блок с тремя пунктами (как на изображении) */}
+        <div
+          className="mb-10 rounded-xl border bg-[var(--bg)]"
+          style={{ borderColor: "var(--neutral-200)", boxShadow: "var(--shadow-sm)" }}
+        >
+          <ul className="p-5 sm:p-6 md:p-7 space-y-4">
+            {points.map((p, idx) => (
+              <li key={p.title} className="flex items-start gap-3">
+                <span
+                  className="flex-shrink-0 inline-flex items-center justify-center rounded-full text-white font-semibold"
+                  style={{
+                    width: 26,
+                    height: 26,
+                    background: "var(--primary)",
+                    lineHeight: "26px",
+                    fontSize: 14,
+                  }}
+                >
+                  {idx + 1}
+                </span>
+                <div className="min-w-0">
+                  <div
+                    className="leading-snug"
+                    style={{
+                      color: "var(--text)",
+                      fontWeight: 600,
+                      fontSize: 20,
+                      lineHeight: "28px",
+                    }}
+                  >
+                    {p.title}
+                  </div>
+                  <div className="text-[13px] text-[rgba(6,3,13,0.7)] mt-0.5">
+                    {p.desc}
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+
         {/* Main Content — equal-height columns */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-stretch">
           {/* Image card (no crop) */}
@@ -65,7 +121,7 @@ const DonateSection: React.FC = () => {
               <img
                 src={donateHorse}
                 alt="Ziedojums zirgiem — dāvanu tēma"
-                className="w-full h-full object-contain"  /* ВПИСЫВАЕМ */
+                className="w-full h-full object-contain"
               />
             </div>
           </div>
