@@ -8,18 +8,24 @@ const Header = () => {
   const toggleSection = (key: string) =>
     setOpenSection((cur) => (cur === key ? null : key));
 
-  // блокируем прокрутку, когда открыт фуллскрин-меню
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [mobileOpen]);
 
-  // Единый класс для анимированного подчёркивания ссылок (desktop)
+  // underline helpers
   const linkUnderline =
-    "relative text-[15px] font-medium text-text/90 hover:text-[var(--primary)] " +
-    "after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 " +
-    "after:bg-[var(--primary)] after:transition-[width] after:duration-200 " +
-    "hover:after:w-full focus-visible:after:w-full focus-visible:outline-none";
+    "relative inline-flex items-center text-[15px] font-medium text-text/90 hover:text-[var(--primary)] " +
+    "after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-[var(--primary)] " +
+    "after:transition-[width] after:duration-200 hover:after:w-full focus-visible:after:w-full focus-visible:outline-none";
+
+  const subLinkUnderline =
+    "relative block px-3 py-2 text-sm text-text/90 hover:text-[var(--primary)] hover:bg-[var(--light)] " +
+    "first:rounded-t-md last:rounded-b-md " +
+    "after:content-[''] after:absolute after:left-3 after:bottom-1 after:h-[2px] after:w-0 after:bg-[var(--primary)] " +
+    "after:transition-[width] after:duration-200 hover:after:w-[calc(100%-1.5rem)]";
 
   const mainNavigation = [
     {
@@ -63,7 +69,7 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-neutral-200">
       <div className="w-full">
-        {/* ===== Top utility bar (desktop only) ===== */}
+        {/* Top utility bar (desktop) */}
         <div className="border-b border-neutral-200 hidden md:block">
           <div className="container mx-auto max-w-7xl px-4">
             <div className="flex items-center justify-between py-1.5">
@@ -100,7 +106,7 @@ const Header = () => {
           </div>
         </div>
 
-        {/* ===== Main bar (desktop) ===== */}
+        {/* Main bar (desktop) */}
         <div className="container mx-auto max-w-7xl px-4">
           <div className="hidden md:grid grid-cols-3 items-center py-4 md:py-5">
             <div className="flex items-center">
@@ -112,28 +118,24 @@ const Header = () => {
               </a>
             </div>
 
-            {/* центр: навигация со строкой-подчёркиванием */}
+            {/* центр */}
             <nav className="hidden lg:flex justify-center">
               <ul className="flex items-center gap-6">
                 {mainNavigation.map((item) =>
                   item.hasDropdown ? (
                     <li key={item.key} className="relative group">
-                      {/* кнопка дропдауна с аним. подчеркиванием */}
-                      <button className={`${linkUnderline} flex items-center gap-1 whitespace-nowrap`}>
+                      {/* кнопка с подчёркиванием */}
+                      <button className={`${linkUnderline} gap-1`}>
                         {item.name}
                         <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                         </svg>
                       </button>
 
-                      {/* выпадающее меню */}
+                      {/* dropdown */}
                       <div className="absolute left-0 top-full mt-2 w-56 rounded-md border border-neutral-200 bg-white shadow-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150">
                         {item.subItems?.map((sub) => (
-                          <a
-                            key={sub.name}
-                            href={sub.href}
-                            className="block px-3 py-2 text-sm text-text/90 hover:text-[var(--primary)] hover:bg-[var(--light)] first:rounded-t-md last:rounded-b-md"
-                          >
+                          <a key={sub.name} href={sub.href} className={subLinkUnderline}>
                             {sub.name}
                           </a>
                         ))}
@@ -150,7 +152,7 @@ const Header = () => {
               </ul>
             </nav>
 
-            {/* справа: без отдельной красной кнопки */}
+            {/* справа */}
             <div className="hidden md:flex items-center justify-end gap-4 whitespace-nowrap">
               <div className="flex items-center h-8">
                 <span className="text-lg md:text-xl font-semibold text-muted-foreground leading-none whitespace-nowrap">
@@ -162,7 +164,7 @@ const Header = () => {
         </div>
       </div>
 
-      {/* ===== Mobile top row (burger) ===== */}
+      {/* Mobile top row */}
       <div className="md:hidden container mx-auto max-w-7xl px-4 py-2">
         <div className="flex items-center justify-between">
           <a href="/" className="text-base font-semibold text-[var(--primary)] whitespace-nowrap">
@@ -187,7 +189,7 @@ const Header = () => {
         </div>
       </div>
 
-      {/* ===== Mobile Fullscreen Menu (без подчёркивания — там блоки) ===== */}
+      {/* Mobile fullscreen menu */}
       <div
         className={`md:hidden fixed inset-0 z-[60] bg-white transition-opacity duration-200 ${
           mobileOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
@@ -263,7 +265,7 @@ const Header = () => {
 
           <div className="my-3 border-t border-neutral-200" />
 
-          {/* Languages (mobile) */}
+          {/* Languages */}
           <div className="px-2 py-2">
             <div className="text-xs uppercase tracking-wide text-text/50 mb-2">VALODAS</div>
             <div className="flex items-center gap-2">
@@ -286,7 +288,7 @@ const Header = () => {
             </div>
           </div>
 
-          {/* Contacts (mobile) */}
+          {/* Contacts */}
           <div className="px-2 py-2">
             <div className="text-xs uppercase tracking-wide text-text/50 mb-2">KONTAKTI</div>
             <div className="space-y-2 text-[15px]">
