@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import donateHorse from "@/assets/donate-horse.png";
+import donateHorse from "@/assets/donate-horse-new.png";
 const DonateSection: React.FC = () => {
   const presets = [10, 20, 30, 50];
   const [amount, setAmount] = useState<string>("");
@@ -45,9 +45,9 @@ const DonateSection: React.FC = () => {
           {/* Horse Image */}
           <div className="w-full lg:w-1/2 flex justify-center">
             <div className="relative max-w-md w-full">
-              <img src={donateHorse} alt="Beautiful brown horse in a field - Support Latvian Horses" className="w-full h-auto rounded-[12px] shadow-lg object-cover" style={{
-              maxHeight: "500px",
-              aspectRatio: "4/5"
+              <img src={donateHorse} alt="Donate to support Latvian Horses" className="w-full h-auto rounded-[12px] shadow-lg object-cover" style={{
+              maxHeight: "400px",
+              aspectRatio: "16/9"
             }} />
             </div>
           </div>
