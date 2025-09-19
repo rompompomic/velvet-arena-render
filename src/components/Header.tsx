@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Button } from "@/components/ui/button";
 
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -8,24 +9,17 @@ const Header = () => {
   const toggleSection = (key: string) =>
     setOpenSection((cur) => (cur === key ? null : key));
 
+  // Блокируем скролл фона, когда открыт фуллскрин-меню
   useEffect(() => {
-    document.body.style.overflow = mobileOpen ? "hidden" : "";
+    if (mobileOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
     return () => {
       document.body.style.overflow = "";
     };
   }, [mobileOpen]);
-
-  // underline helpers
-  const linkUnderline =
-    "relative inline-flex items-center text-[15px] font-medium text-text/90 hover:text-[var(--primary)] " +
-    "after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-[var(--primary)] " +
-    "after:transition-[width] after:duration-200 hover:after:w-full focus-visible:after:w-full focus-visible:outline-none";
-
-  const subLinkUnderline =
-    "relative block px-3 py-2 text-sm text-text/90 hover:text-[var(--primary)] hover:bg-[var(--light)] " +
-    "first:rounded-t-md last:rounded-b-md " +
-    "after:content-[''] after:absolute after:left-3 after:bottom-1 after:h-[2px] after:w-0 after:bg-[var(--primary)] " +
-    "after:transition-[width] after:duration-200 hover:after:w-[calc(100%-1.5rem)]";
 
   const mainNavigation = [
     {
@@ -55,7 +49,6 @@ const Header = () => {
         { name: "Jauno jātnieku skola", href: "/lv/galerija/jauno-jatnieku-skola/" },
       ],
     },
-    { key: "pasakumi", name: "Pasākumi", href: "/lv/pasakumi/" },
     { key: "par", name: "Par mums", href: "/lv/par-mums/" },
     { key: "kontakti", name: "Kontakti", href: "/lv/kontakti/" },
   ];
@@ -66,10 +59,14 @@ const Header = () => {
     { code: "RU", active: false, href: "/ru/" },
   ];
 
+  // Общие utility-классы для анимации подчёркивания
+  const underlineAnim =
+    "relative after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:bg-[var(--primary)] after:w-0 hover:after:w-full after:transition-all after:duration-200 after:content-['']";
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-neutral-200">
       <div className="w-full">
-        {/* Top utility bar (desktop) */}
+        {/* ===== Top utility bar (hidden on mobile) ===== */}
         <div className="border-b border-neutral-200 hidden md:block">
           <div className="container mx-auto max-w-7xl px-4">
             <div className="flex items-center justify-between py-1.5">
@@ -77,9 +74,14 @@ const Header = () => {
                 {languages.map((l, i) => (
                   <span key={l.code} className="flex items-center">
                     {l.active ? (
-                      <span className="font-semibold text-[var(--primary)]">{l.code}</span>
+                      <span className={`font-semibold text-[var(--primary)] ${underlineAnim}`}>
+                        {l.code}
+                      </span>
                     ) : (
-                      <a href={l.href} className="text-text/70 hover:text-[var(--primary)] transition-colors">
+                      <a
+                        href={l.href}
+                        className={`text-text/70 hover:text-[var(--primary)] transition-colors ${underlineAnim}`}
+                      >
                         {l.code}
                       </a>
                     )}
@@ -95,7 +97,10 @@ const Header = () => {
                   </svg>
                   +37128677177
                 </span>
-                <a href="mailto:info@latvianhorses.lv" className="flex items-center gap-1 hover:text-[var(--primary)] transition-colors">
+                <a
+                  href="mailto:info@latvianhorses.lv"
+                  className={`flex items-center gap-1 hover:text-[var(--primary)] transition-colors ${underlineAnim}`}
+                >
                   <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
@@ -106,7 +111,7 @@ const Header = () => {
           </div>
         </div>
 
-        {/* Main bar (desktop) */}
+        {/* ===== Main bar (desktop) ===== */}
         <div className="container mx-auto max-w-7xl px-4">
           <div className="hidden md:grid grid-cols-3 items-center py-4 md:py-5">
             <div className="flex items-center">
@@ -118,32 +123,39 @@ const Header = () => {
               </a>
             </div>
 
-            {/* центр */}
             <nav className="hidden lg:flex justify-center">
-              <ul className="flex items-center gap-6">
+              <ul className="flex items-center lg:gap-4 xl:gap-6 flex-nowrap overflow-x-visible">
                 {mainNavigation.map((item) =>
                   item.hasDropdown ? (
-                    <li key={item.key} className="relative group">
-                      {/* кнопка с подчёркиванием */}
-                      <button className={`${linkUnderline} gap-1`}>
+                    <li key={item.key} className="relative group shrink-0">
+                      <button
+                        className={`text-[15px] text-text/90 hover:text-[var(--primary)] font-medium flex items-center gap-1 whitespace-nowrap ${underlineAnim}`}
+                        aria-haspopup="menu"
+                        aria-expanded="false"
+                      >
                         {item.name}
                         <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                         </svg>
                       </button>
-
-                      {/* dropdown */}
                       <div className="absolute left-0 top-full mt-2 w-56 rounded-md border border-neutral-200 bg-white shadow-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150">
                         {item.subItems?.map((sub) => (
-                          <a key={sub.name} href={sub.href} className={subLinkUnderline}>
+                          <a
+                            key={sub.name}
+                            href={sub.href}
+                            className={`block px-3 py-2 text-sm text-text/90 hover:text-[var(--primary)] hover:bg-[var(--light)] first:rounded-t-md last:rounded-b-md whitespace-nowrap ${underlineAnim}`}
+                          >
                             {sub.name}
                           </a>
                         ))}
                       </div>
                     </li>
                   ) : (
-                    <li key={item.key}>
-                      <a href={item.href} className={linkUnderline}>
+                    <li key={item.key} className="shrink-0">
+                      <a
+                        href={item.href}
+                        className={`text-[15px] text-text/90 hover:text-[var(--primary)] font-medium whitespace-nowrap ${underlineAnim}`}
+                      >
                         {item.name}
                       </a>
                     </li>
@@ -152,19 +164,25 @@ const Header = () => {
               </ul>
             </nav>
 
-            {/* справа */}
             <div className="hidden md:flex items-center justify-end gap-4 whitespace-nowrap">
               <div className="flex items-center h-8">
                 <span className="text-lg md:text-xl font-semibold text-muted-foreground leading-none whitespace-nowrap">
                   Main Sponsor
                 </span>
               </div>
+
+              <a
+                href="/lv/pasakumi/"
+                className={`inline-flex items-center rounded-md px-4 py-2 text-sm md:text-[15px] font-semibold text-white bg-[var(--primary)] hover:bg-[var(--primary-700)] transition-colors whitespace-nowrap ${underlineAnim}`}
+              >
+                Pasākumi
+              </a>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Mobile top row */}
+      {/* ===== Mobile top row (burger) ===== */}
       <div className="md:hidden container mx-auto max-w-7xl px-4 py-2">
         <div className="flex items-center justify-between">
           <a href="/" className="text-base font-semibold text-[var(--primary)] whitespace-nowrap">
@@ -189,7 +207,7 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Mobile fullscreen menu */}
+      {/* ===== Mobile Fullscreen Menu ===== */}
       <div
         className={`md:hidden fixed inset-0 z-[60] bg-white transition-opacity duration-200 ${
           mobileOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
@@ -197,6 +215,7 @@ const Header = () => {
         role="dialog"
         aria-modal="true"
       >
+        {/* Header inside fullscreen panel */}
         <div className="flex items-center justify-between px-4 py-3 border-b border-neutral-200">
           <a href="/" className="text-base font-semibold text-[var(--primary)]" onClick={() => setMobileOpen(false)}>
             Latvian Horses
@@ -208,17 +227,18 @@ const Header = () => {
           </button>
         </div>
 
+        {/* Scrollable content */}
         <div className="h-[calc(100vh-56px)] overflow-y-auto px-2 py-2">
           <nav className="divide-y divide-neutral-200">
             {mainNavigation.map((item) =>
               item.hasDropdown ? (
                 <div key={item.key} className="py-1">
                   <button
-                    className="w-full flex items-center justify-between px-2 py-3 text-[15px] font-medium text-text/90 hover:text-[var(--primary)]"
+                    className={`w-full flex items-center justify-between px-2 py-3 text-[15px] font-medium text-text/90 hover:text-[var(--primary)] ${underlineAnim}`}
                     onClick={() => toggleSection(item.key)}
                     aria-expanded={openSection === item.key}
                   >
-                    <span>{item.name}</span>
+                    <span className="whitespace-nowrap">{item.name}</span>
                     <svg
                       className={`w-4 h-4 transition-transform ${openSection === item.key ? "rotate-180" : ""}`}
                       fill="none"
@@ -228,6 +248,8 @@ const Header = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                     </svg>
                   </button>
+
+                  {/* Subitems */}
                   <div
                     className={`grid transition-[grid-template-rows] duration-300 ease-in-out px-2 ${
                       openSection === item.key ? "grid-rows-[1fr] pb-2" : "grid-rows-[0fr]"
@@ -240,7 +262,7 @@ const Header = () => {
                             <a
                               href={sub.href}
                               onClick={() => setMobileOpen(false)}
-                              className="block px-3 py-2 text-sm text-text/90 rounded-md hover:bg-[var(--light)] hover:text-[var(--primary)]"
+                              className={`block px-3 py-2 text-sm text-text/90 rounded-md hover:bg-[var(--light)] hover:text-[var(--primary)] whitespace-nowrap ${underlineAnim}`}
                             >
                               {sub.name}
                             </a>
@@ -255,7 +277,7 @@ const Header = () => {
                   key={item.key}
                   href={item.href}
                   onClick={() => setMobileOpen(false)}
-                  className="block px-2 py-3 text-[15px] font-medium text-text/90 hover:text-[var(--primary)]"
+                  className={`block px-2 py-3 text-[15px] font-medium text-text/90 hover:text-[var(--primary)] whitespace-nowrap ${underlineAnim}`}
                 >
                   {item.name}
                 </a>
@@ -263,22 +285,26 @@ const Header = () => {
             )}
           </nav>
 
+          {/* Divider */}
           <div className="my-3 border-t border-neutral-200" />
 
-          {/* Languages */}
+          {/* Languages (mobile) */}
           <div className="px-2 py-2">
             <div className="text-xs uppercase tracking-wide text-text/50 mb-2">VALODAS</div>
             <div className="flex items-center gap-2">
               {languages.map((l) =>
                 l.active ? (
-                  <span key={l.code} className="px-2 py-1 text-xs rounded-md bg-[var(--primary-50)] text-[var(--primary)] font-semibold">
+                  <span
+                    key={l.code}
+                    className={`px-2 py-1 text-xs rounded-md bg-[var(--primary-50)] text-[var(--primary)] font-semibold ${underlineAnim}`}
+                  >
                     {l.code}
                   </span>
                 ) : (
                   <a
                     key={l.code}
                     href={l.href}
-                    className="px-2 py-1 text-xs rounded-md hover:bg-[var(--light)]"
+                    className={`px-2 py-1 text-xs rounded-md hover:bg-[var(--light)] ${underlineAnim}`}
                     onClick={() => setMobileOpen(false)}
                   >
                     {l.code}
@@ -288,17 +314,25 @@ const Header = () => {
             </div>
           </div>
 
-          {/* Contacts */}
+          {/* Contacts (mobile) */}
           <div className="px-2 py-2">
             <div className="text-xs uppercase tracking-wide text-text/50 mb-2">KONTAKTI</div>
             <div className="space-y-2 text-[15px]">
-              <a href="tel:+37128677177" className="flex items-center gap-2 hover:text-[var(--primary)]" onClick={() => setMobileOpen(false)}>
+              <a
+                href="tel:+37128677177"
+                className={`flex items-center gap-2 hover:text-[var(--primary)] ${underlineAnim}`}
+                onClick={() => setMobileOpen(false)}
+              >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h2.6a1 1 0 01.95.69l1.2 3.6a1 1 0 01-.51 1.2l-1.6.8a12 12 0 006.32 6.32l.8-1.6a1 1 0 011.2-.51l3.6 1.2a1 1 0 01.69.95V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
                 +37128677177
               </a>
-              <a href="mailto:info@latvianhorses.lv" className="flex items-center gap-2 hover:text-[var(--primary)]" onClick={() => setMobileOpen(false)}>
+              <a
+                href="mailto:info@latvianhorses.lv"
+                className={`flex items-center gap-2 hover:text-[var(--primary)] ${underlineAnim}`}
+                onClick={() => setMobileOpen(false)}
+              >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
@@ -307,12 +341,33 @@ const Header = () => {
             </div>
           </div>
 
+          {/* ==== MAIN SPONSOR (mobile only) ==== */}
+          <div className="px-2 pt-4 pb-2">
+            <div className="text-xs uppercase tracking-wide text-text/50 mb-2">GALVENAIS SPONSORS</div>
+            <a
+              href="https://example.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`flex items-center gap-3 rounded-md border border-neutral-200 bg-[var(--light)] px-3 py-3 hover:bg-[var(--primary-50)] transition-colors ${underlineAnim}`}
+            >
+              <div className="flex-shrink-0">
+                <div className="h-8 w-20 rounded bg-white border border-neutral-200 flex items-center justify-center text-[10px] text-text/60">
+                  LOGO
+                </div>
+              </div>
+              <div className="min-w-0">
+                <div className="text-sm font-semibold text-text truncate">Main Sponsor</div>
+                <div className="text-xs text-text/60 truncate">Atbalsta Latvian Horses</div>
+              </div>
+            </a>
+          </div>
+
           {/* CTA */}
           <div className="px-2 py-4">
             <a
               href="/lv/pasakumi/"
               onClick={() => setMobileOpen(false)}
-              className="inline-flex w-full items-center justify-center rounded-md px-4 py-3 font-semibold text-white bg-[var(--primary)] hover:bg-[var(--primary-700)] transition-colors"
+              className={`inline-flex w-full items-center justify-center rounded-md px-4 py-3 font-semibold text-white bg-[var(--primary)] hover:bg-[var(--primary-700)] transition-colors ${underlineAnim}`}
             >
               Pasākumi
             </a>
