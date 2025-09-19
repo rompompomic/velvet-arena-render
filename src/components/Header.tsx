@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 
 const Header = () => {
@@ -8,6 +8,18 @@ const Header = () => {
   const toggleMobile = () => setMobileOpen((v) => !v);
   const toggleSection = (key: string) =>
     setOpenSection((cur) => (cur === key ? null : key));
+
+  // Блокируем скролл фона, когда открыт фуллскрин-меню
+  useEffect(() => {
+    if (mobileOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileOpen]);
 
   const mainNavigation = [
     {
@@ -154,7 +166,7 @@ const Header = () => {
         </div>
       </div>
 
-      {/* ===== Mobile row ===== */}
+      {/* ===== Mobile top row (burger) ===== */}
       <div className="md:hidden container mx-auto max-w-7xl px-4 py-2">
         <div className="flex items-center justify-between">
           <a href="/" className="text-base font-semibold text-[var(--primary)] whitespace-nowrap">
@@ -179,21 +191,19 @@ const Header = () => {
         </div>
       </div>
 
-      {/* ===== Mobile Drawer + Overlay ===== */}
+      {/* ===== Mobile Fullscreen Menu ===== */}
       <div
-        className={`md:hidden fixed inset-0 z-[49] bg-black/40 backdrop-blur-[1px] transition-opacity ${mobileOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
-        onClick={() => setMobileOpen(false)}
-      />
-      <aside
-        className={`md:hidden fixed top-0 right-0 h-screen w-[88%] max-w-[360px] z-[50] bg-white border-l border-neutral-200 shadow-[0_6px_16px_rgba(0,0,0,0.08)] transition-transform duration-300 ${
-          mobileOpen ? "translate-x-0" : "translate-x-full"
+        className={`md:hidden fixed inset-0 z-[60] bg-white transition-opacity duration-200 ${
+          mobileOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
         role="dialog"
         aria-modal="true"
       >
-        {/* Drawer header */}
+        {/* Header inside fullscreen panel */}
         <div className="flex items-center justify-between px-4 py-3 border-b border-neutral-200">
-          <a href="/" className="text-base font-semibold text-[var(--primary)]">Latvian Horses</a>
+          <a href="/" className="text-base font-semibold text-[var(--primary)]" onClick={() => setMobileOpen(false)}>
+            Latvian Horses
+          </a>
           <button className="p-2 text-text/80" aria-label="Close menu" onClick={toggleMobile}>
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -201,8 +211,8 @@ const Header = () => {
           </button>
         </div>
 
-        {/* Drawer content */}
-        <div className="px-2 py-2 overflow-y-auto">
+        {/* Scrollable content */}
+        <div className="h-[calc(100vh-56px)] overflow-y-auto px-2 py-2">
           <nav className="divide-y divide-neutral-200">
             {mainNavigation.map((item) =>
               item.hasDropdown ? (
@@ -289,13 +299,13 @@ const Header = () => {
           <div className="px-2 py-2">
             <div className="text-xs uppercase tracking-wide text-text/50 mb-2">KONTAKTI</div>
             <div className="space-y-2 text-[15px]">
-              <a href="tel:+37128677177" className="flex items-center gap-2 hover:text-[var(--primary)]">
+              <a href="tel:+37128677177" className="flex items-center gap-2 hover:text-[var(--primary)]" onClick={() => setMobileOpen(false)}>
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h2.6a1 1 0 01.95.69l1.2 3.6a1 1 0 01-.51 1.2l-1.6.8a12 12 0 006.32 6.32l.8-1.6a1 1 0 011.2-.51l3.6 1.2a1 1 0 01.69.95V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
                 +37128677177
               </a>
-              <a href="mailto:info@latvianhorses.lv" className="flex items-center gap-2 hover:text-[var(--primary)]">
+              <a href="mailto:info@latvianhorses.lv" className="flex items-center gap-2 hover:text-[var(--primary)]" onClick={() => setMobileOpen(false)}>
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
@@ -307,34 +317,25 @@ const Header = () => {
           {/* ==== MAIN SPONSOR (mobile only) ==== */}
           <div className="px-2 pt-4 pb-2">
             <div className="text-xs uppercase tracking-wide text-text/50 mb-2">GALVENAIS SPONSORS</div>
-
-            {/* Карточка спонсора — замени href и src на реальные */}
             <a
-              href="https://example.com" // ← ссылка на спонсора
+              href="https://example.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-3 rounded-md border border-neutral-200 bg-[var(--light)]
-                         px-3 py-3 hover:bg-[var(--primary-50)] transition-colors"
+              className="flex items-center gap-3 rounded-md border border-neutral-200 bg-[var(--light)] px-3 py-3 hover:bg-[var(--primary-50)] transition-colors"
             >
-              {/* Лого спонсора */}
               <div className="flex-shrink-0">
-                {/* если есть логотип, замени блок ниже на <img src="/sponsor/main.svg" alt="Main Sponsor" className="h-8 w-auto" /> */}
                 <div className="h-8 w-20 rounded bg-white border border-neutral-200 flex items-center justify-center text-[10px] text-text/60">
                   LOGO
                 </div>
               </div>
-
-              {/* Текст */}
               <div className="min-w-0">
                 <div className="text-sm font-semibold text-text truncate">Main Sponsor</div>
-                <div className="text-xs text-text/60 truncate">
-                  Atbalsta Latvian Horses
-                </div>
+                <div className="text-xs text-text/60 truncate">Atbalsta Latvian Horses</div>
               </div>
             </a>
           </div>
 
-          {/* CTA in drawer */}
+          {/* CTA */}
           <div className="px-2 py-4">
             <a
               href="/lv/pasakumi/"
@@ -345,7 +346,7 @@ const Header = () => {
             </a>
           </div>
         </div>
-      </aside>
+      </div>
     </header>
   );
 };
