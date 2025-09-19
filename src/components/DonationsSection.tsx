@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import donateHorse from "@/assets/DonateHorse.png"; // 16:9 иллюстрация
+import donateHorse from "@/assets/donate-horse-new.png"; // 16:9 иллюстрация
 
 const DonateSection: React.FC = () => {
   const presets = [10, 20, 30, 50];
