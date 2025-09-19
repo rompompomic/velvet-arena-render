@@ -33,28 +33,38 @@ const Footer = () => {
                 </p>
               </div>
               <div className="space-y-3">
-                <div className="flex items-center gap-3">
+                <a
+                  href="tel:+37128677177"
+                  className="flex items-center gap-3 text-white/90 hover:text-white transition-colors"
+                >
+                  {/* NEW phone icon */}
                   <svg
-                    className="w-5 h-5 text-primary-50"
+                    className="w-5 h-5 text-[hsl(var(--primary-50))]"
                     fill="none"
-                    stroke="currentColor"
                     viewBox="0 0 24 24"
+                    aria-hidden="true"
                   >
                     <path
+                      stroke="currentColor"
+                      strokeWidth="1.5"
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21L6.16 10.928c-.67.359-1.006 1.121-.839 1.876.147.667.505 1.297 1.068 1.86s1.193.92 1.86 1.068c.755.167 1.517-.169 1.876-.839l1.541-4.064a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.948V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                      d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25A2.25 2.25 0 0021.75 19.5v-1.5a1.5 1.5 0 00-1.5-1.5h-3.372a1.5 1.5 0 00-1.342.83l-.982 1.964a.75.75 0 01-1.073.335 12.035 12.035 0 01-5.35-5.35.75.75 0 01.335-1.073l1.964-.982a1.5 1.5 0 00.83-1.342V4.5a1.5 1.5 0 00-1.5-1.5H6.75A2.25 2.25 0 004.5 5.25v1.5z"
                     />
                   </svg>
-                  <span className="text-white/90">+37128677177</span>
-                </div>
-                <div className="flex items-center gap-3">
+                  <span>+37128677177</span>
+                </a>
+
+                <a
+                  href="mailto:info@latvianhorses.lv"
+                  className="flex items-center gap-3 text-white/90 hover:text-white transition-colors"
+                >
                   <svg
-                    className="w-5 h-5 text-primary-50"
+                    className="w-5 h-5 text-[hsl(var(--primary-50))]"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
+                    aria-hidden="true"
                   >
                     <path
                       strokeLinecap="round"
@@ -63,14 +73,16 @@ const Footer = () => {
                       d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                     />
                   </svg>
-                  <span className="text-white/90">info@latvianhorses.lv</span>
-                </div>
+                  <span>info@latvianhorses.lv</span>
+                </a>
+
                 <div className="flex items-start gap-3">
                   <svg
-                    className="w-5 h-5 text-primary-50 mt-0.5"
+                    className="w-5 h-5 text-[hsl(var(--primary-50))] mt-0.5"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
+                    aria-hidden="true"
                   >
                     <path
                       strokeLinecap="round"
@@ -135,7 +147,7 @@ const Footer = () => {
               </h4>
               <a
                 href="/lv/davanu-kartes/"
-                className="inline-flex items-center justify-center px-4 py-2 rounded-lg bg-primary text-white font-medium hover:bg-primary-700 transition-colors w-auto mt-1"
+                className="inline-flex items-center justify-center px-4 py-2 rounded-lg bg-[hsl(var(--primary))] text-white font-medium hover:bg-[hsl(var(--primary-700))] transition-colors w-auto mt-1"
               >
                 Pirkt karti
               </a>
@@ -159,28 +171,38 @@ const Footer = () => {
                 </p>
               </div>
               <div className="space-y-3 text-sm">
-                <div className="flex items-center gap-3">
+                <a
+                  href="tel:+37128677177"
+                  className="flex items-center gap-3 text-white/90 hover:text-white transition-colors"
+                >
+                  {/* NEW phone icon */}
                   <svg
-                    className="w-5 h-5 text-primary-50"
+                    className="w-5 h-5 text-[hsl(var(--primary-50))]"
                     fill="none"
-                    stroke="currentColor"
                     viewBox="0 0 24 24"
+                    aria-hidden="true"
                   >
                     <path
+                      stroke="currentColor"
+                      strokeWidth="1.5"
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21L6.16 10.928c-.67.359-1.006 1.121-.839 1.876.147.667.505 1.297 1.068 1.86s1.193.92 1.86 1.068c.755.167 1.517-.169 1.876-.839l1.541-4.064a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.948V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                      d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25A2.25 2.25 0 0021.75 19.5v-1.5a1.5 1.5 0 00-1.5-1.5h-3.372a1.5 1.5 0 00-1.342.83l-.982 1.964a.75.75 0 01-1.073.335 12.035 12.035 0 01-5.35-5.35.75.75 0 01.335-1.073l1.964-.982a1.5 1.5 0 00.83-1.342V4.5a1.5 1.5 0 00-1.5-1.5H6.75A2.25 2.25 0 004.5 5.25v1.5z"
                     />
                   </svg>
-                  <span className="text-white/90">+37128677177</span>
-                </div>
-                <div className="flex items-center gap-3">
+                  <span>+37128677177</span>
+                </a>
+
+                <a
+                  href="mailto:info@latvianhorses.lv"
+                  className="flex items-center gap-3 text-white/90 hover:text-white transition-colors"
+                >
                   <svg
-                    className="w-5 h-5 text-primary-50"
+                    className="w-5 h-5 text-[hsl(var(--primary-50))]"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
+                    aria-hidden="true"
                   >
                     <path
                       strokeLinecap="round"
@@ -189,14 +211,16 @@ const Footer = () => {
                       d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                     />
                   </svg>
-                  <span className="text-white/90">info@latvianhorses.lv</span>
-                </div>
+                  <span>info@latvianhorses.lv</span>
+                </a>
+
                 <div className="flex items-start gap-3">
                   <svg
-                    className="w-5 h-5 text-primary-50 mt-0.5"
+                    className="w-5 h-5 text-[hsl(var(--primary-50))] mt-0.5"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
+                    aria-hidden="true"
                   >
                     <path
                       strokeLinecap="round"
@@ -263,8 +287,8 @@ const Footer = () => {
                 href="/lv/davanu-kartes/"
                 className="inline-flex justify-center
                            w-auto min-w-[170px] px-5 py-2.5
-                           bg-primary rounded-lg text-white font-medium
-                           hover:bg-primary-700 transition-colors whitespace-nowrap mt-1"
+                           bg-[hsl(var(--primary))] rounded-lg text-white font-medium
+                           hover:bg-[hsl(var(--primary-700))] transition-colors whitespace-nowrap mt-1"
               >
                 Pirkt karti
               </a>
