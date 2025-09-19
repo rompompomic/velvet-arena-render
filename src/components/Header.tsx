@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Button } from "@/components/ui/button";
 
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -9,16 +8,10 @@ const Header = () => {
   const toggleSection = (key: string) =>
     setOpenSection((cur) => (cur === key ? null : key));
 
-  // Блокируем скролл фона, когда открыт фуллскрин-меню
   useEffect(() => {
-    if (mobileOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-    return () => {
-      document.body.style.overflow = "";
-    };
+    if (mobileOpen) document.body.style.overflow = "hidden";
+    else document.body.style.overflow = "";
+    return () => { document.body.style.overflow = ""; };
   }, [mobileOpen]);
 
   const mainNavigation = [
@@ -49,6 +42,7 @@ const Header = () => {
         { name: "Jauno jātnieku skola", href: "/lv/galerija/jauno-jatnieku-skola/" },
       ],
     },
+    { key: "pasakumi", name: "Pasākumi", href: "/lv/pasakumi/" }, // ← добавили сюда
     { key: "par", name: "Par mums", href: "/lv/par-mums/" },
     { key: "kontakti", name: "Kontakti", href: "/lv/kontakti/" },
   ];
@@ -62,7 +56,7 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-neutral-200">
       <div className="w-full">
-        {/* ===== Top utility bar (hidden on mobile) ===== */}
+        {/* Top utility bar (desktop) */}
         <div className="border-b border-neutral-200 hidden md:block">
           <div className="container mx-auto max-w-7xl px-4">
             <div className="flex items-center justify-between py-1.5">
@@ -99,7 +93,7 @@ const Header = () => {
           </div>
         </div>
 
-        {/* ===== Main bar (desktop) ===== */}
+        {/* Main bar (desktop) */}
         <div className="container mx-auto max-w-7xl px-4">
           <div className="hidden md:grid grid-cols-3 items-center py-4 md:py-5">
             <div className="flex items-center">
@@ -111,6 +105,7 @@ const Header = () => {
               </a>
             </div>
 
+            {/* центр: все ссылки, включая Pasākumi */}
             <nav className="hidden lg:flex justify-center">
               <ul className="flex items-center gap-6">
                 {mainNavigation.map((item) =>
@@ -148,25 +143,19 @@ const Header = () => {
               </ul>
             </nav>
 
+            {/* справа: без красной кнопки Pasākumi */}
             <div className="hidden md:flex items-center justify-end gap-4 whitespace-nowrap">
               <div className="flex items-center h-8">
                 <span className="text-lg md:text-xl font-semibold text-muted-foreground leading-none whitespace-nowrap">
                   Main Sponsor
                 </span>
               </div>
-
-              <a
-                href="/lv/pasakumi/"
-                className="inline-flex items-center rounded-md px-4 py-2 text-sm md:text-[15px] font-semibold text-white bg-[var(--primary)] hover:bg-[var(--primary-700)] transition-colors whitespace-nowrap"
-              >
-                Pasākumi
-              </a>
             </div>
           </div>
         </div>
       </div>
 
-      {/* ===== Mobile top row (burger) ===== */}
+      {/* Mobile top row (burger) */}
       <div className="md:hidden container mx-auto max-w-7xl px-4 py-2">
         <div className="flex items-center justify-between">
           <a href="/" className="text-base font-semibold text-[var(--primary)] whitespace-nowrap">
@@ -191,7 +180,7 @@ const Header = () => {
         </div>
       </div>
 
-      {/* ===== Mobile Fullscreen Menu ===== */}
+      {/* Mobile Fullscreen Menu */}
       <div
         className={`md:hidden fixed inset-0 z-[60] bg-white transition-opacity duration-200 ${
           mobileOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
@@ -199,7 +188,6 @@ const Header = () => {
         role="dialog"
         aria-modal="true"
       >
-        {/* Header inside fullscreen panel */}
         <div className="flex items-center justify-between px-4 py-3 border-b border-neutral-200">
           <a href="/" className="text-base font-semibold text-[var(--primary)]" onClick={() => setMobileOpen(false)}>
             Latvian Horses
@@ -211,7 +199,6 @@ const Header = () => {
           </button>
         </div>
 
-        {/* Scrollable content */}
         <div className="h-[calc(100vh-56px)] overflow-y-auto px-2 py-2">
           <nav className="divide-y divide-neutral-200">
             {mainNavigation.map((item) =>
@@ -232,8 +219,6 @@ const Header = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                     </svg>
                   </button>
-
-                  {/* Subitems */}
                   <div
                     className={`grid transition-[grid-template-rows] duration-300 ease-in-out px-2 ${
                       openSection === item.key ? "grid-rows-[1fr] pb-2" : "grid-rows-[0fr]"
@@ -269,7 +254,6 @@ const Header = () => {
             )}
           </nav>
 
-          {/* Divider */}
           <div className="my-3 border-t border-neutral-200" />
 
           {/* Languages (mobile) */}
@@ -314,28 +298,7 @@ const Header = () => {
             </div>
           </div>
 
-          {/* ==== MAIN SPONSOR (mobile only) ==== */}
-          <div className="px-2 pt-4 pb-2">
-            <div className="text-xs uppercase tracking-wide text-text/50 mb-2">GALVENAIS SPONSORS</div>
-            <a
-              href="https://example.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-3 rounded-md border border-neutral-200 bg-[var(--light)] px-3 py-3 hover:bg-[var(--primary-50)] transition-colors"
-            >
-              <div className="flex-shrink-0">
-                <div className="h-8 w-20 rounded bg-white border border-neutral-200 flex items-center justify-center text-[10px] text-text/60">
-                  LOGO
-                </div>
-              </div>
-              <div className="min-w-0">
-                <div className="text-sm font-semibold text-text truncate">Main Sponsor</div>
-                <div className="text-xs text-text/60 truncate">Atbalsta Latvian Horses</div>
-              </div>
-            </a>
-          </div>
-
-          {/* CTA */}
+          {/* CTA (можно оставить общий) */}
           <div className="px-2 py-4">
             <a
               href="/lv/pasakumi/"
