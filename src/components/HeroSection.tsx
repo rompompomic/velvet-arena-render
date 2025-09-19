@@ -28,20 +28,19 @@ const HeroSection = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-3 justify-center items-center pt-8">
-            {/* Основная кнопка — красная */}
             <Button
               asChild
               variant="default"
               className="h-11 px-6 rounded-lg font-semibold
                          bg-[#963026] text-white shadow-md transition-all duration-300
-                         hover:-translate-y-0.5 hover:shadow-xl active:translate-y-0
+                         hover:bg-neutral-900 hover:-translate-y-0.5 hover:shadow-xl active:translate-y-0
                          flex items-center justify-center
                          focus:outline-none focus:ring-2 focus:ring-[#963026]/40"
             >
               <a href="/lv/pakalpojumi/jasanas-trenini/" className="inline-flex items-center gap-2">
                 <span>Pieteikties treniņiem</span>
                 <svg
-                  className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
+                  className="w-5 h-5 transition-transform duration-300 hover:translate-x-1"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -50,8 +49,7 @@ const HeroSection = () => {
                 </svg>
               </a>
             </Button>
-          
-            {/* Вторая кнопка — черная */}
+
             <Button
               asChild
               variant="default"
@@ -64,7 +62,7 @@ const HeroSection = () => {
               <a href="/lv/pasakumi/" className="inline-flex items-center gap-2">
                 <span>Skatīt pasākumus</span>
                 <svg
-                  className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
+                  className="w-5 h-5 transition-transform duration-300 hover:translate-x-1"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
