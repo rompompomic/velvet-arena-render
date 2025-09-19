@@ -88,7 +88,7 @@ const Footer = () => {
             {/* 4 - Gift card (mobile/tablet) — слева, компактно */}
             <div className="min-w-0">
               <h4 className="text-base font-semibold mb-3 whitespace-nowrap">Dāvanu kartes</h4>
-              <a href="/lv/davanu-kartes/" className="inline-flex items-center justify-center px-4 py-2 rounded-lg bg-primary text-white font-medium hover:bg-primary-700 transition-colors w-auto -top-1.5">
+              <a href="/lv/davanu-kartes/" className="inline-flex items-center justify-center px-4 py-2 rounded-lg bg-primary text-white font-medium hover:bg-primary-700 transition-colors w-auto -bottom-1 -bottom-1 ">
                 Pirkt karti
               </a>
               <p className="text-sm text-white/70 mt-2">Derīga 12 mēnešus • Elektroniska piegāde</p>
