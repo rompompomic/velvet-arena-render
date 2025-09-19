@@ -44,14 +44,16 @@ const DonateSection: React.FC = () => {
         </div>
 
         {/* Main Content - Image + Form */}
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center lg:items-start">
+        <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-start">
           {/* Horse Image */}
-          <div className="w-full lg:w-1/2 flex justify-center">
+          <div className="w-full lg:w-1/2 lg:-ml-2">
             <div className="relative max-w-md w-full">
-              <img src={donateHorse} alt="Beautiful brown horse in a field - Support Latvian Horses" className="w-full h-auto rounded-[12px] shadow-lg object-cover" style={{
-              maxHeight: "500px",
-              aspectRatio: "4/5"
-            }} />
+              <img
+                src={donateHorse}
+                alt="Beautiful brown horse in a field - Support Latvian Horses"
+                className="w-full h-auto rounded-[12px] shadow-lg object-cover"
+                style={{ maxHeight: "500px", aspectRatio: "4/5" }}
+              />
             </div>
           </div>
 
