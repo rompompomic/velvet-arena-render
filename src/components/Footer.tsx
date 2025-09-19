@@ -14,6 +14,57 @@ const Footer = () => {
     { name: "Drošības noteikumi", href: "/lv/drosibu-noteikumi/" },
   ];
 
+  const socialLinks = [
+    {
+      name: "Facebook",
+      href: "https://facebook.com/latvianhorses",
+      icon: (
+        <svg viewBox="0 0 24 24" aria-hidden="true" className="w-5 h-5">
+          <path
+            fill="currentColor"
+            d="M22 12.07C22 6.48 17.52 2 11.93 2 6.35 2 1.86 6.48 1.86 12.07c0 5.02 3.66 9.18 8.44 10.02v-7.09H7.9v-2.93h2.4V9.86c0-2.37 1.41-3.68 3.57-3.68 1.03 0 2.1.18 2.1.18v2.32h-1.18c-1.17 0-1.54.73-1.54 1.48v1.78h2.62l-.42 2.93h-2.2v7.09C18.34 21.25 22 17.09 22 12.07Z"
+          />
+        </svg>
+      ),
+    },
+    {
+      name: "X",
+      href: "https://x.com/latvianhorses",
+      icon: (
+        <svg viewBox="0 0 24 24" aria-hidden="true" className="w-5 h-5">
+          <path
+            fill="currentColor"
+            d="M18.244 2h3.223l-7.03 8.03L22 22h-5.93l-4.64-6.058L6.06 22H2.835l7.53-8.596L2 2h6.07l4.196 5.59L18.244 2Zm-2.08 18.03h1.786L7.91 3.89H6.02l10.144 16.14Z"
+          />
+        </svg>
+      ),
+    },
+    {
+      name: "Instagram",
+      href: "https://instagram.com/latvianhorses",
+      icon: (
+        <svg viewBox="0 0 24 24" aria-hidden="true" className="w-5 h-5">
+          <path
+            fill="currentColor"
+            d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 3a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2.2a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6ZM18 6.5a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0Z"
+          />
+        </svg>
+      ),
+    },
+    {
+      name: "TikTok",
+      href: "https://tiktok.com/@latvianhorses",
+      icon: (
+        <svg viewBox="0 0 24 24" aria-hidden="true" className="w-5 h-5">
+          <path
+            fill="currentColor"
+            d="M12.8 2h2.6c.3 1.6 1.4 3.06 2.9 3.86A7 7 0 0 0 21 6.4v2.6a8.4 8.4 0 0 1-4.3-1.3 8.7 8.7 0 0 1-1.3-1v7.9a6.6 6.6 0 1 1-6.6-6.6c.3 0 .6 0 .9.1v2.7a3.9 3.9 0 1 0 2.1 3.4V2Z"
+          />
+        </svg>
+      ),
+    },
+  ];
+
   return (
     <footer className="bg-text text-white">
       <div className="container mx-auto px-4 max-w-7xl">
@@ -37,20 +88,16 @@ const Footer = () => {
                   href="tel:+37128677177"
                   className="flex items-center gap-3 text-white/90 hover:text-white transition-colors"
                 >
-                  {/* NEW phone icon */}
                   <svg
                     className="w-5 h-5 text-[hsl(var(--primary-50))]"
                     fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                     viewBox="0 0 24 24"
-                    aria-hidden="true"
                   >
-                    <path
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25A2.25 2.25 0 0021.75 19.5v-1.5a1.5 1.5 0 00-1.5-1.5h-3.372a1.5 1.5 0 00-1.342.83l-.982 1.964a.75.75 0 01-1.073.335 12.035 12.035 0 01-5.35-5.35.75.75 0 01.335-1.073l1.964-.982a1.5 1.5 0 00.83-1.342V4.5a1.5 1.5 0 00-1.5-1.5H6.75A2.25 2.25 0 004.5 5.25v1.5z"
-                    />
+                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.08 4.18 2 2 0 014.06 2h3a2 2 0 012 1.72c.12.81.37 1.6.72 2.34a2 2 0 01-.45 2.18L8.09 9.91a16 16 0 006 6l1.67-1.24a2 2 0 012.18-.45c.74.35 1.53.6 2.34.72a2 2 0 011.72 1.98z" />
                   </svg>
                   <span>+37128677177</span>
                 </a>
@@ -184,7 +231,7 @@ const Footer = () => {
                     strokeLinejoin="round"
                     viewBox="0 0 24 24"
                   >
-                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.08 4.18 2 2 0 014.06 2h3a2 2 0 012 1.72c.12.81.37 1.6.72 2.34a2 2 0 01-.45 2.18L8.09 9.91a16 16 0 006 6l1.67-1.24a2 2 0 012.18-.45c.74.35 1.53.6 2.34.72a2 2 0 011.72 1.98z" />
+                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.08 4.18 2 2 0 014.06 2h3a2 2 0 012 1.72c.12.81.37 1.6.72 2.34a2 2 0 01-.45 2.18L8.09 9.91a16 16 0 0 0 6 6l1.67-1.24a2 2 0 0 1 2.18-.45c.74.35 1.53.6 2.34.72a2 2 0 0 1 1.72 1.98z" />
                   </svg>
                   <span>+37128677177</span>
                 </a>
@@ -300,7 +347,22 @@ const Footer = () => {
             <p className="text-white/70 text-sm">
               © 2025 Latvian Horses. Visas tiesības aizsargātas.
             </p>
-            <div className="flex items-center gap-6">{/* соц. иконки */}</div>
+
+            {/* Соцсети */}
+            <div className="flex items-center gap-6">
+              {socialLinks.map((s) => (
+                <a
+                  key={s.name}
+                  href={s.href}
+                  aria-label={s.name}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/70 hover:text-[hsl(var(--primary))] transition-colors transform hover:scale-110"
+                >
+                  {s.icon}
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </div>
