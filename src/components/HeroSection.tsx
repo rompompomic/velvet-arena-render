@@ -28,7 +28,7 @@ const HeroSection = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-3 justify-center items-center pt-8">
-            {/* Красная кнопка */}
+            {/* Основная кнопка — красная */}
             <Button
               asChild
               variant="default"
@@ -51,7 +51,7 @@ const HeroSection = () => {
               </a>
             </Button>
           
-            {/* Черная кнопка — без shine и без перелива */}
+            {/* Вторая кнопка — черная */}
             <Button
               asChild
               variant="default"
@@ -64,7 +64,7 @@ const HeroSection = () => {
               <a href="/lv/pasakumi/" className="inline-flex items-center gap-2">
                 <span>Skatīt pasākumus</span>
                 <svg
-                  className="w-5 h-5"   {/* убран translate-x hover */}
+                  className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
