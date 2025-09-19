@@ -141,19 +141,13 @@ const DonateSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-stretch">
           {/* Иллюстрация слева — центрируем и бордер по размеру картинки */}
           <div
-            className="w-full h-full rounded-[12px] bg-[var(--light)] shadow-sm overflow-hidden flex items-center justify-center"
-            style={{ border: "1px solid var(--neutral-200)" }}
+            className="w-full h-full lg:min-h-[360px] bg-[var(--light)] flex items-center justify-center rounded-[12px] shadow-sm"
           >
-            {/* ВАЖНО: бордер на изображении, чтобы совпадал с его реальным размером */}
             <img
               src={donateHorse}
               alt="Ziedojums zirgiem — dāvanu tēma"
-              className="max-w-full max-h-full object-contain rounded-[12px]"
-              style={{
-                border: "1px solid var(--neutral-200)",
-                // убираем растягивание: покажем картинку не больше контейнера
-                // и держим её по центру за счёт flex на родителе
-              }}
+              className="max-w-full max-h-full object-contain block rounded-[12px]"
+              style={{ border: "1px solid var(--neutral-200)" }}
             />
           </div>
 
