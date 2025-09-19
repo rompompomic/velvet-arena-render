@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import donateHorse from "@/assets/donate-horse.png";
 
 const DonateSection: React.FC = () => {
   const presets = [10, 20, 30, 50];
@@ -34,9 +35,9 @@ const DonateSection: React.FC = () => {
         } as React.CSSProperties
       }
     >
-      <div className="container mx-auto px-4 max-w-3xl">
+      <div className="container mx-auto px-4 max-w-6xl">
         {/* Заголовок */}
-        <div className="text-center mb-8">
+        <div className="text-center mb-12">
           <h2
             className="mb-2"
             style={{
@@ -55,14 +56,32 @@ const DonateSection: React.FC = () => {
           </p>
         </div>
 
-        {/* Карточка / Форма */}
-        <div
-          className="bg-[var(--bg)] border rounded-[12px] p-6"
-          style={{
-            borderColor: "var(--neutral-200)",
-            boxShadow: "var(--shadow-sm)",
-          }}
-        >
+        {/* Main Content - Image + Form */}
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center lg:items-start">
+          {/* Horse Image */}
+          <div className="w-full lg:w-1/2 flex justify-center">
+            <div className="relative max-w-md w-full">
+              <img
+                src={donateHorse}
+                alt="Beautiful brown horse in a field - Support Latvian Horses"
+                className="w-full h-auto rounded-[12px] shadow-lg object-cover"
+                style={{
+                  maxHeight: "500px",
+                  aspectRatio: "4/5",
+                }}
+              />
+            </div>
+          </div>
+
+          {/* Donation Form */}
+          <div className="w-full lg:w-1/2">
+            <div
+              className="bg-[var(--bg)] border rounded-[12px] p-6 lg:p-8"
+              style={{
+                borderColor: "var(--neutral-200)",
+                boxShadow: "var(--shadow-sm)",
+              }}
+            >
           {submitted ? (
             <div className="text-center py-8">
               <div
@@ -233,6 +252,8 @@ const DonateSection: React.FC = () => {
               </p>
             </form>
           )}
+            </div>
+          </div>
         </div>
       </div>
     </section>
