@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latvian Horses - Vieta, kur cilvēki satiekas ar zirgiem</title>
+    <meta name="description" content="Profesionālas apmācības, pasākumi un atpūta dabas tuvumā bērniem un pieaugušajiem. Jāšanas klubs Inčukalnā, Latvijā.">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: { DEFAULT: '#963026', 700: '#7A251F', 50: '#FCECEA' },
+                        accent: { DEFAULT: '#995856', 700: '#7D4647', 50: '#F9F2F2' },
+                        text: '#06030d',
+                        light: '#FAFAFA',
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="min-h-screen bg-white text-text font-sans">
+    <!-- Header with navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white border-b">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <a href="/" class="text-xl font-semibold text-primary">Latvian Horses</a>
+                <button id="mobile-menu-toggle" class="md:hidden p-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+                <nav class="hidden md:flex space-x-6">
+                    <a href="#" class="hover:text-primary">Pakalpojumi</a>
+                    <a href="#" class="hover:text-primary">Cenas</a>
+                    <a href="#" class="hover:text-primary">Pasākumi</a>
+                    <a href="#" class="hover:text-primary">Kontakti</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="relative min-h-screen flex items-center justify-center">
+            <div class="absolute inset-0">
+                <img src="assets/hero-equestrian.jpg" alt="Hero" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black/50"></div>
+            </div>
+            <div class="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
+                <h1 class="text-5xl font-bold mb-6">Vieta, kur cilvēki satiekas ar zirgiem</h1>
+                <p class="text-xl mb-8">Apmācības, pasākumi un atpūta dabas tuvumā — bērniem un pieaugušajiem</p>
+                <div class="flex gap-4 justify-center">
+                    <a href="#" class="bg-primary text-white px-8 py-3 rounded-lg font-semibold hover:bg-primary-700">Pieteikties treniņiem</a>
+                    <a href="#" class="bg-gray-900 text-white px-8 py-3 rounded-lg font-semibold">Skatīt pasākumus</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="py-24 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold mb-4">Atrodiet savu ceļu pie zirgiem</h2>
+                    <p class="text-xl text-gray-600">Mēs piedāvājam dažādus pakalpojumus visiem, kas mīl zirgus</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                        <div class="bg-primary-50 text-primary px-3 py-1 rounded-full text-sm font-medium mb-4 inline-block">Apmācība</div>
+                        <h3 class="text-xl font-semibold mb-3">Mācīties jāt</h3>
+                        <p class="text-gray-600 mb-6">Profesionālas jāšanas nodarbības visiem sagatavotības līmeņiem</p>
+                        <a href="#" class="text-primary font-medium">Uzzināt vairāk →</a>
+                    </div>
+                    <!-- More service cards... -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-text text-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Latvian Horses</h3>
+                    <p class="text-white/80">Vieta, kur cilvēki satiekas ar zirgiem.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Kontakti</h4>
+                    <p class="text-white/80">+37128677177</p>
+                    <p class="text-white/80">info@latvianhorses.lv</p>
+                </div>
+            </div>
+            <div class="border-t border-white/10 mt-12 pt-8 text-center text-white/70">
+                © 2025 Latvian Horses. Visas tiesības aizsargātas.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
