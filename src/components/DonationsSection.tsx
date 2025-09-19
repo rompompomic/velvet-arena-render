@@ -57,7 +57,7 @@ const DonateSection: React.FC = () => {
             <div style={{
             borderColor: "var(--neutral-200)",
             boxShadow: "var(--shadow-sm)"
-          }} className="bg-[var(--bg)] border rounded-[12px] p-6 lg:p-8 my-[100px]">
+          }} className="bg-[var(--bg)] border rounded-[12px] p-6 lg:p-8 my-0">
               {submitted ? <div className="text-center py-8">
                   <div className="mx-auto mb-4 rounded-full flex items-center justify-center" style={{
                 width: 56,
