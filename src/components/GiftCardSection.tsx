@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { CreditCard, Euro, Gift } from "lucide-react";
+import horse1Image from "@/assets/Horse1.png";
 const GiftCardSection = () => {
   const features = [{
     text: "Tiešsaistes maksājums",
@@ -14,6 +15,14 @@ const GiftCardSection = () => {
   return <section className="py-24 bg-background">
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="velvet-bg rounded-3xl p-12 md:p-16 text-center text-white relative overflow-hidden">
+          {/* Background Horse Image */}
+          <div className="absolute right-0 bottom-0 w-1/2 h-full opacity-20">
+            <img 
+              src={horse1Image} 
+              alt="Horse decoration" 
+              className="w-full h-full object-cover object-center"
+            />
+          </div>
           {/* Content */}
           <div className="relative z-10 max-w-4xl mx-auto">
             <h2 className="text-section mb-6">

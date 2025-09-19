@@ -162,7 +162,7 @@ const Header = () => {
 
               <a
                 href="/lv/pasakumi/"
-                className={`inline-flex items-center rounded-md px-4 py-2 text-sm md:text-[15px] font-semibold text-white bg-[var(--primary)] hover:bg-[var(--primary-700)] transition-colors ${u}`}
+                className="inline-flex items-center rounded-md px-4 py-2 text-sm md:text-[15px] font-semibold text-white bg-[var(--primary)] hover:bg-[var(--primary-700)] transition-colors whitespace-nowrap shrink-0"
               >
                 Pasākumi
               </a>

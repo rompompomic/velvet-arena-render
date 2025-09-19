@@ -38,8 +38,24 @@ const PricesSection = () => {
         </div>
 
         <div className="text-center">
-          <a href="/lv/cenas/" className="text-primary hover:text-primary-700 font-semibold text-lg border-b-2 border-primary/30 hover:border-primary transition-all duration-300 pb-1">
+          <a 
+            href="/lv/cenas/" 
+            className="inline-flex items-center px-8 py-4 bg-primary text-white font-medium rounded-xl transition-all duration-300 hover:bg-primary-700 hover:scale-105"
+          >
             Skatīt visas cenas
+            <svg
+              className="ml-2 w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M17 8l4 4m0 0l-4 4m4-4H3"
+              />
+            </svg>
           </a>
         </div>
       </div>
