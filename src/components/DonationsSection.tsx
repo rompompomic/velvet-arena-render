@@ -69,50 +69,106 @@ const DonateSection: React.FC = () => {
           </p>
         </div>
 
-        {/* Блок с тремя пунктами (как на изображении) */}
+        {/* Блок с тремя пунктами + карточка справа (красный прямоугольник) */}
         <div
           className="mb-10 rounded-xl border bg-[var(--bg)]"
           style={{ borderColor: "var(--neutral-200)", boxShadow: "var(--shadow-sm)" }}
         >
-          <ul className="p-5 sm:p-6 md:p-7 space-y-4">
-            {points.map((p, idx) => (
-              <li key={p.title} className="flex items-start gap-3">
-                <span
-                  className="flex-shrink-0 inline-flex items-center justify-center rounded-full text-white font-semibold"
-                  style={{
-                    width: 26,
-                    height: 26,
-                    background: "var(--primary)",
-                    lineHeight: "26px",
-                    fontSize: 14,
-                  }}
-                >
-                  {idx + 1}
-                </span>
-                <div className="min-w-0">
-                  <div
-                    className="leading-snug"
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-6 p-5 sm:p-6 md:p-7">
+            {/* Левый список */}
+            <ul className="space-y-4">
+              {points.map((p, idx) => (
+                <li key={p.title} className="flex items-start gap-3">
+                  <span
+                    className="flex-shrink-0 inline-flex items-center justify-center rounded-full text-white font-semibold"
                     style={{
-                      color: "var(--text)",
-                      fontWeight: 600,
-                      fontSize: 20,
-                      lineHeight: "28px",
+                      width: 26,
+                      height: 26,
+                      background: "var(--primary)",
+                      lineHeight: "26px",
+                      fontSize: 14,
                     }}
                   >
-                    {p.title}
+                    {idx + 1}
+                  </span>
+                  <div className="min-w-0">
+                    <div
+                      className="leading-snug"
+                      style={{
+                        color: "var(--text)",
+                        fontWeight: 600,
+                        fontSize: 20,
+                        lineHeight: "28px",
+                      }}
+                    >
+                      {p.title}
+                    </div>
+                    <div className="text-[13px] text-[rgba(6,3,13,0.7)] mt-0.5">
+                      {p.desc}
+                    </div>
                   </div>
-                  <div className="text-[13px] text-[rgba(6,3,13,0.7)] mt-0.5">
-                    {p.desc}
+                </li>
+              ))}
+            </ul>
+
+            {/* Правая карточка — ImpactCard */}
+            <div className="mt-6 md:mt-0">
+              <div
+                className="h-full rounded-lg border p-5 sm:p-6 bg-[var(--light)]"
+                style={{ borderColor: "var(--neutral-200)" }}
+              >
+                <div className="flex items-center justify-between mb-3">
+                  <h3 className="font-semibold" style={{ color: "var(--text)" }}>
+                    Mēneša mērķis
+                  </h3>
+                  <span className="text-sm text-[rgba(6,3,13,0.7)]">2 000 €</span>
+                </div>
+
+                {/* Прогресс */}
+                <div className="w-full h-2 rounded-full bg-[#eee] overflow-hidden mb-2">
+                  <div
+                    className="h-full rounded-full"
+                    style={{ width: "62%", background: "var(--primary)" }}
+                  />
+                </div>
+                <div className="text-xs text-[rgba(6,3,13,0.7)] mb-4">
+                  Savākts: <b style={{ color: "var(--text)" }}>1 240 €</b> (62%)
+                </div>
+
+                {/* Цифры-влияние */}
+                <div className="grid grid-cols-2 gap-3 mb-4">
+                  <div className="rounded-md p-3 bg-white border"
+                       style={{ borderColor: "var(--neutral-200)" }}>
+                    <div className="text-[11px] text-[rgba(6,3,13,0.7)]">Barība šomēnes</div>
+                    <div className="text-base font-semibold" style={{ color: "var(--text)" }}>
+                      18 zirgiem
+                    </div>
+                  </div>
+                  <div className="rounded-md p-3 bg-white border"
+                       style={{ borderColor: "var(--neutral-200)" }}>
+                    <div className="text-[11px] text-[rgba(6,3,13,0.7)]">Treniņos piedalās</div>
+                    <div className="text-base font-semibold" style={{ color: "var(--text)" }}>
+                      37 bērni
+                    </div>
                   </div>
                 </div>
-              </li>
-            ))}
-          </ul>
+
+                {/* Мини-CTA */}
+                <a
+                  href="/lv/par-mums/#finansejums"
+                  className="text-sm underline"
+                  style={{ color: "var(--primary)" }}
+                >
+                  Kā tiek izlietoti līdzekļi?
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
 
-        {/* Main Content — equal-height columns */}
+        {/* Основной контент: картинка + НОВАЯ ФОРМА (как ты прислал) */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-stretch">
-          {/* Image card (no crop) */}
+          {/* Иллюстрация */}
           <div
             className="w-full rounded-[12px] border bg-[var(--light)] shadow-sm overflow-hidden h-full lg:min-h-[360px]"
             style={{ borderColor: "var(--neutral-200)" }}
@@ -126,7 +182,7 @@ const DonateSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Donation Form */}
+          {/* Форма доната (без изменений от твоего варианта) */}
           <div className="w-full h-full">
             <div
               className="bg-[var(--bg)] border rounded-[12px] p-6 lg:p-8 h-full lg:min-h-[360px]"
@@ -172,7 +228,7 @@ const DonateSection: React.FC = () => {
                 </div>
               ) : (
                 <form onSubmit={onSubmit} className="space-y-6">
-                  {/* Amount presets */}
+                  {/* Сумма */}
                   <div>
                     <label
                       className="block text-sm font-medium mb-2"
@@ -239,8 +295,8 @@ const DonateSection: React.FC = () => {
                     </div>
                   </div>
 
-                  {/* Contact (optional) */}
-                  <div>
+                  {/* Контакты (необязательно) */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <input
                       type="text"
                       placeholder="Vārds (nav obligāti)"
@@ -250,9 +306,18 @@ const DonateSection: React.FC = () => {
                         color: "var(--text)",
                       }}
                     />
+                    <input
+                      type="email"
+                      placeholder="E-pasts (rēķinam)"
+                      className="w-full h-10 px-3 rounded-md border text-sm"
+                      style={{
+                        borderColor: "var(--neutral-200)",
+                        color: "var(--text)",
+                      }}
+                    />
                   </div>
 
-                  {/* Consent + Submit */}
+                  {/* Согласие + отправка */}
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                     <label
                       className="flex items-center gap-3 text-sm"
