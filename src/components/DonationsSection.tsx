@@ -5,7 +5,6 @@ const DonateSection = () => {
   const presets = [10, 20, 30, 50];
 
   const [amount, setAmount] = useState<number | "">("");
-  const [freq, setFreq] = useState<"one" | "monthly">("one");
   const [method, setMethod] = useState<"card" | "bank">("card");
   const [agree, setAgree] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -119,12 +118,16 @@ const DonateSection = () => {
                   </blockquote>
 
                   <figcaption className="mt-5 flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full flex items-center justify-center font-semibold"
-                         style={{ background: "var(--primary-50)", color: "var(--primary)" }}>
+                    <div
+                      className="w-10 h-10 rounded-full flex items-center justify-center font-semibold"
+                      style={{ background: "var(--primary-50)", color: "var(--primary)" }}
+                    >
                       E
                     </div>
                     <div className="min-w-0">
-                      <div className="font-semibold" style={{ color: "var(--text)" }}>Elīna, 12 gadi</div>
+                      <div className="font-semibold" style={{ color: "var(--text)" }}>
+                        Elīna, 12 gadi
+                      </div>
                       <div className="text-xs text-[rgba(6,3,13,0.7)]">Skolniece, sākuma grupa</div>
                     </div>
                   </figcaption>
@@ -134,24 +137,41 @@ const DonateSection = () => {
           </div>
         </div>
 
-        {/* Иллюстрация + Форма доната (обновлённая) */}
+        {/* Иллюстрация + Форма доната */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-stretch">
-          {/* Иллюстрация слева */}
+          {/* Иллюстрация слева — центрируем и бордер по размеру картинки */}
           <div
-            className="w-full rounded-[12px] border bg-[var(--light)] shadow-sm overflow-hidden h-full lg:min-h-[360px]"
-            style={{ borderColor: "var(--neutral-200)" }}
+            className="w-full h-full rounded-[12px] bg-[var(--light)] shadow-sm overflow-hidden flex items-center justify-center"
+            style={{ border: "1px solid var(--neutral-200)" }}
           >
-            <img src={donateHorse} alt="Ziedojums zirgiem — dāvanu tēma" className="w-full h-full object-contain" />
+            {/* ВАЖНО: бордер на изображении, чтобы совпадал с его реальным размером */}
+            <img
+              src={donateHorse}
+              alt="Ziedojums zirgiem — dāvanu tēma"
+              className="max-w-full max-h-full object-contain rounded-[12px]"
+              style={{
+                border: "1px solid var(--neutral-200)",
+                // убираем растягивание: покажем картинку не больше контейнера
+                // и держим её по центру за счёт flex на родителе
+              }}
+            />
           </div>
 
-          {/* Форма доната справа — как в твоём новом примере */}
+          {/* Форма доната справа */}
           <div
-            className="p-6 md:p-8 bg-[color:var(--bg)]"
+            className="p-6 md:p-8 bg-[color:var(--bg)] flex flex-col"
             style={{ border: "1px solid var(--neutral-200)", borderRadius: 12, boxShadow: "var(--shadow-md)" }}
           >
             {submitted ? (
               <div className="text-center py-10">
-                <svg className="w-10 h-10 mx-auto mb-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ color: "var(--primary)" }}>
+                <svg
+                  className="w-10 h-10 mx-auto mb-3"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  style={{ color: "var(--primary)" }}
+                >
                   <path d="M20 6L9 17l-5-5" />
                 </svg>
                 <h3 className="text-[28px] leading-[36px] font-medium text-[color:var(--text)] mb-2">
@@ -159,7 +179,10 @@ const DonateSection = () => {
                 </h3>
                 <p className="text-[14px] leading-[20px] text-[rgba(6,3,13,0.7)]">
                   Mēs novērtējam tavu ieguldījumu. Ja vajadzīgs rēķins, sazinies ar{" "}
-                  <a href="mailto:info@latvianhorses.lv" className="underline">info@latvianhorses.lv</a>.
+                  <a href="mailto:info@latvianhorses.lv" className="underline">
+                    info@latvianhorses.lv
+                  </a>
+                  .
                 </p>
               </div>
             ) : (
@@ -178,7 +201,10 @@ const DonateSection = () => {
                         className="px-4 h-[42px] inline-flex items-center justify-center rounded-lg border transition-all"
                         style={{
                           borderColor: amount === p ? "var(--primary)" : "var(--neutral-200)",
-                          background: amount === p ? "color-mix(in oklab, var(--primary) 10%, transparent)" : "transparent",
+                          background:
+                            amount === p
+                              ? "color-mix(in oklab, var(--primary) 10%, transparent)"
+                              : "transparent",
                           color: amount === p ? "var(--primary)" : "var(--text)",
                         }}
                       >
@@ -203,43 +229,39 @@ const DonateSection = () => {
                       </span>
                     </div>
                   </div>
-
-                  {/* Частота */}
-                  <div className="mt-4 inline-flex overflow-hidden" style={{ border: "1px solid var(--neutral-200)", borderRadius: 12 }}>
-                    <button
-                      type="button"
-                      onClick={() => setFreq("one")}
-                      className="px-3 py-2 text-[14px] leading-[20px]"
-                      style={{ background: freq === "one" ? "var(--primary)" : "transparent", color: freq === "one" ? "#fff" : "var(--text)" }}
-                    >
-                      Vienreizējs
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => setFreq("monthly")}
-                      className="px-3 py-2 text-[14px] leading-[20px]"
-                      style={{ borderLeft: "1px solid var(--neutral-200)", background: freq === "monthly" ? "var(--primary)" : "transparent", color: freq === "monthly" ? "#fff" : "var(--text)" }}
-                    >
-                      Ik mēnesi
-                    </button>
-                  </div>
                 </div>
 
                 {/* Контакты */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-[14px] leading-[20px] font-medium mb-1 text-[color:var(--text)]">Vārds (nav obligāti)</label>
-                    <input type="text" className="w-full rounded-lg px-3 py-2 focus:outline-none" placeholder="Vārds, uzvārds" style={{ border: "1px solid var(--neutral-200)" }} />
+                    <label className="block text-[14px] leading-[20px] font-medium mb-1 text-[color:var(--text)]">
+                      Vārds (nav obligāti)
+                    </label>
+                    <input
+                      type="text"
+                      className="w-full rounded-lg px-3 py-2 focus:outline-none"
+                      placeholder="Vārds, uzvārds"
+                      style={{ border: "1px solid var(--neutral-200)" }}
+                    />
                   </div>
                   <div>
-                    <label className="block text-[14px] leading-[20px] font-medium mb-1 text-[color:var(--text)]">E-pasts (rēķinam)</label>
-                    <input type="email" className="w-full rounded-lg px-3 py-2 focus:outline-none" placeholder="name@example.com" style={{ border: "1px solid var(--neutral-200)" }} />
+                    <label className="block text-[14px] leading-[20px] font-medium mb-1 text-[color:var(--text)]">
+                      E-pasts (rēķinam)
+                    </label>
+                    <input
+                      type="email"
+                      className="w-full rounded-lg px-3 py-2 focus:outline-none"
+                      placeholder="name@example.com"
+                      style={{ border: "1px solid var(--neutral-200)" }}
+                    />
                   </div>
                 </div>
 
                 {/* Способ оплаты */}
                 <div>
-                  <label className="block text-[14px] leading-[20px] font-medium mb-2 text-[color:var(--text)]">Apmaksas veids</label>
+                  <label className="block text-[14px] leading-[20px] font-medium mb-2 text-[color:var(--text)]">
+                    Apmaksas veids
+                  </label>
                   <div className="flex gap-3">
                     <button
                       type="button"
@@ -269,10 +291,21 @@ const DonateSection = () => {
 
                   {/* Детали метода */}
                   {method === "card" ? (
-                    <p className="mt-3 text-[14px] leading-[20px] text-[rgba(6,3,13,0.7)]">Norēķini ar karti tiks pievienoti drīzumā.</p>
+                    <p className="mt-3 text-[14px] leading-[20px] text-[rgba(6,3,13,0.7)]">
+                      Norēķini ar karti tiks pievienoti drīzumā.
+                    </p>
                   ) : (
-                    <div className="mt-4 p-4" style={{ background: "var(--light)", border: "1px solid var(--neutral-200)", borderRadius: 12 }}>
-                      <p className="text-[14px] leading-[20px] font-medium mb-2 text-[color:var(--text)]">Pārskaitījuma rekvizīti</p>
+                    <div
+                      className="mt-4 p-4"
+                      style={{
+                        background: "var(--light)",
+                        border: "1px solid var(--neutral-200)",
+                        borderRadius: 12,
+                      }}
+                    >
+                      <p className="text-[14px] leading-[20px] font-medium mb-2 text-[color:var(--text)]">
+                        Pārskaitījuma rekvizīti
+                      </p>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-[14px] leading-[20px]">
                         <div className="text-[rgba(6,3,13,0.7)]">Saņēmējs</div>
                         <div className="text-[color:var(--text)]">Latvian Horses</div>
@@ -287,7 +320,10 @@ const DonateSection = () => {
                       </div>
                       <p className="mt-3 text-[12px] leading-[20px] text-[rgba(6,3,13,0.7)]">
                         * Ja vajadzīgi precīzi rekvizīti rēķinam, raksti:{" "}
-                        <a href="mailto:info@latvianhorses.lv" className="underline">info@latvianhorses.lv</a>.
+                        <a href="mailto:info@latvianhorses.lv" className="underline">
+                          info@latvianhorses.lv
+                        </a>
+                        .
                       </p>
                     </div>
                   )}
@@ -304,7 +340,10 @@ const DonateSection = () => {
                   />
                   <span className="text-[color:var(--text)]">
                     Piekrītu personas datu apstrādei saskaņā ar{" "}
-                    <a href="/lv/privatuma-politika/" className="underline">Privātuma politiku</a>.
+                    <a href="/lv/privatuma-politika/" className="underline">
+                      Privātuma politiku
+                    </a>
+                    .
                   </span>
                 </label>
 
@@ -319,7 +358,6 @@ const DonateSection = () => {
                   onMouseLeave={(e) => (e.currentTarget.style.background = "var(--primary)")}
                 >
                   Ziedot {amount ? `${amount} €` : ""}
-                  {freq === "monthly" && <span className="ml-1 opacity-90">/ mēnesī</span>}
                 </button>
 
                 <p className="text-[12px] leading-[20px] text-center text-[rgba(6,3,13,0.7)]">
