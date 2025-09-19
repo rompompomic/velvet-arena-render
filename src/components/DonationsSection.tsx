@@ -59,7 +59,7 @@ const DonateSection: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-6 p-5 sm:p-6 md:p-7">
             {/* Левый список */}
             <ul className="space-y-4">
-              {points.map((p, idx) => <li key={p.title} className="flex items-start gap-3">
+              {points.map((p, idx) => <li key={p.title} className="flex items-start gap-3 my-[25px]">
                   <span className="flex-shrink-0 inline-flex items-center justify-center rounded-full text-white font-semibold" style={{
                 width: 26,
                 height: 26,
