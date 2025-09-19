@@ -175,24 +175,19 @@ const Footer = () => {
                   href="tel:+37128677177"
                   className="flex items-center gap-3 text-white/90 hover:text-white transition-colors"
                 >
-                  {/* NEW phone icon */}
                   <svg
                     className="w-5 h-5 text-[hsl(var(--primary-50))]"
                     fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                     viewBox="0 0 24 24"
-                    aria-hidden="true"
                   >
-                    <path
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25A2.25 2.25 0 0021.75 19.5v-1.5a1.5 1.5 0 00-1.5-1.5h-3.372a1.5 1.5 0 00-1.342.83l-.982 1.964a.75.75 0 01-1.073.335 12.035 12.035 0 01-5.35-5.35.75.75 0 01.335-1.073l1.964-.982a1.5 1.5 0 00.83-1.342V4.5a1.5 1.5 0 00-1.5-1.5H6.75A2.25 2.25 0 004.5 5.25v1.5z"
-                    />
+                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.08 4.18 2 2 0 014.06 2h3a2 2 0 012 1.72c.12.81.37 1.6.72 2.34a2 2 0 01-.45 2.18L8.09 9.91a16 16 0 006 6l1.67-1.24a2 2 0 012.18-.45c.74.35 1.53.6 2.34.72a2 2 0 011.72 1.98z" />
                   </svg>
                   <span>+37128677177</span>
                 </a>
-
                 <a
                   href="mailto:info@latvianhorses.lv"
                   className="flex items-center gap-3 text-white/90 hover:text-white transition-colors"
