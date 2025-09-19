@@ -140,9 +140,7 @@ const DonateSection = () => {
         {/* Иллюстрация + Форма доната */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-stretch">
           {/* Иллюстрация слева — центрируем и бордер по размеру картинки */}
-          <div
-            className="w-full h-full lg:min-h-[360px] bg-[var(--light)] flex items-center justify-center rounded-[12px] shadow-sm"
-          >
+          <div className="w-full h-full lg:min-h-[360px] flex items-center justify-center">
             <img
               src={donateHorse}
               alt="Ziedojums zirgiem — dāvanu tēma"
