@@ -170,11 +170,24 @@ const EventAlbumDetail = () => {
                   <p className="text-muted-foreground leading-relaxed mb-6">
                     {album.description}
                   </p>
-                  <Button asChild>
+                  <Button
+                    asChild
+                    className="bg-primary text-white rounded-xl transition-all duration-300 hover:bg-primary-700 hover:scale-105"
+                  >
                     <a href={album.eventLink}>
                       Skatīt pasākuma detaļas
-                      <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      <svg
+                        className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M9 5l7 7-7 7"
+                        />
                       </svg>
                     </a>
                   </Button>
