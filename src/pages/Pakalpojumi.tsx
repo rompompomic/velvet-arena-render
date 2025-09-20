@@ -133,12 +133,6 @@ const Pakalpojumi = () => {
               alt=""
               className="w-full h-full object-cover"
             />
-            {/* затемнение + легкий блюр для читаемости текста */}
-            <div className="absolute inset-0 bg-black/45 backdrop-blur-[1px]" />
-            {/* мягкая нижняя растушевка */}
-            <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-b from-transparent to-background" />
-          </div>
-
           <div className="relative container mx-auto px-4 max-w-7xl py-20 md:py-28 text-center text-white">
             <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight drop-shadow-sm">
               Mūsu pakalpojumi
