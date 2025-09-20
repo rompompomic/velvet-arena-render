@@ -232,8 +232,16 @@ const Checkout = () => {
                     </div>
 
                     {/* Buy Button */}
-                    <Button className="w-full py-4 text-lg font-semibold" disabled={!agreedToTerms} asChild>
-                      <a href="/lv/paldies-par-pirkumu/">Pirkt</a>
+                    <Button
+                      className="w-full py-4 text-lg font-semibold bg-primary text-white rounded-xl 
+                                 transition-all duration-300 hover:bg-primary-700 hover:scale-105
+                                 disabled:opacity-50 disabled:pointer-events-none"
+                      disabled={!agreedToTerms}
+                      asChild
+                    >
+                      <a href="/lv/paldies-par-pirkumu/" className="!text-white">
+                        Pirkt
+                      </a>
                     </Button>
                   </div>
                 </div>
