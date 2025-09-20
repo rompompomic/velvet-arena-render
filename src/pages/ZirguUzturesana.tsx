@@ -4,20 +4,14 @@ import { ChevronRight, Home, Building2, Users, Shield, Heart, CheckCircle2, MapP
 import serviceStable from "@/assets/service-horse-stable.jpg";
 import heroImage from "@/assets/hero-equestrian.jpg";
 import winterImage from "@/assets/winter-equestrian.jpg";
-
 const ZirguUzturesana = () => {
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       <Header />
 
       <main className="pt-24">
         {/* HERO */}
         <section className="relative">
-          <img
-            src={heroImage}
-            alt="Zirgu uzturēšana"
-            className="absolute inset-0 w-full h-full object-cover"
-          />
+          <img src={heroImage} alt="Zirgu uzturēšana" className="absolute inset-0 w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/20" />
         
           <div className="relative flex items-center justify-center text-center text-white min-h-[50vh] md:min-h-[60vh]">
@@ -40,22 +34,7 @@ const ZirguUzturesana = () => {
               </p>
         
               {/* Stats chips */}
-              <div className="mt-8 flex flex-wrap justify-center gap-4">
-                {[
-                  { k: ">70", v: "boksi", icon: Building2 },
-                  { k: "2", v: "slēgtās manēžas", icon: Shield },
-                  { k: "24/7", v: "aprūpe un uzraudzība", icon: Heart },
-                ].map((s) => (
-                  <div
-                    key={s.v}
-                    className="glass-card px-4 py-3 flex items-center gap-2 text-white border-white/20"
-                  >
-                    <s.icon className="w-4 h-4" />
-                    <span className="font-semibold text-lg">{s.k}</span>
-                    <span className="text-sm">{s.v}</span>
-                  </div>
-                ))}
-              </div>
+              
             </div>
           </div>
         </section>
@@ -80,20 +59,31 @@ const ZirguUzturesana = () => {
               <div className="space-y-4">
                 <h3 className="text-xl font-semibold text-foreground">Pakalpojumi ietver:</h3>
                 <div className="grid gap-3">
-                  {[
-                    { text: "Pilna laika zirgu uzturēšana modernās stallīs", icon: Building2 },
-                    { text: "Kvalitatīva barība un ūdens nodrošinājums", icon: Heart },
-                    { text: "Regulāra veterinārā aprūpe un veselības pārbaudes", icon: Shield },
-                    { text: "Profesionāla kopšana un higiēna", icon: CheckCircle2 },
-                    { text: "Individuālas treniņu plāns katram zirgam", icon: Users },
-                    { text: "24/7 uzraudzība un drošības nodrošinājums", icon: Shield },
-                    { text: "Āra pastaigu laukumi un ganības", icon: MapPin },
-                  ].map((item, index) => (
-                    <div key={index} className="flex items-start gap-3 p-3 rounded-lg hover:bg-light transition-colors">
+                  {[{
+                  text: "Pilna laika zirgu uzturēšana modernās stallīs",
+                  icon: Building2
+                }, {
+                  text: "Kvalitatīva barība un ūdens nodrošinājums",
+                  icon: Heart
+                }, {
+                  text: "Regulāra veterinārā aprūpe un veselības pārbaudes",
+                  icon: Shield
+                }, {
+                  text: "Profesionāla kopšana un higiēna",
+                  icon: CheckCircle2
+                }, {
+                  text: "Individuālas treniņu plāns katram zirgam",
+                  icon: Users
+                }, {
+                  text: "24/7 uzraudzība un drošības nodrošinājums",
+                  icon: Shield
+                }, {
+                  text: "Āra pastaigu laukumi un ganības",
+                  icon: MapPin
+                }].map((item, index) => <div key={index} className="flex items-start gap-3 p-3 rounded-lg hover:bg-light transition-colors">
                       <item.icon className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
                       <span className="text-muted-foreground">{item.text}</span>
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
               </div>
             </div>
@@ -105,21 +95,10 @@ const ZirguUzturesana = () => {
                 Iekļauts ikdienā
               </h3>
               <div className="space-y-4">
-                {[
-                  "Mehāniskās dzirdnes un barības sili",
-                  "Speciāls trauks sālim",
-                  "Skaidu pakaiši boksos",
-                  "Garderobes ar apsildāmām grīdām",
-                  "Barības un saimniecības telpas (veļas mašīnas, žāvētāji)",
-                  "Divi solāriji un mazgāšanas vietas",
-                  "Vairāki āra pastaigu laukumi (ikdienas izvešana)",
-                  "Vasarā – atvērta tipa staļļi sacensībām",
-                ].map((item, index) => (
-                  <div key={index} className="flex items-start gap-3">
+                {["Mehāniskās dzirdnes un barības sili", "Speciāls trauks sālim", "Skaidu pakaiši boksos", "Garderobes ar apsildāmām grīdām", "Barības un saimniecības telpas (veļas mašīnas, žāvētāji)", "Divi solāriji un mazgāšanas vietas", "Vairāki āra pastaigu laukumi (ikdienas izvešana)", "Vasarā – atvērta tipa staļļi sacensībām"].map((item, index) => <div key={index} className="flex items-start gap-3">
                     <CheckCircle2 className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
                     <span className="text-sm text-muted-foreground">{item}</span>
-                  </div>
-                ))}
+                  </div>)}
               </div>
             </aside>
           </div>
@@ -130,22 +109,28 @@ const ZirguUzturesana = () => {
           <div className="container mx-auto max-w-6xl px-4">
             <h3 className="text-section text-foreground mb-12 text-center">Iekārtas un labiekārtojums</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[
-                { text: "Ventilācijas sistēmas", icon: Shield },
-                { text: "Kvalitatīvi boksi", icon: Building2 },
-                { text: "Solāriji zirgiem", icon: Heart },
-                { text: "Mazgāšanas vietas", icon: CheckCircle2 },
-                { text: "Apsildāmas garderobes", icon: Users },
-                { text: "Āra laukumi un ganības", icon: MapPin },
-              ].map((item, index) => (
-                <div
-                  key={index}
-                  className="glass-card p-6 text-center hover-lift group"
-                >
+              {[{
+              text: "Ventilācijas sistēmas",
+              icon: Shield
+            }, {
+              text: "Kvalitatīvi boksi",
+              icon: Building2
+            }, {
+              text: "Solāriji zirgiem",
+              icon: Heart
+            }, {
+              text: "Mazgāšanas vietas",
+              icon: CheckCircle2
+            }, {
+              text: "Apsildāmas garderobes",
+              icon: Users
+            }, {
+              text: "Āra laukumi un ganības",
+              icon: MapPin
+            }].map((item, index) => <div key={index} className="glass-card p-6 text-center hover-lift group">
                   <item.icon className="w-8 h-8 text-primary mx-auto mb-4 group-hover:scale-110 transition-transform" />
                   <p className="text-sm font-medium text-foreground">{item.text}</p>
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
         </section>
@@ -162,39 +147,49 @@ const ZirguUzturesana = () => {
                 </tr>
               </thead>
               <tbody>
-                {[
-                  { name: "DIY", price: "155", isPopular: false },
-                  { name: "BRONZA", price: "285", isPopular: false },
-                  { name: "SUDRABS", price: "370", isPopular: false },
-                  { name: "SUDRABS+", price: "410", isPopular: true },
-                  { name: "ZELTS", price: "470", isPopular: false },
-                  { name: "PLATĪNS", price: "720", isPopular: false },
-                ].map((pkg, index) => (
-                  <tr 
-                    key={pkg.name} 
-                    className={`
+                {[{
+                name: "DIY",
+                price: "155",
+                isPopular: false
+              }, {
+                name: "BRONZA",
+                price: "285",
+                isPopular: false
+              }, {
+                name: "SUDRABS",
+                price: "370",
+                isPopular: false
+              }, {
+                name: "SUDRABS+",
+                price: "410",
+                isPopular: true
+              }, {
+                name: "ZELTS",
+                price: "470",
+                isPopular: false
+              }, {
+                name: "PLATĪNS",
+                price: "720",
+                isPopular: false
+              }].map((pkg, index) => <tr key={pkg.name} className={`
                       border-t hover:bg-primary/5 transition-colors
                       ${pkg.isPopular ? 'bg-primary/10 border-primary/20' : 'border-border'}
                       ${index % 2 === 0 ? 'bg-background' : 'bg-muted/30'}
-                    `}
-                  >
+                    `}>
                     <td className="px-6 py-4 relative">
                       <div className="flex items-center gap-2">
                         <span className={`font-medium ${pkg.isPopular ? 'text-primary' : 'text-foreground'}`}>
                           {pkg.name}
                         </span>
-                        {pkg.isPopular && (
-                          <span className="px-2 py-1 text-xs bg-primary text-white rounded-full font-medium">
+                        {pkg.isPopular && <span className="px-2 py-1 text-xs bg-primary text-white rounded-full font-medium">
                             Populārs
-                          </span>
-                        )}
+                          </span>}
                       </div>
                     </td>
                     <td className={`px-6 py-4 text-right font-bold text-lg ${pkg.isPopular ? 'text-primary' : 'text-foreground'}`}>
                       €{pkg.price}
                     </td>
-                  </tr>
-                ))}
+                  </tr>)}
               </tbody>
             </table>
           </div>
@@ -210,31 +205,28 @@ const ZirguUzturesana = () => {
             <h3 className="text-section text-foreground mb-12 text-center">Praktiskā informācija</h3>
             <div className="glass-card p-8">
               <div className="grid gap-6">
-                {[
-                  { text: "Visi pakalpojumi pēc iepriekšēja pieraksta.", icon: CheckCircle2 },
-                  { text: "Svētku dienās visiem pakalpojumiem tiek piemērota papildus maksa 50% apmērā.", icon: Shield },
-                  { text: "Nodarbību / aprūpes laiki var mainīties — vienmēr precizējam pirms apmeklējuma.", icon: Users },
-                ].map((item, index) => (
-                  <div key={index} className="flex items-start gap-4">
+                {[{
+                text: "Visi pakalpojumi pēc iepriekšēja pieraksta.",
+                icon: CheckCircle2
+              }, {
+                text: "Svētku dienās visiem pakalpojumiem tiek piemērota papildus maksa 50% apmērā.",
+                icon: Shield
+              }, {
+                text: "Nodarbību / aprūpes laiki var mainīties — vienmēr precizējam pirms apmeklējuma.",
+                icon: Users
+              }].map((item, index) => <div key={index} className="flex items-start gap-4">
                     <item.icon className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
                     <span className="text-muted-foreground">{item.text}</span>
-                  </div>
-                ))}
+                  </div>)}
                 <div className="flex items-start gap-4 pt-4 border-t border-border">
                   <Phone className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
                   <div className="space-y-2">
                     <p className="text-muted-foreground">Interesentiem:</p>
                     <div className="flex flex-col sm:flex-row gap-4">
-                      <a 
-                        href="tel:+37128677177" 
-                        className="link-underline text-primary font-medium hover:text-primary-700 transition-colors"
-                      >
+                      <a href="tel:+37128677177" className="link-underline text-primary font-medium hover:text-primary-700 transition-colors">
                         +371 28677177
                       </a>
-                      <a 
-                        href="mailto:info@latvianhorses.lv"
-                        className="link-underline text-primary font-medium hover:text-primary-700 transition-colors"
-                      >
+                      <a href="mailto:info@latvianhorses.lv" className="link-underline text-primary font-medium hover:text-primary-700 transition-colors">
                         info@latvianhorses.lv
                       </a>
                     </div>
@@ -247,8 +239,6 @@ const ZirguUzturesana = () => {
       </main>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default ZirguUzturesana;
