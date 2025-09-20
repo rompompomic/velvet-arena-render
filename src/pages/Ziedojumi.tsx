@@ -39,7 +39,7 @@ const Ziedojumi = () => {
     if (urlPaymentMethod) setPaymentMethod(urlPaymentMethod);
   }, [searchParams]);
 
-  const presetAmounts = [10, 25, 50, 100, 250];
+  const presetAmounts = [10, 25, 50, 100];
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
