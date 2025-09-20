@@ -43,8 +43,6 @@ const CitiPakalpojumi = () => {
           </div>
         </section>
 
-        </section>
-
         {/* Content Section */}
         <section className="container mx-auto max-w-6xl px-4 py-16 md:py-20">
           {/* Breadcrumbs */}
