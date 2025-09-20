@@ -11,41 +11,39 @@ const ZirguUzturesana = () => {
 
       <main className="pt-24">
         {/* HERO */}
-        <section className="relative isolate">
+        <section className="relative">
           {/* фон */}
           <img
-            src={heroImage}               // <-- фикс: используем импорт
+            src={heroImage}
             alt="Zirgu uzturēšana"
             className="absolute inset-0 w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black/45" />
-
-          {/* контент по центру */}
-          <div className="relative container mx-auto max-w-6xl px-4">
-            <div className="min-h-[65vh] flex flex-col items-center justify-center text-center text-white py-20 md:py-28">
-              <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight">
-                Zirgu uzturēšana
-              </h1>
-              <p className="mt-4 max-w-3xl text-lg md:text-xl text-white/90">
-                Profesionāla zirgu aprūpe un uzturēšana modernās stallīs ar
-                augstākajiem komforta standartiem.
-              </p>
-
-              {/* Stats chips */}
-              <div className="mt-6 flex flex-wrap justify-center gap-3">
-                {[
-                  { k: ">70", v: "boksi" },
-                  { k: "2", v: "slēgtās manēžas" },
-                  { k: "24/7", v: "aprūpe un uzraudzība" },
-                ].map((s) => (
-                  <div
-                    key={s.v}
-                    className="px-3 py-1.5 rounded-full bg-white/10 backdrop-blur text-sm border border-white/15"
-                  >
-                    <span className="font-semibold">{s.k}</span> {s.v}
-                  </div>
-                ))}
-              </div>
+        
+          {/* контент */}
+          <div className="relative container mx-auto px-4 max-w-7xl py-20 md:py-28 text-center text-white">
+            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight drop-shadow-sm">
+              Zirgu uzturēšana
+            </h1>
+            <p className="mt-5 text-base md:text-xl max-w-3xl mx-auto text-white/90">
+              Profesionāla zirgu aprūpe un uzturēšana modernās stallīs ar
+              augstākajiem komforta standartiem.
+            </p>
+        
+            {/* Stats chips */}
+            <div className="mt-6 flex flex-wrap justify-center gap-3">
+              {[
+                { k: ">70", v: "boksi" },
+                { k: "2", v: "slēgtās manēžas" },
+                { k: "24/7", v: "aprūpe un uzraudzība" },
+              ].map((s) => (
+                <div
+                  key={s.v}
+                  className="px-3 py-1.5 rounded-full bg-white/10 backdrop-blur text-sm border border-white/15"
+                >
+                  <span className="font-semibold">{s.k}</span> {s.v}
+                </div>
+              ))}
             </div>
           </div>
         </section>
