@@ -259,7 +259,7 @@ const ParMums = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-16 md:py-20 bg-primary/5">
+        <section className="py-16 md:py-20 bg-background">
           <div className="container mx-auto px-4 max-w-4xl text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Pievienojies mūsu komandai
@@ -272,7 +272,6 @@ const ParMums = () => {
               <Button 
                 asChild 
                 size="lg"
-                className="bg-[#963026] text-white hover:bg-[#7a2620]"
               >
                 <a href="/lv/pakalpojumi/jasanas-trenini/">
                   Sākt treniņus
@@ -286,7 +285,6 @@ const ParMums = () => {
                 asChild 
                 variant="outline" 
                 size="lg"
-                className="border-[#963026] text-[#963026] hover:bg-[#963026]/10"
               >
                 <a href="/lv/pasakumi/">
                   Skatīt pasākumus
