@@ -16,57 +16,61 @@ import serviceOther from "@/assets/service-other-services.jpg";
 
 const StableIcon = ({ className = "w-5 h-5" }) => (
   <svg viewBox="0 0 24 24" className={className} fill="currentColor" aria-hidden>
-    {/* сарай + дверь */}
-    <path d="M12 3 3 8.5V20a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V8.5L12 3Z" />
-    <path d="M9 13h6v8H9z" fill="white" opacity=".22" />
+    {/* Stable building with roof */}
+    <path d="M2 9 12 2l10 7v11a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V9Z" />
+    <path d="M7 12h3v9H7V12ZM14 12h3v9h-3V12Z" fill="white" opacity=".3" />
+    <path d="M9 16h6v2H9v-2Z" fill="white" opacity=".2" />
   </svg>
 );
 
 const RidingIcon = ({ className = "w-5 h-5" }) => (
   <svg viewBox="0 0 24 24" className={className} fill="currentColor" aria-hidden>
-    {/* шлем верховой езды */}
-    <path d="M6 12a6 6 0 0 1 12 0v1H6v-1Z" />
-    <path d="M6 14h7.5a3.5 3.5 0 0 1-3.5 3.5H8.25A2.25 2.25 0 0 1 6 15.25V14Z" />
-    <circle cx="15.25" cy="10" r="1" />
+    {/* Person riding horse */}
+    <path d="M14 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4Z" />
+    <path d="M13 7h3l2 5-1 2h-2l-1-3-1 8-2-1V7Z" />
+    <path d="M4 18c0-2 2-4 5-4s4 1 6 2c1 0 2-1 4-1v2c-1.5 0-2.5.5-3 1-1.5-1-3-1.5-5-1s-3 1-4 2c-2 0-3-1-3-1Z" />
   </svg>
 );
 
 const ArenaIcon = ({ className = "w-5 h-5" }) => (
   <svg viewBox="0 0 24 24" className={className} fill="currentColor" aria-hidden>
-    {/* препятствие: стойки + две перекладины */}
-    <rect x="4" y="5" width="3" height="14" rx="1" />
-    <rect x="17" y="5" width="3" height="14" rx="1" />
-    <rect x="6.5" y="9" width="11" height="2.5" rx="1.25" />
-    <rect x="6.5" y="13" width="11" height="2.5" rx="1.25" />
+    {/* Jumping obstacle */}
+    <rect x="3" y="6" width="2" height="12" rx="1" />
+    <rect x="19" y="6" width="2" height="12" rx="1" />
+    <rect x="4" y="10" width="16" height="1.5" rx="0.75" />
+    <rect x="4" y="13" width="16" height="1.5" rx="0.75" />
+    <path d="M6 8h12v1H6V8ZM6 16h12v1H6v-1Z" opacity=".4" />
   </svg>
 );
 
 const ExcursionIcon = ({ className = "w-5 h-5" }) => (
   <svg viewBox="0 0 24 24" className={className} fill="currentColor" aria-hidden>
-    {/* камера (фото-экскурсии) */}
-    <rect x="3" y="7" width="18" height="12" rx="2" />
-    <path d="M8 7 9.3 5h5.4L16 7z" />
-    <circle cx="12" cy="13" r="4" fill="white" opacity=".18" />
+    {/* Group of people */}
+    <circle cx="8" cy="6" r="2" />
+    <circle cx="16" cy="6" r="2" />
+    <circle cx="12" cy="8" r="1.5" />
+    <path d="M4 18v-3c0-1.5 1.5-3 4-3s4 1.5 4 3v3h-8Z" />
+    <path d="M12 18v-2.5c0-1 1-2 2.5-2s2.5 1 2.5 2V18h-5Z" />
+    <path d="M16 18v-3c0-1.5 1.5-3 4-3s4 1.5 4 3v3h-8Z" />
   </svg>
 );
 
 const CorporateIcon = ({ className = "w-5 h-5" }) => (
   <svg viewBox="0 0 24 24" className={className} fill="currentColor" aria-hidden>
-    {/* рукопожатие */}
-    <path d="M4 12.5h4.8l2.2 1.8a2.8 2.8 0 0 0 3.6 0l2.2-1.8H22V18a2 2 0 0 1-2 2h-7.2a5 5 0 0 1-3.2-1.2L7.2 17H4a2 2 0 0 1-2-2v-2.5h2Z" />
-    {/* галочка-результат */}
-    <path d="M14.5 9.2 16 10.7l3-3" fill="white" opacity=".22" />
+    {/* Handshake */}
+    <path d="M8 12c0-1 1-2 2-2h4c1 0 2 1 2 2v1l-2 2h-4l-2-2v-1Z" />
+    <path d="M6 11c-1 0-2 1-2 2s1 2 2 2h1l1-1v-2l-1-1H6ZM18 11c1 0 2 1 2 2s-1 2-2 2h-1l-1-1v-2l1-1h1Z" />
+    <path d="M10 8c0-1 1-1 1-1s1 0 1 1v2h-2V8ZM12 8c0-1 1-1 1-1s1 0 1 1v2h-2V8Z" />
   </svg>
 );
 
 const ServicesIcon = ({ className = "w-5 h-5" }) => (
   <svg viewBox="0 0 24 24" className={className} fill="currentColor" aria-hidden>
-    {/* подкова */}
-    <path d="M12 3a8 8 0 0 1 8 8v2a8 8 0 0 1-16 0v-2a8 8 0 0 1 8-8Z" />
-    <circle cx="8.5" cy="10" r="1" fill="white" opacity=".28" />
-    <circle cx="15.5" cy="10" r="1" fill="white" opacity=".28" />
-    <circle cx="8.5" cy="16" r="1" fill="white" opacity=".28" />
-    <circle cx="15.5" cy="16" r="1" fill="white" opacity=".28" />
+    {/* Medical cross with horseshoe */}
+    <path d="M12 2C8 2 5 5 5 9c0 2 1 4 3 5v6c0 1 1 2 2 2h4c1 0 2-1 2-2v-6c2-1 3-3 3-5 0-4-3-7-7-7Z" />
+    <path d="M10 6h4v2h-4V6ZM11 9h2v4h-2V9Z" fill="white" opacity=".4" />
+    <circle cx="8" cy="10" r="1" fill="white" opacity=".3" />
+    <circle cx="16" cy="10" r="1" fill="white" opacity=".3" />
   </svg>
 );
 
