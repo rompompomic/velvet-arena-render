@@ -15,7 +15,7 @@ const GiftCardSection = () => {
         <div
           className="rounded-3xl p-12 md:p-16 text-center text-white relative overflow-hidden"
           style={{
-            background: "linear-gradient(135deg, #995856 0%, #7D4647 50%, #F9F2F2 100%)",
+            background: "linear-gradient(135deg, #963026 0%, #8A6060 100%)",
           }}
         >
           {/* Background Horse Image */}
