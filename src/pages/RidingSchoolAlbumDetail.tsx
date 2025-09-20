@@ -21,14 +21,16 @@ const RidingSchoolAlbumDetail = () => {
         { title: "Jāšanas treniņi", href: "/lv/pakalpojumi/jasanas-trenini/" },
         { title: "Bērnu programmas", href: "/lv/pakalpojumi/bernu-programmas/" }
       ],
-      coverImage: "/placeholder.svg?height=400&width=600",
+      coverImage: "/src/assets/gallery-ikdienas-dzive-1.jpg",
       photos: [
-        { id: "1", src: "/placeholder.svg?height=800&width=1200", alt: "Rīta barošana", caption: "Rīta barošanas procedūra stalļos" },
-        { id: "2", src: "/placeholder.svg?height=800&width=1200", alt: "Pirmā nodarbība", caption: "Mazā jātnieka pirmā iepazīšanās ar zirgu" },
-        { id: "3", src: "/placeholder.svg?height=800&width=1200", alt: "Treniņš arēnā", caption: "Treniņu process iekštelpu arēnā" },
-        { id: "4", src: "/placeholder.svg?height=800&width=1200", alt: "Zirgu aprūpe", caption: "Audzēkņi mācās rūpēties par zirgiem" },
-        { id: "5", src: "/placeholder.svg?height=800&width=1200", alt: "Vakara aktivitātes", caption: "Vakara nodarbības dabas vidē" },
-        { id: "6", src: "/placeholder.svg?height=800&width=1200", alt: "Komandas darbs", caption: "Kopīgs darbs pie zirgu aprūpes" },
+        { id: "1", src: "/src/assets/horse-care-album.jpg", alt: "Rīta barošana", caption: "Rīta barošanas procedūra stalļos" },
+        { id: "2", src: "/src/assets/riding-school-training.jpg", alt: "Pirmā nodarbība", caption: "Mazā jātnieka pirmā iepazīšanās ar zirgu" },
+        { id: "3", src: "/src/assets/service-riding-lessons.jpg", alt: "Treniņš arēnā", caption: "Treniņu process iekštelpu arēnā" },
+        { id: "4", src: "/src/assets/Horse1.png", alt: "Zirgu aprūpe", caption: "Audzēkņi mācās rūpēties par zirgiem" },
+        { id: "5", src: "/src/assets/hero-equestrian.jpg", alt: "Vakara aktivitātes", caption: "Vakara nodarbības dabas vidē" },
+        { id: "6", src: "/src/assets/Horse2.png", alt: "Komandas darbs", caption: "Kopīgs darbs pie zirgu aprūpes" },
+        { id: "7", src: "/src/assets/service-horse-stable.jpg", alt: "Stalli", caption: "Mūsdienīgie zirgu stalli" },
+        { id: "8", src: "/src/assets/Horse3.png", alt: "Zirgu draudzība", caption: "Cieša saikne starp bērniem un zirgiem" }
       ]
     },
     "jaunie-jatniekki-2025": {
@@ -39,12 +41,14 @@ const RidingSchoolAlbumDetail = () => {
         { title: "Bērnu programmas", href: "/lv/pakalpojumi/bernu-programmas/" },
         { title: "Iesācēju kursi", href: "/lv/pakalpojumi/jasanas-trenini/" }
       ],
-      coverImage: "/placeholder.svg?height=400&width=600",
+      coverImage: "/src/assets/gallery-jaunie-jatniekki-1.jpg",
       photos: [
-        { id: "1", src: "/placeholder.svg?height=800&width=1200", alt: "Pirmā iepazīšanās", caption: "Pirmā reize, kad bērns satiek zirgu" },
-        { id: "2", src: "/placeholder.svg?height=800&width=1200", alt: "Drošības pamācība", caption: "Instruktors māca drošības noteikumus" },
-        { id: "3", src: "/placeholder.svg?height=800&width=1200", alt: "Mazais jātnieks", caption: "Pirmais sēdējums sedlos" },
-        { id: "4", src: "/placeholder.svg?height=800&width=1200", alt: "Prieks sejās", caption: "Bezgalīgs prieks pēc veiksmīgas nodarbības" },
+        { id: "1", src: "/src/assets/summer-camp-album.jpg", alt: "Pirmā iepazīšanās", caption: "Pirmā reize, kad bērns satiek zirgu" },
+        { id: "2", src: "/src/assets/service-riding-lessons.jpg", alt: "Drošības pamācība", caption: "Instruktors māca drošības noteikumus" },
+        { id: "3", src: "/src/assets/Horse4.png", alt: "Mazais jātnieks", caption: "Pirmais sēdējums sedlos" },
+        { id: "4", src: "/src/assets/riding-school-training.jpg", alt: "Prieks sejās", caption: "Bezgalīgs prieks pēc veiksmīgas nodarbības" },
+        { id: "5", src: "/src/assets/Horse1.png", alt: "Pirmie soļi", caption: "Pirmie neatkarīgie soļi ar zirgu" },
+        { id: "6", src: "/src/assets/service-excursions.jpg", alt: "Grupas nodarbība", caption: "Kopīgās aktivitātes ar vienaudžiem" }
       ]
     },
     "ziemas-sagatavosana-2025": {
@@ -55,15 +59,70 @@ const RidingSchoolAlbumDetail = () => {
         { title: "Ziemas sagatavošanās", href: "/lv/jaunumi/winter-preparation/" },
         { title: "Laukumu īre", href: "/lv/pakalpojumi/laukumu-ire/" }
       ],
-      coverImage: "/placeholder.svg?height=400&width=600",
+      coverImage: "/src/assets/gallery-ziemas-sagatavosana-1.jpg",
       photos: [
-        { id: "1", src: "/placeholder.svg?height=800&width=1200", alt: "Iekštelpu treniņš", caption: "Treniņš iekštelpu arēnā ziemas laikā" },
-        { id: "2", src: "/placeholder.svg?height=800&width=1200", alt: "Teorijas nodarbība", caption: "Teorijas apguves process" },
-        { id: "3", src: "/placeholder.svg?height=800&width=1200", alt: "Zirgu aprūpe ziemā", caption: "Īpašā zirgu aprūpe ziemas sezonā" },
-        { id: "4", src: "/placeholder.svg?height=800&width=1200", alt: "Siltas telpas", caption: "Siltas telpas treniņiem" },
+        { id: "1", src: "/src/assets/winter-training.jpg", alt: "Iekštelpu treniņš", caption: "Treniņš iekštelpu arēnā ziemas laikā" },
+        { id: "2", src: "/src/assets/service-riding-lessons.jpg", alt: "Teorijas nodarbība", caption: "Teorijas apguves process" },
+        { id: "3", src: "/src/assets/winter-equestrian.jpg", alt: "Zirgu aprūpe ziemā", caption: "Īpašā zirgu aprūpe ziemas sezonā" },
+        { id: "4", src: "/src/assets/service-arena-rental.jpg", alt: "Siltas telpas", caption: "Siltas telpas treniņiem" },
+        { id: "5", src: "/src/assets/Horse2.png", alt: "Ziemas zirgi", caption: "Zirgi ziemas treniņu laikā" },
+        { id: "6", src: "/src/assets/Horse4.png", alt: "Ziemas jāšana", caption: "Ziemas apstākļos pielāgotā jāšana" }
       ]
     },
-    // Add more albums...
+    "vasaras-nometne-2024": {
+      title: "Vasaras nometne 2024",
+      season: "Vasara 2024",
+      description: "Neaizmirstamā vasaras nometne, kurā bērni pavadīja veselu nedēļu kopā ar zirgiem, apgūstot jāšanas prasmes un baudot dabas skaistumu.",
+      relatedLinks: [
+        { title: "Bērnu programmas", href: "/lv/pakalpojumi/bernu-programmas/" },
+        { title: "Vasaras nometnes", href: "/lv/pakalpojumi/bernu-programmas/" }
+      ],
+      coverImage: "/src/assets/gallery-vasaras-nometne-1.jpg",
+      photos: [
+        { id: "1", src: "/src/assets/summer-camp-album.jpg", alt: "Vasaras nometne", caption: "Vasaras nometnes sākums" },
+        { id: "2", src: "/src/assets/service-excursions.jpg", alt: "Dabas izpēte", caption: "Izpētot apkārtējās dabas skaistumu" },
+        { id: "3", src: "/src/assets/Horse3.png", alt: "Vasaras jāšana", caption: "Brīvā dabā ar zirgiem" },
+        { id: "4", src: "/src/assets/hero-equestrian.jpg", alt: "Grupu aktivitātes", caption: "Kopīgās vasaras aktivitātes" },
+        { id: "5", src: "/src/assets/riding-school-training.jpg", alt: "Laukuma treniņi", caption: "Treniņi svaigā gaisā" },
+        { id: "6", src: "/src/assets/Horse1.png", alt: "Draudzība", caption: "Jaunas draudzības ar zirgiem" }
+      ]
+    },
+    "zirgu-apruupe-2024": {
+      title: "Zirgu aprūpe 2024",
+      season: "Gada garumā",
+      description: "Kā mūsu audzēkņi mācās rūpēties par zirgiem - barošana, tīrīšana, veselības uzraudzība un ikdienas aprūpe.",
+      relatedLinks: [
+        { title: "Zirgu uzturēšana", href: "/lv/pakalpojumi/zirgu-uzturesana/" },
+        { title: "Jāšanas treniņi", href: "/lv/pakalpojumi/jasanas-trenini/" }
+      ],
+      coverImage: "/src/assets/gallery-zirgu-apruupe-1.jpg",
+      photos: [
+        { id: "1", src: "/src/assets/horse-care-album.jpg", alt: "Zirgu aprūpe", caption: "Ikdienas zirgu aprūpes darbi" },
+        { id: "2", src: "/src/assets/service-horse-stable.jpg", alt: "Stalļu darbi", caption: "Stalļu uzkopšana un uzturēšana" },
+        { id: "3", src: "/src/assets/Horse2.png", alt: "Zirgu barošana", caption: "Zirgu barošanas process" },
+        { id: "4", src: "/src/assets/Horse4.png", alt: "Zirgu tīrīšana", caption: "Zirgu regulārā tīrīšana" },
+        { id: "5", src: "/src/assets/service-other-services.jpg", alt: "Aprūpes prasmes", caption: "Audzēkņi apgūst aprūpes prasmes" },
+        { id: "6", src: "/src/assets/Horse3.png", alt: "Rūpīga aprūpe", caption: "Mīļa un rūpīga zirgu aprūpe" }
+      ]
+    },
+    "instruktoru-darbs-2024": {
+      title: "Instruktoru darbs 2024",
+      season: "2024. gads",
+      description: "Mūsu pieredzējušo instruktoru ikdienas darbs - mācīšana, konsultēšana un audzēkņu attīstības veicināšana.",
+      relatedLinks: [
+        { title: "Jāšanas treniņi", href: "/lv/pakalpojumi/jasanas-trenini/" },
+        { title: "Par mums", href: "/lv/" }
+      ],
+      coverImage: "/src/assets/gallery-instruktoru-darbs-1.jpg",
+      photos: [
+        { id: "1", src: "/src/assets/service-riding-lessons.jpg", alt: "Individuālās nodarbības", caption: "Instruktors individuālajā nodarbībā" },
+        { id: "2", src: "/src/assets/riding-school-training.jpg", alt: "Grupu nodarbības", caption: "Grupu treniņu vadīšana" },
+        { id: "3", src: "/src/assets/service-corporate.jpg", alt: "Korporatīvie treniņi", caption: "Speciālie korporatīvie treniņi" },
+        { id: "4", src: "/src/assets/Horse1.png", alt: "Darbs ar zirgiem", caption: "Instruktora darbs ar mācību zirgiem" },
+        { id: "5", src: "/src/assets/service-excursions.jpg", alt: "Ekskursiju vadīšana", caption: "Informatīvu ekskursiju organizēšana" },
+        { id: "6", src: "/src/assets/hero-equestrian.jpg", alt: "Profesionālā pieeja", caption: "Profesionāla pieeja katram audzēknim" }
+      ]
+    }
   };
 
   const album = id ? albumData[id] : null;

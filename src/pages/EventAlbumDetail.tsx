@@ -19,13 +19,16 @@ const EventAlbumDetail = () => {
       location: "Inčukalna rajons, 'Zustrenes'",
       description: "Gada lielākā jauniešu sacensība, kurā piedalījās vairāk nekā 50 dalībnieki no visas Latvijas. Sacensības notika trīs dienas ar dažādām disciplīnām un vecuma grupām.",
       eventLink: "/lv/pasakumi/jauniesu-kauss-2025/",
-      coverImage: "/placeholder.svg?height=400&width=600",
+      coverImage: "/src/assets/gallery-jauniesu-kauss-1.jpg",
       photos: [
-        { id: "1", src: "/placeholder.svg?height=800&width=1200", alt: "Sacensību atklāšana", caption: "Sacensību svinīgā atklāšana" },
-        { id: "2", src: "/placeholder.svg?height=800&width=1200", alt: "Jātnieks šķērslī", caption: "Precīzs šķēršļu pārvarējums" },
-        { id: "3", src: "/placeholder.svg?height=800&width=1200", alt: "Uzvarētāji", caption: "Uzvarētāju apbalvošana" },
-        { id: "4", src: "/placeholder.svg?height=800&width=1200", alt: "Komandas foto", caption: "Visu dalībnieku kopīgais foto" },
-        // Add more photos...
+        { id: "1", src: "/src/assets/youth-cup.jpg", alt: "Sacensību atklāšana", caption: "Sacensību svinīgā atklāšana" },
+        { id: "2", src: "/src/assets/event-showjumping.jpg", alt: "Jātnieks šķērslī", caption: "Precīzs šķēršļu pārvarējums" },
+        { id: "3", src: "/src/assets/youth-championship-album.jpg", alt: "Uzvarētāji", caption: "Uzvarētāju apbalvošana" },
+        { id: "4", src: "/src/assets/event-competition-1.jpg", alt: "Komandas foto", caption: "Visu dalībnieku kopīgais foto" },
+        { id: "5", src: "/src/assets/Horse1.png", alt: "Dalībnieku zirgi", caption: "Sacensību zirgi pirms startiem" },
+        { id: "6", src: "/src/assets/Horse2.png", alt: "Treniņš", caption: "Sagatavošanās treniņš" },
+        { id: "7", src: "/src/assets/events-calendar-hero.jpg", alt: "Pasākuma atmosfēra", caption: "Krāšņā sacensību atmosfēra" },
+        { id: "8", src: "/src/assets/riding-school-training.jpg", alt: "Jātnieku sagatavošanās", caption: "Intensīvā sagatavošanās" }
       ]
     },
     "latvijas-zirgu-dienas-2025": {
@@ -34,15 +37,47 @@ const EventAlbumDetail = () => {
       location: "Jauno jātnieku skola, Inčukalns",
       description: "Krāšņs svētku pasākums visiem zirgu mīļotājiem ar dažādām aktivitātēm, izstādēm un izklaidēm.",
       eventLink: "/lv/pasakumi/zirgu-dienas-2025/",
-      coverImage: "/placeholder.svg?height=400&width=600",
+      coverImage: "/src/assets/gallery-latvijas-zirgu-dienas-1.jpg",
       photos: [
-        { id: "1", src: "/placeholder.svg?height=800&width=1200", alt: "Svētku atklāšana", caption: "XVII Zirgu dienu svinīgā atklāšana" },
-        { id: "2", src: "/placeholder.svg?height=800&width=1200", alt: "Zirgu izstāde", caption: "Skaistāko zirgu demonstrācija" },
-        { id: "3", src: "/placeholder.svg?height=800&width=1200", alt: "Bērnu aktivitātes", caption: "Bērniem paredzētās aktivitātes" },
-        { id: "4", src: "/placeholder.svg?height=800&width=1200", alt: "Vakarēšanās koncerts", caption: "Mūzikas koncerts zem zvaigznēm" },
+        { id: "1", src: "/src/assets/hero-equestrian.jpg", alt: "Svētku atklāšana", caption: "XVII Zirgu dienu svinīgā atklāšana" },
+        { id: "2", src: "/src/assets/Horse3.png", alt: "Zirgu izstāde", caption: "Skaistāko zirgu demonstrācija" },
+        { id: "3", src: "/src/assets/summer-camp-album.jpg", alt: "Bērnu aktivitātes", caption: "Bērniem paredzētās aktivitātes" },
+        { id: "4", src: "/src/assets/events-calendar-hero.jpg", alt: "Vakarēšanās koncerts", caption: "Mūzikas koncerts zem zvaigznēm" },
+        { id: "5", src: "/src/assets/Horse4.png", alt: "Zirgu parāde", caption: "Krāšņā zirgu parāde" },
+        { id: "6", src: "/src/assets/service-excursions.jpg", alt: "Ekskursijas", caption: "Aizraujošās ekskursijas pa saimniecību" }
       ]
     },
-    // Add more albums...
+    "yrs-open-2025": {
+      title: "YRS Open Championship 2025",
+      date: "12-14 jūlijs, 2025",
+      location: "Jauno jātnieku skola, Inčukalns",
+      description: "Starptautiskās sacensības jaunajiem jātniekiem ar dalībniekiem no Baltijas valstīm un citām Eiropas valstīm.",
+      eventLink: "/lv/pasakumi/yrs-open-2025/",
+      coverImage: "/src/assets/gallery-yrs-open-1.jpg",
+      photos: [
+        { id: "1", src: "/src/assets/event-competition.jpg", alt: "Starptautiskās sacensības", caption: "YRS Open sākums" },
+        { id: "2", src: "/src/assets/event-showjumping.jpg", alt: "Šķēršļu jāšana", caption: "Augstākā līmeņa šķēršļu jāšana" },
+        { id: "3", src: "/src/assets/youth-championship-album.jpg", alt: "Starptautiskie dalībnieki", caption: "Dalībnieki no dažādām valstīm" },
+        { id: "4", src: "/src/assets/Horse1.png", alt: "Čempionu zirgi", caption: "Līderu zirgi finālā" },
+        { id: "5", src: "/src/assets/riding-school-training.jpg", alt: "Treniņu process", caption: "Sagatavošanās sacensībām" }
+      ]
+    },
+    "pavasara-sacensibas-2025": {
+      title: "Pavasara sacensības 2025",
+      date: "25-26 maijs, 2025",
+      location: "Jauno jātnieku skola, Inčukalns",
+      description: "Tradicionālās pavasara sacensības, kas iezīmē aktīvās sezonas sākumu. Dalības iespējas visām vecuma grupām.",
+      eventLink: "/lv/pasakumi/pavasara-sacensibas-2025/",
+      coverImage: "/src/assets/gallery-pavasara-sacensibas-1.jpg",
+      photos: [
+        { id: "1", src: "/src/assets/event-competition-1.jpg", alt: "Pavasara sacensības", caption: "Pavasara sacensību atklāšana" },
+        { id: "2", src: "/src/assets/Horse2.png", alt: "Pavasara treniņi", caption: "Pirmie treniņi pēc ziemas" },
+        { id: "3", src: "/src/assets/youth-cup.jpg", alt: "Jaunieši startā", caption: "Jauno jātnieku starts" },
+        { id: "4", src: "/src/assets/events-calendar-hero.jpg", alt: "Sacensību gaisotne", caption: "Pavasarīgā sacensību atmosfēra" },
+        { id: "5", src: "/src/assets/Horse3.png", alt: "Treniņu zirgi", caption: "Zirgi pavasara treniņos" },
+        { id: "6", src: "/src/assets/riding-school-training.jpg", alt: "Praktiskais darbs", caption: "Praktiskās nodarbības laukā" }
+      ]
+    }
   };
 
   const album = id ? albumData[id] : null;
