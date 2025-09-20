@@ -15,7 +15,6 @@ import {
   Star,
   User,
   CalendarClock,
-  MessageSquare,
   X,
 } from "lucide-react";
 
@@ -29,7 +28,7 @@ const ZirguUzturesana = () => {
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // тут можно отправить форму через fetch на ваш endpoint
+    // TODO: отправьте данные на ваш endpoint
     setSent(true);
     setTimeout(() => {
       setOpen(false);
@@ -67,8 +66,7 @@ const ZirguUzturesana = () => {
                 Zirgu uzturēšana
               </h1>
               <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto text-white/90 leading-relaxed">
-                Profesionāla zirgu aprūpe un uzturēšana modernās stallīs ar
-                augstākajiem komforta standartiem.
+                Profesionāla zirgu aprūpe un uzturēšana modernās stallīs ar augstākajiem komforta standartiem.
               </p>
             </div>
           </div>
@@ -79,16 +77,11 @@ const ZirguUzturesana = () => {
           <div className="grid grid-cols-1 lg:grid-cols-[1.4fr,1fr] gap-12">
             {/* Left: intro */}
             <div className="space-y-8">
-              <h2 className="text-section text-foreground">
-                Profesionāla zirgu aprūpe un uzturēšana
-              </h2>
+              <h2 className="text-section text-foreground">Profesionala zirgu aprūpe un uzturēšana</h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Piedāvājam profesionālu zirgu aprūpi un uzturēšanu mūsdienīgos
-                staļļos ar augstākajiem komforta standartiem. Staļļi ir aprīkoti
-                ar modernām ventilācijas sistēmām, kvalitatīvām boksu
-                konstrukcijām un regulāru veterināro uzraudzību. Katrs zirgs
-                saņem individuālu aprūpi, ņemot vērā tā vecumu, veselības stāvokli
-                un īpašās vajadzības.
+                Piedāvājam profesionālu zirgu aprūpi un uzturēšanu mūsdienīgos staļļos ar augstākajiem komforta standartiem.
+                Staļļi ir aprīkoti ar modernām ventilācijas sistēmām, kvalitatīvām boksu konstrukcijām un regulāru veterināro uzraudzību.
+                Katrs zirgs saņem individuālu aprūpi, ņemot vērā tā vecumu, veselības stāvokli un īpašās vajadzības.
               </p>
 
               <div className="space-y-4">
@@ -103,7 +96,7 @@ const ZirguUzturesana = () => {
                     { text: "24/7 uzraudzība un drošības nodrošinājums", icon: Shield },
                     { text: "Āra pastaigu laukumi un ganības", icon: MapPin },
                   ].map((item, i) => (
-                    <div key={i} className="flex items-start gap-3 p-3 rounded-lg hover:bg-light transition-colors">
+                    <div key={i} className="flex items-start gap-3 p-3 rounded-lg hover:bg-neutral-50 transition-colors">
                       <item.icon className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
                       <span className="text-muted-foreground">{item.text}</span>
                     </div>
@@ -112,8 +105,8 @@ const ZirguUzturesana = () => {
               </div>
             </div>
 
-            {/* Right: aside card */}
-            <aside className="glass-card p-8 h-fit">
+            {/* Right: daily include card (light) */}
+            <aside className="p-8 h-fit rounded-2xl border bg-white shadow-sm">
               <h3 className="text-card-title text-foreground mb-6 flex items-center gap-2">
                 <Star className="w-5 h-5 text-primary" />
                 Iekļauts ikdienā
@@ -139,8 +132,8 @@ const ZirguUzturesana = () => {
           </div>
         </section>
 
-        {/* Included features grid */}
-        <section className="bg-light py-16">
+        {/* Facilities grid (light cards) */}
+        <section className="bg-neutral-50 py-16">
           <div className="container mx-auto max-w-6xl px-4">
             <h3 className="text-section text-foreground mb-12 text-center">Iekārtas un labiekārtojums</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -152,8 +145,11 @@ const ZirguUzturesana = () => {
                 { text: "Apsildāmas garderobes", icon: Users },
                 { text: "Āra laukumi un ganības", icon: MapPin },
               ].map((item, i) => (
-                <div key={i} className="glass-card p-6 text-center hover-lift group">
-                  <item.icon className="w-8 h-8 text-primary mx-auto mb-4 group-hover:scale-110 transition-transform" />
+                <div
+                  key={i}
+                  className="p-6 rounded-2xl border bg-white shadow-sm text-center transition-transform duration-200 hover:-translate-y-0.5"
+                >
+                  <item.icon className="w-8 h-8 text-primary mx-auto mb-4" />
                   <p className="text-sm font-medium text-foreground">{item.text}</p>
                 </div>
               ))}
@@ -161,39 +157,85 @@ const ZirguUzturesana = () => {
           </div>
         </section>
 
-        {/* Pricing table (оставил как было) */}
-        {/* ... твоя таблица пакетов или прайс ... */}
+        {/* Pricing table */}
+        <section className="container mx-auto max-w-6xl px-4 py-16">
+          <h3 className="text-section text-foreground mb-12 text-center">Piedāvātās pakas</h3>
+          <div className="overflow-hidden rounded-2xl border bg-white shadow-sm">
+            <table className="min-w-full text-sm">
+              <thead className="bg-primary/5">
+                <tr>
+                  <th className="text-left px-6 py-4 font-semibold text-foreground">Paka</th>
+                  <th className="text-right px-6 py-4 font-semibold text-foreground">Cena (EUR) + PVN</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  { name: "DIY", price: "155", isPopular: false },
+                  { name: "BRONZA", price: "285", isPopular: false },
+                  { name: "SUDRABS", price: "370", isPopular: false },
+                  { name: "SUDRABS+", price: "410", isPopular: true },
+                  { name: "ZELTS", price: "470", isPopular: false },
+                  { name: "PLATĪNS", price: "720", isPopular: false },
+                ].map((pkg, index) => (
+                  <tr
+                    key={pkg.name}
+                    className={`
+                      border-t hover:bg-primary/5 transition-colors
+                      ${pkg.isPopular ? "bg-primary/10 border-primary/20" : "border-border"}
+                      ${index % 2 === 0 ? "bg-background" : "bg-muted/30"}
+                    `}
+                  >
+                    <td className="px-6 py-4 relative">
+                      <div className="flex items-center gap-2">
+                        <span className={`font-medium ${pkg.isPopular ? "text-primary" : "text-foreground"}`}>
+                          {pkg.name}
+                        </span>
+                        {pkg.isPopular && (
+                          <span className="px-2 py-1 text-xs bg-primary text-white rounded-full font-medium">
+                            Populārs
+                          </span>
+                        )}
+                      </div>
+                    </td>
+                    <td className={`px-6 py-4 text-right font-bold text-lg ${pkg.isPopular ? "text-primary" : "text-foreground"}`}>
+                      €{pkg.price}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-6 text-sm text-muted-foreground text-center max-w-2xl mx-auto">
+            * Cenas norādītas bez PVN. Apmaksa iespējama kā juridiskai personai vai uz biedrību ar sabiedriskā labuma statusu.
+          </p>
+        </section>
 
-        {/* Practical info + Contacts highlighted */}
-        <section className="bg-light py-16">
+        {/* Practical info + Contacts (light cards) */}
+        <section className="bg-neutral-50 py-16">
           <div className="container mx-auto max-w-4xl px-4">
             <h3 className="text-section text-foreground mb-12 text-center">Praktiskā informācija</h3>
 
             <div className="grid gap-8 md:grid-cols-[1.2fr,1fr]">
-              {/* Информация */}
-              <div className="glass-card p-8">
+              {/* Info card */}
+              <div className="p-8 rounded-2xl border bg-white shadow-sm">
                 <div className="grid gap-6">
                   {[
-                    { text: "Visi pakalpojumi pēc iepriekšēja pieraksta.", icon: CheckCircle2 },
-                    { text: "Svētku dienās visiem pakalpojumiem tiek piemērota papildus maksa 50% apmērā.", icon: Shield },
-                    { text: "Nodarbību / aprūpes laiki var mainīties — vienmēr precizējam pirms apmeklējuma.", icon: Users },
-                  ].map((item, i) => (
+                    "Visi pakalpojumi pēc iepriekšēja pieraksta.",
+                    "Svētku dienās visiem pakalpojumiem tiek piemērota papildus maksa 50% apmērā.",
+                    "Nodarbību / aprūpes laiki var mainīties — vienmēr precizējam pirms apmeklējuma.",
+                  ].map((text, i) => (
                     <div key={i} className="flex items-start gap-4">
-                      <item.icon className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
-                      <span className="text-muted-foreground">{item.text}</span>
+                      <CheckCircle2 className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                      <span className="text-muted-foreground">{text}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
-              {/* Контакты — яркая карточка + кнопка на попап */}
-              <div className="glass-card p-0 overflow-hidden">
+              {/* Contacts card + popup trigger */}
+              <div className="p-0 overflow-hidden rounded-2xl border bg-white shadow-sm">
                 <div className="relative h-28 bg-gradient-to-r from-primary/80 to-primary/60">
-                  <img
-                    src={winterImage}
-                    alt=""
-                    className="absolute inset-0 w-full h-full object-cover opacity-25"
-                  />
+                  <img src={winterImage} alt="" className="absolute inset-0 w-full h-full object-cover opacity-25" />
                 </div>
                 <div className="p-6 space-y-4">
                   <h4 className="text-lg font-semibold text-foreground">Sazinieties ar mums</h4>
@@ -223,7 +265,7 @@ const ZirguUzturesana = () => {
         </section>
       </main>
 
-      {/* === POPUP FORM === */}
+      {/* POPUP FORM */}
       {open && (
         <div
           role="dialog"
@@ -235,25 +277,17 @@ const ZirguUzturesana = () => {
             className="w-full max-w-3xl grid md:grid-cols-2 bg-white rounded-2xl overflow-hidden shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Left: image */}
+            {/* Left image */}
             <div className="relative hidden md:block">
-              <img
-                src={serviceStable}
-                alt=""
-                className="absolute inset-0 w-full h-full object-cover"
-              />
+              <img src={serviceStable} alt="" className="absolute inset-0 w-full h-full object-cover" />
               <div className="absolute inset-0 bg-black/10" />
             </div>
 
-            {/* Right: form */}
+            {/* Right form */}
             <div className="p-6 md:p-8">
               <div className="flex items-start justify-between mb-4">
                 <h4 className="text-xl font-semibold">Atstāt pieteikumu</h4>
-                <button
-                  onClick={() => setOpen(false)}
-                  className="p-2 rounded-lg hover:bg-neutral-100"
-                  aria-label="Close"
-                >
+                <button onClick={() => setOpen(false)} className="p-2 rounded-lg hover:bg-neutral-100" aria-label="Close">
                   <X className="w-5 h-5" />
                 </button>
               </div>
@@ -267,7 +301,7 @@ const ZirguUzturesana = () => {
                     <input
                       required
                       type="text"
-                      className="input"
+                      className="w-full rounded-xl border border-neutral-200 bg-white px-3 py-2.5 text-sm outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50"
                       placeholder="Jūsu vārds"
                     />
                   </label>
@@ -280,7 +314,7 @@ const ZirguUzturesana = () => {
                       <input
                         required
                         type="tel"
-                        className="input"
+                        className="w-full rounded-xl border border-neutral-200 bg-white px-3 py-2.5 text-sm outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50"
                         placeholder="+371 ..."
                       />
                     </label>
@@ -290,7 +324,7 @@ const ZirguUzturesana = () => {
                       </span>
                       <input
                         type="email"
-                        className="input"
+                        className="w-full rounded-xl border border-neutral-200 bg-white px-3 py-2.5 text-sm outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50"
                         placeholder="name@example.com"
                       />
                     </label>
@@ -302,7 +336,7 @@ const ZirguUzturesana = () => {
                     </span>
                     <textarea
                       rows={4}
-                      className="input resize-none"
+                      className="w-full rounded-xl border border-neutral-200 bg-white px-3 py-2.5 text-sm outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50 resize-none"
                       placeholder="Īsi aprakstiet pieprasījumu"
                     />
                   </label>
@@ -318,9 +352,7 @@ const ZirguUzturesana = () => {
                 <div className="flex flex-col items-center justify-center py-10 text-center">
                   <CheckCircle2 className="w-10 h-10 text-primary mb-3" />
                   <p className="text-lg font-medium">Pieteikums nosūtīts!</p>
-                  <p className="text-sm text-muted-foreground">
-                    Mēs sazināsimies ar jums tuvākajā laikā.
-                  </p>
+                  <p className="text-sm text-muted-foreground">Mēs sazināsimies ar jums tuvākajā laikā.</p>
                 </div>
               )}
             </div>
@@ -334,13 +366,3 @@ const ZirguUzturesana = () => {
 };
 
 export default ZirguUzturesana;
-
-/* Tailwind helper (если у тебя нет классов input/glass-card/light/hover-lift):
-.input { @apply w-full rounded-xl border border-neutral-200 bg-white px-3 py-2.5 text-sm outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50; }
-.glass-card { @apply rounded-2xl border border-neutral-200 bg-white/80 backdrop-blur shadow-sm; }
-.bg-light { @apply bg-neutral-50; }
-.hover-lift { @apply transition-transform duration-200 hover:-translate-y-0.5; }
-.text-hero { @apply text-4xl md:text-6xl font-extrabold tracking-tight; }
-.text-section { @apply text-2xl md:text-3xl font-semibold; }
-.text-card-title { @apply text-lg font-semibold; }
-*/
