@@ -30,15 +30,6 @@ const LaukumuIre = () => {
           
           <div className="relative flex items-center justify-center text-center text-white min-h-[50vh] md:min-h-[60vh]">
             <div className="container mx-auto px-4 max-w-6xl">
-              {/* Breadcrumbs */}
-              <nav className="flex items-center justify-center mb-6 text-sm text-white/80">
-                <Home className="w-4 h-4 mr-2" />
-                <span>Sākums</span>
-                <ChevronRight className="w-4 h-4 mx-2" />
-                <span>Pakalpojumi</span>
-                <ChevronRight className="w-4 h-4 mx-2" />
-                <span className="text-white font-medium">Laukumu īre</span>
-              </nav>
 
               <h1 className="text-hero text-white mb-4 drop-shadow-lg">
                 Laukumu īre
@@ -52,6 +43,19 @@ const LaukumuIre = () => {
 
         {/* Content Section */}
         <section className="container mx-auto max-w-6xl px-4 py-16 md:py-20">
+          {/* Breadcrumbs */}
+            <nav className="flex items-center justify-start mb-6 text-sm text-black/80">
+              <a href="/lv/" className="flex items-center hover:text-primary transition-colors">
+                <Home className="w-4 h-4 mr-2" />
+                Sākums
+              </a>
+              <ChevronRight className="w-4 h-4 mx-2" />
+              <a href="/lv/pakalpojumi/" className="hover:text-primary transition-colors">
+                Pakalpojumi
+              </a>
+              <ChevronRight className="w-4 h-4 mx-2" />
+              <span className="text-black font-medium">Laukumu īre</span>
+            </nav>
           <div className="grid grid-cols-1 lg:grid-cols-[1.4fr,1fr] gap-12">
             <div className="space-y-8">
               <h2 className="text-section text-foreground">Profesionālu jāšanas laukumu īre</h2>
