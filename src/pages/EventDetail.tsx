@@ -249,7 +249,7 @@ const EventDetail = () => {
                     )}
                     <Button
                       asChild
-                      className="bg-transparent text-white rounded-xl 
+                      className="bg-[#963026] text-white rounded-xl 
                                  transition-all duration-300 hover:scale-105"
                     >
                       <a href={currentEvent.gallery} className="flex items-center !text-white">
