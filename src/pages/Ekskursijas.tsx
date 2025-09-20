@@ -121,6 +121,51 @@ const Ekskursijas = () => {
           </div>
         </section>
 
+        {/* Ekskursijas table */}
+        <section className="container mx-auto max-w-6xl px-4 py-12">
+          <div className="overflow-hidden rounded-2xl border bg-white shadow-sm">
+            <table className="min-w-full text-sm">
+              <thead className="bg-neutral-50">
+                <tr>
+                  <th className="text-left px-4 md:px-6 py-3 font-semibold uppercase tracking-wide">
+                    Ekskursijas
+                  </th>
+                  <th className="text-right px-4 md:px-6 py-3 font-semibold">
+                    Cena ar PVN
+                  </th>
+                </tr>
+              </thead>
+        
+              <tbody className="divide-y">
+                {[
+                  {
+                    name:
+                      "Ekskursija pa teritoriju ar zirgu barošanu, līdz 4 personām (bērniem līdz 7 g.v. bez maksas)",
+                    price: "€ 20.00",
+                  },
+                  {
+                    name: "Papildus vizināšana ar zirgu/poniju, par personu",
+                    price: "€ 5.00",
+                  },
+                  {
+                    name:
+                      "Skolu un bērnudārza grupiņu ekskursijas ar zirgu barošanu un vizināšanos (cena par 1 personu, sākot no 10 personām)",
+                    price: "€ 3.00",
+                  },
+                ].map((row, i) => (
+                  <tr key={i} className="hover:bg-neutral-50/60">
+                    <td className="px-4 md:px-6 py-3 text-foreground">{row.name}</td>
+                    <td className="px-4 md:px-6 py-3 text-right font-medium">
+                      {row.price}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+
         {/* Practical info + Contacts (light cards) */}
         <section className="bg-neutral-50 py-16">
           <div className="container mx-auto max-w-4xl px-4">
