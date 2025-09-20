@@ -6,14 +6,15 @@ import serviceRiding from "@/assets/service-riding-lessons.jpg";
 import excursionsImage from "@/assets/service-excursions.jpg";
 import { Gift, ShieldCheck, Sparkles, Clock, Wallet } from "lucide-react";
 
+type FixedCard = { amount: number; price: string; custom?: false };
+type CustomCard = { custom: true };
+type GiftCard = FixedCard | CustomCard;
+
 const DavanuKartes = () => {
   const [customAmount, setCustomAmount] = useState("");
   const customInputRef = useRef<HTMLInputElement | null>(null);
 
-  const giftCards: Array<
-    | { amount: number; price: string; custom?: false }
-    | { custom: true }
-  > = [
+  const giftCards: GiftCard[] = [
     { amount: 25, price: "€25.00" },
     { amount: 50, price: "€50.00" },
     { amount: 100, price: "€100.00" },
@@ -25,14 +26,10 @@ const DavanuKartes = () => {
       <Header />
 
       <main className="pt-24">
-        {/* Hero Section */}
+        {/* Hero */}
         <section className="relative">
           <div className="absolute inset-0">
-            <img
-              src={serviceRiding}
-              alt=""
-              className="w-full h-full object-cover"
-            />
+            <img src={serviceRiding} alt="" className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-black/45 backdrop-blur-[1px]" />
           </div>
 
@@ -47,7 +44,7 @@ const DavanuKartes = () => {
           </div>
         </section>
 
-        {/* Gift Cards Grid */}
+        {/* Gift Cards */}
         <section className="py-16 md:py-24">
           <div className="container mx-auto px-4 max-w-6xl">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -55,10 +52,7 @@ const DavanuKartes = () => {
                 const isCustom = "custom" in card && card.custom;
 
                 return (
-                  <div
-                    key={index}
-                    className="glass-card overflow-hidden rounded-2xl shadow-sm"
-                  >
+                  <div key={index} className="rounded-2xl overflow-hidden shadow-sm bg-card flex flex-col">
                     {/* Кликабельная картинка */}
                     {isCustom ? (
                       <a
@@ -66,58 +60,48 @@ const DavanuKartes = () => {
                         onClick={(e) => {
                           e.preventDefault();
                           customInputRef.current?.focus();
-                          document
-                            .getElementById("custom-amount")
-                            ?.scrollIntoView({ behavior: "smooth", block: "center" });
+                          document.getElementById("custom-amount")?.scrollIntoView({
+                            behavior: "smooth",
+                            block: "center",
+                          });
                         }}
-                        className="block relative h-96"
+                        className="relative block aspect-[3/4]"
                         aria-label="Savs apjoms"
                       >
-                        <img
-                          src={excursionsImage}
-                          alt=""
-                          className="absolute inset-0 w-full h-full object-cover"
-                        />
-                        <div className="absolute inset-0 bg-black/50" />
-                        <div className="relative h-full p-8 flex flex-col justify-center items-center text-center">
-                          <h3 className="text-white text-3xl font-bold mb-4">
+                        <img src={excursionsImage} alt="" className="absolute inset-0 w-full h-full object-cover" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                        <div className="relative h-full px-6 py-5 flex flex-col justify-end">
+                          <div className="text-white text-2xl font-bold leading-tight drop-shadow-sm">
                             Dāvanu karte
-                          </h3>
-                          <div className="text-white text-3xl font-semibold">
+                          </div>
+                          <div className="mt-2 text-white text-3xl font-extrabold drop-shadow-sm">
                             Savs apjoms
                           </div>
                         </div>
                       </a>
                     ) : (
                       <a
-                        href={`/lv/checkout/?amount=${(card as any).amount}`}
-                        className="block relative h-96"
-                        aria-label={`Pirkt dāvanu karti ${(card as any).amount}€`}
+                        href={`/lv/checkout/?amount=${(card as FixedCard).amount}`}
+                        className="relative block aspect-[3/4]"
+                        aria-label={`Pirkt dāvanu karti ${(card as FixedCard).amount}€`}
                       >
-                        <img
-                          src={excursionsImage}
-                          alt=""
-                          className="absolute inset-0 w-full h-full object-cover"
-                        />
-                        <div className="absolute inset-0 bg-black/50" />
-                        <div className="relative h-full p-8 flex flex-col justify-center items-center text-center">
-                          <h3 className="text-white text-3xl font-bold mb-4">
+                        <img src={excursionsImage} alt="" className="absolute inset-0 w-full h-full object-cover" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                        <div className="relative h-full px-6 py-5 flex flex-col justify-end">
+                          <div className="text-white text-2xl font-bold leading-tight drop-shadow-sm">
                             Dāvanu karte
-                          </h3>
-                          <div className="text-white text-5xl font-extrabold">
-                            {(card as any).amount}€
+                          </div>
+                          <div className="mt-2 text-white text-4xl font-extrabold drop-shadow-sm">
+                            {(card as FixedCard).amount}€
                           </div>
                         </div>
                       </a>
                     )}
 
-                    {/* Действия под карточкой */}
+                    {/* Действия под карточкой (единый стек для всех) */}
                     <div className="p-5 border-t bg-white/60 dark:bg-black/20 backdrop-blur">
                       {isCustom ? (
-                        <div
-                          id="custom-amount"
-                          className="flex flex-col gap-3"
-                        >
+                        <div id="custom-amount" className="flex flex-col gap-3">
                           <input
                             ref={customInputRef}
                             type="number"
@@ -130,8 +114,8 @@ const DavanuKartes = () => {
                               if (Number(v) >= 0 || v === "") setCustomAmount(v);
                             }}
                             placeholder="Ievadiet summu (€)"
-                            className="w-full rounded-xl border border-gray-300 px-4 py-2.5 text-base 
-                                       bg-white text-gray-900 placeholder-gray-400 
+                            className="w-full rounded-xl border border-gray-300 px-4 py-2.5 text-base
+                                       bg-white text-gray-900 placeholder-gray-400
                                        focus:outline-none focus:ring-2 focus:ring-primary"
                           />
                           <Button
@@ -149,13 +133,13 @@ const DavanuKartes = () => {
                           </Button>
                         </div>
                       ) : (
-                        <div className="flex items-center justify-between">
+                        <div className="flex flex-col gap-3">
                           <div className="text-sm text-muted-foreground">
-                            {(card as any).price}
+                            {(card as FixedCard).price}
                           </div>
-                          <Button asChild className="rounded-xl px-6 py-2.5 text-base">
+                          <Button asChild className="w-full rounded-xl px-6 py-2.5 text-base">
                             <a
-                              href={`/lv/checkout/?amount=${(card as any).amount}`}
+                              href={`/lv/checkout/?amount=${(card as FixedCard).amount}`}
                               className="!text-white"
                             >
                               Pirkt
@@ -171,11 +155,8 @@ const DavanuKartes = () => {
           </div>
         </section>
 
-        {/* Advantages Section */}
-        <section
-          className="py-16 md:py-24"
-          style={{ backgroundColor: "#2f2f2f14" }}
-        >
+        {/* Advantages */}
+        <section className="py-16 md:py-24" style={{ backgroundColor: "#2f2f2f14" }}>
           <div className="container mx-auto px-4 max-w-6xl">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">
