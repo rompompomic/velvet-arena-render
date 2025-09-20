@@ -12,50 +12,35 @@ import MapSection from "@/components/MapSection";
 import contactHeroBg from "@/assets/contact-hero-bg.jpg";
 
 const Kontakti = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: ""
-  });
+  const [formData, setFormData] = useState({ name: "", email: "", phone: "", message: "" });
   const { toast } = useToast();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
+    setFormData(prev => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically send the form data to your backend
     toast({
       title: "Ziņojums nosūtīts!",
       description: "Mēs ar jums sazināsimies tuvākajā laikā.",
     });
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      message: ""
-    });
+    setFormData({ name: "", email: "", phone: "", message: "" });
   };
 
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      
-    {/* HERO Section matching Pakalpojumi style */}
-      <section className="relative">
+
+      {/* HERO — смещён ниже фикс-хедера, центрирование и стабильная высота */}
+      <section className="relative mt-16 md:mt-20 h-[460px] md:h-[560px] overflow-hidden">
         <div className="absolute inset-0">
-          <img src={contactHeroBg} alt="" className="w-full h-full object-cover" />
+          <img src={contactHeroBg} alt="Kontakti" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-black/45 backdrop-blur-[1px]" />
         </div>
 
-        <div className="relative container mx-auto px-4 max-w-7xl py-20 md:py-28 text-center text-white">
+        <div className="relative h-full container mx-auto px-4 max-w-7xl flex flex-col items-center justify-center text-center text-white">
           <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight drop-shadow-sm">
             Kontakti
           </h1>
@@ -78,57 +63,21 @@ const Kontakti = () => {
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
                     <Label htmlFor="name">Vārds *</Label>
-                    <Input
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      required
-                      className="mt-1"
-                    />
+                    <Input id="name" name="name" value={formData.name} onChange={handleInputChange} required className="mt-1" />
                   </div>
-                  
                   <div>
                     <Label htmlFor="email">E-pasts *</Label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      required
-                      className="mt-1"
-                    />
+                    <Input id="email" name="email" type="email" value={formData.email} onChange={handleInputChange} required className="mt-1" />
                   </div>
-                  
                   <div>
                     <Label htmlFor="phone">Telefons</Label>
-                    <Input
-                      id="phone"
-                      name="phone"
-                      type="tel"
-                      value={formData.phone}
-                      onChange={handleInputChange}
-                      className="mt-1"
-                    />
+                    <Input id="phone" name="phone" type="tel" value={formData.phone} onChange={handleInputChange} className="mt-1" />
                   </div>
-                  
                   <div>
                     <Label htmlFor="message">Ziņojums *</Label>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleInputChange}
-                      required
-                      rows={5}
-                      className="mt-1"
-                    />
+                    <Textarea id="message" name="message" value={formData.message} onChange={handleInputChange} required rows={5} className="mt-1" />
                   </div>
-                  
-                  <Button type="submit" className="w-full">
-                    Nosūtīt ziņojumu
-                  </Button>
+                  <Button type="submit" className="w-full">Nosūtīt ziņojumu</Button>
                 </form>
               </CardContent>
             </Card>
@@ -151,7 +100,7 @@ const Kontakti = () => {
                       </a>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-center space-x-4">
                     <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
                       <Mail className="w-6 h-6 text-primary" />
@@ -163,7 +112,7 @@ const Kontakti = () => {
                       </a>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-center space-x-4">
                     <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
                       <MapPin className="w-6 h-6 text-primary" />
@@ -175,7 +124,7 @@ const Kontakti = () => {
                       </p>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-center space-x-4">
                     <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
                       <Clock className="w-6 h-6 text-primary" />
@@ -196,12 +145,61 @@ const Kontakti = () => {
                   <CardTitle className="text-2xl text-primary">Sekojiet mums</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="flex space-x-4">
-                    <Button variant="outline" size="icon" className="hover:bg-primary hover:text-primary-foreground">
-                      <Facebook className="w-5 h-5" />
+                  <div className="flex flex-wrap gap-3">
+                    <Button
+                      variant="outline"
+                      size="icon"
+                      className="hover:bg-primary hover:text-primary-foreground"
+                      aria-label="Facebook"
+                      asChild
+                    >
+                      <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                        <Facebook className="w-5 h-5" />
+                      </a>
                     </Button>
-                    <Button variant="outline" size="icon" className="hover:bg-primary hover:text-primary-foreground">
-                      <Instagram className="w-5 h-5" />
+
+                    <Button
+                      variant="outline"
+                      size="icon"
+                      className="hover:bg-primary hover:text-primary-foreground"
+                      aria-label="Instagram"
+                      asChild
+                    >
+                      <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                        <Instagram className="w-5 h-5" />
+                      </a>
+                    </Button>
+
+                    {/* X (Twitter) */}
+                    <Button
+                      variant="outline"
+                      size="icon"
+                      className="hover:bg-primary hover:text-primary-foreground"
+                      aria-label="X (Twitter)"
+                      asChild
+                    >
+                      <a href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+                        {/* Иконка X */}
+                        <svg viewBox="0 0 24 24" className="w-5 h-5" fill="currentColor" aria-hidden="true">
+                          <path d="M18.244 2H21l-6.52 7.45L22.5 22h-6.73l-4.72-6.2L5.44 22H2.5l7.06-8.06L1.5 2h6.86l4.33 5.73L18.244 2Zm-2.36 18h1.77L8.21 4h-1.8l9.474 16Z" />
+                        </svg>
+                      </a>
+                    </Button>
+
+                    {/* TikTok */}
+                    <Button
+                      variant="outline"
+                      size="icon"
+                      className="hover:bg-primary hover:text-primary-foreground"
+                      aria-label="TikTok"
+                      asChild
+                    >
+                      <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                        {/* Иконка TikTok */}
+                        <svg viewBox="0 0 24 24" className="w-5 h-5" fill="currentColor" aria-hidden="true">
+                          <path d="M12.5 2h2.2c.2 1.1.8 2.1 1.6 2.9a5.9 5.9 0 0 0 3 1.5v2.3a8.3 8.3 0 0 1-3.9-1.1v6.6a6.6 6.6 0 1 1-6.6-6.6c.3 0 .6 0 .9.1v2.5c-.3-.1-.6-.1-.9-.1a4.1 4.1 0 1 0 4.1 4.1V2Z" />
+                        </svg>
+                      </a>
                     </Button>
                   </div>
                   <p className="text-sm text-muted-foreground mt-4">
