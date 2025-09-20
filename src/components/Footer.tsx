@@ -327,10 +327,7 @@ const Footer = () => {
               </h4>
               <a
                 href="/lv/davanu-kartes/"
-                className="inline-flex justify-center
-                           w-auto min-w-[170px] px-5 py-2.5
-                           bg-[hsl(var(--primary))] rounded-lg text-white font-medium
-                           hover:bg-[hsl(var(--primary-700))] transition-colors whitespace-nowrap mt-1"
+                className="inline-flex items-center justify-center px-8 py-4 bg-primary text-white font-medium rounded-xl transition-all duration-300 hover:bg-primary-700 hover:scale-105"
               >
                 Pirkt karti
               </a>
