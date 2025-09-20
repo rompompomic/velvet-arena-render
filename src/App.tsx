@@ -13,6 +13,10 @@ import Ekskursijas from "./pages/Ekskursijas";
 import KorporativiepasakumI from "./pages/KorporativiepasakumI";
 import CitiPakalpojumi from "./pages/CitiPakalpojumi";
 import Cenas from "./pages/Cenas";
+import Jaunumi from "./pages/Jaunumi";
+import WinterPreparation from "./pages/WinterPreparation";
+import StudentSuccess from "./pages/StudentSuccess";
+import KidsPrograms from "./pages/KidsPrograms";
 
 const queryClient = new QueryClient();
 
@@ -32,6 +36,10 @@ const App = () => (
           <Route path="/lv/pakalpojumi/korporativie-pasakumi/" element={<KorporativiepasakumI />} />
           <Route path="/lv/pakalpojumi/citi-pakalpojumi/" element={<CitiPakalpojumi />} />
           <Route path="/lv/cenas/" element={<Cenas />} />
+          <Route path="/lv/jaunumi/" element={<Jaunumi />} />
+          <Route path="/lv/jaunumi/winter-preparation" element={<WinterPreparation />} />
+          <Route path="/lv/jaunumi/student-success" element={<StudentSuccess />} />
+          <Route path="/lv/jaunumi/kids-programs" element={<KidsPrograms />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
