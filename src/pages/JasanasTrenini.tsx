@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { ChevronRight, Home, Users, Trophy, Shield, Heart, X, CheckCircle2, Phone, Mail, BookOpen, Target } from "lucide-react";
