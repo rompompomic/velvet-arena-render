@@ -63,7 +63,7 @@ const DavanuKartes = () => {
 
                 return (
                   <div key={index} className="flex flex-col items-stretch">
-                    <div className="rounded-2xl overflow-hidden shadow-sm bg-card flex flex-col">
+                    <div className="rounded-2xl overflow-hidden shadow-sm bg-card flex flex-col hover-lift transition-all duration-300">
                       {/* Картинка */}
                       {isCustom ? (
                         <a
@@ -76,11 +76,14 @@ const DavanuKartes = () => {
                               block: "center",
                             });
                           }}
-                          className="relative block aspect-[3/4]"
+                          className="relative block aspect-[3/4] group"
                           aria-label="Savs apjoms"
                         >
-                          <img src={excursionsImage} alt="" className="absolute inset-0 w-full h-full object-cover" />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                          <img
+                            src={excursionsImage}
+                            alt=""
+                            className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                          />
                           <div className="relative h-full px-6 py-5 flex flex-col justify-end">
                             <div className="text-white text-2xl font-bold drop-shadow-sm">
                               Dāvanu karte
@@ -93,10 +96,13 @@ const DavanuKartes = () => {
                       ) : (
                         <a
                           href={`/lv/checkout/?amount=${(card as FixedCard).amount}`}
-                          className="relative block aspect-[3/4]"
+                          className="relative block aspect-[3/4] group"
                         >
-                          <img src={excursionsImage} alt="" className="absolute inset-0 w-full h-full object-cover" />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                          <img
+                            src={excursionsImage}
+                            alt=""
+                            className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                          />
                           <div className="relative h-full px-6 py-5 flex flex-col justify-end">
                             <div className="text-white text-2xl font-bold drop-shadow-sm">
                               Dāvanu karte
@@ -128,18 +134,21 @@ const DavanuKartes = () => {
                             />
                           </div>
                         ) : (
-                          <div className="flex flex-col gap-3">
-                            <div className={`${fieldBase} select-none`}>
-                              {(card as FixedCard).price}
-                            </div>
-                          </div>
+                          <Button asChild className="w-full rounded-xl px-6 py-2.5 text-base">
+                            <a
+                              href={`/lv/checkout/?amount=${(card as FixedCard).amount}`}
+                              className="!text-white"
+                            >
+                              Pirkt
+                            </a>
+                          </Button>
                         )}
                       </div>
                     </div>
 
-                    {/* Кнопка под карточкой */}
-                    <div className="mt-3">
-                      {isCustom ? (
+                    {/* Кнопка под карточкой только для кастомной */}
+                    {isCustom && (
+                      <div className="mt-3">
                         <Button
                           asChild
                           disabled={!customAmount || Number(customAmount) < 5}
@@ -152,17 +161,8 @@ const DavanuKartes = () => {
                             Pirkt
                           </a>
                         </Button>
-                      ) : (
-                        <Button asChild className="w-full rounded-xl px-6 py-2.5 text-base">
-                          <a
-                            href={`/lv/checkout/?amount=${(card as FixedCard).amount}`}
-                            className="!text-white"
-                          >
-                            Pirkt
-                          </a>
-                        </Button>
-                      )}
-                    </div>
+                      </div>
+                    )}
                   </div>
                 );
               })}
