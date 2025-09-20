@@ -258,7 +258,6 @@ const EventDetail = () => {
                         Foto galerija
                       </a>
                     </Button>
-                    </Button>
                   </div>
                 </CardContent>
               </Card>
