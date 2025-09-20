@@ -249,13 +249,22 @@ const DonateSection = () => {
                 </label>
 
                 {/* Отправка */}
-                <button type="submit" disabled={!amount || Number(amount) <= 0 || !agree} className="inline-flex w-full items-center justify-center px-5 py-3 font-semibold rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed" style={{
-              background: "var(--primary)",
-              color: "#fff",
-              borderRadius: 12
-            }} onMouseDown={e => e.currentTarget.style.background = "var(--primary-700)"} onMouseUp={e => e.currentTarget.style.background = "var(--primary)"} onMouseLeave={e => e.currentTarget.style.background = "var(--primary)"}>
+                <a
+                  href="/lv/ziedojumi/"
+                  className="inline-flex w-full items-center justify-center px-5 py-3 font-semibold rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  style={{
+                    background: "var(--primary)",
+                    color: "#fff",
+                    borderRadius: 12,
+                    pointerEvents: !amount || Number(amount) <= 0 || !agree ? "none" : "auto",
+                    opacity: !amount || Number(amount) <= 0 || !agree ? 0.5 : 1,
+                  }}
+                  onMouseDown={(e) => (e.currentTarget.style.background = "var(--primary-700)")}
+                  onMouseUp={(e) => (e.currentTarget.style.background = "var(--primary)")}
+                  onMouseLeave={(e) => (e.currentTarget.style.background = "var(--primary)")}
+                >
                   Ziedot {amount ? `${amount} €` : ""}
-                </button>
+                </a>
 
                 <p className="text-[12px] leading-[20px] text-center text-[rgba(6,3,13,0.7)]">
                   Pēc ziedojuma saņemšanas nosūtīsim apstiprinājumu uz e-pastu (ja norādīts).
