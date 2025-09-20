@@ -168,10 +168,12 @@ const Checkout = () => {
                   
                   <div className="space-y-6">
                     {/* Payment Method */}
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="card" id="card" checked />
-                      <Label htmlFor="card">Maksājumu karte</Label>
-                    </div>
+                    <RadioGroup defaultValue="card">
+                      <div className="flex items-center space-x-2">
+                        <RadioGroupItem value="card" id="card" />
+                        <Label htmlFor="card">Maksājumu karte</Label>
+                      </div>
+                    </RadioGroup>
 
                     {/* Terms Agreement */}
                     <div className="flex items-start space-x-2">
