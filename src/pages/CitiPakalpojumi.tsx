@@ -4,20 +4,14 @@ import { ChevronRight, Home, Shield, Heart, CheckCircle2, Users, Truck, Target, 
 import serviceOther from "@/assets/service-other-services.jpg";
 import winterImage from "@/assets/winter-equestrian.jpg";
 import heroImage from "@/assets/hero-equestrian.jpg";
-
 const CitiPakalpojumi = () => {
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       <Header />
       
       <main className="pt-24">
         {/* Hero Section */}
         <section className="relative">
-          <img
-            src={serviceOther}
-            alt="Citi pakalpojumi"
-            className="absolute inset-0 w-full h-full object-cover"
-          />
+          <img src={serviceOther} alt="Citi pakalpojumi" className="absolute inset-0 w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/20" />
           
           <div className="relative flex items-center justify-center text-center text-white min-h-[50vh] md:min-h-[60vh]">
@@ -65,21 +59,34 @@ const CitiPakalpojumi = () => {
               <div className="space-y-4">
                 <h3 className="text-xl font-semibold text-foreground">Pieejamie pakalpojumi:</h3>
                 <div className="grid gap-3">
-                  {[
-                    { text: "Veterinārā aprūpe un profilaktiskās pārbaudes", icon: Shield },
-                    { text: "Kausēšanas pakalpojumi un naglu aprūpe", icon: CheckCircle2 },
-                    { text: "Zirgu masāža un fizioterapija", icon: Heart },
-                    { text: "Specializētā barības plānu izstrāde", icon: Target },
-                    { text: "Zirgu pārvadāšanas pakalpojumi", icon: Truck },
-                    { text: "Konsultācijas zirgu aprūpē un treniņos", icon: BookOpen },
-                    { text: "Zirgu uzvedības korekcijas programmas", icon: Users },
-                    { text: "Sezonālā aprūpe un ziemas sagatavošana", icon: Shield },
-                  ].map((item, index) => (
-                    <div key={index} className="flex items-start gap-3 p-3 rounded-lg hover:bg-light transition-colors">
+                  {[{
+                  text: "Veterinārā aprūpe un profilaktiskās pārbaudes",
+                  icon: Shield
+                }, {
+                  text: "Kausēšanas pakalpojumi un naglu aprūpe",
+                  icon: CheckCircle2
+                }, {
+                  text: "Zirgu masāža un fizioterapija",
+                  icon: Heart
+                }, {
+                  text: "Specializētā barības plānu izstrāde",
+                  icon: Target
+                }, {
+                  text: "Zirgu pārvadāšanas pakalpojumi",
+                  icon: Truck
+                }, {
+                  text: "Konsultācijas zirgu aprūpē un treniņos",
+                  icon: BookOpen
+                }, {
+                  text: "Zirgu uzvedības korekcijas programmas",
+                  icon: Users
+                }, {
+                  text: "Sezonālā aprūpe un ziemas sagatavošana",
+                  icon: Shield
+                }].map((item, index) => <div key={index} className="flex items-start gap-3 p-3 rounded-lg hover:bg-light transition-colors">
                       <item.icon className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
                       <span className="text-muted-foreground">{item.text}</span>
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
               </div>
             </div>
@@ -90,52 +97,20 @@ const CitiPakalpojumi = () => {
                 Mūsu speciālisti
               </h3>
               <div className="space-y-4">
-                {[
-                  "Pieredzējuši veterinārārsti",
-                  "Sertificēti kausētāji",
-                  "Profesionāli masieri",
-                  "Barošanas speciālisti",
-                  "Uzvedības eksperti",
-                  "Personalizēta aprūpe",
-                ].map((item, index) => (
-                  <div key={index} className="flex items-start gap-3">
+                {["Pieredzējuši veterinārārsti", "Sertificēti kausētāji", "Profesionāli masieri", "Barošanas speciālisti", "Uzvedības eksperti", "Personalizēta aprūpe"].map((item, index) => <div key={index} className="flex items-start gap-3">
                     <CheckCircle2 className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
                     <span className="text-sm text-muted-foreground">{item}</span>
-                  </div>
-                ))}
+                  </div>)}
               </div>
             </aside>
           </div>
         </section>
 
         {/* Gallery Section */}
-        <section className="py-12 bg-muted/30">
-          <div className="container mx-auto px-4 max-w-5xl">
-            <h3 className="text-2xl font-bold text-foreground mb-8 text-center">Galerija</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <img
-                src={serviceOther}
-                alt="Zirgu aprūpe"
-                className="rounded-lg object-cover w-full h-64"
-              />
-              <img
-                src={winterImage}
-                alt="Ziemas aprūpe"
-                className="rounded-lg object-cover w-full h-64"
-              />
-              <img
-                src={heroImage}
-                alt="Veterinārā aprūpe"
-                className="rounded-lg object-cover w-full h-64"
-              />
-            </div>
-          </div>
-        </section>
+        
       </main>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default CitiPakalpojumi;
