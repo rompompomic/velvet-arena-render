@@ -12,7 +12,7 @@ const ZirguUzturesana = () => {
       <main className="pt-24">
         {/* HERO */}
         <section className="relative min-h-[65vh]">
-          <img src="heroImage" alt="" className="absolute inset-0 w-full h-full object-cover" />
+          <img src="/assets/hero-equestrian.jpg" alt="" className="absolute inset-0 w-full h-full object-cover" />
           <div className="absolute inset-0 bg-black/45" />
           <div className="relative container mx-auto max-w-6xl px-4 py-20 md:py-28 text-white">
             <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight">Zirgu uzturēšana</h1>
