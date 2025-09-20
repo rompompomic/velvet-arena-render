@@ -59,15 +59,6 @@ const ZirguUzturesana = () => {
                 Profesionāla zirgu aprūpe un uzturēšana modernās stallīs ar augstākajiem komforta standartiem.
               </p>
             </div>
-            {/* Breadcrumbs */}
-              <nav className="flex items-center justify-center mb-6 text-sm text-white/80">
-                <Home className="w-4 h-4 mr-2" />
-                <span>Sākums</span>
-                <ChevronRight className="w-4 h-4 mx-2" />
-                <span>Pakalpojumi</span>
-                <ChevronRight className="w-4 h-4 mx-2" />
-                <span className="text-white font-medium">Zirgu uzturēšana</span>
-              </nav>
           </div>
         </section>
 
@@ -76,6 +67,15 @@ const ZirguUzturesana = () => {
           <div className="grid grid-cols-1 lg:grid-cols-[1.4fr,1fr] gap-12">
             {/* Left: intro */}
             <div className="space-y-8">
+              {/* Breadcrumbs */}
+              <nav className="flex items-center justify-center mb-6 text-sm text-white/80">
+                <Home className="w-4 h-4 mr-2" />
+                <span>Sākums</span>
+                <ChevronRight className="w-4 h-4 mx-2" />
+                <span>Pakalpojumi</span>
+                <ChevronRight className="w-4 h-4 mx-2" />
+                <span className="text-white font-medium">Zirgu uzturēšana</span>
+              </nav>
               <h2 className="text-section text-foreground">Profesionala zirgu aprūpe un uzturēšana</h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 Piedāvājam profesionālu zirgu aprūpi un uzturēšanu mūsdienīgos staļļos ar augstākajiem komforta standartiem.
