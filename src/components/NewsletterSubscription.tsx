@@ -54,7 +54,8 @@ const NewsletterSubscription = () => {
               type="submit" 
               size="lg"
               disabled={isLoading}
-              className="h-12 px-8 font-semibold"
+              className="h-12 px-8 font-semibold bg-primary text-white rounded-xl 
+                         transition-all duration-300 hover:bg-primary-700 hover:scale-105 disabled:opacity-50 disabled:pointer-events-none"
             >
               {isLoading ? "Abonē..." : "Abonēt jaunumus"}
             </Button>
