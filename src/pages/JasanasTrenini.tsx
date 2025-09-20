@@ -25,19 +25,22 @@ const JasanasTrenini = () => {
       <main className="pt-24">
         {/* Hero Section */}
         <section className="relative">
-          <img src={serviceRiding} alt="Jāšanas treniņi" className="absolute inset-0 w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/20" />
-          
-          <div className="relative flex items-center justify-center text-center text-white min-h-[50vh] md:min-h-[60vh]">
-            <div className="container mx-auto px-4 max-w-6xl">
-
-              <h1 className="text-hero text-white mb-4 drop-shadow-lg">
-                Jāšanas treniņi
-              </h1>
-              <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto text-white/90 leading-relaxed">
-                Kvalitatīvas jāšanas nodarbības visiem līmeņiem ar pieredzējušiem instruktoriem drošā vidē.
-              </p>
-            </div>
+          <div className="absolute inset-0">
+            <img
+              src={serviceRiding}
+              alt="Jāšanas treniņi"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/20" />
+          </div>
+        
+          <div className="relative container mx-auto px-4 max-w-7xl py-20 md:py-28 text-center text-white">
+            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight drop-shadow-lg">
+              Jāšanas treniņi
+            </h1>
+            <p className="mt-5 text-base md:text-xl max-w-3xl mx-auto text-white/90 leading-relaxed">
+              Kvalitatīvas jāšanas nodarbības visiem līmeņiem ar pieredzējušiem instruktoriem drošā vidē.
+            </p>
           </div>
         </section>
 
