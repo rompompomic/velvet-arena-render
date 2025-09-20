@@ -316,11 +316,17 @@ const ParMums = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg">
-                <a href="/lv/pakalpojumi/jasanas-trenini/">
+              {/* Primary button */}
+              <Button
+                asChild
+                size="lg"
+                className="group bg-primary text-white rounded-xl 
+                           transition-all duration-300 hover:bg-primary-700 hover:scale-105"
+              >
+                <a href="/lv/pakalpojumi/jasanas-trenini/" className="flex items-center">
                   Sākt treniņus
                   <svg
-                    className="w-5 h-5 ml-2"
+                    className="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -334,8 +340,14 @@ const ParMums = () => {
                   </svg>
                 </a>
               </Button>
-
-              <Button asChild variant="outline" size="lg">
+            
+              {/* Outline button */}
+              <Button
+                asChild
+                size="lg"
+                className="border border-primary text-primary rounded-xl 
+                           transition-all duration-300 hover:bg-primary hover:text-white hover:scale-105"
+              >
                 <a href="/lv/pasakumi/">Skatīt pasākumus</a>
               </Button>
             </div>
