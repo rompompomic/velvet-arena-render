@@ -205,7 +205,7 @@ const CitiPakalpojumi = () => {
         </section>
 
         {/* Practical info + Contacts (light cards) */}
-        <section className="py-16 bg-white">
+        <section className="bg-neutral-50 py-16">
           <div className="container mx-auto max-w-4xl px-4">
             <h3 className="text-section text-foreground mb-12 text-center">
               Praktiskā informācija
