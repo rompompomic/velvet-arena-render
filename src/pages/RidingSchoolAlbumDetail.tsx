@@ -18,8 +18,7 @@ const RidingSchoolAlbumDetail = () => {
       season: "2025. gads",
       description: "Ieskats mūsu audzēkņu ikdienas dzīvē - no rīta zirgu barošanas līdz vakara treniņiem. Šeit redzamas gan pirmās nodarbības ar mazākajiem audzēkņiem, gan nopietni treniņi ar pieredzējušajiem jātniekiem.",
       relatedLinks: [
-        { title: "Jāšanas treniņi", href: "/lv/pakalpojumi/jasanas-trenini/" },
-        { title: "Bērnu programmas", href: "/lv/pakalpojumi/bernu-programmas/" }
+        { title: "Jāšanas treniņi", href: "/lv/pakalpojumi/jasanas-trenini/" }        
       ],
       coverImage: "/src/assets/gallery-ikdienas-dzive-1.jpg",
       photos: [
@@ -38,7 +37,6 @@ const RidingSchoolAlbumDetail = () => {
       season: "Pavasaris 2025",
       description: "Bērnu pirmie soļi jāšanas mākslā. Skaistas atmiņas par to, kā mūsu mazākie audzēkņi iemācījās draudzēties ar zirgiem un gūt pirmās jāšanas prasmes.",
       relatedLinks: [
-        { title: "Bērnu programmas", href: "/lv/pakalpojumi/bernu-programmas/" },
         { title: "Iesācēju kursi", href: "/lv/pakalpojumi/jasanas-trenini/" }
       ],
       coverImage: "/src/assets/gallery-jaunie-jatniekki-1.jpg",
@@ -74,8 +72,6 @@ const RidingSchoolAlbumDetail = () => {
       season: "Vasara 2024",
       description: "Neaizmirstamā vasaras nometne, kurā bērni pavadīja veselu nedēļu kopā ar zirgiem, apgūstot jāšanas prasmes un baudot dabas skaistumu.",
       relatedLinks: [
-        { title: "Bērnu programmas", href: "/lv/pakalpojumi/bernu-programmas/" },
-        { title: "Vasaras nometnes", href: "/lv/pakalpojumi/bernu-programmas/" }
       ],
       coverImage: "/src/assets/gallery-vasaras-nometne-1.jpg",
       photos: [
