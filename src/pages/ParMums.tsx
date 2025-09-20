@@ -285,12 +285,7 @@ const ParMums = () => {
               </div>
             </div>
           </div>
-        </section>
-
-        {/* CTA Section for Partnership (отдельная кнопка по центру) */}
-        <section className="py-0">
-          <div className="container mx-auto px-4 max-w-7xl flex justify-center py-[15px]">
-            <Button
+          <Button
               asChild
               className="w-full sm:w-auto bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-4 text-lg font-semibold"
             >
@@ -310,8 +305,6 @@ const ParMums = () => {
                   />
                 </svg>
               </a>
-            </Button>
-          </div>
         </section>
 
         {/* CTA Section (финал) */}
