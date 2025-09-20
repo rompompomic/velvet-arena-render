@@ -8,7 +8,6 @@ const PrivatumaPolitika = () => {
       <main className="container mx-auto px-4 py-16">
         <div className="max-w-4xl mx-auto">
           <div
-            style={{ borderColor: "#963026" }}
             className="border-2 p-8 md:p-12 rounded-lg bg-card my-[60px]"
           >
             <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-8">
