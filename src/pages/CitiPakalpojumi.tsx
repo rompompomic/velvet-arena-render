@@ -120,6 +120,11 @@ const CitiPakalpojumi = () => {
                   </div>)}
               </div>
             </aside>
+            {/* Filler image below card */}
+            <div className="rounded-2xl overflow-hidden">
+              <img src={winterImage} // замени на свой PNG
+            alt="Stable horses" className="w-full h-full object-cover" />
+            </div>
           </div>
         </section>
 
@@ -139,7 +144,7 @@ const CitiPakalpojumi = () => {
                 <table className="min-w-full text-sm">
                   <thead className="bg-primary/5">
                     <tr>
-                      <th className="text-left px-6 font-medium py-[22px]">Pakalpojums</th>
+                      <th className="text-left px-6 py-3 font-medium">Pakalpojums</th>
                       <th className="text-right px-6 py-3 font-medium">Cena ar PVN</th>
                     </tr>
                   </thead>
