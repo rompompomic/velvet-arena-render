@@ -96,7 +96,7 @@ const Jaunumi = () => {
         <section className="relative">
           <div className="absolute inset-0">
             <img
-              src={serviceOther}
+              src={heroImage}
               alt=""
               className="w-full h-full object-cover"
             />
