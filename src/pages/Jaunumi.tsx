@@ -97,7 +97,7 @@ const Jaunumi = () => {
         {/* BG image + overlay ниже текста по z-index */}
         <div className="absolute inset-0 -z-10 pointer-events-none">
           <img
-            src={heroImage} // ИМПОРТИРУЙ: import heroImage from "@/assets/hero-equestrian.jpg";
+            src={heroImage}
             alt="Jaunumi un raksti"
             className="w-full h-full object-cover"
           />
