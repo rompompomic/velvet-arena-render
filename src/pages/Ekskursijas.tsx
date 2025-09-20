@@ -121,45 +121,57 @@ const Ekskursijas = () => {
           </div>
         </section>
 
-        {/* Ekskursijas table */}
-        <section className="container mx-auto max-w-4xl px-4 py-12">
-          <h3 className="text-xl font-semibold mb-6 text-center">Ekskursijas</h3>
+        {/* Ekskursijas */}
+        <section className="container mx-auto max-w-4xl px-4 py-16">
+          <h3 className="text-section text-foreground mb-12 text-center">
+            Ekskursijas
+          </h3>
         
           <div className="overflow-hidden rounded-2xl border bg-white shadow-sm">
             <table className="min-w-full text-sm">
-              <thead className="bg-neutral-50 text-neutral-600">
+              <thead className="bg-primary/5">
                 <tr>
-                  <th className="text-left px-6 py-4 font-semibold">Ekskursija</th>
-                  <th className="text-right px-6 py-4 font-semibold">Cena ar PVN</th>
+                  <th className="text-left px-6 py-3 font-medium">Pakalpojums</th>
+                  <th className="text-right px-6 py-3 font-medium">Cena ar PVN</th>
                 </tr>
               </thead>
-        
               <tbody className="divide-y">
-                {[
-                  [
-                    "Ekskursija pa teritoriju ar zirgu barošanu, līdz 4 personām (bērniem līdz 7 g.v. bez maksas)",
-                    "€20.00",
-                  ],
-                  ["Papildus vizināšana ar zirgu/poniju, par personu", "€5.00"],
-                  [
-                    "Skolu un bērnudārza grupiņu ekskursijas ar zirgu barošanu un vizināšanos (cena par 1 personu, sākot no 10 personām)",
-                    "€3.00",
-                  ],
-                ].map(([name, price], i) => (
-                  <tr
-                    key={i}
-                    className="hover:bg-neutral-50 transition-colors"
-                  >
-                    <td className="px-6 py-4 text-foreground">{name}</td>
-                    <td className="px-6 py-4 text-right font-semibold text-foreground">
-                      {price}
-                    </td>
-                  </tr>
-                ))}
+                <tr>
+                  <td className="px-6 py-4">
+                    Ekskursija pa teritoriju ar zirgu barošanu, līdz 4 personām 
+                    <span className="block text-xs text-muted-foreground">
+                      (bērniem līdz 7 g.v. bez maksas)
+                    </span>
+                  </td>
+                  <td className="px-6 py-4 text-right">€20.00</td>
+                </tr>
+                <tr>
+                  <td className="px-6 py-4">
+                    Papildus vizināšana ar zirgu/poniju, par personu
+                  </td>
+                  <td className="px-6 py-4 text-right">€5.00</td>
+                </tr>
+                <tr>
+                  <td className="px-6 py-4">
+                    Skolu un bērnudārza grupiņu ekskursijas ar zirgu barošanu un vizināšanos
+                    <span className="block text-xs text-muted-foreground">
+                      (cena par 1 personu, sākot no 10 personām)
+                    </span>
+                  </td>
+                  <td className="px-6 py-4 text-right">€3.00</td>
+                </tr>
               </tbody>
             </table>
           </div>
-        </section>
+
+  {/* Notes */}
+  <p className="mt-6 text-sm text-muted-foreground text-center">
+    Visi pakalpojumi pēc iepriekšēja pieraksta.
+    <br />
+    Svētku dienās visiem pakalpojumiem tiek piemērota papildus maksa 50% apmērā.
+  </p>
+</section>
+
 
         {/* Practical info + Contacts (light cards) */}
         <section className="bg-neutral-50 py-16">
