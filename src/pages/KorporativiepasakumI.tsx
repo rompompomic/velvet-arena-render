@@ -5,6 +5,7 @@ import { ChevronRight, Home, Users, Trophy, Shield, Heart, CheckCircle2, Target,
 import serviceStable from "@/assets/service-horse-stable.jpg";
 import serviceCorporate from "@/assets/service-corporate.jpg";
 import eventCompetition from "@/assets/event-competition.jpg";
+import winterImage from "@/assets/winter-equestrian.jpg";
 import winterTraining from "@/assets/winter-training.jpg";
 const KorporativiepasakumI = () => {
   const [open, setOpen] = useState(false);
