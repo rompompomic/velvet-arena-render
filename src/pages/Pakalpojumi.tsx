@@ -11,61 +11,51 @@ import serviceArena from "@/assets/service-arena-rental.jpg";
 import serviceExcursions from "@/assets/service-excursions.jpg";
 import serviceCorporate from "@/assets/service-corporate.jpg";
 import serviceOther from "@/assets/service-other-services.jpg";
-
 const Pakalpojumi = () => {
-  const services = [
-    {
-      title: "Zirgu uzturēšana",
-      description: "Profesionāla zirgu aprūpe un uzturēšana mūsdienīgās stallis ar augstākajiem komforta standartiem.",
-      badge: "Core",
-      href: "/lv/pakalpojumi/zirgu-uzturesana/",
-      image: serviceStable,
-      icon: Home
-    },
-    {
-      title: "Jāšanas treniņi",
-      description: "Kvalitatīvas jāšanas nodarbības visiem līmeņiem ar pieredzējušiem instruktoriem drošā vidē.",
-      badge: "Core", 
-      href: "/lv/pakalpojumi/jasanas-trenini/",
-      image: serviceRiding,
-      icon: Users
-    },
-    {
-      title: "Laukumu īre",
-      description: "Profesionālu jāšanas laukumu īre ar visām nepieciešamajām iekārtām un šķēršļiem.",
-      badge: "Additional",
-      href: "/lv/pakalpojumi/laukumu-ire/",
-      image: serviceArena,
-      icon: MapPin
-    },
-    {
-      title: "Ekskursijas",
-      description: "Izglītojošas ekskursijas visai ģimenei, lai iepazītos ar zirgiem un to aprūpi.",
-      badge: "Additional",
-      href: "/lv/pakalpojumi/ekskursijas/",
-      image: serviceExcursions,
-      icon: Calendar
-    },
-    {
-      title: "Korporatīvie pasākumi",
-      description: "Unikāli komandas veidošanas pasākumi ar zirgiem uzņēmumiem un organizācijām.",
-      badge: "Additional",
-      href: "/lv/pakalpojumi/korporativie-pasakumi/",
-      image: serviceCorporate,
-      icon: Building2
-    },
-    {
-      title: "Citi pakalpojumi",
-      description: "Papildu pakalpojumi zirgu aprūpē, veselības uzraudzībā un specializētās terapijas.",
-      badge: "Additional",
-      href: "/lv/pakalpojumi/citi-pakalpojumi/",
-      image: serviceOther,
-      icon: Heart
-    }
-  ];
-
-  return (
-    <div className="min-h-screen bg-background">
+  const services = [{
+    title: "Zirgu uzturēšana",
+    description: "Profesionāla zirgu aprūpe un uzturēšana mūsdienīgās stallis ar augstākajiem komforta standartiem.",
+    badge: "Core",
+    href: "/lv/pakalpojumi/zirgu-uzturesana/",
+    image: serviceStable,
+    icon: Home
+  }, {
+    title: "Jāšanas treniņi",
+    description: "Kvalitatīvas jāšanas nodarbības visiem līmeņiem ar pieredzējušiem instruktoriem drošā vidē.",
+    badge: "Core",
+    href: "/lv/pakalpojumi/jasanas-trenini/",
+    image: serviceRiding,
+    icon: Users
+  }, {
+    title: "Laukumu īre",
+    description: "Profesionālu jāšanas laukumu īre ar visām nepieciešamajām iekārtām un šķēršļiem.",
+    badge: "Additional",
+    href: "/lv/pakalpojumi/laukumu-ire/",
+    image: serviceArena,
+    icon: MapPin
+  }, {
+    title: "Ekskursijas",
+    description: "Izglītojošas ekskursijas visai ģimenei, lai iepazītos ar zirgiem un to aprūpi.",
+    badge: "Additional",
+    href: "/lv/pakalpojumi/ekskursijas/",
+    image: serviceExcursions,
+    icon: Calendar
+  }, {
+    title: "Korporatīvie pasākumi",
+    description: "Unikāli komandas veidošanas pasākumi ar zirgiem uzņēmumiem un organizācijām.",
+    badge: "Additional",
+    href: "/lv/pakalpojumi/korporativie-pasakumi/",
+    image: serviceCorporate,
+    icon: Building2
+  }, {
+    title: "Citi pakalpojumi",
+    description: "Papildu pakalpojumi zirgu aprūpē, veselības uzraudzībā un specializētās terapijas.",
+    badge: "Additional",
+    href: "/lv/pakalpojumi/citi-pakalpojumi/",
+    image: serviceOther,
+    icon: Heart
+  }];
+  return <div className="min-h-screen bg-background">
       <Header />
       
       <main className="pt-24">
@@ -82,16 +72,11 @@ const Pakalpojumi = () => {
             {/* Services Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {services.map((service, index) => {
-                const IconComponent = service.icon;
-                return (
-                  <div key={index} className="glass-card overflow-hidden hover-lift group">
+              const IconComponent = service.icon;
+              return <div key={index} className="glass-card overflow-hidden hover-lift group">
                     {/* Service Image */}
                     <div className="relative h-48 overflow-hidden">
-                      <img 
-                        src={service.image} 
-                        alt={service.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      />
+                      <img src={service.image} alt={service.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
                     </div>
 
@@ -102,12 +87,7 @@ const Pakalpojumi = () => {
                         <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-primary/10">
                           <IconComponent className="w-5 h-5 text-primary" />
                         </div>
-                        <Badge 
-                          variant={service.badge === "Core" ? "default" : "secondary"}
-                          className="text-xs font-medium"
-                        >
-                          {service.badge}
-                        </Badge>
+                        
                       </div>
 
                       {/* Title */}
@@ -121,40 +101,23 @@ const Pakalpojumi = () => {
                       </p>
 
                       {/* Learn More Button */}
-                      <Button 
-                        variant="ghost" 
-                        className="w-full justify-between group-hover:bg-primary/5 transition-colors duration-300"
-                        asChild
-                      >
+                      <Button variant="ghost" className="w-full justify-between group-hover:bg-primary/5 transition-colors duration-300" asChild>
                         <a href={service.href}>
                           Uzzināt vairāk
-                          <svg 
-                            className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" 
-                            fill="none" 
-                            stroke="currentColor" 
-                            viewBox="0 0 24 24"
-                          >
-                            <path 
-                              strokeLinecap="round" 
-                              strokeLinejoin="round" 
-                              strokeWidth={2} 
-                              d="M9 5l7 7-7 7" 
-                            />
+                          <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                           </svg>
                         </a>
                       </Button>
                     </div>
-                  </div>
-                );
-              })}
+                  </div>;
+            })}
             </div>
           </div>
         </section>
       </main>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Pakalpojumi;
