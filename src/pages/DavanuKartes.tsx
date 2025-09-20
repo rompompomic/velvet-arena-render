@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import serviceRiding from "@/assets/service-riding-lessons.jpg";
+import excursionsImage from "@/assets/service-excursions.jpg";
 
 const DavanuKartes = () => {
   const giftCards = [
@@ -56,44 +57,33 @@ const DavanuKartes = () => {
                   className="group relative glass-card overflow-hidden hover-lift cursor-pointer transition-all duration-300"
                 >
                   {/* Gift Card Design */}
-                  <div className="relative h-64 bg-gradient-to-br from-primary to-primary-foreground p-6 flex flex-col justify-between">
-                    {/* Card Header */}
-                    <div className="text-white/90 text-sm font-medium">
-                      Jauno jātnieku skola
-                    </div>
-                    
-                    {/* Card Content */}
-                    <div className="text-center">
-                      <h3 className="text-white text-2xl font-bold mb-2">
+                  <div className="relative h-96">
+                    {/* Background image with overlay */}
+                    <img
+                      src={excursionsImage}
+                      alt=""
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-black/50" />
+        
+                    {/* Content */}
+                    <div className="relative h-full p-8 flex flex-col justify-center items-center text-center">
+                      <h3 className="text-white text-3xl font-bold mb-4">
                         Dāvanu karte
                       </h3>
-                      <div className="text-white text-4xl font-extrabold">
+                      <div className="text-white text-5xl font-extrabold">
                         {card.amount}€
                       </div>
                     </div>
-
-                    {/* Card Footer */}
-                    <div className="text-white/80 text-xs text-center">
-                      Derīga 12 mēnešus
-                    </div>
-
+        
                     {/* Hover Overlay */}
                     <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                       <Button
                         asChild
-                        className="bg-white text-primary hover:bg-white/90 hover:text-primary-700 px-8 py-3 font-semibold"
+                        className="bg-white text-primary hover:bg-white/90 hover:text-primary-700 px-10 py-4 text-lg font-semibold"
                       >
-                        <a href={`/lv/checkout/?amount=${card.amount}`}>
-                          Pirkt
-                        </a>
+                        <a href={`/lv/checkout/?amount=${card.amount}`}>Pirkt</a>
                       </Button>
-                    </div>
-                  </div>
-
-                  {/* Price Caption */}
-                  <div className="p-4 text-center bg-background">
-                    <div className="text-2xl font-bold text-foreground">
-                      {card.price}
                     </div>
                   </div>
                 </div>
