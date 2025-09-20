@@ -246,8 +246,6 @@ const ZirguUzturesana = () => {
                   ))}
                 </div>
               </div>
-            </div>
-          </div>
 
               {/* Contacts card + popup trigger */}
               <div className="p-0 overflow-hidden rounded-2xl border bg-white shadow-sm">
