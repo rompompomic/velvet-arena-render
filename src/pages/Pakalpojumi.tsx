@@ -10,63 +10,88 @@ import serviceExcursions from "@/assets/service-excursions.jpg";
 import serviceCorporate from "@/assets/service-corporate.jpg";
 import serviceOther from "@/assets/service-other-services.jpg";
 
-// Custom SVG Icons for each service
-// Stable — конюшня с крышей и дверью
-const StableIcon = ({ className = "w-6 h-6" }) => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" 
-    strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
-    <path d="M3 10.5L12 4l9 6.5v9.5a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-9.5z"/>
-    <rect x="9" y="14" width="6" height="6" rx="1"/>
+// --- PREMIUM ICON SET (duotone outline) ---
+// Общие параметры: 24x24, round caps/joins, strokeWidth=1.8
+// className по умолчанию  w-5 h-5  (можно менять)
+
+const StableIcon = ({ className = "w-5 h-5" }) => (
+  <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    {/* мягкая подложка */}
+    <path d="M4 10.5 12 5l8 5.5v7.5a1.5 1.5 0 0 1-1.5 1.5H5.5A1.5 1.5 0 0 1 4 18V10.5z" fill="currentColor" opacity=".12"/>
+    {/* крыша/коробка */}
+    <path d="M4 10.5 12 5l8 5.5"/>
+    <path d="M5.5 10.5v7.5A1.5 1.5 0 0 0 7 19.5h10a1.5 1.5 0 0 0 1.5-1.5v-7.5"/>
+    {/* дверь сарая */}
+    <rect x="9" y="14" width="6" height="5.5" rx="1"/>
+    {/* профиль головы лошади в двери */}
+    <path d="M10.6 17.8c.5-.8 1.3-1.3 2.2-1 .8.2 1.2.8 1.3 1.9"/>
   </svg>
 );
 
-// Riding — всадник на лошади
-const RidingIcon = ({ className = "w-6 h-6" }) => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
-    strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
-    <circle cx="8" cy="6" r="2"/>
-    <path d="M7 9l3 2 2 5"/>
-    <path d="M5 16c2-2 6-2 8 0l4 1"/>
+const RidingIcon = ({ className = "w-5 h-5" }) => (
+  // Универсальная и понятная метафора — ШЛЕМ для верховой езды
+  <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M6 11.5a6 6 0 0 1 12 0" fill="currentColor" opacity=".12"/>
+    {/* корпус шлема */}
+    <path d="M6 11.5a6 6 0 0 1 12 0"/>
+    {/* козырёк */}
+    <path d="M6 12.5h6.5"/>
+    {/* ремешок */}
+    <path d="M17 12.5c0 1.6-1.3 3-3 3H8"/>
+    <circle cx="15.2" cy="10.2" r=".8" fill="currentColor"/>
   </svg>
 );
 
-// Arena — барьеры в манеже
-const ArenaIcon = ({ className = "w-6 h-6" }) => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
-    strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
-    <path d="M5 6v12M19 6v12"/>
-    <path d="M5 10h14M5 14h14"/>
+const ArenaIcon = ({ className = "w-5 h-5" }) => (
+  // Препятствие для конкура (стойки + перекладины со "штриховкой")
+  <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="4" y="6" width="16" height="12" rx="1.5" fill="currentColor" opacity=".08"/>
+    {/* стойки */}
+    <path d="M6 6v12M18 6v12"/>
+    {/* перекладины */}
+    <path d="M6 10h12M6 13h12"/>
+    {/* диагональная разметка (намёк на полосатую рейку) */}
+    <path d="M7.5 9l3 3M13.5 9l3 3M7.5 12l3 3M13.5 12l3 3"/>
   </svg>
 );
 
-// Excursion — карта с пином
-const ExcursionIcon = ({ className = "w-6 h-6" }) => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
-    strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
-    <path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2V6z"/>
-    <circle cx="12" cy="12" r="2"/>
+const ExcursionIcon = ({ className = "w-5 h-5" }) => (
+  // Экскурсии — ПОНЯТНОЕ фото/камера
+  <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="3" y="7.5" width="18" height="11" rx="2" fill="currentColor" opacity=".10"/>
+    {/* камера */}
+    <path d="M8 7.5l1.2-1.8h5.6L16 7.5"/>
+    <circle cx="12" cy="13" r="3.5"/>
+    <circle cx="12" cy="13" r="1.2" fill="currentColor"/>
+    {/* кнопка камеры */}
+    <path d="M18 9.5h.01"/>
   </svg>
 );
 
-// Corporate — люди и график
-const CorporateIcon = ({ className = "w-6 h-6" }) => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
-    strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
-    <circle cx="7" cy="8" r="3"/>
-    <circle cx="17" cy="9" r="2.5"/>
-    <path d="M2 20c1.5-3 4-4 6-4h1c2 0 4 1 5 4"/>
-    <path d="M13 20v-4l2 2 4-4"/>
+const CorporateIcon = ({ className = "w-5 h-5" }) => (
+  // Бизнес-ивенты — рукопожатие (очевидная метафора) + лёгкая подложка
+  <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M4 10.5h16v7a1.5 1.5 0 0 1-1.5 1.5H5.5A1.5 1.5 0 0 1 4 17.5v-7z" fill="currentColor" opacity=".08"/>
+    {/* рукопожатие */}
+    <path d="M7 14.5l2.2 1.8a2.8 2.8 0 0 0 3.6 0L15 14.5"/>
+    <path d="M7 14.5l2.2-1.8a2.8 2.8 0 0 1 3.6 0L15 14.5"/>
+    {/* руки / манжеты */}
+    <path d="M5.5 13l2-.8M18.5 13l-2-.8"/>
+    {/* маленький график-галочка как акцент деловой ценности */}
+    <path d="M16 11.2l1.2 1.2L20 9.6"/>
   </svg>
 );
 
-// Services — подкова (универсальные услуги)
-const ServicesIcon = ({ className = "w-6 h-6" }) => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
-    strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
-    <path d="M6 8a6 6 0 0 1 12 0v4a6 6 0 0 1-12 0V8z"/>
-    <path d="M8 8v4M16 8v4"/>
+const ServicesIcon = ({ className = "w-5 h-5" }) => (
+  // Прочие услуги — элегантная подкова
+  <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M12 4a7 7 0 0 1 7 7v2a7 7 0 0 1-14 0v-2a7 7 0 0 1 7-7z" fill="currentColor" opacity=".10"/>
+    <path d="M12 4a7 7 0 0 1 7 7v2a7 7 0 0 1-14 0v-2a7 7 0 0 1 7-7z"/>
+    {/* клёпки */}
+    <path d="M8.2 8.7h0M10 7.5h0M14 7.5h0M15.8 8.7h0M8.2 15.3h0M15.8 15.3h0"/>
   </svg>
 );
+
 
 
 const Pakalpojumi = () => {
