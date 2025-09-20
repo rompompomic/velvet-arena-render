@@ -4,20 +4,14 @@ import { ChevronRight, Home, Users, Trophy, Shield, Heart, CheckCircle2, BookOpe
 import serviceRiding from "@/assets/service-riding-lessons.jpg";
 import heroImage from "@/assets/hero-equestrian.jpg";
 import eventImage from "@/assets/event-showjumping.jpg";
-
 const JasanasTrenini = () => {
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       <Header />
       
       <main className="pt-24">
         {/* Hero Section */}
         <section className="relative">
-          <img
-            src={serviceRiding}
-            alt="Jāšanas treniņi"
-            className="absolute inset-0 w-full h-full object-cover"
-          />
+          <img src={serviceRiding} alt="Jāšanas treniņi" className="absolute inset-0 w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/20" />
           
           <div className="relative flex items-center justify-center text-center text-white min-h-[50vh] md:min-h-[60vh]">
@@ -65,19 +59,28 @@ const JasanasTrenini = () => {
               <div className="space-y-4">
                 <h3 className="text-xl font-semibold text-foreground">Treniņu veidi:</h3>
                 <div className="grid gap-3">
-                  {[
-                    { text: "Individuālās nodarbības iesācējiem", icon: Users },
-                    { text: "Grupu treniņi pieredzējušiem jātniekiem", icon: Trophy },
-                    { text: "Bērnu jāšanas skola (no 6 gadu vecuma)", icon: BookOpen },
-                    { text: "Specializētie dresūras treniņi", icon: Target },
-                    { text: "Šķēršļu pārvarēšanas nodarbības", icon: Shield },
-                    { text: "Konkursa sagatavošanas treniņi", icon: Trophy },
-                  ].map((item, index) => (
-                    <div key={index} className="flex items-start gap-3 p-3 rounded-lg hover:bg-light transition-colors">
+                  {[{
+                  text: "Individuālās nodarbības iesācējiem",
+                  icon: Users
+                }, {
+                  text: "Grupu treniņi pieredzējušiem jātniekiem",
+                  icon: Trophy
+                }, {
+                  text: "Bērnu jāšanas skola (no 6 gadu vecuma)",
+                  icon: BookOpen
+                }, {
+                  text: "Specializētie dresūras treniņi",
+                  icon: Target
+                }, {
+                  text: "Šķēršļu pārvarēšanas nodarbības",
+                  icon: Shield
+                }, {
+                  text: "Konkursa sagatavošanas treniņi",
+                  icon: Trophy
+                }].map((item, index) => <div key={index} className="flex items-start gap-3 p-3 rounded-lg hover:bg-light transition-colors">
                       <item.icon className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
                       <span className="text-muted-foreground">{item.text}</span>
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
               </div>
             </div>
@@ -88,52 +91,20 @@ const JasanasTrenini = () => {
                 Treniņu priekšrocības
               </h3>
               <div className="space-y-4">
-                {[
-                  "Sertificēti instruktori",
-                  "Individuāla pieeja",
-                  "Droša vide",
-                  "Kvalitatīvi zirgi",
-                  "Modernas iekārtas",
-                  "Visi līmeņi laipni gaidīti",
-                ].map((item, index) => (
-                  <div key={index} className="flex items-start gap-3">
+                {["Sertificēti instruktori", "Individuāla pieeja", "Droša vide", "Kvalitatīvi zirgi", "Modernas iekārtas", "Visi līmeņi laipni gaidīti"].map((item, index) => <div key={index} className="flex items-start gap-3">
                     <CheckCircle2 className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
                     <span className="text-sm text-muted-foreground">{item}</span>
-                  </div>
-                ))}
+                  </div>)}
               </div>
             </aside>
           </div>
         </section>
 
         {/* Gallery Section */}
-        <section className="py-12 bg-muted/30">
-          <div className="container mx-auto px-4 max-w-5xl">
-            <h3 className="text-2xl font-bold text-foreground mb-8 text-center">Galerija</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <img
-                src={serviceRiding}
-                alt="Jāšanas treniņš"
-                className="rounded-lg object-cover w-full h-64"
-              />
-              <img
-                src={heroImage}
-                alt="Zirgs ar jātnieku"
-                className="rounded-lg object-cover w-full h-64"
-              />
-              <img
-                src={eventImage}
-                alt="Šķēršļu pārvarēšana"
-                className="rounded-lg object-cover w-full h-64"
-              />
-            </div>
-          </div>
-        </section>
+        
       </main>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default JasanasTrenini;
