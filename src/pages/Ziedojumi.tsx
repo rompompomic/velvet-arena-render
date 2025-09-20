@@ -51,7 +51,7 @@ const Ziedojumi = () => {
       amount: amount.toString(),
       method: paymentMethod
     });
-    window.location.href = `/lv/paldies-par-pirkumu/?${params.toString()}`;
+    window.location.href = `/lv/checkout/?${params.toString()}`;
   };
 
   return (
