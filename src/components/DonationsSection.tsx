@@ -248,12 +248,11 @@ const DonateSection = () => {
                   </span>
                 </label>
 
-                {/* Отправка */}
                 <a
                   href="/lv/ziedojumi/"
                   className={`inline-flex w-full items-center justify-center px-5 py-3 font-semibold 
-                              rounded-xl bg-primary text-white 
-                              transition-all duration-300 hover:bg-primary-700 hover:scale-105
+                              rounded-xl bg-[hsl(var(--primary))] text-white 
+                              transition-all duration-300 hover:bg-[hsl(var(--primary-700))] hover:scale-105
                               ${!amount || Number(amount) <= 0 || !agree ? "opacity-50 pointer-events-none" : ""}`}
                 >
                   Ziedot {amount ? `${amount} €` : ""}
