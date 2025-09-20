@@ -99,7 +99,10 @@ const WinterPreparation = () => {
             <p className="text-muted-foreground mb-6">
               Mūsu speciālisti ir gatavi palīdzēt jums sagatavot jūsu zirgu ziemas sezonai.
             </p>
-            <Button size="lg">
+            <Button 
+              size="lg"
+              className="bg-primary text-white rounded-xl transition-all duration-300 hover:bg-primary-700 hover:scale-105"
+            >
               Sazināties ar speciālistiem
             </Button>
           </div>
