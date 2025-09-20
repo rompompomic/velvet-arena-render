@@ -126,71 +126,71 @@ const CitiPakalpojumi = () => {
         <section className="container mx-auto max-w-6xl px-4 py-16">
           <div className="grid gap-8 md:grid-cols-2">
             {/* TELPU NOMA PASĀKUMIEM */}
-            <div className="rounded-2xl border bg-white shadow-sm overflow-hidden">
-              <table className="min-w-full text-sm">
-                <thead className="bg-neutral-50">
-                  <tr>
-                    <th className="text-left px-4 py-3 font-semibold text-foreground">
-                      TELPU NOMA PASĀKUMIEM
-                    </th>
-                    <th className="text-right px-4 py-3 font-semibold text-foreground">
-                      Cena ar PVN
-                    </th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y">
-                  <tr>
-                    <td className="px-4 py-3">
-                      VIP telts īre pasākumiem (ar galdiem, krēsliem) Cena par 1h,
-                      minimālā īre 3h
-                    </td>
-                    <td className="px-4 py-3 text-right font-medium">€ 80.00</td>
-                  </tr>
-                  <tr>
-                    <td className="px-4 py-3">
-                      Kafejnīcas terases īre pasākumiem (ar galdiem, krēsliem) Cena par
-                      1h, minimālā īre 3h
-                    </td>
-                    <td className="px-4 py-3 text-right font-medium">€ 50.00</td>
-                  </tr>
-                  <tr>
-                    <td className="px-4 py-3">Teritorijas īre pasākumiem</td>
-                    <td className="px-4 py-3 text-right font-medium">Pēc vienošanās</td>
-                  </tr>
-                </tbody>
-              </table>
+            <div>
+              <h3 className="text-lg font-semibold text-foreground mb-4">
+                Telpu noma pasākumiem
+              </h3>
+              <div className="rounded-2xl border bg-white shadow-sm overflow-hidden">
+                <table className="min-w-full text-sm">
+                  <thead className="bg-neutral-50">
+                    <tr>
+                      <th className="text-left px-4 py-3 font-medium">Pakalpojums</th>
+                      <th className="text-right px-4 py-3 font-medium">Cena ar PVN</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y">
+                    <tr>
+                      <td className="px-4 py-3">
+                        VIP telts īre pasākumiem (ar galdiem, krēsliem) Cena par 1h,
+                        minimālā īre 3h
+                      </td>
+                      <td className="px-4 py-3 text-right font-medium">€ 80.00</td>
+                    </tr>
+                    <tr>
+                      <td className="px-4 py-3">
+                        Kafejnīcas terases īre pasākumiem (ar galdiem, krēsliem) Cena par
+                        1h, minimālā īre 3h
+                      </td>
+                      <td className="px-4 py-3 text-right font-medium">€ 50.00</td>
+                    </tr>
+                    <tr>
+                      <td className="px-4 py-3">Teritorijas īre pasākumiem</td>
+                      <td className="px-4 py-3 text-right font-medium">Pēc vienošanās</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
         
             {/* CITI */}
-            <div className="rounded-2xl border bg-white shadow-sm overflow-hidden">
-              <table className="min-w-full text-sm">
-                <thead className="bg-neutral-50">
-                  <tr>
-                    <th className="text-left px-4 py-3 font-semibold text-foreground">
-                      CITI
-                    </th>
-                    <th className="text-right px-4 py-3 font-semibold text-foreground">
-                      Cena ar PVN
-                    </th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y">
-                  <tr>
-                    <td className="px-4 py-3">
-                      Ponijs/zirgs ballītei ārpus sporta centra (1 zirgs, 2 instruktori),
-                      cena par 1h (papildus 0,80 eur/km)
-                    </td>
-                    <td className="px-4 py-3 text-right font-medium">€ 150.00</td>
-                  </tr>
-                  <tr>
-                    <td className="px-4 py-3">
-                      Fotosesija ar zirgu JJS teritorijā (sagatavots zirgs, sesijas
-                      garums līdz 1h)
-                    </td>
-                    <td className="px-4 py-3 text-right font-medium">€ 30.00</td>
-                  </tr>
-                </tbody>
-              </table>
+            <div>
+              <h3 className="text-lg font-semibold text-foreground mb-4">CITI</h3>
+              <div className="rounded-2xl border bg-white shadow-sm overflow-hidden">
+                <table className="min-w-full text-sm">
+                  <thead className="bg-neutral-50">
+                    <tr>
+                      <th className="text-left px-4 py-3 font-medium">Pakalpojums</th>
+                      <th className="text-right px-4 py-3 font-medium">Cena ar PVN</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y">
+                    <tr>
+                      <td className="px-4 py-3">
+                        Ponijs/zirgs ballītei ārpus sporta centra (1 zirgs, 2 instruktori),
+                        cena par 1h (papildus 0,80 eur/km)
+                      </td>
+                      <td className="px-4 py-3 text-right font-medium">€ 150.00</td>
+                    </tr>
+                    <tr>
+                      <td className="px-4 py-3">
+                        Fotosesija ar zirgu JJS teritorijā (sagatavots zirgs, sesijas
+                        garums līdz 1h)
+                      </td>
+                      <td className="px-4 py-3 text-right font-medium">€ 30.00</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         
