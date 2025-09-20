@@ -139,7 +139,7 @@ const CitiPakalpojumi = () => {
                 <table className="min-w-full text-sm">
                   <thead className="bg-primary/5">
                     <tr>
-                      <th className="text-left px-6 py-3 font-medium">Pakalpojums</th>
+                      <th className="text-left px-6 font-medium py-[21px]">Pakalpojums</th>
                       <th className="text-right px-6 py-3 font-medium">Cena ar PVN</th>
                     </tr>
                   </thead>
