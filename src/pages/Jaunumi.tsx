@@ -93,25 +93,17 @@ const Jaunumi = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative isolate overflow-hidden">
-        {/* Фон */}
-        <div className="absolute inset-0 z-0">
-          <img
-            src={heroImage} // import heroImage from "@/assets/hero-equestrian.jpg";
-            alt="Jaunumi un raksti"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/20" />
-        </div>
-      
-        {/* Контент */}
-        <div className="relative z-10 container mx-auto px-4 max-w-7xl pt-28 md:pt-36 pb-16 text-center text-white min-h-[48vh]">
-          <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight drop-shadow-lg mb-5">
-            Jaunumi un raksti
-          </h1>
-          <p className="text-base md:text-xl max-w-3xl mx-auto text-white/90 leading-relaxed">
-            Sekojiet līdzi jaunākajām ziņām no jāšanas sporta pasaules, mūsu audzēkņu panākumiem un gaidāmajiem pasākumiem
-          </p>
+      <section className="relative bg-gradient-to-br from-primary/10 to-primary/5 py-24 overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/src/assets/hero-equestrian.jpg')] bg-cover bg-center opacity-10"></div>
+        <div className="container mx-auto px-4 max-w-7xl relative z-10">
+          <div className="text-center">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-foreground">
+              Jaunumi un raksti
+            </h1>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              Sekojiet līdzi jaunākajām ziņām no jāšanas sporta pasaules, mūsu audzēkņu panākumiem un gaidāmajiem pasākumiem
+            </p>
+          </div>
         </div>
       </section>
 
