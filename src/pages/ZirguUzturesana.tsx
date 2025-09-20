@@ -221,17 +221,29 @@ const ZirguUzturesana = () => {
             <div className="grid gap-8 md:grid-cols-[1.2fr,1fr]">
               {/* Info card */}
               <div className="p-8 rounded-2xl border bg-white shadow-sm">
-                <div className="grid gap-6">
-                  {[
-                    "Visi pakalpojumi pēc iepriekšēja pieraksta.",
-                    "Svētku dienās visiem pakalpojumiem tiek piemērota papildus maksa 50% apmērā.",
-                    "Nodarbību / aprūpes laiki var mainīties — vienmēr precizējam pirms apmeklējuma.",
-                  ].map((text, i) => (
-                    <div key={i} className="flex items-start gap-4">
-                      <CheckCircle2 className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
-                      <span className="text-muted-foreground">{text}</span>
-                    </div>
-                  ))}
+                <div className="grid md:grid-cols-2 gap-8 items-center">
+                  {/* Left: bullet list */}
+                  <div className="grid gap-6">
+                    {[
+                      "Visi pakalpojumi pēc iepriekšēja pieraksta.",
+                      "Svētku dienās visiem pakalpojumiem tiek piemērota papildus maksa 50% apmērā.",
+                      "Nodarbību / aprūpes laiki var mainīties — vienmēr precizējam pirms apmeklējuma.",
+                    ].map((text, i) => (
+                      <div key={i} className="flex items-start gap-4">
+                        <CheckCircle2 className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                        <span className="text-muted-foreground">{text}</span>
+                      </div>
+                    ))}
+                  </div>
+              
+                  {/* Right: placeholder image */}
+                  <div className="w-full h-48 md:h-full rounded-xl overflow-hidden">
+                    <img
+                      src="https://via.placeholder.com/500x300"
+                      alt="Praktiskā informācija"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
                 </div>
               </div>
 
