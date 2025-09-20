@@ -133,25 +133,24 @@ const Pakalpojumi = () => {
       <Header />
 
       <main className="pt-24">
-        {/* HERO with background image */}
+        {/* Hero Section */}
         <section className="relative">
           <div className="absolute inset-0">
             <img
-              src={serviceRiding}
-              alt=""
+              src={heroImage}
+              alt="Jaunumi un raksti"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-black/45 backdrop-blur-[1px]" />
           </div>
-
+        
           <div className="relative container mx-auto px-4 max-w-7xl py-20 md:py-28 text-center text-white">
             <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight drop-shadow-sm">
-              Mūsu pakalpojumi
+              Jaunumi un raksti
             </h1>
             <p className="mt-5 text-base md:text-xl max-w-3xl mx-auto text-white/90">
-              Atklājiet plašu pakalpojumu klāstu, kas paredzēts gan
-              pieredzējušiem jātniekiem, gan tiem, kas tikai sāk savu ceļu ar
-              zirgiem.
+              Sekojiet līdzi jaunākajām ziņām no jāšanas sporta pasaules, mūsu audzēkņu
+              panākumiem un gaidāmajiem pasākumiem
             </p>
           </div>
         </section>
