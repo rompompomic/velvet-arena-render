@@ -5,7 +5,7 @@ import { ChevronRight, Home, Shield, Heart, CheckCircle2, Users, Truck, Target, 
 import serviceOther from "@/assets/service-other-services.jpg";
 import winterImage from "@/assets/winter-equestrian.jpg";
 import heroImage from "@/assets/hero-equestrian.jpg";
-mport serviceStable from "@/assets/service-horse-stable.jpg";
+import serviceStable from "@/assets/service-horse-stable.jpg";
 const CitiPakalpojumi = () => {
   const [open, setOpen] = useState(false);
   const [sent, setSent] = useState(false);
