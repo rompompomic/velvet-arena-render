@@ -10,10 +10,6 @@ import serviceExcursions from "@/assets/service-excursions.jpg";
 import serviceCorporate from "@/assets/service-corporate.jpg";
 import serviceOther from "@/assets/service-other-services.jpg";
 
-// ==== SOLID ICONS (readable at 20–24px) ====
-// Принцип: только fill="currentColor", никакого stroke.
-// Итог: высокая контрастность, без размытия на ретине.
-
 const StableIcon = ({ className = "w-5 h-5" }) => (
   <svg viewBox="0 0 24 24" className={className} fill="currentColor" aria-hidden>
     {/* Stable building with roof */}
