@@ -43,11 +43,13 @@ const LaukumuIre = () => {
               <h2 className="text-section text-foreground">Profesionālu jāšanas laukumu īre</h2>
               
               <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
-                <p>
-                  Piedāvājam profesionālu jāšanas laukumu īri ar visām nepieciešamajām iekārtām un šķēršļiem. 
-                  Mūsu laukumi ir aprīkoti ar augstas kvalitātes segumu un regulāri tiek uzturēti optimālā stāvoklī, 
-                  nodrošinot drošu un komfortablu vidi treniņiem un sacensībām.
-                </p>
+                <p>Sporta centrs piedāvā izīrēt manēžu un laukumus jātniekiem un zirgu īpašniekiem ar saviem privātajiem zirgiem, kuri netiek turēti Jauno Jātnieku Skolas zirgu staļļos. Laukumi un manēžas ir aprīkotas ar šķēršļu komplektiem un atbilstošu aprīkojumu, lai klientiem varētu sniegt pilnvērtīgus jāšanas treniņus un nodrošinātu augstas klases sacensības.
+
+Īres maksa par vienu zirgu – Cena 25 EUR / stundā (īres laikā manēžā atradīsies arī citi jātnieki).
+
+Laukumus un manēžas ir iespējams arī īrēt privātiem pasākumiem, piemēram, zirgu skatei vai suņu adžiliti sacensībām.
+
+Lai rezervētu laiku, lūdzu zvanīt uz tel.28677177</p>
                 
                 <p>
                   Laukumi ir piemēroti dažādu disciplīnu treniņiem - dresūrai, šķēršļu pārvarēšanai, 
