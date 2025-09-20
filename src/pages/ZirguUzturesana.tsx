@@ -65,14 +65,18 @@ const ZirguUzturesana = () => {
         {/* CONTENT: 2 columns */}
         <section className="container mx-auto max-w-6xl px-4 py-16 md:py-20">
           {/* Breadcrumbs */}
-              <nav className="flex items-center justify-center mb-6 text-sm text-black/80">
+            <nav className="flex items-center justify-start mb-6 text-sm text-black/80">
+              <a href="/lv/" className="flex items-center hover:text-primary transition-colors">
                 <Home className="w-4 h-4 mr-2" />
-                <span>Sākums</span>
-                <ChevronRight className="w-4 h-4 mx-2" />
-                <span>Pakalpojumi</span>
-                <ChevronRight className="w-4 h-4 mx-2" />
-                <span className="text-white font-medium">Zirgu uzturēšana</span>
-              </nav>
+                Sākums
+              </a>
+              <ChevronRight className="w-4 h-4 mx-2" />
+              <a href="/lv/pakalpojumi/" className="hover:text-primary transition-colors">
+                Pakalpojumi
+              </a>
+              <ChevronRight className="w-4 h-4 mx-2" />
+              <span className="text-black font-medium">Zirgu uzturēšana</span>
+            </nav>
           <div className="grid grid-cols-1 lg:grid-cols-[1.4fr,1fr] gap-12">
             {/* Left: intro */}
             <div className="space-y-8">
