@@ -1,13 +1,13 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-
 const LietosanasNoteikumi = () => {
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       <Header />
       <main className="container mx-auto px-4 py-16">
         <div className="max-w-4xl mx-auto">
-          <div className="border-2 p-8 md:p-12 rounded-lg bg-card" style={{ borderColor: '#963026' }}>
+          <div style={{
+          borderColor: '#963026'
+        }} className="border-2 p-8 md:p-12 rounded-lg bg-card my-[60px]">
             <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-8">
               Lietošanas noteikumi
             </h1>
@@ -246,8 +246,6 @@ const LietosanasNoteikumi = () => {
         </div>
       </main>
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default LietosanasNoteikumi;
