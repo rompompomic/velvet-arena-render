@@ -124,9 +124,9 @@ const CitiPakalpojumi = () => {
         </section>
 
         <section className="container mx-auto max-w-6xl px-4 py-16">
-          <h3 className="text-lg font-semibold text-foreground mb-4">
-            Telpu noma pasākumiem
-          </h3>
+          <h3 className="text-section text-foreground mb-12 text-center">
+            Telpu noma pasākumiem un citi pakalpojumi
+          </h3
           <div className="grid gap-8 md:grid-cols-2">
             <div className="rounded-2xl border bg-white shadow-sm overflow-hidden">
               <table className="min-w-full text-sm">
