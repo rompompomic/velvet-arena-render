@@ -144,6 +144,7 @@ const Pakalpojumi = () => {
               pieredzējušiem jātniekiem, gan tiem, kas tikai sāk savu ceļu ar
               zirgiem.
             </p>
+            <div className="absolute inset-0 bg-black/45 backdrop-blur-[1px]" />
           </div>
         </section>
 
