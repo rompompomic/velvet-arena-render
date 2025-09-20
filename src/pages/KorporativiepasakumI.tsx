@@ -106,22 +106,24 @@ const KorporativiepasakumI = () => {
               </div>
             </div>
 
-            <aside className="glass-card p-8 h-fit">
-              <h3 className="text-card-title text-foreground mb-6 flex items-center gap-2">
-                <Handshake className="w-5 h-5 text-primary" />
-                Attīstāmās prasmes
-              </h3>
-              <div className="space-y-4">
-                {["Uzticības veidošana", "Līderības prasmes", "Komandas saliedētība", "Komunikācija", "Pacietība", "Neverbālā saziņa"].map((item, index) => <div key={index} className="flex items-start gap-3">
-                    <CheckCircle2 className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
-                    <span className="text-sm text-muted-foreground">{item}</span>
-                  </div>)}
+            <div className="flex flex-col gap-6">
+              <aside className="glass-card p-8 h-fit">
+                <h3 className="text-card-title text-foreground mb-6 flex items-center gap-2">
+                  <Handshake className="w-5 h-5 text-primary" />
+                  Attīstāmās prasmes
+                </h3>
+                <div className="space-y-4">
+                  {["Uzticības veidošana", "Līderības prasmes", "Komandas saliedētība", "Komunikācija", "Pacietība", "Neverbālā saziņa"].map((item, index) => <div key={index} className="flex items-start gap-3">
+                      <CheckCircle2 className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
+                      <span className="text-sm text-muted-foreground">{item}</span>
+                    </div>)}
+                </div>
+              </aside>
+              {/* Filler image below card */}
+              <div className="rounded-2xl overflow-hidden">
+                <img src={winterImage} // замени на свой PNG
+              alt="Stable horses" className="w-full h-full object-cover" />
               </div>
-            </aside>
-            {/* Filler image below card */}
-            <div className="rounded-2xl overflow-hidden">
-              <img src={winterImage} // замени на свой PNG
-            alt="Stable horses" className="w-full h-full object-cover" />
             </div>
           </div>
         </section>
