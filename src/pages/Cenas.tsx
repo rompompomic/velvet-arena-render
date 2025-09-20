@@ -87,18 +87,25 @@ const Cenas = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary/10 to-primary/5 py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/src/assets/hero-equestrian.jpg')] bg-cover bg-center opacity-10"></div>
-        <div className="container mx-auto px-4 max-w-7xl relative z-10">
-          <div className="text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-foreground">
-              Jaunumi un raksti
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Sekojiet līdzi jaunākajām ziņām no jāšanas sporta pasaules, mūsu audzēkņu panākumiem un gaidāmajiem pasākumiem
-            </p>
-          </div>
-        </section>
+      <section className="relative">
+        <div className="absolute inset-0">
+          <div
+            className="w-full h-full bg-cover bg-center bg-no-repeat"
+            style={{ backgroundImage: `url(${heroImage})` }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/20" />
+        </div>
+      
+        <div className="relative container mx-auto px-4 max-w-7xl py-20 md:py-28 text-center text-white">
+          <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight drop-shadow-lg mb-6">
+            Mūsu cenas un pakalpojumi
+          </h1>
+          <p className="text-base md:text-xl leading-relaxed max-w-2xl mx-auto text-white/90">
+            Pielāgoti risinājumi visām vecuma grupām — no pirmās iepazīšanās ar zirgu 
+            līdz profesionāliem treniņiem un korporatīviem pasākumiem.
+          </p>
+        </div>
+      </section>
 
       <div className="container mx-auto px-4 py-16 max-w-7xl">
         
