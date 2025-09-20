@@ -62,10 +62,23 @@ const NewsSection = () => {
 
         {/* View All Button */}
         <div className="text-center mt-12">
-          <a href="/lv/jaunumi/" className="inline-flex items-center btn-outline-velvet hover:bg-primary-50">
+          <a
+            href="/lv/jaunumi/"
+            className="inline-flex items-center px-8 py-4 bg-primary text-white font-medium rounded-xl transition-all duration-300 hover:bg-primary-700 hover:scale-105"
+          >
             Visi jaunumi
-            <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            <svg
+              className="ml-2 w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M17 8l4 4m0 0l-4 4m4-4H3"
+              />
             </svg>
           </a>
         </div>
