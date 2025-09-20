@@ -254,13 +254,15 @@ const Ziedojumi = () => {
                 {/* Submit */}
                 <Button
                   type="submit"
-                  className="w-full h-12 text-lg font-semibold"
                   disabled={
                     !amount ||
                     !agreeToTerms ||
                     (!isAnonymous &&
                       (!personalInfo.firstName || !personalInfo.lastName || !personalInfo.email))
                   }
+                  className="w-full h-12 text-lg font-semibold bg-primary text-white rounded-xl
+                             transition-all duration-300 hover:bg-primary-700 hover:scale-105
+                             disabled:opacity-50 disabled:pointer-events-none"
                 >
                   Ziedot €{amount || "0"}
                 </Button>
