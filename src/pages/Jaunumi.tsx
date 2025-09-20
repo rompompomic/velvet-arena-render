@@ -93,28 +93,25 @@ const Jaunumi = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative h-[420px] md:h-[520px]">
+      <section className="relative isolate overflow-hidden">
         {/* Фон */}
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 z-0">
           <img
-            src={heroImage}
+            src={heroImage} // import heroImage from "@/assets/hero-equestrian.jpg";
             alt="Jaunumi un raksti"
-            className="w-full h-full object-cover object-center"
+            className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/45 backdrop-blur-[1px]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/20" />
         </div>
       
-        {/* Контент по центру по вертикали и горизонтали */}
-        <div className="relative h-full">
-          <div className="container mx-auto px-4 max-w-7xl h-full grid place-content-center text-center text-white">
-            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight drop-shadow-sm">
-              Jaunumi un raksti
-            </h1>
-            <p className="mt-5 text-base md:text-xl max-w-3xl mx-auto text-white/90 leading-relaxed">
-              Sekojiet līdzi jaunākajām ziņām no jāšanas sporta pasaules, mūsu audzēkņu
-              panākumiem un gaidāmajiem pasākumiem
-            </p>
-          </div>
+        {/* Контент */}
+        <div className="relative z-10 container mx-auto px-4 max-w-7xl pt-28 md:pt-36 pb-16 text-center text-white min-h-[48vh]">
+          <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight drop-shadow-lg mb-5">
+            Jaunumi un raksti
+          </h1>
+          <p className="text-base md:text-xl max-w-3xl mx-auto text-white/90 leading-relaxed">
+            Sekojiet līdzi jaunākajām ziņām no jāšanas sporta pasaules, mūsu audzēkņu panākumiem un gaidāmajiem pasākumiem
+          </p>
         </div>
       </section>
 
