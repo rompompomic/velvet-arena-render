@@ -78,7 +78,13 @@ const Kontakti = () => {
                     <Label htmlFor="message">Ziņojums *</Label>
                     <Textarea id="message" name="message" value={formData.message} onChange={handleInputChange} required rows={5} className="mt-1" />
                   </div>
-                  <Button type="submit" className="w-full">Nosūtīt ziņojumu</Button>
+                  <Button 
+                    type="submit" 
+                    className="w-full bg-primary text-white rounded-xl 
+                               transition-all duration-300 hover:bg-primary-700 hover:scale-105"
+                  >
+                    Nosūtīt ziņojumu
+                  </Button>
                 </form>
               </CardContent>
             </Card>
