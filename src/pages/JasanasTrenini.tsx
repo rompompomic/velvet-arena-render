@@ -4,6 +4,7 @@ import { ChevronRight, Home, Users, Trophy, Shield, Heart, CheckCircle2, BookOpe
 import serviceRiding from "@/assets/service-riding-lessons.jpg";
 import heroImage from "@/assets/hero-equestrian.jpg";
 import eventImage from "@/assets/event-showjumping.jpg";
+import winterImage from "@/assets/winter-equestrian.jpg";
 const JasanasTrenini = () => {
   return <div className="min-h-screen bg-background">
       <Header />
