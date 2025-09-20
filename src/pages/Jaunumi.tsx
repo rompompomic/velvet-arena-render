@@ -97,7 +97,7 @@ const Jaunumi = () => {
         {/* Фон */}
         <div className="absolute inset-0 z-0">
           <img
-            src={heroImage} // import heroImage from "@/assets/hero-equestrian.jpg";
+            src={heroImage}
             alt="Jaunumi un raksti"
             className="w-full h-full object-cover"
           />
@@ -105,7 +105,7 @@ const Jaunumi = () => {
         </div>
       
         {/* Контент */}
-        <div className="relative z-10 container mx-auto px-4 max-w-7xl pt-28 md:pt-36 pb-16 text-center text-white min-h-[48vh]">
+        <div className="relative z-10 container mx-auto px-4 max-w-7xl min-h-[60vh] flex flex-col items-center justify-center text-center text-white">
           <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight drop-shadow-lg mb-5">
             Jaunumi un raksti
           </h1>
