@@ -12,14 +12,13 @@ const ZirguUzturesana = () => {
       <main className="pt-24">
         {/* HERO */}
         <section className="relative min-h-[65vh]">
-          <img src="/assets/uzturesana-hero.jpg" alt="" className="absolute inset-0 w-full h-full object-cover" />
+          <img src="heroImage" alt="" className="absolute inset-0 w-full h-full object-cover" />
           <div className="absolute inset-0 bg-black/45" />
           <div className="relative container mx-auto max-w-6xl px-4 py-20 md:py-28 text-white">
             <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight">Zirgu uzturēšana</h1>
             <p className="mt-4 max-w-3xl text-lg md:text-xl text-white/90">
               Profesionāla zirgu aprūpe un uzturēšana modernās stallīs ar augstākajiem komforta standartiem.
             </p>
-        
             {/* Stats chips */}
             <div className="mt-6 flex flex-wrap gap-3">
               {[
