@@ -93,19 +93,19 @@ const Jaunumi = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative overflow-hidden">
-        {/* BG image + overlay ниже текста по z-index */}
-        <div className="absolute inset-0 -z-10 pointer-events-none">
+      <section className="relative isolate overflow-hidden">
+        {/* Фон */}
+        <div className="absolute inset-0 z-0">
           <img
-            src={heroImage}
+            src={heroImage} // import heroImage from "@/assets/hero-equestrian.jpg";
             alt="Jaunumi un raksti"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/20" />
         </div>
       
-        {/* Контент. Добавил паддинги с учётом фикс-хедера и min-h */}
-        <div className="relative container mx-auto px-4 max-w-7xl pt-28 md:pt-36 pb-16 text-center text-white min-h-[48vh]">
+        {/* Контент */}
+        <div className="relative z-10 container mx-auto px-4 max-w-7xl pt-28 md:pt-36 pb-16 text-center text-white min-h-[48vh]">
           <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight drop-shadow-lg mb-5">
             Jaunumi un raksti
           </h1>
