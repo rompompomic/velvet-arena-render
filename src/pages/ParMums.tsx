@@ -214,10 +214,7 @@ const ParMums = () => {
                     </a>
                   </Button>
                   
-                  <div className="text-sm text-muted-foreground">
-                    <p>E-pasts: marketing@latvianhorses.lv</p>
-                    <p>Tālrunis: +371 25 415 777</p>
-                  </div>
+                  
                 </div>
               </div>
               
