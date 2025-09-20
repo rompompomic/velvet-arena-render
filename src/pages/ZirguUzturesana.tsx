@@ -52,7 +52,14 @@ const ZirguUzturesana = () => {
 
           <div className="relative flex items-center justify-center text-center text-white min-h-[50vh] md:min-h-[60vh]">
             <div className="container mx-auto px-4 max-w-6xl">
-              {/* Breadcrumbs */}
+              <h1 className="text-hero text-white mb-4 drop-shadow-lg">
+                Zirgu uzturēšana
+              </h1>
+              <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto text-white/90 leading-relaxed">
+                Profesionāla zirgu aprūpe un uzturēšana modernās stallīs ar augstākajiem komforta standartiem.
+              </p>
+            </div>
+            {/* Breadcrumbs */}
               <nav className="flex items-center justify-center mb-6 text-sm text-white/80">
                 <Home className="w-4 h-4 mr-2" />
                 <span>Sākums</span>
@@ -61,14 +68,6 @@ const ZirguUzturesana = () => {
                 <ChevronRight className="w-4 h-4 mx-2" />
                 <span className="text-white font-medium">Zirgu uzturēšana</span>
               </nav>
-
-              <h1 className="text-hero text-white mb-4 drop-shadow-lg">
-                Zirgu uzturēšana
-              </h1>
-              <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto text-white/90 leading-relaxed">
-                Profesionāla zirgu aprūpe un uzturēšana modernās stallīs ar augstākajiem komforta standartiem.
-              </p>
-            </div>
           </div>
         </section>
 
