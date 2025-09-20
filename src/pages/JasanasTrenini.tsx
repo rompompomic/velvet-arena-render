@@ -149,6 +149,57 @@ const JasanasTrenini = () => {
           </p>
         </section>
 
+        {/* Practical info + Contacts (light cards) */}
+        <section className="bg-neutral-50 py-16">
+          <div className="container mx-auto max-w-4xl px-4">
+            <h3 className="text-section text-foreground mb-12 text-center">
+              Praktiskā informācija
+            </h3>
+        
+            <div className="grid gap-8 md:grid-cols-[1.2fr,1fr]">
+              {/* Info card with image */}
+              <div className="p-0 overflow-hidden rounded-2xl border bg-white shadow-sm">
+                {/* Top image */}
+                <div className="relative h-28 bg-gradient-to-r from-primary/80 to-primary/60">
+                  <img src={winterImage} alt="Praktiskā informācija" className="absolute inset-0 w-full h-full object-cover opacity-25" />
+                </div>
+        
+                {/* Content */}
+                <div className="p-6 space-y-6">
+                  {["Visi pakalpojumi pēc iepriekšēja pieraksta.", "Svētku dienās visiem pakalpojumiem tiek piemērota papildus maksa 50% apmērā.", "Nodarbību / aprūpes laiki var mainīties — vienmēr precizējam pirms apmeklējuma."].map((text, i) => <div key={i} className="flex items-start gap-4">
+                      <CheckCircle2 className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                      <span className="text-muted-foreground">{text}</span>
+                    </div>)}
+                </div>
+              </div>
+
+              {/* Contacts card + popup trigger */}
+              <div className="p-0 overflow-hidden rounded-2xl border bg-white shadow-sm">
+                <div className="relative h-28 bg-gradient-to-r from-primary/80 to-primary/60">
+                  <img src={winterImage} alt="" className="absolute inset-0 w-full h-full object-cover opacity-25" />
+                </div>
+                <div className="p-6 space-y-4">
+                  <h4 className="text-lg font-semibold text-foreground">Sazinieties ar mums</h4>
+                  <div className="space-y-3">
+                    <a href="tel:+37128677177" className="flex items-center gap-3 text-foreground hover:text-primary transition-colors">
+                      <Phone className="w-5 h-5 text-primary" />
+                      <span className="font-medium">+371 28677177</span>
+                    </a>
+                    <a href="mailto:info@latvianhorses.lv" className="flex items-center gap-3 text-foreground hover:text-primary transition-colors">
+                      <Mail className="w-5 h-5 text-primary" />
+                      <span className="font-medium">info@latvianhorses.lv</span>
+                    </a>
+                  </div>
+
+                  <button onClick={() => setOpen(true)} className="mt-2 inline-flex items-center justify-center w-full rounded-xl bg-primary text-white px-4 py-2.5 font-medium hover:bg-primary/90 transition-colors" aria-haspopup="dialog" aria-expanded={open}>
+                    Atstāt pieteikumu
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
       </main>
 
       <Footer />
