@@ -10,70 +10,63 @@ import serviceExcursions from "@/assets/service-excursions.jpg";
 import serviceCorporate from "@/assets/service-corporate.jpg";
 import serviceOther from "@/assets/service-other-services.jpg";
 
-const svgProps = {
-  fill: "none",
-  stroke: "currentColor",
-  strokeWidth: 2.25,
-  strokeLinecap: "round" as const,
-  strokeLinejoin: "round" as const,
-  vectorEffect: "non-scaling-stroke" as const,
-  shapeRendering: "geometricPrecision" as const,
-  className: "w-6 h-6", // на бейдже 40×40 это смотрится ровно
-};
+// ==== SOLID ICONS (readable at 20–24px) ====
+// Принцип: только fill="currentColor", никакого stroke.
+// Итог: высокая контрастность, без размытия на ретине.
 
-// Конюшня (Stable)
-const StableIcon = () => (
-  <svg viewBox="0 0 24 24" {...svgProps}>
-    <path d="M3.5 10.5 12 4.5l8.5 6" />
-    <path d="M5.5 11v8.5a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V11" />
-    <rect x="9" y="14.5" width="6" height="5" rx="1" />
+const StableIcon = ({ className = "w-5 h-5" }) => (
+  <svg viewBox="0 0 24 24" className={className} fill="currentColor" aria-hidden>
+    {/* сарай + дверь */}
+    <path d="M12 3 3 8.5V20a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V8.5L12 3Z" />
+    <path d="M9 13h6v8H9z" fill="white" opacity=".22" />
   </svg>
 );
 
-// Шлем (Riding) — самая узнаваемая метафора
-const RidingIcon = () => (
-  <svg viewBox="0 0 24 24" {...svgProps}>
-    <path d="M6.5 11.5a6 6 0 0 1 11 0" />
-    <path d="M6.5 12.5H13" />
-    <path d="M17.5 12.5c0 1.9-1.6 3.5-3.5 3.5H8.5" />
-    <circle cx="15.5" cy="10" r="0.9" />
+const RidingIcon = ({ className = "w-5 h-5" }) => (
+  <svg viewBox="0 0 24 24" className={className} fill="currentColor" aria-hidden>
+    {/* шлем верховой езды */}
+    <path d="M6 12a6 6 0 0 1 12 0v1H6v-1Z" />
+    <path d="M6 14h7.5a3.5 3.5 0 0 1-3.5 3.5H8.25A2.25 2.25 0 0 1 6 15.25V14Z" />
+    <circle cx="15.25" cy="10" r="1" />
   </svg>
 );
 
-// Барьер (Arena)
-const ArenaIcon = () => (
-  <svg viewBox="0 0 24 24" {...svgProps}>
-    <path d="M5.5 6.5v11" />
-    <path d="M18.5 6.5v11" />
-    <path d="M5.5 10.5h13" />
-    <path d="M5.5 14.5h13" />
+const ArenaIcon = ({ className = "w-5 h-5" }) => (
+  <svg viewBox="0 0 24 24" className={className} fill="currentColor" aria-hidden>
+    {/* препятствие: стойки + две перекладины */}
+    <rect x="4" y="5" width="3" height="14" rx="1" />
+    <rect x="17" y="5" width="3" height="14" rx="1" />
+    <rect x="6.5" y="9" width="11" height="2.5" rx="1.25" />
+    <rect x="6.5" y="13" width="11" height="2.5" rx="1.25" />
   </svg>
 );
 
-// Камера (Excursions)
-const ExcursionIcon = () => (
-  <svg viewBox="0 0 24 24" {...svgProps}>
-    <rect x="3.5" y="7.5" width="17" height="10" rx="2" />
-    <path d="M8.5 7.5l1.1-1.6h4.8l1.1 1.6" />
-    <circle cx="12" cy="12.5" r="3" />
+const ExcursionIcon = ({ className = "w-5 h-5" }) => (
+  <svg viewBox="0 0 24 24" className={className} fill="currentColor" aria-hidden>
+    {/* камера (фото-экскурсии) */}
+    <rect x="3" y="7" width="18" height="12" rx="2" />
+    <path d="M8 7 9.3 5h5.4L16 7z" />
+    <circle cx="12" cy="13" r="4" fill="white" opacity=".18" />
   </svg>
 );
 
-// Рукопожатие (Corporate)
-const CorporateIcon = () => (
-  <svg viewBox="0 0 24 24" {...svgProps}>
-    <path d="M7 14.5l2.4 2a3 3 0 0 0 3.6 0l2.4-2" />
-    <path d="M7 14.5l2.4-1.8a3 3 0 0 1 3.6 0L15.4 14.5" />
-    <path d="M5.7 13.2l1.8-.7M18.3 13.2l-1.8-.7" />
-    <path d="M16 10.5l1.4 1.4L20 9.3" />
+const CorporateIcon = ({ className = "w-5 h-5" }) => (
+  <svg viewBox="0 0 24 24" className={className} fill="currentColor" aria-hidden>
+    {/* рукопожатие */}
+    <path d="M4 12.5h4.8l2.2 1.8a2.8 2.8 0 0 0 3.6 0l2.2-1.8H22V18a2 2 0 0 1-2 2h-7.2a5 5 0 0 1-3.2-1.2L7.2 17H4a2 2 0 0 1-2-2v-2.5h2Z" />
+    {/* галочка-результат */}
+    <path d="M14.5 9.2 16 10.7l3-3" fill="white" opacity=".22" />
   </svg>
 );
 
-// Подкова (Other)
-const ServicesIcon = () => (
-  <svg viewBox="0 0 24 24" {...svgProps}>
-    <path d="M12 4.5a7 7 0 0 1 7 7v2a7 7 0 0 1-14 0v-2a7 7 0 0 1 7-7z" />
-    <path d="M8.5 12.5v1.5M15.5 12.5v1.5" />
+const ServicesIcon = ({ className = "w-5 h-5" }) => (
+  <svg viewBox="0 0 24 24" className={className} fill="currentColor" aria-hidden>
+    {/* подкова */}
+    <path d="M12 3a8 8 0 0 1 8 8v2a8 8 0 0 1-16 0v-2a8 8 0 0 1 8-8Z" />
+    <circle cx="8.5" cy="10" r="1" fill="white" opacity=".28" />
+    <circle cx="15.5" cy="10" r="1" fill="white" opacity=".28" />
+    <circle cx="8.5" cy="16" r="1" fill="white" opacity=".28" />
+    <circle cx="15.5" cy="16" r="1" fill="white" opacity=".28" />
   </svg>
 );
 
