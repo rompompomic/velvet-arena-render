@@ -92,10 +92,10 @@ const Lightbox = ({ photos, currentIndex, onClose, onNavigate }: LightboxProps) 
         </div>
 
         {/* Image Container */}
-        <div className="flex-1 flex items-center justify-center p-4">
-          <div className="relative max-w-full max-h-full">
+        <div className="flex-1 flex items-center justify-center p-4 min-h-0">
+          <div className="relative w-full h-full flex items-center justify-center">
             {isLoading && (
-              <div className="absolute inset-0 flex items-center justify-center">
+              <div className="absolute inset-0 flex items-center justify-center z-10">
                 <div className="w-8 h-8 border-2 border-white/30 border-t-white rounded-full animate-spin" />
               </div>
             )}
@@ -103,7 +103,11 @@ const Lightbox = ({ photos, currentIndex, onClose, onNavigate }: LightboxProps) 
             <img
               src={currentPhoto.src}
               alt={currentPhoto.alt}
-              className="max-w-full max-h-full object-contain"
+              className="max-w-full max-h-full w-auto h-auto object-contain"
+              style={{ 
+                maxWidth: 'calc(100vw - 2rem)',
+                maxHeight: 'calc(100vh - 12rem)' // Account for header + navigation space
+              }}
               onLoad={() => setIsLoading(false)}
             />
           </div>
