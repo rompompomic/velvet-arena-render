@@ -8,44 +8,65 @@ const ZirguUzturesana = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      
+
       <main className="pt-24">
         {/* HERO */}
-        <section className="relative min-h-[65vh]">
-          <img src="/assets/hero-equestrian.jpg" alt="" className="absolute inset-0 w-full h-full object-cover" />
+        <section className="relative isolate">
+          {/* фон */}
+          <img
+            src={heroImage}               // <-- фикс: используем импорт
+            alt="Zirgu uzturēšana"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
           <div className="absolute inset-0 bg-black/45" />
-          <div className="relative container mx-auto max-w-6xl px-4 py-20 md:py-28 text-white">
-            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight">Zirgu uzturēšana</h1>
-            <p className="mt-4 max-w-3xl text-lg md:text-xl text-white/90">
-              Profesionāla zirgu aprūpe un uzturēšana modernās stallīs ar augstākajiem komforta standartiem.
-            </p>
-            {/* Stats chips */}
-            <div className="mt-6 flex flex-wrap gap-3">
-              {[
-                { k: ">70", v: "boksi" },
-                { k: "2", v: "slēgtās manēžas" },
-                { k: "24/7", v: "aprūpe un uzraudzība" },
-              ].map((s) => (
-                <div key={s.v} className="px-3 py-1.5 rounded-full bg-white/10 backdrop-blur text-sm border border-white/15">
-                  <span className="font-semibold">{s.k}</span> {s.v}
-                </div>
-              ))}
+
+          {/* контент по центру */}
+          <div className="relative container mx-auto max-w-6xl px-4">
+            <div className="min-h-[65vh] flex flex-col items-center justify-center text-center text-white py-20 md:py-28">
+              <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight">
+                Zirgu uzturēšana
+              </h1>
+              <p className="mt-4 max-w-3xl text-lg md:text-xl text-white/90">
+                Profesionāla zirgu aprūpe un uzturēšana modernās stallīs ar
+                augstākajiem komforta standartiem.
+              </p>
+
+              {/* Stats chips */}
+              <div className="mt-6 flex flex-wrap justify-center gap-3">
+                {[
+                  { k: ">70", v: "boksi" },
+                  { k: "2", v: "slēgtās manēžas" },
+                  { k: "24/7", v: "aprūpe un uzraudzība" },
+                ].map((s) => (
+                  <div
+                    key={s.v}
+                    className="px-3 py-1.5 rounded-full bg-white/10 backdrop-blur text-sm border border-white/15"
+                  >
+                    <span className="font-semibold">{s.k}</span> {s.v}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
-        
+
         {/* CONTENT: 2 columns */}
         <section className="container mx-auto max-w-6xl px-4 py-12 md:py-16">
           <div className="grid grid-cols-1 lg:grid-cols-[1.4fr,1fr] gap-10">
             {/* Left: intro */}
             <div className="space-y-6">
-              <h2 className="text-2xl md:text-3xl font-semibold">Profesionāla zirgu aprūpe un uzturēšana</h2>
+              <h2 className="text-2xl md:text-3xl font-semibold">
+                Profesionāla zirgu aprūpe un uzturēšana
+              </h2>
               <p className="text-muted-foreground">
-                Piedāvājam profesionālu zirgu aprūpi un uzturēšanu mūsdienīgos staļļos ar augstākajiem komforta standartiem.
-                Staļļi ir aprīkoti ar modernām ventilācijas sistēmām, kvalitatīvām boksu konstrukcijām un regulāru veterināro
-                uzraudzību. Katrs zirgs saņem individuālu aprūpi, ņemot vērā tā vecumu, veselības stāvokli un īpašās vajadzības.
+                Piedāvājam profesionālu zirgu aprūpi un uzturēšanu mūsdienīgos
+                staļļos ar augstākajiem komforta standartiem. Staļļi ir aprīkoti
+                ar modernām ventilācijas sistēmām, kvalitatīvām boksu
+                konstrukcijām un regulāru veterināro uzraudzību. Katrs zirgs
+                saņem individuālu aprūpi, ņemot vērā tā vecumu, veselības stāvokli
+                un īpašās vajadzības.
               </p>
-        
+
               <h3 className="text-xl font-semibold">Pakalpojumi ietver:</h3>
               <ul className="list-disc pl-5 space-y-1 text-muted-foreground">
                 <li>Pilna laika zirgu uzturēšana modernās stallīs</li>
@@ -57,7 +78,7 @@ const ZirguUzturesana = () => {
                 <li>Āra pastaigu laukumi un ganības</li>
               </ul>
             </div>
-        
+
             {/* Right: aside card */}
             <aside className="p-6 rounded-2xl border bg-white shadow-sm">
               <h3 className="text-lg font-semibold mb-3">Iekļauts ikdienā</h3>
@@ -74,7 +95,7 @@ const ZirguUzturesana = () => {
             </aside>
           </div>
         </section>
-        
+
         {/* Included features grid */}
         <section className="container mx-auto max-w-6xl px-4 pb-6 md:pb-10">
           <h3 className="text-xl font-semibold mb-4">Iekārtas un labiekārtojums</h3>
@@ -87,13 +108,16 @@ const ZirguUzturesana = () => {
               "Apsildāmas garderobes",
               "Āra laukumi un ganības",
             ].map((t) => (
-              <div key={t} className="p-4 rounded-xl border bg-white shadow-sm text-sm text-muted-foreground">
+              <div
+                key={t}
+                className="p-4 rounded-xl border bg-white shadow-sm text-sm text-muted-foreground"
+              >
                 {t}
               </div>
             ))}
           </div>
         </section>
-        
+
         {/* Pricing table */}
         <section className="container mx-auto max-w-6xl px-4 py-8 md:py-12">
           <h3 className="text-xl font-semibold mb-4">Piedāvātās pakas</h3>
@@ -123,10 +147,11 @@ const ZirguUzturesana = () => {
             </table>
           </div>
           <p className="mt-3 text-xs text-muted-foreground">
-            * Cenas norādītas bez PVN. Apmaksa iespējama kā juridiskai personai vai uz biedrību ar sabiedriskā labuma statusu.
+            * Cenas norādītas bez PVN. Apmaksa iespējama kā juridiskai personai vai uz
+            biedrību ar sabiedriskā labuma statusu.
           </p>
         </section>
-        
+
         {/* Practical info */}
         <section className="container mx-auto max-w-6xl px-4 pb-16">
           <h3 className="text-xl font-semibold mb-3">Praktiskā informācija</h3>
@@ -134,7 +159,17 @@ const ZirguUzturesana = () => {
             <li>Visi pakalpojumi pēc iepriekšēja pieraksta.</li>
             <li>Svētku dienās visiem pakalpojumiem tiek piemērota papildus maksa 50% apmērā.</li>
             <li>Nodarbību / aprūpes laiki var mainīties — vienmēr precizējam pirms apmeklējuma.</li>
-            <li>Interesentiem: tālr. <a href="tel:+37128677177" className="underline">+371 28677177</a>, e-pasts <a className="underline" href="mailto:info@latvianhorses.lv">info@latvianhorses.lv</a>.</li>
+            <li>
+              Interesentiem: tālr.{" "}
+              <a href="tel:+37128677177" className="underline">
+                +371 28677177
+              </a>
+              , e-pasts{" "}
+              <a className="underline" href="mailto:info@latvianhorses.lv">
+                info@latvianhorses.lv
+              </a>
+              .
+            </li>
           </ul>
         </section>
       </main>
