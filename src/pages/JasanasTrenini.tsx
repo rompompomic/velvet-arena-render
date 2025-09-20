@@ -199,7 +199,6 @@ const JasanasTrenini = () => {
             </div>
           </div>
         </section>
-
       </main>
 
       <Footer />
