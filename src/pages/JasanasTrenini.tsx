@@ -202,6 +202,66 @@ const JasanasTrenini = () => {
         </section>
       </main>
 
+      {/* POPUP FORM */}
+      {open && <div role="dialog" aria-modal="true" className="fixed inset-0 z-[70] flex items-center justify-center p-4 md:p-8 bg-black/60" onClick={() => setOpen(false)}>
+          <div className="w-full max-w-3xl grid md:grid-cols-2 bg-white rounded-2xl overflow-hidden shadow-2xl" onClick={e => e.stopPropagation()}>
+            {/* Left image */}
+            <div className="relative hidden md:block">
+              <img src={serviceStable} alt="" className="absolute inset-0 w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-black/10" />
+            </div>
+
+            {/* Right form */}
+            <div className="p-6 md:p-8">
+              <div className="flex items-start justify-between mb-4">
+                <h4 className="text-xl font-semibold">Atstāt pieteikumu</h4>
+                <button onClick={() => setOpen(false)} className="p-2 rounded-lg hover:bg-neutral-100" aria-label="Close">
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+
+              {!sent ? <form className="grid gap-4" onSubmit={onSubmit}>
+                  <label className="grid gap-1">
+                    <span className="text-sm text-muted-foreground flex items-center gap-2">
+                      <User className="w-4 h-4 text-primary" /> Vārds, Uzvārds
+                    </span>
+                    <input required type="text" className="w-full rounded-xl border border-neutral-200 bg-white px-3 py-2.5 text-sm outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50" placeholder="Jūsu vārds" />
+                  </label>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <label className="grid gap-1">
+                      <span className="text-sm text-muted-foreground flex items-center gap-2">
+                        <Phone className="w-4 h-4 text-primary" /> Telefons
+                      </span>
+                      <input required type="tel" className="w-full rounded-xl border border-neutral-200 bg-white px-3 py-2.5 text-sm outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50" placeholder="+371 ..." />
+                    </label>
+                    <label className="grid gap-1">
+                      <span className="text-sm text-muted-foreground flex items-center gap-2">
+                        <Mail className="w-4 h-4 text-primary" /> E-pasts
+                      </span>
+                      <input type="email" className="w-full rounded-xl border border-neutral-200 bg-white px-3 py-2.5 text-sm outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50" placeholder="name@example.com" />
+                    </label>
+                  </div>
+
+                  <label className="grid gap-1">
+                    <span className="text-sm text-muted-foreground flex items-center gap-2">
+                      <CalendarClock className="w-4 h-4 text-primary" /> Vēlamais laiks / komentārs
+                    </span>
+                    <textarea rows={4} className="w-full rounded-xl border border-neutral-200 bg-white px-3 py-2.5 text-sm outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50 resize-none" placeholder="Īsi aprakstiet pieprasījumu" />
+                  </label>
+
+                  <button type="submit" className="mt-2 inline-flex items-center justify-center rounded-xl bg-primary text-white px-4 py-2.5 font-medium hover:bg-primary/90 transition-colors">
+                    Nosūtīt
+                  </button>
+                </form> : <div className="flex flex-col items-center justify-center py-10 text-center">
+                  <CheckCircle2 className="w-10 h-10 text-primary mb-3" />
+                  <p className="text-lg font-medium">Pieteikums nosūtīts!</p>
+                  <p className="text-sm text-muted-foreground">Mēs sazināsimies ar jums tuvākajā laikā.</p>
+                </div>}
+            </div>
+          </div>
+        </div>}
+
       <Footer />
     </div>;
 };
