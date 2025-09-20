@@ -120,6 +120,9 @@ const ZirguUzturesana = () => {
           </div>
         </section>
 
+        {/* Facilities grid (light cards) */}
+        
+
         {/* Pricing table */}
         <section className="container mx-auto max-w-6xl px-4 py-16">
           <h3 className="text-section text-foreground mb-12 text-center">Piedāvātās pakas</h3>
