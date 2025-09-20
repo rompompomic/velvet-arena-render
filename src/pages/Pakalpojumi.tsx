@@ -9,6 +9,7 @@ import serviceArena from "@/assets/service-arena-rental.jpg";
 import serviceExcursions from "@/assets/service-excursions.jpg";
 import serviceCorporate from "@/assets/service-corporate.jpg";
 import serviceOther from "@/assets/service-other-services.jpg";
+import ridingIcon from "@/assets/riding-icon.webp";
 
 const StableIcon = ({ className = "w-5 h-5" }) => (
   <svg viewBox="0 0 24 24" className={className} fill="currentColor" aria-hidden>
@@ -182,7 +183,15 @@ const Pakalpojumi = () => {
                       {/* Icon Row (с бейджем при желании) */}
                       <div className="flex items-center justify-between mb-4">
                         <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-primary/10">
-                          <IconComponent />
+                          {service.title === "Jāšanas treniņi" ? (
+                            <img 
+                              src={ridingIcon} 
+                              alt="" 
+                              className="w-6 h-6 object-contain"
+                            />
+                          ) : (
+                            <IconComponent />
+                          )}
                         </div>
                       </div>
 
