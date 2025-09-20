@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { CheckCircle, Mail, Download, Calendar } from "lucide-react";
+import { CheckCircle, Mail, Download, Calendar, Phone } from "lucide-react";
 import serviceRiding from "@/assets/service-riding-lessons.jpg";
 
 const PaldiesParPirkumu = () => {
@@ -103,13 +103,13 @@ const PaldiesParPirkumu = () => {
                 Ja jums ir jautājumi par pasūtījumu vai dāvanu karti, sazinieties ar mums:
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
                 <div className="flex items-center gap-2">
-                  <span className="text-sm">📞</span>
+                  <Phone className="w-5 h-5 text-primary" />
                   <span className="font-medium">+371 28677177</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="text-sm">✉️</span>
+                  <Mail className="w-5 h-5 text-primary" />
                   <span className="font-medium">info@latvianhorses.lv</span>
                 </div>
               </div>
