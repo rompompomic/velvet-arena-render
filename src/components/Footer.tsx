@@ -3,7 +3,7 @@ const Footer = () => {
     { name: "Pakalpojumi", href: "/lv/pakalpojumi/" },
     { name: "Pasākumi", href: "/lv/pasakumi/" },
     { name: "Cenas", href: "/lv/cenas/" },
-    { key: "Jaunumi", href: "/lv/jaunumi/" },
+    { name: "Jaunumi", href: "/lv/jaunumi/" },
     { name: "Galerija", href: "/lv/galerija/" },
     { name: "Par mums", href: "/lv/par-mums/" },
     { name: "Kontakti", href: "/lv/kontakti/" },
