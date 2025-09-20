@@ -4,6 +4,7 @@ import { ChevronRight, Home, Users, Trophy, Shield, Heart, CheckCircle2, Phone, 
 import serviceRiding from "@/assets/service-riding-lessons.jpg";
 import heroImage from "@/assets/hero-equestrian.jpg";
 import eventImage from "@/assets/event-showjumping.jpg";
+import serviceStable from "@/assets/service-horse-stable.jpg";
 import winterImage from "@/assets/winter-equestrian.jpg";
 const JasanasTrenini = () => {
   return <div className="min-h-screen bg-background">
