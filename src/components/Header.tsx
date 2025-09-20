@@ -19,7 +19,7 @@ const Header = () => {
     {
       key: "pakalpojumi",
       name: "Pakalpojumi",
-      href: "/lv/pakalpojumi/", // ссылка на кнопку
+      href: "/lv/pakalpojumi/",
       hasDropdown: true,
       subItems: [
         { name: "Jāšanas treniņi", href: "/lv/pakalpojumi/jasanas-trenini/" },
@@ -35,7 +35,7 @@ const Header = () => {
     {
       key: "galerija",
       name: "Galerija",
-      href: "/lv/galerija/", // ссылка на кнопку
+      href: "/lv/galerija/",
       hasDropdown: true,
       subItems: [
         { name: "Pasākumi", href: "/lv/galerija/pasakumi/" },
@@ -56,7 +56,7 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-neutral-200">
       <div className="w-full">
-        {/* Top utility bar */}
+        {/* Top utility bar (desktop only) */}
         <div className="border-b border-neutral-200 hidden md:block">
           <div className="container mx-auto max-w-7xl px-4">
             <div className="flex items-center justify-between py-1.5">
@@ -83,41 +83,15 @@ const Header = () => {
               </nav>
 
               <div className="flex items-center gap-4 text-xs text-text/80">
-                <a
-                  href="tel:+37128677177"
-                  className="flex items-center gap-1 link-underline"
-                >
-                  <svg
-                    className="w-3.5 h-3.5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M3 5a2 2 0 012-2h2.6a1 1 0 01.95.69l1.2 3.6a1 1 0 01-.51 1.2l-1.6.8a12 12 0 006.32 6.32l.8-1.6a1 1 0 011.2-.51l3.6 1.2a1 1 0 01.69.95V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                    />
+                <a href="tel:+37128677177" className="flex items-center gap-1 link-underline">
+                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h2.6a1 1 0 01.95.69l1.2 3.6a1 1 0 01-.51 1.2l-1.6.8a12 12 0 006.32 6.32l.8-1.6a1 1 0 011.2-.51l3.6 1.2a1 1 0 01.69.95V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
                   </svg>
                   +37128677177
                 </a>
-                <a
-                  href="mailto:info@latvianhorses.lv"
-                  className="flex items-center gap-1 hover:text-[hsl(var(--primary))] transition-colors link-underline"
-                >
-                  <svg
-                    className="w-3.5 h-3.5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                    />
+                <a href="mailto:info@latvianhorses.lv" className="flex items-center gap-1 hover:text-[hsl(var(--primary))] transition-colors link-underline">
+                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                   </svg>
                   info@latvianhorses.lv
                 </a>
@@ -129,17 +103,12 @@ const Header = () => {
         {/* Main bar (desktop) */}
         <div className="container mx-auto max-w-7xl px-4">
           <div className="hidden md:grid grid-cols-[auto,1fr,auto] items-center py-4 md:py-5">
-            {/* Левый логотип */}
             <div className="flex items-center">
-              <a
-                href="/"
-                className="text-lg md:text-xl font-semibold text-[hsl(var(--primary))] tracking-tight leading-none h-8 flex items-center whitespace-nowrap link-underline"
-              >
+              <a href="/" className="text-lg md:text-xl font-semibold text-[hsl(var(--primary))] tracking-tight leading-none h-8 flex items-center whitespace-nowrap link-underline">
                 Latvian Horses
               </a>
             </div>
 
-            {/* Центр — все пункты в одну линию, без переносов */}
             <nav className="hidden lg:flex justify-center min-w-0">
               <ul className="flex items-center lg:gap-4 xl:gap-6 flex-nowrap overflow-x-visible">
                 {mainNavigation.map((item) =>
@@ -150,7 +119,6 @@ const Header = () => {
                       onMouseEnter={() => setOpenSection(item.key)}
                       onMouseLeave={() => setOpenSection(null)}
                     >
-                      {/* Кнопка-дропдаун теперь ссылка */}
                       <a
                         href={item.href}
                         className="text-[15px] text-text/90 hover:text-[hsl(var(--primary))] font-medium flex items-center gap-1 whitespace-nowrap link-underline"
@@ -158,22 +126,11 @@ const Header = () => {
                         aria-expanded={openSection === item.key}
                       >
                         {item.name}
-                        <svg
-                          className="w-3 h-3"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M19 9l-7 7-7-7"
-                          />
+                        <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                         </svg>
                       </a>
 
-                      {/* дропдаун */}
                       <div className="absolute left-0 top-full mt-2 w-56 rounded-md border border-neutral-200 bg-white shadow-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150 z-[70]">
                         {item.subItems?.map((sub) => (
                           <a
@@ -200,7 +157,6 @@ const Header = () => {
               </ul>
             </nav>
 
-            {/* Правый блок — только текст, чтобы ничего не «выталкивало» */}
             <div className="hidden md:flex items-center justify-end gap-4 whitespace-nowrap shrink-0">
               <span className="hidden xl:inline text-lg md:text-xl font-semibold text-muted-foreground leading-none whitespace-nowrap">
                 Main Sponsor
@@ -213,10 +169,7 @@ const Header = () => {
       {/* Mobile top row */}
       <div className="md:hidden container mx-auto max-w-7xl px-4 py-2">
         <div className="flex items-center justify-between">
-          <a
-            href="/"
-            className="text-base font-semibold text-[hsl(var(--primary))] whitespace-nowrap link-underline"
-          >
+          <a href="/" className="text-base font-semibold text-[hsl(var(--primary))] whitespace-nowrap link-underline">
             Latvian Horses
           </a>
           <button
@@ -226,32 +179,12 @@ const Header = () => {
             onClick={toggleMobile}
           >
             {mobileOpen ? (
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12"/>
               </svg>
             ) : (
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16"/>
               </svg>
             )}
           </button>
@@ -266,6 +199,7 @@ const Header = () => {
         role="dialog"
         aria-modal="true"
       >
+        {/* header row */}
         <div className="flex items-center justify-between px-4 py-3 border-b border-neutral-200">
           <a
             href="/"
@@ -274,33 +208,20 @@ const Header = () => {
           >
             Latvian Horses
           </a>
-          <button
-            className="p-2 text-text/80"
-            aria-label="Close menu"
-            onClick={toggleMobile}
-          >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M6 18L18 6M6 6l12 12"
-              />
+          <button className="p-2 text-text/80" aria-label="Close menu" onClick={toggleMobile}>
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12"/>
             </svg>
           </button>
         </div>
 
+        {/* scrollable content */}
         <div className="h-[calc(100vh-56px)] overflow-y-auto px-2 py-2">
+          {/* NAV */}
           <nav className="divide-y divide-neutral-200">
             {mainNavigation.map((item) =>
               item.hasDropdown ? (
                 <div key={item.key} className="py-1">
-                  {/* слева — ссылка, справа — chevron для раскрытия */}
                   <div className="w-full flex items-center justify-between px-2 py-3">
                     <a
                       href={item.href}
@@ -316,28 +237,17 @@ const Header = () => {
                       onClick={() => toggleSection(item.key)}
                     >
                       <svg
-                        className={`w-4 h-4 transition-transform ${
-                          openSection === item.key ? "rotate-180" : ""
-                        }`}
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
+                        className={`w-4 h-4 transition-transform ${openSection === item.key ? "rotate-180" : ""}`}
+                        fill="none" stroke="currentColor" viewBox="0 0 24 24"
                       >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M19 9l-7 7-7-7"
-                        />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"/>
                       </svg>
                     </button>
                   </div>
 
                   <div
                     className={`grid transition-[grid-template-rows] duration-300 ease-in-out px-2 ${
-                      openSection === item.key
-                        ? "grid-rows-[1fr] pb-2"
-                        : "grid-rows-[0fr]"
+                      openSection === item.key ? "grid-rows-[1fr] pb-2" : "grid-rows-[0fr]"
                     }`}
                   >
                     <div className="overflow-hidden">
@@ -369,6 +279,68 @@ const Header = () => {
               )
             )}
           </nav>
+
+          {/* LANGUAGES */}
+          <div className="mt-4 px-2">
+            <div className="text-[11px] tracking-wide text-text/50 uppercase mb-2">VALODAS</div>
+            <div className="flex items-center gap-3 text-sm">
+              {languages.map((l) =>
+                l.active ? (
+                  <span key={l.code} className="font-semibold text-[hsl(var(--primary))]"> {l.code} </span>
+                ) : (
+                  <a
+                    key={l.code}
+                    href={l.href}
+                    onClick={() => setMobileOpen(false)}
+                    className="text-text/70 hover:text-[hsl(var(--primary))] link-underline"
+                  >
+                    {l.code}
+                  </a>
+                )
+              )}
+            </div>
+          </div>
+
+          {/* CONTACTS */}
+          <div className="mt-6 px-2">
+            <div className="text-[11px] tracking-wide text-text/50 uppercase mb-2">KONTAKTI</div>
+            <div className="flex flex-col gap-2 text-sm">
+              <a
+                href="tel:+37128677177"
+                onClick={() => setMobileOpen(false)}
+                className="flex items-center gap-2 text-text/90 hover:text-[hsl(var(--primary))] link-underline"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h2.6a1 1 0 01.95.69l1.2 3.6a1 1 0 01-.51 1.2l-1.6.8a12 12 0 006.32 6.32l.8-1.6a1 1 0 011.2-.51l3.6 1.2a1 1 0 01.69.95V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                </svg>
+                +37128677177
+              </a>
+              <a
+                href="mailto:info@latvianhorses.lv"
+                onClick={() => setMobileOpen(false)}
+                className="flex items-center gap-2 text-text/90 hover:text-[hsl(var(--primary))] link-underline"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                </svg>
+                info@latvianhorses.lv
+              </a>
+            </div>
+          </div>
+
+          {/* MAIN SPONSOR CARD */}
+          <div className="mt-6 px-2 pb-4">
+            <div className="text-[11px] tracking-wide text-text/50 uppercase mb-2">GALVENAIS SPONSORS</div>
+            <div className="flex items-center gap-3 border border-neutral-200 rounded-xl p-3">
+              <div className="w-12 h-12 rounded-lg border border-neutral-200 flex items-center justify-center text-[10px] text-text/60">
+                LOGO
+              </div>
+              <div className="min-w-0">
+                <div className="text-sm font-medium text-text/90">Main Sponsor</div>
+                <div className="text-xs text-text/60">Atbalsta Latvian Horses</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </header>
