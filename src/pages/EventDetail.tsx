@@ -248,13 +248,12 @@ const EventDetail = () => {
                       </Button>
                     )}
                     <Button
-                      variant="outline"
                       asChild
-                      className="border border-primary text-white rounded-xl 
-                                 transition-all duration-300 hover:bg-primary hover:scale-105"
+                      className="bg-transparent text-white rounded-xl 
+                                 transition-all duration-300 hover:scale-105"
                     >
-                      <a href={currentEvent.gallery} className="flex items-center">
-                        <Image className="w-4 h-4 mr-2" />
+                      <a href={currentEvent.gallery} className="flex items-center !text-white">
+                        <Image className="w-4 h-4 mr-2 !text-white" />
                         Foto galerija
                       </a>
                     </Button>
