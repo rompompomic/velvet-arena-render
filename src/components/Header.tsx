@@ -14,7 +14,7 @@ const Header = () => {
   }, [mobileOpen]);
 
   // Добавил Pasākumi в основную навигацию, чтобы стиль был как у всех
-  const mainNavigation = [
+    const mainNavigation = [
     {
       key: "pakalpojumi",
       name: "Pakalpojumi",
@@ -31,6 +31,8 @@ const Header = () => {
       ],
     },
     { key: "cenas", name: "Cenas", href: "/lv/cenas/" },
+    // 👇 новый пункт меню
+    { key: "jaunumi", name: "Jaunumi", href: "/lv/jaunumi/" },
     {
       key: "galerija",
       name: "Galerija",
@@ -44,7 +46,6 @@ const Header = () => {
     },
     { key: "par", name: "Par mums", href: "/lv/par-mums/" },
     { key: "kontakti", name: "Kontakti", href: "/lv/kontakti/" },
-    // ← вот он, как обычный пункт меню
     { key: "pasakumi", name: "Pasākumi", href: "/lv/pasakumi/" },
   ];
 
