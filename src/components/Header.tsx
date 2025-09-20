@@ -10,15 +10,16 @@ const Header = () => {
 
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [mobileOpen]);
 
-  // Добавил Pasākumi в основную навигацию, чтобы стиль был как у всех
-    const mainNavigation = [
+  const mainNavigation = [
     {
       key: "pakalpojumi",
       name: "Pakalpojumi",
-      href: "/lv/pakalpojumi/", // ← ссылка на кнопку
+      href: "/lv/pakalpojumi/", // ссылка на кнопку
       hasDropdown: true,
       subItems: [
         { name: "Jāšanas treniņi", href: "/lv/pakalpojumi/jasanas-trenini/" },
@@ -34,7 +35,7 @@ const Header = () => {
     {
       key: "galerija",
       name: "Galerija",
-      href: "/lv/galerija/", // ← ссылка на кнопку
+      href: "/lv/galerija/", // ссылка на кнопку
       hasDropdown: true,
       subItems: [
         { name: "Pasākumi", href: "/lv/galerija/pasakumi/" },
@@ -45,7 +46,6 @@ const Header = () => {
     { key: "kontakti", name: "Kontakti", href: "/lv/kontakti/" },
     { key: "pasakumi", name: "Pasākumi", href: "/lv/pasakumi/" },
   ];
-
 
   const languages = [
     { code: "LV", active: true, href: "/lv/" },
@@ -64,27 +64,60 @@ const Header = () => {
                 {languages.map((l, i) => (
                   <span key={l.code} className="flex items-center">
                     {l.active ? (
-                      <span className="font-semibold text-[hsl(var(--primary))] link-underline">{l.code}</span>
+                      <span className="font-semibold text-[hsl(var(--primary))] link-underline">
+                        {l.code}
+                      </span>
                     ) : (
-                      <a href={l.href} className="text-text/70 hover:text-[hsl(var(--primary))] transition-colors link-underline">
+                      <a
+                        href={l.href}
+                        className="text-text/70 hover:text-[hsl(var(--primary))] transition-colors link-underline"
+                      >
                         {l.code}
                       </a>
                     )}
-                    {i < languages.length - 1 && <span className="mx-1 text-text/30">/</span>}
+                    {i < languages.length - 1 && (
+                      <span className="mx-1 text-text/30">/</span>
+                    )}
                   </span>
                 ))}
               </nav>
 
               <div className="flex items-center gap-4 text-xs text-text/80">
-                <a href="tel:+37128677177" className="flex items-center gap-1 link-underline">
-                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h2.6a1 1 0 01.95.69l1.2 3.6a1 1 0 01-.51 1.2l-1.6.8a12 12 0 006.32 6.32l.8-1.6a1 1 0 011.2-.51l3.6 1.2a1 1 0 01.69.95V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                <a
+                  href="tel:+37128677177"
+                  className="flex items-center gap-1 link-underline"
+                >
+                  <svg
+                    className="w-3.5 h-3.5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M3 5a2 2 0 012-2h2.6a1 1 0 01.95.69l1.2 3.6a1 1 0 01-.51 1.2l-1.6.8a12 12 0 006.32 6.32l.8-1.6a1 1 0 011.2-.51l3.6 1.2a1 1 0 01.69.95V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                    />
                   </svg>
                   +37128677177
                 </a>
-                <a href="mailto:info@latvianhorses.lv" className="flex items-center gap-1 hover:text-[hsl(var(--primary))] transition-colors link-underline">
-                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                <a
+                  href="mailto:info@latvianhorses.lv"
+                  className="flex items-center gap-1 hover:text-[hsl(var(--primary))] transition-colors link-underline"
+                >
+                  <svg
+                    className="w-3.5 h-3.5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    />
                   </svg>
                   info@latvianhorses.lv
                 </a>
@@ -111,18 +144,37 @@ const Header = () => {
               <ul className="flex items-center lg:gap-4 xl:gap-6 flex-nowrap overflow-x-visible">
                 {mainNavigation.map((item) =>
                   item.hasDropdown ? (
-                    <li key={item.key} className="relative group shrink-0">
-                      <button
+                    <li
+                      key={item.key}
+                      className="relative group shrink-0"
+                      onMouseEnter={() => setOpenSection(item.key)}
+                      onMouseLeave={() => setOpenSection(null)}
+                    >
+                      {/* Кнопка-дропдаун теперь ссылка */}
+                      <a
+                        href={item.href}
                         className="text-[15px] text-text/90 hover:text-[hsl(var(--primary))] font-medium flex items-center gap-1 whitespace-nowrap link-underline"
                         aria-haspopup="menu"
                         aria-expanded={openSection === item.key}
                       >
                         {item.name}
-                        <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                        <svg
+                          className="w-3 h-3"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M19 9l-7 7-7-7"
+                          />
                         </svg>
-                      </button>
-                      <div className="absolute left-0 top-full mt-2 w-56 rounded-md border border-neutral-200 bg-white shadow-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150">
+                      </a>
+
+                      {/* дропдаун */}
+                      <div className="absolute left-0 top-full mt-2 w-56 rounded-md border border-neutral-200 bg-white shadow-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150 z-[70]">
                         {item.subItems?.map((sub) => (
                           <a
                             key={sub.name}
@@ -161,7 +213,10 @@ const Header = () => {
       {/* Mobile top row */}
       <div className="md:hidden container mx-auto max-w-7xl px-4 py-2">
         <div className="flex items-center justify-between">
-          <a href="/" className="text-base font-semibold text-[hsl(var(--primary))] whitespace-nowrap link-underline">
+          <a
+            href="/"
+            className="text-base font-semibold text-[hsl(var(--primary))] whitespace-nowrap link-underline"
+          >
             Latvian Horses
           </a>
           <button
@@ -171,12 +226,32 @@ const Header = () => {
             onClick={toggleMobile}
           >
             {mobileOpen ? (
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
               </svg>
             ) : (
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
               </svg>
             )}
           </button>
@@ -192,12 +267,30 @@ const Header = () => {
         aria-modal="true"
       >
         <div className="flex items-center justify-between px-4 py-3 border-b border-neutral-200">
-          <a href="/" className="text-base font-semibold text-[hsl(var(--primary))] link-underline" onClick={() => setMobileOpen(false)}>
+          <a
+            href="/"
+            className="text-base font-semibold text-[hsl(var(--primary))] link-underline"
+            onClick={() => setMobileOpen(false)}
+          >
             Latvian Horses
           </a>
-          <button className="p-2 text-text/80" aria-label="Close menu" onClick={toggleMobile}>
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          <button
+            className="p-2 text-text/80"
+            aria-label="Close menu"
+            onClick={toggleMobile}
+          >
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
             </svg>
           </button>
         </div>
@@ -207,25 +300,44 @@ const Header = () => {
             {mainNavigation.map((item) =>
               item.hasDropdown ? (
                 <div key={item.key} className="py-1">
-                  <button
-                    className="w-full flex items-center justify-between px-2 py-3 text-[15px] font-medium text-text/90 hover:text-[hsl(var(--primary))] link-underline"
-                    onClick={() => toggleSection(item.key)}
-                    aria-expanded={openSection === item.key}
-                  >
-                    <span className="whitespace-nowrap">{item.name}</span>
-                    <svg
-                      className={`w-4 h-4 transition-transform ${openSection === item.key ? "rotate-180" : ""}`}
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
+                  {/* слева — ссылка, справа — chevron для раскрытия */}
+                  <div className="w-full flex items-center justify-between px-2 py-3">
+                    <a
+                      href={item.href}
+                      onClick={() => setMobileOpen(false)}
+                      className="text-[15px] font-medium text-text/90 hover:text-[hsl(var(--primary))] whitespace-nowrap link-underline"
                     >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </button>
+                      {item.name}
+                    </a>
+                    <button
+                      className="p-2 text-text/80"
+                      aria-label={`Toggle ${item.name}`}
+                      aria-expanded={openSection === item.key}
+                      onClick={() => toggleSection(item.key)}
+                    >
+                      <svg
+                        className={`w-4 h-4 transition-transform ${
+                          openSection === item.key ? "rotate-180" : ""
+                        }`}
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                    </button>
+                  </div>
 
                   <div
                     className={`grid transition-[grid-template-rows] duration-300 ease-in-out px-2 ${
-                      openSection === item.key ? "grid-rows-[1fr] pb-2" : "grid-rows-[0fr]"
+                      openSection === item.key
+                        ? "grid-rows-[1fr] pb-2"
+                        : "grid-rows-[0fr]"
                     }`}
                   >
                     <div className="overflow-hidden">
