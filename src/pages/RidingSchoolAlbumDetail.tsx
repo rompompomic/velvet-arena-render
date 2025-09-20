@@ -216,9 +216,9 @@ const RidingSchoolAlbumDetail = () => {
                           size="sm"
                           asChild
                           className="border border-primary text-primary rounded-xl
-                                     transition-all duration-300 hover:bg-primary hover:text-white hover:scale-105 group"
+                                     transition-all duration-300 hover:bg-primary hover:text-white hover:scale-105"
                         >
-                          <a href={link.href} className="text-inherit">
+                          <a href={link.href} className="!text-white">
                             {link.title}
                           </a>
                         </Button>
