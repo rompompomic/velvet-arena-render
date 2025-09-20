@@ -102,7 +102,10 @@ const StudentSuccess = () => {
             <p className="text-muted-foreground mb-6">
               Sāciet savu ceļu jāšanas sportā kopā ar mūsu pieredzējušajiem treneriem.
             </p>
-            <Button size="lg">
+            <Button 
+              size="lg"
+              className="bg-primary text-white rounded-xl transition-all duration-300 hover:bg-primary-700 hover:scale-105"
+            >
               Pieteikties treniņiem
             </Button>
           </div>
