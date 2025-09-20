@@ -108,28 +108,40 @@ const ZirguUzturesana = () => {
               </div>
             </div>
 
-            {/* Right: daily include card (light) */}
-            <aside className="p-8 h-fit rounded-2xl border bg-white shadow-sm">
-              <h3 className="text-card-title text-foreground mb-6 flex items-center gap-2">
-                <Star className="w-5 h-5 text-primary" />
-                Iekļauts ikdienā
-              </h3>
-              <div className="space-y-4">
-                {[
-                  "Mehāniskās dzirdnes un barības sili",
-                  "Speciāls trauks sālim",
-                  "Skaidu pakaiši boksos",
-                  "Garderobes ar apsildāmām grīdām",
-                  "Barības un saimniecības telpas (veļas mašīnas, žāvētāji)",
-                  "Divi solāriji un mazgāšanas vietas",
-                  "Vairāki āra pastaigu laukumi (ikdienas izvešana)",
-                  "Vasarā – atvērta tipa staļļi sacensībām",
-                ].map((t, i) => (
-                  <div key={i} className="flex items-start gap-3">
-                    <CheckCircle2 className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
-                    <span className="text-sm text-muted-foreground">{t}</span>
-                  </div>
-                ))}
+            {/* Right: aside card */}
+            <aside className="rounded-2xl border bg-white shadow-sm overflow-hidden flex flex-col">
+              <div className="p-6 flex-1">
+                <h3 className="text-card-title text-foreground mb-6 flex items-center gap-2">
+                  <Star className="w-5 h-5 text-primary" />
+                  Iekļauts ikdienā
+                </h3>
+                <div className="space-y-4">
+                  {[
+                    "Mehāniskās dzirdnes un barības sili",
+                    "Speciāls trauks sālim",
+                    "Skaidu pakaiši boksos",
+                    "Garderobes ar apsildāmām grīdām",
+                    "Barības un saimniecības telpas (veļas mašīnas, žāvētāji)",
+                    "Divi solāriji un mazgāšanas vietas",
+                    "Vairāki āra pastaigu laukumi (ikdienas izvešana)",
+                    "Vasarā – atvērta tipa staļļi sacensībām",
+                  ].map((item, index) => (
+                    <div key={index} className="flex items-start gap-3">
+                      <CheckCircle2 className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
+                      <span className="text-sm text-muted-foreground">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            
+              {/* Bottom image */}
+              <div className="relative h-40">
+                <img
+                  src={winterImage} // ← можно заменить на твой новый PNG
+                  alt="Iekļauts ikdienā"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-black/10" />
               </div>
             </aside>
           </div>
