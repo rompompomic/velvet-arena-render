@@ -15,9 +15,9 @@ const DavanuKartes = () => {
   const customInputRef = useRef<HTMLInputElement | null>(null);
 
   const giftCards: GiftCard[] = [
-    { amount: 25, price: "€25.00" },
-    { amount: 50, price: "€50.00" },
-    { amount: 100, price: "€100.00" },
+    { amount: 25, price: "25.00€" },
+    { amount: 50, price: "50.00€" },
+    { amount: 100, price: "100.00€" },
     { custom: true },
   ];
 
