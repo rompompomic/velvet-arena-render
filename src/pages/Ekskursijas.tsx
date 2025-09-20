@@ -4,20 +4,14 @@ import { ChevronRight, Home, Users, BookOpen, Shield, Heart, CheckCircle2, Camer
 import serviceExcursions from "@/assets/service-excursions.jpg";
 import youthCup from "@/assets/youth-cup.jpg";
 import heroImage from "@/assets/hero-equestrian.jpg";
-
 const Ekskursijas = () => {
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       <Header />
       
       <main className="pt-24">
         {/* Hero Section */}
         <section className="relative">
-          <img
-            src={serviceExcursions}
-            alt="Ekskursijas"
-            className="absolute inset-0 w-full h-full object-cover"
-          />
+          <img src={serviceExcursions} alt="Ekskursijas" className="absolute inset-0 w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/20" />
           
           <div className="relative flex items-center justify-center text-center text-white min-h-[50vh] md:min-h-[60vh]">
@@ -65,20 +59,31 @@ const Ekskursijas = () => {
               <div className="space-y-4">
                 <h3 className="text-xl font-semibold text-foreground">Ekskursijas programma:</h3>
                 <div className="grid gap-3">
-                  {[
-                    { text: "Iepazīšanās ar zirgu šķirnēm un to īpašībām", icon: BookOpen },
-                    { text: "Zirgu aprūpes un barošanas demonstrējumi", icon: Heart },
-                    { text: "Drošības noteikumi un zirgu uzvedības īpatnības", icon: Shield },
-                    { text: "Praktiskās nodarbības - zirgu sukāšana un barošana", icon: Users },
-                    { text: "Iepazīšanās ar jāšanas ekipējumu un tā lietošanu", icon: CheckCircle2 },
-                    { text: "Zirgu treniņu un sacensību stāstījumi", icon: Trophy },
-                    { text: "Atmiņu foto ar zirgiem", icon: Camera },
-                  ].map((item, index) => (
-                    <div key={index} className="flex items-start gap-3 p-3 rounded-lg hover:bg-light transition-colors">
+                  {[{
+                  text: "Iepazīšanās ar zirgu šķirnēm un to īpašībām",
+                  icon: BookOpen
+                }, {
+                  text: "Zirgu aprūpes un barošanas demonstrējumi",
+                  icon: Heart
+                }, {
+                  text: "Drošības noteikumi un zirgu uzvedības īpatnības",
+                  icon: Shield
+                }, {
+                  text: "Praktiskās nodarbības - zirgu sukāšana un barošana",
+                  icon: Users
+                }, {
+                  text: "Iepazīšanās ar jāšanas ekipējumu un tā lietošanu",
+                  icon: CheckCircle2
+                }, {
+                  text: "Zirgu treniņu un sacensību stāstījumi",
+                  icon: Trophy
+                }, {
+                  text: "Atmiņu foto ar zirgiem",
+                  icon: Camera
+                }].map((item, index) => <div key={index} className="flex items-start gap-3 p-3 rounded-lg hover:bg-light transition-colors">
                       <item.icon className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
                       <span className="text-muted-foreground">{item.text}</span>
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
               </div>
             </div>
@@ -89,52 +94,20 @@ const Ekskursijas = () => {
                 Piemērots visai ģimenei
               </h3>
               <div className="space-y-4">
-                {[
-                  "Bērniem un pieaugušajiem",
-                  "Izglītojošs saturs",
-                  "Praktiskās nodarbības",
-                  "Drošā vidē",
-                  "Pieredzējuši gidi",
-                  "Neaizmirstamas atmiņas",
-                ].map((item, index) => (
-                  <div key={index} className="flex items-start gap-3">
+                {["Bērniem un pieaugušajiem", "Izglītojošs saturs", "Praktiskās nodarbības", "Drošā vidē", "Pieredzējuši gidi", "Neaizmirstamas atmiņas"].map((item, index) => <div key={index} className="flex items-start gap-3">
                     <CheckCircle2 className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
                     <span className="text-sm text-muted-foreground">{item}</span>
-                  </div>
-                ))}
+                  </div>)}
               </div>
             </aside>
           </div>
         </section>
 
         {/* Gallery Section */}
-        <section className="py-12 bg-muted/30">
-          <div className="container mx-auto px-4 max-w-5xl">
-            <h3 className="text-2xl font-bold text-foreground mb-8 text-center">Galerija</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <img
-                src={serviceExcursions}
-                alt="Bērni ar zirgiem"
-                className="rounded-lg object-cover w-full h-64"
-              />
-              <img
-                src={youthCup}
-                alt="Jauniešu aktivitātes"
-                className="rounded-lg object-cover w-full h-64"
-              />
-              <img
-                src={heroImage}
-                alt="Ģimenes ekskursija"
-                className="rounded-lg object-cover w-full h-64"
-              />
-            </div>
-          </div>
-        </section>
+        
       </main>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Ekskursijas;
