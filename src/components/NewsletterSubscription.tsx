@@ -26,7 +26,7 @@ const NewsletterSubscription = () => {
   };
 
   return (
-    <section className="py-24 bg-gradient-to-br from-primary/5 to-primary/10">
+    <section className="py-24 bg-[#2f2f2f]/[0.08]">
       <div className="container mx-auto px-4 max-w-4xl">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold mb-4 text-foreground">
@@ -36,7 +36,7 @@ const NewsletterSubscription = () => {
             Saņemiet jaunākās ziņas par sacensībām, treniņiem un pasākumiem tieši savā e-pastā
           </p>
         </div>
-
+    
         <div className="bg-white rounded-2xl p-8 md:p-12 shadow-lg">
           <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4">
             <div className="flex-1">
