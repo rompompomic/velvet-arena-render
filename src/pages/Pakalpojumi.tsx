@@ -133,6 +133,7 @@ const Pakalpojumi = () => {
               alt=""
               className="w-full h-full object-cover"
             />
+            <div className="absolute inset-0 bg-black/45 backdrop-blur-[1px]" />
           </div>
 
           <div className="relative container mx-auto px-4 max-w-7xl py-20 md:py-28 text-center text-white">
@@ -145,7 +146,6 @@ const Pakalpojumi = () => {
               zirgiem.
             </p>
           </div>
-          <div className="absolute inset-0 bg-black/45 backdrop-blur-[1px]" />
         </section>
 
         {/* Services Grid */}
