@@ -11,7 +11,7 @@ const Footer = () => {
 
   const legalLinks = [
     { name: "Privātuma politika", href: "/lv/privatuma-politika/" },
-    { name: "Lietošanas noteikumi", href: "/lv/noteikumi/" },
+    { name: "Lietošanas noteikumi", href: "/lv/lietosanas-noteikumi/" },
   ];
 
   const socialLinks = [
