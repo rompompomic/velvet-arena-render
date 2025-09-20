@@ -175,7 +175,13 @@ Lai rezervētu laiku, lūdzu zvanīt uz tel.28677177</p>
                     </a>
                   </div>
 
-                  <button onClick={() => setOpen(true)} className="mt-2 inline-flex items-center justify-center w-full rounded-xl bg-primary text-white px-4 py-2.5 font-medium hover:bg-primary/90 transition-colors" aria-haspopup="dialog" aria-expanded={open}>
+                  <button
+                    onClick={() => setOpen(true)}
+                    className="mt-2 inline-flex items-center justify-center w-full rounded-xl bg-primary text-white px-4 py-2.5 font-medium 
+                               transition-all duration-300 hover:bg-primary-700 hover:scale-105"
+                    aria-haspopup="dialog"
+                    aria-expanded={open}
+                  >
                     Atstāt pieteikumu
                   </button>
                 </div>
