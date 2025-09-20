@@ -249,15 +249,13 @@ const DonateSection = () => {
                 </label>
 
                 {/* Отправка */}
-                <a
+                <Button
                   href="/lv/ziedojumi/"
-                  className={`inline-flex items-center justify-center px-8 py-4 font-medium rounded-xl text-white transition-all duration-300
-                    ${!amount || Number(amount) <= 0 || !agree 
-                      ? "opacity-50 pointer-events-none" 
-                      : "bg-primary hover:bg-primary-700 hover:scale-105"}`}
+                  disabled={!amount || Number(amount) <= 0 || !agree}
+                  fullWidth
                 >
                   Ziedot {amount ? `${amount} €` : ""}
-                </a>
+                </Button>
 
                 <p className="text-[12px] leading-[20px] text-center text-[rgba(6,3,13,0.7)]">
                   Pēc ziedojuma saņemšanas nosūtīsim apstiprinājumu uz e-pastu (ja norādīts).
