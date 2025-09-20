@@ -215,37 +215,30 @@ const ZirguUzturesana = () => {
 
         {/* Practical info + Contacts (light cards) */}
         <section className="bg-neutral-50 py-16">
-          <div className="container mx-auto max-w-4xl px-4">
-            <h3 className="text-section text-foreground mb-12 text-center">Praktiskā informācija</h3>
-
-            <div className="grid gap-8 md:grid-cols-[1.2fr,1fr]">
-              {/* Info card */}
-              <div className="p-8 rounded-2xl border bg-white shadow-sm">
-                <div className="grid md:grid-cols-2 gap-8 items-center">
-                  {/* Left: bullet list */}
-                  <div className="grid gap-6">
-                    {[
-                      "Visi pakalpojumi pēc iepriekšēja pieraksta.",
-                      "Svētku dienās visiem pakalpojumiem tiek piemērota papildus maksa 50% apmērā.",
-                      "Nodarbību / aprūpes laiki var mainīties — vienmēr precizējam pirms apmeklējuma.",
-                    ].map((text, i) => (
-                      <div key={i} className="flex items-start gap-4">
-                        <CheckCircle2 className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
-                        <span className="text-muted-foreground">{text}</span>
-                      </div>
-                    ))}
-                  </div>
-              
-                  {/* Right: placeholder image */}
-                  <div className="w-full h-48 md:h-full rounded-xl overflow-hidden">
-                    <img
-                      src="https://via.placeholder.com/500x300"
-                      alt="Praktiskā informācija"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
+          <div className="p-0 overflow-hidden rounded-2xl border bg-white shadow-sm">
+            {/* Top image (placeholder) */}
+            <div className="relative h-28 bg-gradient-to-r from-primary/80 to-primary/60">
+              <img
+                src="https://via.placeholder.com/600x200"
+                alt="Praktiskā informācija"
+                className="absolute inset-0 w-full h-full object-cover opacity-30"
+              />
+            </div>
+          
+            {/* Content */}
+            <div className="p-6 space-y-6">
+              {[
+                "Visi pakalpojumi pēc iepriekšēja pieraksta.",
+                "Svētku dienās visiem pakalpojumiem tiek piemērota papildus maksa 50% apmērā.",
+                "Nodarbību / aprūpes laiki var mainīties — vienmēr precizējam pirms apmeklējuma.",
+              ].map((text, i) => (
+                <div key={i} className="flex items-start gap-4">
+                  <CheckCircle2 className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                  <span className="text-muted-foreground">{text}</span>
                 </div>
-              </div>
+              ))}
+            </div>
+          </div>
 
               {/* Contacts card + popup trigger */}
               <div className="p-0 overflow-hidden rounded-2xl border bg-white shadow-sm">
