@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
+import { CreditCard, Landmark } from "lucide-react";
 
 // Import images
 import donateHero from "@/assets/donate-horse-new.png";
@@ -24,17 +25,15 @@ const Ziedojumi = () => {
     address: "",
     city: "",
     postalCode: "",
-    country: "Latvija"
+    country: "Latvija",
   });
   const [isAnonymous, setIsAnonymous] = useState(false);
   const [agreeToTerms, setAgreeToTerms] = useState(false);
   const [message, setMessage] = useState("");
 
   useEffect(() => {
-    // Get donation details from URL params
     const urlAmount = searchParams.get("amount");
     const urlPaymentMethod = searchParams.get("payment");
-    
     if (urlAmount) setAmount(urlAmount);
     if (urlPaymentMethod) setPaymentMethod(urlPaymentMethod);
   }, [searchParams]);
@@ -44,12 +43,11 @@ const Ziedojumi = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!amount || !agreeToTerms) return;
-    
-    // Redirect to thank you page with donation details
+
     const params = new URLSearchParams({
       type: "donation",
       amount: amount.toString(),
-      method: paymentMethod
+      method: paymentMethod,
     });
     window.location.href = `/lv/checkout/?${params.toString()}`;
   };
@@ -59,14 +57,10 @@ const Ziedojumi = () => {
       <Header />
 
       <main className="pt-24">
-        {/* HERO Section matching Pakalpojumi style */}
+        {/* HERO */}
         <section className="relative">
           <div className="absolute inset-0">
-            <img
-              src={donateHero}
-              alt=""
-              className="w-full h-full object-cover"
-            />
+            <img src={donateHero} alt="" className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-black/45 backdrop-blur-[1px]" />
           </div>
 
@@ -75,12 +69,13 @@ const Ziedojumi = () => {
               Atbalsti Latvian Horses
             </h1>
             <p className="mt-5 text-base md:text-xl max-w-3xl mx-auto text-white/90">
-              Tava līdzdalība palīdz uzturēt zirgu labturību, attīstīt jauno jātnieku skolu un rīkot kvalitatīvus pasākumus.
+              Tava līdzdalība palīdz uzturēt zirgu labturību, attīstīt jauno
+              jātnieku skolu un rīkot kvalitatīvus pasākumus.
             </p>
           </div>
         </section>
 
-        {/* Donation Form Section */}
+        {/* Donation Form */}
         <section className="py-12 md:py-16">
           <div className="container mx-auto px-4 max-w-4xl">
             <div className="glass-card p-6 md:p-8">
@@ -89,9 +84,11 @@ const Ziedojumi = () => {
               </h2>
 
               <form onSubmit={handleSubmit} className="space-y-8">
-                {/* Donation Amount */}
+                {/* Amount */}
                 <div>
                   <h3 className="text-lg font-semibold mb-4">Ziedojuma summa</h3>
+
+                  {/* пресеты + “Cita summa” в одной сетке */}
                   <div className="grid grid-cols-2 md:grid-cols-5 gap-3 mb-4">
                     {presetAmounts.map((preset) => (
                       <Button
@@ -104,45 +101,50 @@ const Ziedojumi = () => {
                         €{preset}
                       </Button>
                     ))}
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <input
-                      type="number"
-                      value={amount}
-                      onChange={(e) => setAmount(e.target.value)}
-                      placeholder="Cita summa"
-                      className="flex-1 h-12 px-3 border border-input bg-background rounded-md"
-                      min="1"
-                      required
-                    />
-                    <span className="text-muted-foreground">€</span>
+
+                    {/* custom amount cell */}
+                    <div className="col-span-2 md:col-span-1 flex items-center gap-2">
+                      <input
+                        type="number"
+                        value={amount}
+                        onChange={(e) => setAmount(e.target.value)}
+                        placeholder="Cita summa"
+                        className="w-full h-12 px-3 border border-input bg-background rounded-md"
+                        min="1"
+                        inputMode="numeric"
+                      />
+                      <span className="text-muted-foreground">€</span>
+                    </div>
                   </div>
                 </div>
 
-                {/* Payment Method */}
+                {/* Payment Method (иконки lucide-react) */}
                 <div>
                   <h3 className="text-lg font-semibold mb-4">Apmaksas veids</h3>
-                  <RadioGroup 
-                    value={paymentMethod} 
+                  <RadioGroup
+                    value={paymentMethod}
                     onValueChange={setPaymentMethod}
                     className="grid grid-cols-1 md:grid-cols-2 gap-4"
                   >
-                    <div className="flex items-center space-x-2 p-4 border rounded-lg">
+                    <div className="flex items-center space-x-3 p-4 border rounded-lg">
                       <RadioGroupItem value="card" id="card" />
-                      <Label htmlFor="card" className="font-medium">
-                        💳 Bankas karte
+                      <Label htmlFor="card" className="font-medium flex items-center gap-2">
+                        <CreditCard className="w-4 h-4" />
+                        Bankas karte
                       </Label>
                     </div>
-                    <div className="flex items-center space-x-2 p-4 border rounded-lg">
+
+                    <div className="flex items-center space-x-3 p-4 border rounded-lg">
                       <RadioGroupItem value="bank" id="bank" />
-                      <Label htmlFor="bank" className="font-medium">
-                        🏦 Bankas pārskaitījums
+                      <Label htmlFor="bank" className="font-medium flex items-center gap-2">
+                        <Landmark className="w-4 h-4" />
+                        Bankas pārskaitījums
                       </Label>
                     </div>
                   </RadioGroup>
                 </div>
 
-                {/* Anonymous Donation Option */}
+                {/* Anonymous */}
                 <div className="flex items-center space-x-2">
                   <input
                     type="checkbox"
@@ -151,12 +153,10 @@ const Ziedojumi = () => {
                     onChange={(e) => setIsAnonymous(e.target.checked)}
                     className="rounded"
                   />
-                  <Label htmlFor="anonymous">
-                    Ziedot anonīmi (nav nepieciešami personas dati)
-                  </Label>
+                  <Label htmlFor="anonymous">Ziedot anonīmi (nav nepieciešami personas dati)</Label>
                 </div>
 
-                {/* Personal Information (if not anonymous) */}
+                {/* Personal Info */}
                 {!isAnonymous && (
                   <div>
                     <h3 className="text-lg font-semibold mb-4">Personas informācija</h3>
@@ -167,7 +167,9 @@ const Ziedojumi = () => {
                           type="text"
                           id="firstName"
                           value={personalInfo.firstName}
-                          onChange={(e) => setPersonalInfo({...personalInfo, firstName: e.target.value})}
+                          onChange={(e) =>
+                            setPersonalInfo({ ...personalInfo, firstName: e.target.value })
+                          }
                           className="w-full h-10 px-3 border border-input bg-background rounded-md mt-1"
                           required={!isAnonymous}
                         />
@@ -178,7 +180,9 @@ const Ziedojumi = () => {
                           type="text"
                           id="lastName"
                           value={personalInfo.lastName}
-                          onChange={(e) => setPersonalInfo({...personalInfo, lastName: e.target.value})}
+                          onChange={(e) =>
+                            setPersonalInfo({ ...personalInfo, lastName: e.target.value })
+                          }
                           className="w-full h-10 px-3 border border-input bg-background rounded-md mt-1"
                           required={!isAnonymous}
                         />
@@ -189,7 +193,9 @@ const Ziedojumi = () => {
                           type="email"
                           id="email"
                           value={personalInfo.email}
-                          onChange={(e) => setPersonalInfo({...personalInfo, email: e.target.value})}
+                          onChange={(e) =>
+                            setPersonalInfo({ ...personalInfo, email: e.target.value })
+                          }
                           className="w-full h-10 px-3 border border-input bg-background rounded-md mt-1"
                           required={!isAnonymous}
                         />
@@ -200,7 +206,9 @@ const Ziedojumi = () => {
                           type="tel"
                           id="phone"
                           value={personalInfo.phone}
-                          onChange={(e) => setPersonalInfo({...personalInfo, phone: e.target.value})}
+                          onChange={(e) =>
+                            setPersonalInfo({ ...personalInfo, phone: e.target.value })
+                          }
                           className="w-full h-10 px-3 border border-input bg-background rounded-md mt-1"
                         />
                       </div>
@@ -220,7 +228,7 @@ const Ziedojumi = () => {
                   />
                 </div>
 
-                {/* Terms Agreement */}
+                {/* Terms */}
                 <div className="flex items-start space-x-2">
                   <input
                     type="checkbox"
@@ -243,11 +251,16 @@ const Ziedojumi = () => {
                   </Label>
                 </div>
 
-                {/* Submit Button */}
+                {/* Submit */}
                 <Button
                   type="submit"
                   className="w-full h-12 text-lg font-semibold"
-                  disabled={!amount || !agreeToTerms || (!isAnonymous && (!personalInfo.firstName || !personalInfo.lastName || !personalInfo.email))}
+                  disabled={
+                    !amount ||
+                    !agreeToTerms ||
+                    (!isAnonymous &&
+                      (!personalInfo.firstName || !personalInfo.lastName || !personalInfo.email))
+                  }
                 >
                   Ziedot €{amount || "0"}
                 </Button>
@@ -256,15 +269,14 @@ const Ziedojumi = () => {
           </div>
         </section>
 
-        {/* Where Donations Go Section */}
+        {/* Where Donations Go */}
         <section className="py-12 md:py-16 bg-muted/50">
           <div className="container mx-auto px-4 max-w-6xl">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Kur tiek izmantoti ziedojumi
-              </h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Kur tiek izmantoti ziedojumi</h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Katrs eiro tiek rūpīgi izmantots, lai uzlabotu zirgu dzīves kvalitāti un attīstītu mūsu programmas.
+                Katrs eiro tiek rūpīgi izmantots, lai uzlabotu zirgu dzīves kvalitāti un attīstītu
+                mūsu programmas.
               </p>
             </div>
 
@@ -286,7 +298,8 @@ const Ziedojumi = () => {
                     <h3 className="text-xl font-semibold">Zirgu labturība</h3>
                   </div>
                   <p className="text-muted-foreground">
-                    40% no ziedojumiem tiek izmantoti augstas kvalitātes barībai, veterinārajai aprūpei un regulārām veselības pārbaudēm.
+                    40% no ziedojumiem tiek izmantoti augstas kvalitātes barībai, veterinārajai
+                    aprūpei un regulārām veselības pārbaudēm.
                   </p>
                 </div>
               </div>
@@ -308,7 +321,8 @@ const Ziedojumi = () => {
                     <h3 className="text-xl font-semibold">Jauno jātnieku attīstība</h3>
                   </div>
                   <p className="text-muted-foreground">
-                    35% finansē mācību programmas, nometnes un sacensību dalības maksu bērniem no maznodrošinātām ģimenēm.
+                    35% finansē mācību programmas, nometnes un sacensību dalības maksu bērniem no
+                    maznodrošinātām ģimenēm.
                   </p>
                 </div>
               </div>
@@ -330,17 +344,16 @@ const Ziedojumi = () => {
                     <h3 className="text-xl font-semibold">Infrastruktūras attīstība</h3>
                   </div>
                   <p className="text-muted-foreground">
-                    25% tiek investēti drošības uzlabojumos, aprīkojuma atjaunošanā un vides labiekārtošanā.
+                    25% tiek investēti drošības uzlabojumos, aprīkojuma atjaunošanā un vides
+                    labiekārtošanā.
                   </p>
                 </div>
               </div>
             </div>
 
-            {/* Impact Statistics */}
+            {/* Stats */}
             <div className="mt-12 glass-card p-8">
-              <h3 className="text-2xl font-bold text-center mb-8">
-                Tavs ieguldījums 2023. gadā
-              </h3>
+              <h3 className="text-2xl font-bold text-center mb-8">Tavs ieguldījums 2023. gadā</h3>
               <div className="grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
                 <div>
                   <div className="text-3xl font-bold text-primary mb-2">156</div>
@@ -363,14 +376,12 @@ const Ziedojumi = () => {
           </div>
         </section>
 
-        {/* Thank You Section */}
+        {/* Thank You */}
         <section className="py-12 text-center">
           <div className="container mx-auto px-4 max-w-2xl">
-            <h2 className="text-2xl md:text-3xl font-bold mb-4">
-              Paldies par atbalstu!
-            </h2>
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">Paldies par atbalstu!</h2>
             <p className="text-muted-foreground mb-6">
-              Katrs ziedojums ir nozīmīgs un palīdz mums turpināt darbu ar zirgiem un bērniem. 
+              Katrs ziedojums ir nozīmīgs un palīdz mums turpināt darbu ar zirgiem un bērniem.
               Mēs sūtīsim tev ziņojumu par ziedojuma izmantošanu.
             </p>
             <div className="text-sm text-muted-foreground">
