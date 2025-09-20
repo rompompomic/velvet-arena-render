@@ -139,37 +139,128 @@ const DonateSection = () => {
           }} />
           </div>
 
-          {/* Способ оплаты */}
-          <div>
-            <label className="block text-[14px] leading-[20px] font-medium mb-2 text-[color:var(--text)]">
-              Apmaksas veids
-            </label>
-            <div className="flex gap-3">
-              <button
-                type="button"
-                onClick={() => setMethod("card")}
-                className="px-4 h-[42px] inline-flex items-center justify-center rounded-lg border transition-all"
-                style={{
+          {/* Форма доната справа */}
+          <div style={{
+          border: "1px solid var(--neutral-200)",
+          borderRadius: 12,
+          boxShadow: "var(--shadow-md)"
+        }} className="p-6 md:p-8 bg-[color:var(--bg)] flex flex-col py-0 px-[32px]">
+            {submitted ? <div className="text-center py-10">
+                <svg className="w-10 h-10 mx-auto mb-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{
+              color: "var(--primary)"
+            }}>
+                  <path d="M20 6L9 17l-5-5" />
+                </svg>
+                <h3 className="text-[28px] leading-[36px] font-medium text-[color:var(--text)] mb-2">
+                  Paldies par atbalstu!
+                </h3>
+                <p className="text-[14px] leading-[20px] text-[rgba(6,3,13,0.7)]">
+                  Mēs novērtējam tavu ieguldījumu. Ja vajadzīgs rēķins, sazinies ar{" "}
+                  <a href="mailto:info@latvianhorses.lv" className="underline">
+                    info@latvianhorses.lv
+                  </a>
+                  .
+                </p>
+              </div> : <form onSubmit={onSubmit} className="space-y-6">
+                {/* Сумма */}
+                <div>
+                  <label className="block text-[14px] leading-[20px] font-medium mb-2 text-[color:var(--text)]">
+                    Ziedojuma summa
+                  </label>
+                  <div className="flex flex-wrap gap-3">
+                    {presets.map(p => <button key={p} type="button" onClick={() => handlePreset(p)} className="px-4 h-[42px] inline-flex items-center justify-center rounded-lg border transition-all" style={{
+                  borderColor: amount === p ? "var(--primary)" : "var(--neutral-200)",
+                  background: amount === p ? "color-mix(in oklab, var(--primary) 10%, transparent)" : "transparent",
+                  color: amount === p ? "var(--primary)" : "var(--text)"
+                }}>
+                        {p} €
+                      </button>)}
+                    <div className="relative">
+                      <input inputMode="decimal" pattern="[0-9]*" value={amount} onChange={e => {
+                    const v = e.target.value.replace(/[^\d]/g, "");
+                    setAmount(v === "" ? "" : Number(v));
+                  }} placeholder="Cita summa" className="h-[42px] w-36 rounded-lg px-3 pr-8 focus:outline-none" style={{
+                    border: "1px solid var(--neutral-200)",
+                    boxShadow: "0 0 0 0 rgba(0,0,0,0)"
+                  }} />
+                      <span className="pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 text-[14px] leading-[20px] text-[rgba(6,3,13,0.7)]">
+                        €
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Контакты */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-[14px] leading-[20px] font-medium mb-1 text-[color:var(--text)]">
+                      Vārds (nav obligāti)
+                    </label>
+                    <input type="text" className="w-full rounded-lg px-3 py-2 focus:outline-none" placeholder="Vārds, uzvārds" style={{
+                  border: "1px solid var(--neutral-200)"
+                }} />
+                  </div>
+                  <div>
+                    <label className="block text-[14px] leading-[20px] font-medium mb-1 text-[color:var(--text)]">
+                      E-pasts (rēķinam)
+                    </label>
+                    <input type="email" className="w-full rounded-lg px-3 py-2 focus:outline-none" placeholder="name@example.com" style={{
+                  border: "1px solid var(--neutral-200)"
+                }} />
+                  </div>
+                </div>
+
+                {/* Способ оплаты */}
+                <div>
+                  <label className="block text-[14px] leading-[20px] font-medium mb-2 text-[color:var(--text)]">
+                    Apmaksas veids
+                  </label>
+                  <div className="flex gap-3">
+                    <button type="button" onClick={() => setMethod("card")} className="px-4 h-[42px] inline-flex items-center justify-center rounded-lg border transition-all" style={{
                   borderColor: method === "card" ? "var(--primary)" : "var(--neutral-200)",
                   background: method === "card" ? "var(--primary-50)" : "transparent",
-                  color: method === "card" ? "var(--primary)" : "var(--text)",
-                }}
-              >
-                Bankas karte
-              </button>
-              <button
-                type="button"
-                onClick={() => setMethod("bank")}
-                className="px-4 h-[42px] inline-flex items-center justify-center rounded-lg border transition-all"
-                style={{
+                  color: method === "card" ? "var(--primary)" : "var(--text)"
+                }}>
+                      Bankas karte
+                    </button>
+                    <button type="button" onClick={() => setMethod("bank")} className="px-4 h-[42px] inline-flex items-center justify-center rounded-lg border transition-all" style={{
                   borderColor: method === "bank" ? "var(--primary)" : "var(--neutral-200)",
                   background: method === "bank" ? "var(--primary-50)" : "transparent",
-                  color: method === "bank" ? "var(--primary)" : "var(--text)",
-                }}
-              >
-                Bankas pārskaitījums
-              </button>
-            </div>
+                  color: method === "bank" ? "var(--primary)" : "var(--text)"
+                }}>
+                      Bankas pārskaitījums
+                    </button>
+                  </div>
+                </div>
+
+                {/* Согласие */}
+                <label className="flex items-start gap-3 text-[14px] leading-[20px]">
+                  <input type="checkbox" className="mt-0.5 h-4 w-4 rounded" checked={agree} onChange={e => setAgree(e.target.checked)} style={{
+                border: "1px solid var(--neutral-200)",
+                accentColor: "var(--primary)"
+              }} />
+                  <span className="text-[color:var(--text)]">
+                    Piekrītu personas datu apstrādei saskaņā ar{" "}
+                    <a href="/lv/privatuma-politika/" className="underline">
+                      Privātuma politiku
+                    </a>
+                    .
+                  </span>
+                </label>
+
+                {/* Отправка */}
+                <button type="submit" disabled={!amount || Number(amount) <= 0 || !agree} className="inline-flex w-full items-center justify-center px-5 py-3 font-semibold rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed" style={{
+              background: "var(--primary)",
+              color: "#fff",
+              borderRadius: 12
+            }} onMouseDown={e => e.currentTarget.style.background = "var(--primary-700)"} onMouseUp={e => e.currentTarget.style.background = "var(--primary)"} onMouseLeave={e => e.currentTarget.style.background = "var(--primary)"}>
+                  Ziedot {amount ? `${amount} €` : ""}
+                </button>
+
+                <p className="text-[12px] leading-[20px] text-center text-[rgba(6,3,13,0.7)]">
+                  Pēc ziedojuma saņemšanas nosūtīsim apstiprinājumu uz e-pastu (ja norādīts).
+                </p>
+              </form>}
           </div>
         </div>
       </div>
