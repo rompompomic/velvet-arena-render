@@ -219,12 +219,15 @@ const JasanasTrenini = () => {
                     </a>
                   </div>
 
-                  <Button 
+                  <button 
                     onClick={() => setOpen(true)} 
-                    fullWidth
+                    className="mt-2 inline-flex items-center justify-center w-full rounded-xl bg-primary text-white px-4 py-2.5 font-medium 
+                               transition-all duration-300 hover:bg-primary-700 hover:scale-105"
+                    aria-haspopup="dialog" 
+                    aria-expanded={open}
                   >
                     Atstāt pieteikumu
-                  </Button>
+                  </button>
                 </div>
               </div>
             </div>
