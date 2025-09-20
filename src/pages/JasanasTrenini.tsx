@@ -100,8 +100,55 @@ const JasanasTrenini = () => {
           </div>
         </section>
 
-        {/* Gallery Section */}
-        
+        {/* Pricing table */}
+        <section className="container mx-auto max-w-6xl px-4 py-16">
+          <h3 className="text-section text-foreground mb-12 text-center">Treniņu un pakalpojumu cenas</h3>
+          <div className="glass-card overflow-hidden">
+            <table className="min-w-full text-sm">
+              <thead className="bg-primary/5">
+                <tr>
+                  <th className="text-left px-6 py-4 font-semibold text-foreground">Pakalpojums</th>
+                  <th className="text-right px-6 py-4 font-semibold text-foreground">Cena ar PVN</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  { category: "Treniņi", items: [
+                    { name: "Iepazīšanās ar poniju / zirgu", price: "35.00" },
+                    { name: "Individuāls treniņš ar skolas zirgu", price: "60.00" },
+                    { name: "Treniņš ar savu zirgu pie JJS trenera (iekļaujot manēžas īri)", price: "45.00" },
+                    { name: "Treniņš ar personīgo zirgu, kurš uzturas JJS stallī, pie JJS trenera", price: "30.00" }
+                  ]},
+                  { category: "Mēneša abonementi treniņiem", items: [
+                    { name: "1x nedēļā (60 EUR reize)", price: "240.00" },
+                    { name: "2x nedēļā (55 EUR reize)", price: "440.00" },
+                    { name: "3x nedēļā (50 EUR reize)", price: "600.00" }
+                  ]},
+                  { category: "Manēžas / laukuma īre par zirgu", items: [
+                    { name: "Viena reize", price: "25.00" },
+                    { name: "Abonements 10 reizēm (3 mēnešu laikā)", price: "200.00" }
+                  ]}
+                ].map((group, gi) => (
+                  <>
+                    <tr key={group.category} className="bg-muted/30">
+                      <td colSpan={2} className="px-6 py-3 font-semibold text-primary">{group.category}</td>
+                    </tr>
+                    {group.items.map((item, i) => (
+                      <tr key={item.name} className="border-t hover:bg-primary/5 transition-colors">
+                        <td className="px-6 py-4 text-foreground">{item.name}</td>
+                        <td className="px-6 py-4 text-right font-medium">€{item.price}</td>
+                      </tr>
+                    ))}
+                  </>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-6 text-sm text-muted-foreground text-center max-w-2xl mx-auto">
+            * Nodarbību laiki var mainīties. Svētku dienās visiem pakalpojumiem tiek piemērota papildus maksa 50% apmērā.
+          </p>
+        </section>
+
       </main>
 
       <Footer />
