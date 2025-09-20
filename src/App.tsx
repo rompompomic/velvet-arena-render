@@ -27,6 +27,7 @@ import EventDetail from "./pages/EventDetail";
 import ParMums from "./pages/ParMums";
 import Kontakti from "./pages/Kontakti";
 import LietosanasNoteikumi from "./pages/LietosanasNoteikumi";
+import PrivatumaPolitika from "./pages/PrivatumaPolitika";
 
 const queryClient = new QueryClient();
 
@@ -60,6 +61,7 @@ const App = () => (
           <Route path="/lv/par-mums/" element={<ParMums />} />
           <Route path="/lv/kontakti/" element={<Kontakti />} />
           <Route path="/lv/lietosanas-noteikumi/" element={<LietosanasNoteikumi />} />
+          <Route path="/lv/privatuma-politika/" element={<PrivatumaPolitika />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
