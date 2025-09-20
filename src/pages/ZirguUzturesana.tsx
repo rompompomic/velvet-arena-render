@@ -12,7 +12,7 @@ const ZirguUzturesana = () => {
       <main className="pt-24">
         {/* HERO */}
         <section className="relative">
-          {/* фон */}
+          {/* Фон */}
           <img
             src={heroImage}
             alt="Zirgu uzturēšana"
@@ -20,33 +20,34 @@ const ZirguUzturesana = () => {
           />
           <div className="absolute inset-0 bg-black/45" />
         
-          {/* контент */}
-          <div className="relative container mx-auto px-4 max-w-7xl py-20 md:py-28 text-center text-white">
-            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight drop-shadow-sm">
-              Zirgu uzturēšana
-            </h1>
-            <p className="mt-5 text-base md:text-xl max-w-3xl mx-auto text-white/90">
-              Profesionāla zirgu aprūpe un uzturēšana modernās stallīs ar
-              augstākajiem komforta standartiem.
-            </p>
+          {/* Контент */}
+          <div className="relative flex items-center justify-center text-center text-white min-h-[38vh] md:min-h-[44vh]">
+            <div className="container mx-auto px-4 max-w-5xl">
+              <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight drop-shadow">
+                Zirgu uzturēšana
+              </h1>
+              <p className="mt-3 text-base md:text-lg max-w-2xl mx-auto text-white/90">
+                Profesionāla zirgu aprūpe un uzturēšana modernās stallīs ar augstākajiem komforta standartiem.
+              </p>
         
-            {/* Stats chips */}
-            <div className="mt-6 flex flex-wrap justify-center gap-3">
-              {[
-                { k: ">70", v: "boksi" },
-                { k: "2", v: "slēgtās manēžas" },
-                { k: "24/7", v: "aprūpe un uzraudzība" },
-              ].map((s) => (
-                <div
-                  key={s.v}
-                  className="px-3 py-1.5 rounded-full bg-white/10 backdrop-blur text-sm border border-white/15"
-                >
-                  <span className="font-semibold">{s.k}</span> {s.v}
-                </div>
-              ))}
+              {/* Чипы со статистикой */}
+              <div className="mt-4 flex flex-wrap justify-center gap-3">
+                {[
+                  { k: ">70", v: "boksi" },
+                  { k: "2", v: "slēgtās manēžas" },
+                  { k: "24/7", v: "aprūpe un uzraudzība" },
+                ].map((s) => (
+                  <div
+                    key={s.v}
+                    className="px-2.5 py-1 rounded-full bg-white/10 backdrop-blur text-xs md:text-sm border border-white/15"
+                  >
+                    <span className="font-semibold">{s.k}</span> {s.v}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
-        </section>
+</section>
 
         {/* CONTENT: 2 columns */}
         <section className="container mx-auto max-w-6xl px-4 py-12 md:py-16">
