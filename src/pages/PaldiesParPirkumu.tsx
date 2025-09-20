@@ -117,14 +117,24 @@ const PaldiesParPirkumu = () => {
 
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center mt-12">
-              <Button asChild className="px-8 py-3">
-                <a href="/lv/davanu-kartes/">
+              {/* Primary button */}
+              <Button
+                asChild
+                className="px-8 py-3 bg-primary text-white rounded-xl 
+                           transition-all duration-300 hover:bg-primary-700 hover:scale-105"
+              >
+                <a href="/lv/davanu-kartes/" className="!text-white">
                   Pirkt vēl vienu karti
                 </a>
               </Button>
               
-              <Button variant="outline" asChild className="px-8 py-3">
-                <a href="/">
+              {/* Outline button */}
+              <Button
+                asChild
+                className="px-8 py-3 border border-primary text-white rounded-xl 
+                           transition-all duration-300 hover:bg-primary hover:scale-105"
+              >
+                <a href="/" className="!text-white">
                   Atgriezties sākumlapā
                 </a>
               </Button>
