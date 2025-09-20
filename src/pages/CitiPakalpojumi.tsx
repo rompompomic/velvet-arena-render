@@ -123,88 +123,85 @@ const CitiPakalpojumi = () => {
           </div>
         </section>
 
+        {/* Telpu noma pasākumiem + Citi */}
         <section className="container mx-auto max-w-6xl px-4 py-16">
           <h3 className="text-section text-foreground mb-12 text-center">
             Telpu noma pasākumiem un citi pakalpojumi
-          </h3
+          </h3>
+        
           <div className="grid gap-8 md:grid-cols-2">
-            <div className="rounded-2xl border bg-white shadow-sm overflow-hidden">
-              <table className="min-w-full text-sm">
-                <thead className="bg-neutral-50">
-                  <tr>
-                    <th className="text-left px-4 py-3 font-semibold text-foreground">
-                      TELPU NOMA PASĀKUMIEM
-                    </th>
-                    <th className="text-right px-4 py-3 font-semibold text-foreground">
-                      Cena ar PVN
-                    </th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y">
-                  <tr>
-                    <td className="px-4 py-3">
-                      VIP telts īre pasākumiem (ar galdiem, krēsliem) Cena par 1h,
-                      minimālā īre 3h
-                    </td>
-                    <td className="px-4 py-3 text-right font-medium">€ 80.00</td>
-                  </tr>
-                  <tr>
-                    <td className="px-4 py-3">
-                      Kafejnīcas terases īre pasākumiem (ar galdiem, krēsliem) Cena par
-                      1h, minimālā īre 3h
-                    </td>
-                    <td className="px-4 py-3 text-right font-medium">€ 50.00</td>
-                  </tr>
-                  <tr>
-                    <td className="px-4 py-3">Teritorijas īre pasākumiem</td>
-                    <td className="px-4 py-3 text-right font-medium">Pēc vienošanās</td>
-                  </tr>
-                </tbody>
-              </table>
+            {/* Telpu noma pasākumiem */}
+            <div>
+              <h4 className="text-lg font-semibold text-foreground mb-4 text-center">
+                Telpu noma pasākumiem
+              </h4>
+              <div className="overflow-hidden rounded-2xl border bg-white shadow-sm">
+                <table className="min-w-full text-sm">
+                  <thead className="bg-primary/5">
+                    <tr>
+                      <th className="text-left px-6 py-3 font-medium">Pakalpojums</th>
+                      <th className="text-right px-6 py-3 font-medium">Cena ar PVN</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y">
+                    <tr>
+                      <td className="px-6 py-4">
+                        VIP telts īre pasākumiem (ar galdiem, krēsliem), cena par 1h,
+                        minimālā īre 3h
+                      </td>
+                      <td className="px-6 py-4 text-right">€80.00</td>
+                    </tr>
+                    <tr>
+                      <td className="px-6 py-4">
+                        Kafejnīcas terases īre pasākumiem (ar galdiem, krēsliem), cena
+                        par 1h, minimālā īre 3h
+                      </td>
+                      <td className="px-6 py-4 text-right">€50.00</td>
+                    </tr>
+                    <tr>
+                      <td className="px-6 py-4">Teritorijas īre pasākumiem</td>
+                      <td className="px-6 py-4 text-right">Pēc vienošanās</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
         
-            {/* CITI */}
-            <div className="rounded-2xl border bg-white shadow-sm overflow-hidden">
-              <table className="min-w-full text-sm">
-                <thead className="bg-neutral-50">
-                  <tr>
-                    <th className="text-left px-4 py-3 font-semibold text-foreground">
-                      CITI
-                    </th>
-                    <th className="text-right px-4 py-3 font-semibold text-foreground">
-                      Cena ar PVN
-                    </th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y">
-                  <tr>
-                    <td className="px-4 py-3">
-                      Ponijs/zirgs ballītei ārpus sporta centra (1 zirgs, 2 instruktori),
-                      cena par 1h (papildus 0,80 eur/km)
-                    </td>
-                    <td className="px-4 py-3 text-right font-medium">€ 150.00</td>
-                  </tr>
-                  <tr>
-                    <td className="px-4 py-3">
-                      Fotosesija ar zirgu JJS teritorijā (sagatavots zirgs, sesijas
-                      garums līdz 1h)
-                    </td>
-                    <td className="px-4 py-3 text-right font-medium">€ 30.00</td>
-                  </tr>
-                </tbody>
-              </table>
+            {/* Citi */}
+            <div>
+              <h4 className="text-lg font-semibold text-foreground mb-4 text-center">
+                Citi
+              </h4>
+              <div className="overflow-hidden rounded-2xl border bg-white shadow-sm">
+                <table className="min-w-full text-sm">
+                  <thead className="bg-primary/5">
+                    <tr>
+                      <th className="text-left px-6 py-3 font-medium">Pakalpojums</th>
+                      <th className="text-right px-6 py-3 font-medium">Cena ar PVN</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y">
+                    <tr>
+                      <td className="px-6 py-4">
+                        Ponijs/zirgs ballītei ārpus sporta centra (1 zirgs, 2 instruktori), cena par 1h 
+                        <br />
+                        <span className="text-xs text-muted-foreground">
+                          (papildus 0,80 EUR/km)
+                        </span>
+                      </td>
+                      <td className="px-6 py-4 text-right">€150.00</td>
+                    </tr>
+                    <tr>
+                      <td className="px-6 py-4">
+                        Fotosesija ar zirgu JJS teritorijā (sagatavots zirgs, sesijas garums līdz 1h)
+                      </td>
+                      <td className="px-6 py-4 text-right">€30.00</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
-        
-          {/* Notes */}
-          <p className="mt-6 text-sm text-muted-foreground">
-            Manēžas īre: Darba dienās no pl.9:00 – 15:00; sestdien, svētdien no
-            pl.16:00 – 20:00; pēc pieejamības
-          </p>
-          <p className="text-sm text-muted-foreground">
-            Visi pakalpojumi pēc iepriekšēja pieraksta. Svētku dienās visiem
-            pakalpojumiem tiek piemērota papildus maksa 50% apmērā.
-          </p>
         </section>
 
         {/* Practical info + Contacts (light cards) */}
