@@ -231,28 +231,29 @@ const Pasakumi = () => {
             </div>
 
             {/* Календарь */}
-            <Card>
-              <CardContent className="p-6">
-                <div className="inline-block rounded-xl border border-gray-300 p-2">
-                  <Calendar
-                    mode="single"
-                    locale={lv}
-                    defaultMonth={defaultMonth}
-                    selected={selectedDate}
-                    onSelect={(date) => {
-                      if (date) setSelectedDate(date);
-                    }}
-                    className="rounded-md"
-                    modifiers={{ hasEvent: eventDates }}
-                    modifiersClassNames={{
-                      hasEvent:
-                        "relative after:content-[''] after:w-1.5 after:h-1.5 after:rounded-full after:bg-primary after:absolute after:bottom-1 after:left-1/2 after:-translate-x-1/2",
-                    }}
-                  />
-                </div>
-              </CardContent>
-            </Card>
-
+            {viewMode === "calendar" && (
+              <div className="grid grid-cols-1 lg:grid-cols-[400px,1fr] gap-8">
+                <Card>
+                  <CardContent className="p-6">
+                    <Calendar
+                      mode="single"
+                      locale={lv}
+                      defaultMonth={defaultMonth}
+                      selected={selectedDate} // по умолчанию undefined
+                      onSelect={(date) => {
+                        if (date) setSelectedDate(date); // не сбрасываем в undefined
+                      }}
+                      className="rounded-md border-0"
+                      // помечаем дни, где есть события
+                      modifiers={{ hasEvent: eventDates }}
+                      // добавляем «точку» снизу у дней с событиями
+                      modifiersClassNames={{
+                        hasEvent:
+                          "relative after:content-[''] after:w-1.5 after:h-1.5 after:rounded-full after:bg-primary after:absolute after:bottom-1 after:left-1/2 after:-translate-x-1/2",
+                      }}
+                    />
+                  </CardContent>
+                </Card>
 
                 <div className="space-y-6">
                   <h3 className="text-2xl font-bold">
