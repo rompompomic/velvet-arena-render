@@ -102,13 +102,14 @@ const Galerija = () => {
 
                 <div className="p-6">
                   <Button
-                    className="w-full justify-between bg-primary text-primary-foreground hover:bg-primary/90 transition-colors duration-300"
+                    className="w-full justify-between bg-primary text-white rounded-xl 
+                               transition-all duration-300 hover:bg-primary-700 hover:scale-105"
                     asChild
                   >
                     <a href="/lv/galerija/jauno-jatnieku-skola/">
                       Skatīt skolas galeriju
                       <svg
-                        className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300"
+                        className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
