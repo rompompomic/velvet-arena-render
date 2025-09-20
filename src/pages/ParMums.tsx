@@ -292,7 +292,9 @@ const ParMums = () => {
           <div className="container mx-auto px-4 max-w-7xl flex justify-center py-[15px]">
             <Button
               asChild
-              className="w-full sm:w-auto bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-4 text-lg font-semibold"
+              className="w-full sm:w-auto bg-primary text-white rounded-xl 
+                         px-8 py-4 text-lg font-semibold 
+                         transition-all duration-300 hover:bg-primary-700 hover:scale-105"
             >
               <a href="/lv/kontakti/">
                 Sazināties par partnerību
