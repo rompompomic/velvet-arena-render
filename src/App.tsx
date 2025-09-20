@@ -25,6 +25,7 @@ import RidingSchoolAlbumDetail from "./pages/RidingSchoolAlbumDetail";
 import Pasakumi from "./pages/Pasakumi";
 import EventDetail from "./pages/EventDetail";
 import ParMums from "./pages/ParMums";
+import Kontakti from "./pages/Kontakti";
 
 const queryClient = new QueryClient();
 
@@ -56,6 +57,7 @@ const App = () => (
           <Route path="/lv/pasakumi/" element={<Pasakumi />} />
           <Route path="/lv/pasakumi/:event/" element={<EventDetail />} />
           <Route path="/lv/par-mums/" element={<ParMums />} />
+          <Route path="/lv/kontakti/" element={<Kontakti />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
