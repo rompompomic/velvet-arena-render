@@ -173,6 +173,10 @@ const Checkout = () => {
                         <RadioGroupItem value="card" id="card" />
                         <Label htmlFor="card">Maksājumu karte</Label>
                       </div>
+                      <div className="flex items-center space-x-2">
+                        <RadioGroupItem value="bank" id="bank" />
+                        <Label htmlFor="bank">Bankas pārskaitījums</Label>
+                      </div>
                     </RadioGroup>
 
                     {/* Terms Agreement */}
