@@ -1,23 +1,18 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import serviceRiding from "@/assets/service-riding-lessons.jpg";
 import excursionsImage from "@/assets/service-excursions.jpg";
-import { Gift, ShieldCheck, Sparkles, Clock, Wallet } from "lucide-react";
 
 const DavanuKartes = () => {
   const [customAmount, setCustomAmount] = useState("");
-  const customInputRef = useRef<HTMLInputElement | null>(null);
 
-  const giftCards: Array<
-    | { amount: number; price: string; custom?: false }
-    | { custom: true }
-  > = [
+  const giftCards = [
     { amount: 25, price: "€25.00" },
     { amount: 50, price: "€50.00" },
     { amount: 100, price: "€100.00" },
-    { custom: true },
+    { custom: true }, // новая карточка
   ];
 
   return (
@@ -41,203 +36,82 @@ const DavanuKartes = () => {
               Dāvanu kartes
             </h1>
             <p className="mt-5 text-base md:text-xl max-w-3xl mx-auto text-white/90">
-              Dāviniet iespēju piedzīvot neaizmirstamas emocijas ar zirgiem.
+              Dāviniet iespēju piedzīvot neaizmirstamas emocijas ar zirgiem. 
               Mūsu dāvanu kartes ir ideāls veids, kā pārsteigt tuvos cilvēkus.
             </p>
           </div>
         </section>
 
         {/* Gift Cards Grid */}
-        <section className="py-16 md:py-24">
+        <section className="py-16 md:py-24" style={{ backgroundColor: "#2f2f2f14" }}>>
           <div className="container mx-auto px-4 max-w-6xl">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-              {giftCards.map((card, index) => {
-                const isCustom = "custom" in card && card.custom;
+              {giftCards.map((card, index) => (
+                <div
+                  key={index}
+                  className="group relative glass-card overflow-hidden hover-lift cursor-pointer transition-all duration-300"
+                >
+                  <div className="relative h-96">
+                    <img
+                      src={excursionsImage}
+                      alt=""
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-black/50" />
 
-                return (
-                  <div
-                    key={index}
-                    className="glass-card overflow-hidden rounded-2xl shadow-sm"
-                  >
-                    {/* Кликабельная картинка */}
-                    {isCustom ? (
-                      <a
-                        href="#custom-amount"
-                        onClick={(e) => {
-                          // фокус на инпут
-                          e.preventDefault();
-                          customInputRef.current?.focus();
-                          document
-                            .getElementById("custom-amount")
-                            ?.scrollIntoView({ behavior: "smooth", block: "center" });
-                        }}
-                        className="block relative h-96"
-                        aria-label="Savs apjoms"
-                      >
-                        <img
-                          src={excursionsImage}
-                          alt=""
-                          className="absolute inset-0 w-full h-full object-cover"
-                        />
-                        <div className="absolute inset-0 bg-black/50" />
-                        <div className="relative h-full p-8 flex flex-col justify-center items-center text-center">
-                          <h3 className="text-white text-3xl font-bold mb-4">
-                            Dāvanu karte
-                          </h3>
-                          <div className="text-white text-3xl font-semibold">
-                            Savs apjoms
-                          </div>
-                        </div>
-                      </a>
-                    ) : (
-                      <a
-                        href={`/lv/checkout/?amount=${(card as any).amount}`}
-                        className="block relative h-96"
-                        aria-label={`Pirkt dāvanu karti ${(card as any).amount}€`}
-                      >
-                        <img
-                          src={excursionsImage}
-                          alt=""
-                          className="absolute inset-0 w-full h-full object-cover"
-                        />
-                        <div className="absolute inset-0 bg-black/50" />
-                        <div className="relative h-full p-8 flex flex-col justify-center items-center text-center">
-                          <h3 className="text-white text-3xl font-bold mb-4">
-                            Dāvanu karte
-                          </h3>
-                          <div className="text-white text-5xl font-extrabold">
-                            {(card as any).amount}€
-                          </div>
-                        </div>
-                      </a>
-                    )}
-
-                    {/* Действия под карточкой */}
-                    <div className="p-5 border-t bg-white/60 dark:bg-black/20 backdrop-blur">
-                      {isCustom ? (
-                        <div
-                          id="custom-amount"
-                          className="flex items-center gap-3"
-                        >
-                          <input
-                            ref={customInputRef}
-                            type="number"
-                            min={5}
-                            step="1"
-                            inputMode="numeric"
-                            value={customAmount}
-                            onChange={(e) => {
-                              const v = e.target.value;
-                              // лёгкая валидация: только неотрицательные
-                              if (Number(v) >= 0 || v === "") setCustomAmount(v);
-                            }}
-                            placeholder="Ievadiet summu (€)"
-                            className="flex-1 rounded-xl border px-4 py-2.5 text-base bg-white focus:outline-none focus:ring-2 focus:ring-primary"
-                          />
-                          <Button
-                            asChild
-                            disabled={!customAmount || Number(customAmount) < 5}
-                            className="rounded-xl px-6 py-2.5 text-base"
-                          >
-                            <a
-                              href={`/lv/checkout/?amount=${customAmount || 0}`}
-                              className="!text-white"
-                              aria-disabled={!customAmount || Number(customAmount) < 5}
-                            >
-                              Pirkt
-                            </a>
-                          </Button>
+                    <div className="relative h-full p-8 flex flex-col justify-center items-center text-center">
+                      <h3 className="text-white text-3xl font-bold mb-4">
+                        Dāvanu karte
+                      </h3>
+                      {card.custom ? (
+                        <div className="text-white text-3xl font-semibold">
+                          Savs apjoms
                         </div>
                       ) : (
-                        <div className="flex items-center justify-between">
-                          <div className="text-sm text-muted-foreground">
-                            {(card as any).price}
-                          </div>
-                          <Button asChild className="rounded-xl px-6 py-2.5 text-base">
-                            <a
-                              href={`/lv/checkout/?amount=${(card as any).amount}`}
-                              className="!text-white"
-                            >
-                              Pirkt
-                            </a>
-                          </Button>
+                        <div className="text-white text-5xl font-extrabold">
+                          {card.amount}€
                         </div>
                       )}
                     </div>
+
+                    {/* Hover Overlay */}
+                    <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-4 p-6">
+                      {card.custom ? (
+                        <>
+                          <input
+                            type="number"
+                            min="5"
+                            value={customAmount}
+                            onChange={(e) => setCustomAmount(e.target.value)}
+                            placeholder="Ievadiet summu (€)"
+                            className="w-40 rounded-lg px-3 py-2 text-center text-black focus:outline-none focus:ring-2 focus:ring-primary"
+                          />
+                          <Button
+                            asChild
+                            disabled={!customAmount}
+                            className="bg-primary text-white rounded-xl px-8 py-3 text-lg font-semibold 
+                                       transition-all duration-300 hover:bg-primary-700 hover:scale-105"
+                          >
+                            <a href={`/lv/checkout/?amount=${customAmount || 0}`} className="!text-white">
+                              Pirkt
+                            </a>
+                          </Button>
+                        </>
+                      ) : (
+                        <Button
+                          asChild
+                          className="bg-primary text-white rounded-xl px-10 py-4 text-lg font-semibold 
+                                     transition-all duration-300 hover:bg-primary-700 hover:scale-105"
+                        >
+                          <a href={`/lv/checkout/?amount=${card.amount}`} className="!text-white">
+                            Pirkt
+                          </a>
+                        </Button>
+                      )}
+                    </div>
                   </div>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-
-        {/* Advantages Section */}
-        <section className="py-16 md:py-24 bg-muted/40">
-          <div className="container mx-auto px-4 max-w-6xl">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">
-                Kāpēc izvēlēties dāvanu karti?
-              </h2>
-              <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
-                Elastīga, ērta un vienmēr patīkama dāvana — piemērota gan
-                bērniem, gan pieaugušajiem.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-              <div className="rounded-2xl border bg-card p-6 hover:shadow-md transition">
-                <div className="flex items-center gap-3 mb-3">
-                  <Gift className="w-6 h-6" />
-                  <h3 className="text-xl font-semibold">Universāla dāvana</h3>
                 </div>
-                <p className="text-muted-foreground">
-                  Der nodarbībām, ekskursijām vai mierīgai atpūtai pie zirgiem —
-                  saņēmējs pats izvēlas pieredzi.
-                </p>
-              </div>
-
-              <div className="rounded-2xl border bg-card p-6 hover:shadow-md transition">
-                <div className="flex items-center gap-3 mb-3">
-                  <Wallet className="w-6 h-6" />
-                  <h3 className="text-xl font-semibold">Elastīga summa</h3>
-                </div>
-                <p className="text-muted-foreground">
-                  Fiksētas vērtības vai paša izvēlēta summa — dāvanu karti var
-                  pielāgot jebkuram budžetam.
-                </p>
-              </div>
-
-              <div className="rounded-2xl border bg-card p-6 hover:shadow-md transition">
-                <div className="flex items-center gap-3 mb-3">
-                  <Clock className="w-6 h-6" />
-                  <h3 className="text-xl font-semibold">Ērta izmantošana</h3>
-                </div>
-                <p className="text-muted-foreground">
-                  Vienkārša iegāde tiešsaistē un ērta pierakstīšanās uz
-                  pakalpojumiem jebkurā laikā.
-                </p>
-              </div>
-
-              <div className="rounded-2xl border bg-card p-6 hover:shadow-md transition">
-                <div className="flex items-center gap-3 mb-3">
-                  <ShieldCheck className="w-6 h-6" />
-                  <h3 className="text-xl font-semibold">Drošs pirkums</h3>
-                </div>
-                <p className="text-muted-foreground">
-                  Droši norēķini un caurskatāmi noteikumi — nekādu pārsteigumu.
-                </p>
-              </div>
-
-              <div className="rounded-2xl border bg-card p-6 hover:shadow-md transition md:col-span-2">
-                <div className="flex items-center gap-3 mb-3">
-                  <Sparkles className="w-6 h-6" />
-                  <h3 className="text-xl font-semibold">Emocijas dāvanā</h3>
-                </div>
-                <p className="text-muted-foreground">
-                  Dāvana, kas paliek atmiņā — satikšanās ar zirgiem sniedz
-                  īpašas sajūtas un iedvesmu.
-                </p>
-              </div>
+              ))}
             </div>
           </div>
         </section>
