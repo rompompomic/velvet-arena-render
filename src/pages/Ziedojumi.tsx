@@ -8,8 +8,8 @@ import { Label } from "@/components/ui/label";
 
 // Import images
 import donateHero from "@/assets/donate-horse-new.png";
-import horseCare from "@/assets/zirgu-apruupe-1.jpg";
-import youthPrograms from "@/assets/jaunie-jatniekki-1.jpg";
+import horseCare from "@/assets/gallery-zirgu-apruupe-1.jpg";
+import youthPrograms from "@/assets/gallery-jaunie-jatniekki-1.jpg";
 import facilities from "@/assets/about-facilities.jpg";
 
 const Ziedojumi = () => {
