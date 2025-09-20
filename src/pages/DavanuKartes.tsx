@@ -31,6 +31,9 @@ const DavanuKartes = () => {
     "w-full rounded-xl border border-gray-300 px-4 py-2.5 text-base bg-white " +
     "text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary";
 
+  const buttonAnim =
+    "w-full rounded-xl px-6 py-2.5 text-base transition-transform duration-300 hover:scale-105";
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -134,7 +137,7 @@ const DavanuKartes = () => {
                             />
                           </div>
                         ) : (
-                          <Button asChild className="w-full rounded-xl px-6 py-2.5 text-base">
+                          <Button asChild className={buttonAnim}>
                             <a
                               href={`/lv/checkout/?amount=${(card as FixedCard).amount}`}
                               className="!text-white"
@@ -152,7 +155,7 @@ const DavanuKartes = () => {
                         <Button
                           asChild
                           disabled={!customAmount || Number(customAmount) < 5}
-                          className="w-full rounded-xl px-6 py-2.5 text-base"
+                          className={buttonAnim}
                         >
                           <a
                             href={`/lv/checkout/?amount=${customAmount || 0}`}
