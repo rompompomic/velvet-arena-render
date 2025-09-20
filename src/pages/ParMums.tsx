@@ -203,8 +203,20 @@ const ParMums = () => {
                     </div>
                   </div>
                 </div>
-        
-                <Button
+              </div>
+              
+              <div className="order-1 lg:order-2">
+                <div className="glass-card overflow-hidden">
+                  <img
+                    src={partnershipImage}
+                    alt="Sadarbība un partnerība jāšanas sportā"
+                    className="w-full h-80 lg:h-96 object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <Button
                   asChild
                   className="w-full sm:w-auto bg-primary text-primary-foreground hover:bg-primary/90"
                 >
@@ -225,19 +237,6 @@ const ParMums = () => {
                     </svg>
                   </a>
                 </Button>
-              </div>
-              
-              <div className="order-1 lg:order-2">
-                <div className="glass-card overflow-hidden">
-                  <img
-                    src={partnershipImage}
-                    alt="Sadarbība un partnerība jāšanas sportā"
-                    className="w-full h-80 lg:h-96 object-cover"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
         </section>
 
         {/* CTA Section */}
