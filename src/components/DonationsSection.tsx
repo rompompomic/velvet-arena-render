@@ -251,17 +251,10 @@ const DonateSection = () => {
                 {/* Отправка */}
                 <a
                   href="/lv/ziedojumi/"
-                  className="inline-flex w-full items-center justify-center px-5 py-3 font-semibold rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-                  style={{
-                    background: "var(--primary)",
-                    color: "#fff",
-                    borderRadius: 12,
-                    pointerEvents: !amount || Number(amount) <= 0 || !agree ? "none" : "auto",
-                    opacity: !amount || Number(amount) <= 0 || !agree ? 0.5 : 1,
-                  }}
-                  onMouseDown={(e) => (e.currentTarget.style.background = "var(--primary-700)")}
-                  onMouseUp={(e) => (e.currentTarget.style.background = "var(--primary)")}
-                  onMouseLeave={(e) => (e.currentTarget.style.background = "var(--primary)")}
+                  className={`inline-flex items-center justify-center px-8 py-4 font-medium rounded-xl text-white transition-all duration-300
+                    ${!amount || Number(amount) <= 0 || !agree 
+                      ? "opacity-50 pointer-events-none" 
+                      : "bg-primary hover:bg-primary-700 hover:scale-105"}`}
                 >
                   Ziedot {amount ? `${amount} €` : ""}
                 </a>
