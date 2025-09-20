@@ -248,12 +248,20 @@ const DonateSection = () => {
                   </span>
                 </label>
 
+                {/* Отправка */}
                 <a
                   href="/lv/ziedojumi/"
-                  className={`inline-flex w-full items-center justify-center px-5 py-3 font-semibold 
-                              rounded-xl bg-[hsl(var(--primary))] text-white 
-                              transition-all duration-300 hover:bg-[hsl(var(--primary-700))] hover:scale-105
-                              ${!amount || Number(amount) <= 0 || !agree ? "opacity-50 pointer-events-none" : ""}`}
+                  className="inline-flex w-full items-center justify-center px-5 py-3 font-semibold rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  style={{
+                    background: "var(--primary)",
+                    color: "#fff",
+                    borderRadius: 12,
+                    pointerEvents: !amount || Number(amount) <= 0 || !agree ? "none" : "auto",
+                    opacity: !amount || Number(amount) <= 0 || !agree ? 0.5 : 1,
+                  }}
+                  onMouseDown={(e) => (e.currentTarget.style.background = "var(--primary-700)")}
+                  onMouseUp={(e) => (e.currentTarget.style.background = "var(--primary)")}
+                  onMouseLeave={(e) => (e.currentTarget.style.background = "var(--primary)")}
                 >
                   Ziedot {amount ? `${amount} €` : ""}
                 </a>
