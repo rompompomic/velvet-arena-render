@@ -6,6 +6,7 @@ import serviceArena from "@/assets/service-arena-rental.jpg";
 import eventCompetition from "@/assets/event-competition.jpg";
 import eventShowjumping from "@/assets/event-showjumping.jpg";
 import winterImage from "@/assets/winter-equestrian.jpg";
+import serviceStable from "@/assets/service-horse-stable.jpg";
 const LaukumuIre = () => {
   const [open, setOpen] = useState(false);
   const [sent, setSent] = useState(false);
