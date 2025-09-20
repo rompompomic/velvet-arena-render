@@ -48,22 +48,22 @@ const Kontakti = () => {
     <div className="min-h-screen bg-background">
       <Header />
       
-      {/* HERO Section matching Pakalpojumi style */}
-        <section className="relative">
-          <div className="absolute inset-0">
-            <img src={contactHeroBg} alt="" className="w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-black/45 backdrop-blur-[1px]" />
-          </div>
+    {/* HERO Section matching Pakalpojumi style */}
+      <section className="relative">
+        <div className="absolute inset-0">
+          <img src={contactHeroBg} alt="" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-black/45 backdrop-blur-[1px]" />
+        </div>
 
-          <div className="relative container mx-auto px-4 max-w-7xl py-20 md:py-28 text-center text-white">
-            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight drop-shadow-sm">
-              Kontakti
-            </h1>
-            <p className="mt-5 text-base md:text-xl max-w-3xl mx-auto text-white/90">
-              Sazinieties ar mums – mēs ar prieku atbildēsim uz jūsu jautājumiem
-            </p>
-          </div>
-        </section>
+        <div className="relative container mx-auto px-4 max-w-7xl py-20 md:py-28 text-center text-white">
+          <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight drop-shadow-sm">
+            Kontakti
+          </h1>
+          <p className="mt-5 text-base md:text-xl max-w-3xl mx-auto text-white/90">
+            Sazinieties ar mums – mēs ar prieku atbildēsim uz jūsu jautājumiem
+          </p>
+        </div>
+      </section>
 
       {/* Main Content */}
       <main className="py-16">
