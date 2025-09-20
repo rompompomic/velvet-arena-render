@@ -345,10 +345,12 @@ const ParMums = () => {
               <Button
                 asChild
                 size="lg"
-                className="border border-primary text-primary rounded-xl 
-                           transition-all duration-300 hover:bg-primary hover:text-white hover:scale-105"
+                className="border border-primary text-white rounded-xl 
+                           transition-all duration-300 hover:bg-primary hover:scale-105"
               >
-                <a href="/lv/pasakumi/">Skatīt pasākumus</a>
+                <a href="/lv/pasakumi/" className="!text-white">
+                  Skatīt pasākumus
+                </a>
               </Button>
             </div>
           </div>
