@@ -4,20 +4,14 @@ import { ChevronRight, Home, MapPin, Trophy, Shield, Users, CheckCircle2, Target
 import serviceArena from "@/assets/service-arena-rental.jpg";
 import eventCompetition from "@/assets/event-competition.jpg";
 import eventShowjumping from "@/assets/event-showjumping.jpg";
-
 const LaukumuIre = () => {
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       <Header />
       
       <main className="pt-24">
         {/* Hero Section */}
         <section className="relative">
-          <img
-            src={serviceArena}
-            alt="Laukumu īre"
-            className="absolute inset-0 w-full h-full object-cover"
-          />
+          <img src={serviceArena} alt="Laukumu īre" className="absolute inset-0 w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/20" />
           
           <div className="relative flex items-center justify-center text-center text-white min-h-[50vh] md:min-h-[60vh]">
@@ -65,20 +59,31 @@ const LaukumuIre = () => {
               <div className="space-y-4">
                 <h3 className="text-xl font-semibold text-foreground">Pieejamie laukumi:</h3>
                 <div className="grid gap-3">
-                  {[
-                    { text: "Galvenais konkursu laukums (60x20m) ar tribunēm", icon: Trophy },
-                    { text: "Dresūras laukums (60x20m) ar ogļu segumu", icon: Target },
-                    { text: "Šķēršļu treniņu laukums ar pilnu šķēršļu komplektu", icon: Shield },
-                    { text: "Silšanās laukums iekštelpu manēžā", icon: Users },
-                    { text: "Mājas un stabļa izvietošanas vietas", icon: MapPin },
-                    { text: "Veterinārās palīdzības iespēja", icon: CheckCircle2 },
-                    { text: "Tehniskais nodrošinājums un skaņas sistēma", icon: Volume2 },
-                  ].map((item, index) => (
-                    <div key={index} className="flex items-start gap-3 p-3 rounded-lg hover:bg-light transition-colors">
+                  {[{
+                  text: "Galvenais konkursu laukums (60x20m) ar tribunēm",
+                  icon: Trophy
+                }, {
+                  text: "Dresūras laukums (60x20m) ar ogļu segumu",
+                  icon: Target
+                }, {
+                  text: "Šķēršļu treniņu laukums ar pilnu šķēršļu komplektu",
+                  icon: Shield
+                }, {
+                  text: "Silšanās laukums iekštelpu manēžā",
+                  icon: Users
+                }, {
+                  text: "Mājas un stabļa izvietošanas vietas",
+                  icon: MapPin
+                }, {
+                  text: "Veterinārās palīdzības iespēja",
+                  icon: CheckCircle2
+                }, {
+                  text: "Tehniskais nodrošinājums un skaņas sistēma",
+                  icon: Volume2
+                }].map((item, index) => <div key={index} className="flex items-start gap-3 p-3 rounded-lg hover:bg-light transition-colors">
                       <item.icon className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
                       <span className="text-muted-foreground">{item.text}</span>
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
               </div>
             </div>
@@ -89,52 +94,20 @@ const LaukumuIre = () => {
                 Laukumu iekārtas
               </h3>
               <div className="space-y-4">
-                {[
-                  "Augstas kvalitātes segums",
-                  "Profesionāls apgaismojums",
-                  "Ūdens aspergēšanas sistēma",
-                  "Tribīnes skatītājiem",
-                  "Šķēršļu komplekts",
-                  "Drošības standartiem atbilstoši",
-                ].map((item, index) => (
-                  <div key={index} className="flex items-start gap-3">
+                {["Augstas kvalitātes segums", "Profesionāls apgaismojums", "Ūdens aspergēšanas sistēma", "Tribīnes skatītājiem", "Šķēršļu komplekts", "Drošības standartiem atbilstoši"].map((item, index) => <div key={index} className="flex items-start gap-3">
                     <CheckCircle2 className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
                     <span className="text-sm text-muted-foreground">{item}</span>
-                  </div>
-                ))}
+                  </div>)}
               </div>
             </aside>
           </div>
         </section>
 
         {/* Gallery Section */}
-        <section className="py-12 bg-muted/30">
-          <div className="container mx-auto px-4 max-w-5xl">
-            <h3 className="text-2xl font-bold text-foreground mb-8 text-center">Galerija</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <img
-                src={serviceArena}
-                alt="Jāšanas laukums"
-                className="rounded-lg object-cover w-full h-64"
-              />
-              <img
-                src={eventCompetition}
-                alt="Sacensības laukumā"
-                className="rounded-lg object-cover w-full h-64"
-              />
-              <img
-                src={eventShowjumping}
-                alt="Šķēršļu pārvarēšana"
-                className="rounded-lg object-cover w-full h-64"
-              />
-            </div>
-          </div>
-        </section>
+        
       </main>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default LaukumuIre;
