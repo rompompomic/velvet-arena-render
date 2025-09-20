@@ -28,6 +28,9 @@ import ParMums from "./pages/ParMums";
 import Kontakti from "./pages/Kontakti";
 import LietosanasNoteikumi from "./pages/LietosanasNoteikumi";
 import PrivatumaPolitika from "./pages/PrivatumaPolitika";
+import DavanuKartes from "./pages/DavanuKartes";
+import Checkout from "./pages/Checkout";
+import PaldiesParPirkumu from "./pages/PaldiesParPirkumu";
 
 const queryClient = new QueryClient();
 
@@ -62,6 +65,9 @@ const App = () => (
           <Route path="/lv/kontakti/" element={<Kontakti />} />
           <Route path="/lv/lietosanas-noteikumi/" element={<LietosanasNoteikumi />} />
           <Route path="/lv/privatuma-politika/" element={<PrivatumaPolitika />} />
+          <Route path="/lv/davanu-kartes/" element={<DavanuKartes />} />
+          <Route path="/lv/checkout/" element={<Checkout />} />
+          <Route path="/lv/paldies-par-pirkumu/" element={<PaldiesParPirkumu />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
