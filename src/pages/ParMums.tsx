@@ -177,18 +177,17 @@ const ParMums = () => {
         <section className="py-16 md:py-24">
           <div className="container mx-auto px-4 max-w-7xl">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              
               {/* Текст слева */}
               <div className="order-2 lg:order-1">
                 <h2 className="text-section mb-6">Sadarbība un partneri</h2>
                 <div className="section-divider mb-8" />
-                
+        
                 <div className="space-y-6 text-muted-foreground mb-8">
                   <p>
                     Mēs piedāvājam trīs sponsorēšanas iespējas partneriem, kas vēlas
                     atbalstīt jāšanas sportu un mūsu aktivitātes.
                   </p>
-                  
+        
                   <div className="space-y-4">
                     <div className="glass-card p-4">
                       <h4 className="font-semibold mb-2">Treniņu arēnas partneris</h4>
@@ -196,14 +195,14 @@ const ParMums = () => {
                         Logo redzamība reklāmas materiālos un digitālajos kanālos.
                       </p>
                     </div>
-                    
+        
                     <div className="glass-card p-4">
                       <h4 className="font-semibold mb-2">Galvenais sponsors</h4>
                       <p className="text-sm">
                         Plašā redzamība pasākumos un digitālajā komunikācijā.
                       </p>
                     </div>
-                    
+        
                     <div className="glass-card p-4">
                       <h4 className="font-semibold mb-2">Nosaukuma tiesību partneris</h4>
                       <p className="text-sm">
@@ -213,43 +212,45 @@ const ParMums = () => {
                   </div>
                 </div>
               </div>
-              
-              {/* Фото справа + кнопка */}
-              <div className="order-1 lg:order-2 flex flex-col items-center">
-                <div className="glass-card overflow-hidden w-full">
+        
+              {/* Фото справа */}
+              <div className="order-1 lg:order-2">
+                <div className="glass-card overflow-hidden">
                   <img
                     src={partnershipImage}
                     alt="Sadarbība un partnerība jāšanas sportā"
                     className="w-full h-80 lg:h-96 object-cover"
                   />
                 </div>
-                
-                <div className="mt-6 flex justify-center w-full">
-                  <Button
-                    asChild
-                    className="bg-primary text-primary-foreground hover:bg-primary/90"
-                  >
-                    <a href="/lv/kontakti/">
-                      Sazināties par partnerību
-                      <svg
-                        className="w-4 h-4 ml-2"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                        />
-                      </svg>
-                    </a>
-                  </Button>
-                </div>
               </div>
-        
             </div>
+          </div>
+        </section>
+        
+        {/* CTA Section for Partnership */}
+        <section className="py-12">
+          <div className="container mx-auto px-4 max-w-7xl flex justify-center">
+            <Button
+              asChild
+              className="w-full sm:w-auto bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-4 text-lg font-semibold"
+            >
+              <a href="/lv/kontakti/">
+                Sazināties par partnerību
+                <svg
+                  className="w-5 h-5 ml-2"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  />
+                </svg>
+              </a>
+            </Button>
           </div>
         </section>
 
