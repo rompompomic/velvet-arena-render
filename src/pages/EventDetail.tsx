@@ -241,7 +241,8 @@ const EventDetail = () => {
                     {currentEvent.registrationAvailable && (
                       <Button 
                         onClick={() => setRegistrationOpen(true)}
-                        className="bg-primary text-primary-foreground hover:bg-primary/90"
+                        className="bg-primary text-white rounded-xl 
+                                   transition-all duration-300 hover:bg-primary-700 hover:scale-105"
                       >
                         Reģistrēties
                       </Button>
