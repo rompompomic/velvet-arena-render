@@ -7,6 +7,17 @@ import eventImage from "@/assets/event-showjumping.jpg";
 import serviceStable from "@/assets/service-horse-stable.jpg";
 import winterImage from "@/assets/winter-equestrian.jpg";
 const JasanasTrenini = () => {
+  const [open, setOpen] = useState(false);
+  const [sent, setSent] = useState(false);
+  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    // TODO: отправьте данные на ваш endpoint
+    setSent(true);
+    setTimeout(() => {
+      setOpen(false);
+      setSent(false);
+    }, 1400);
+  };
   return <div className="min-h-screen bg-background">
       <Header />
       
