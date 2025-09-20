@@ -103,11 +103,12 @@ const Jaunumi = () => {
           <div className="absolute inset-0 bg-black/45 backdrop-blur-[1px]" />
         </div>
       
-        <div className="relative container mx-auto px-4 max-w-7xl py-20 md:py-28 text-center text-white">
-          <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight drop-shadow-sm">
+        {/* Контейнер с flex для центрирования */}
+        <div className="relative container mx-auto px-4 max-w-7xl min-h-[60vh] flex flex-col items-center justify-center text-center text-white">
+          <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight drop-shadow-sm mb-5">
             Jaunumi un raksti
           </h1>
-          <p className="mt-5 text-base md:text-xl max-w-3xl mx-auto text-white/90">
+          <p className="text-base md:text-xl max-w-3xl mx-auto text-white/90 leading-relaxed">
             Sekojiet līdzi jaunākajām ziņām no jāšanas sporta pasaules, mūsu audzēkņu
             panākumiem un gaidāmajiem pasākumiem
           </p>
