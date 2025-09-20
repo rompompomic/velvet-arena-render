@@ -92,29 +92,26 @@ const Jaunumi = () => {
     <div className="min-h-screen bg-background">
       <Header />
       
-      {/* Hero Section (from scratch) */}
-      <section className="relative h-[460px] md:h-[560px] overflow-hidden">
-        {/* Фон как background-image (не зависит от паддингов) */}
-        <div
-          className="absolute inset-0 bg-center bg-cover"
-          style={{ backgroundImage: `url(${heroImage})` }} // import heroImage from "@/assets/hero-equestrian.jpg";
-        />
-        {/* Оверлей */}
-        <div className="absolute inset-0 bg-black/45 backdrop-blur-[1px]" />
+      {/* Hero Section */}
+      <section className="relative isolate overflow-hidden">
+        {/* Фон */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src={heroImage} // import heroImage from "@/assets/hero-equestrian.jpg";
+            alt="Jaunumi un raksti"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/20" />
+        </div>
       
-        {/* Контент строго по центру */}
-        <div className="relative h-full">
-          <div className="container mx-auto max-w-7xl h-full grid place-items-center px-4 text-center text-white">
-            <div className="max-w-3xl">
-              <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight drop-shadow-sm">
-                Jaunumi un raksti
-              </h1>
-              <p className="mt-5 text-base md:text-xl text-white/90 leading-relaxed">
-                Sekojiet līdzi jaunākajām ziņām no jāšanas sporta pasaules, mūsu audzēkņu
-                panākumiem un gaidāmajiem pasākumiem
-              </p>
-            </div>
-          </div>
+        {/* Контент */}
+        <div className="relative z-10 container mx-auto px-4 max-w-7xl pt-28 md:pt-36 pb-16 text-center text-white min-h-[48vh]">
+          <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight drop-shadow-lg mb-5">
+            Jaunumi un raksti
+          </h1>
+          <p className="text-base md:text-xl max-w-3xl mx-auto text-white/90 leading-relaxed">
+            Sekojiet līdzi jaunākajām ziņām no jāšanas sporta pasaules, mūsu audzēkņu panākumiem un gaidāmajiem pasākumiem
+          </p>
         </div>
       </section>
 
