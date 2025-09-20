@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import NewsletterSubscription from "@/components/NewsletterSubscription";
+import heroImage from "@/assets/hero-equestrian.jpg";
 import winterImage from "@/assets/winter-equestrian.jpg";
 import eventImage from "@/assets/event-showjumping.jpg";
 import youthCupImage from "@/assets/youth-cup.jpg";
