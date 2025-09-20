@@ -108,9 +108,10 @@ const ZirguUzturesana = () => {
               </div>
             </div>
 
-            {/* Right: aside card */}
-            <aside className="rounded-2xl border bg-white shadow-sm overflow-hidden flex flex-col">
-              <div className="p-6 flex-1">
+            {/* Right: aside card + image below */}
+            <div className="flex flex-col gap-6">
+              {/* Info card */}
+              <aside className="rounded-2xl border bg-white shadow-sm p-6">
                 <h3 className="text-card-title text-foreground mb-6 flex items-center gap-2">
                   <Star className="w-5 h-5 text-primary" />
                   Iekļauts ikdienā
@@ -132,18 +133,17 @@ const ZirguUzturesana = () => {
                     </div>
                   ))}
                 </div>
-              </div>
+              </aside>
             
-              {/* Bottom image */}
-              <div className="relative h-40">
+              {/* Filler image below card */}
+              <div className="rounded-2xl overflow-hidden">
                 <img
-                  src={winterImage} // ← можно заменить на твой новый PNG
-                  alt="Iekļauts ikdienā"
-                  className="absolute inset-0 w-full h-full object-cover"
+                  src={winterImage} // замени на свой PNG
+                  alt="Stable horses"
+                  className="w-full h-40 object-cover"
                 />
-                <div className="absolute inset-0 bg-black/10" />
               </div>
-            </aside>
+            </div>
           </div>
         </section>
 
