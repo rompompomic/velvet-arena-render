@@ -93,16 +93,16 @@ const Jaunumi = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative">
+      <section className="relative mt-16 md:mt-20">
         <div className="absolute inset-0">
           <img
             src={heroImage}
-            alt=""
+            alt="Jaunumi un raksti"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black/45 backdrop-blur-[1px]" />
         </div>
-
+      
         <div className="relative container mx-auto px-4 max-w-7xl py-20 md:py-28 text-center text-white">
           <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight drop-shadow-sm">
             Jaunumi un raksti
