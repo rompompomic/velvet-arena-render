@@ -18,10 +18,9 @@ const Header = () => {
     {
       key: "pakalpojumi",
       name: "Pakalpojumi",
-      href: "/lv/pakalpojumi/",
+      href: "/lv/pakalpojumi/", // ← ссылка на кнопку
       hasDropdown: true,
       subItems: [
-        { name: "Visi pakalpojumi", href: "/lv/pakalpojumi/" },
         { name: "Jāšanas treniņi", href: "/lv/pakalpojumi/jasanas-trenini/" },
         { name: "Zirgu uzturēšana", href: "/lv/pakalpojumi/zirgu-uzturesana/" },
         { name: "Laukumu īre", href: "/lv/pakalpojumi/laukumu-ire/" },
@@ -31,15 +30,13 @@ const Header = () => {
       ],
     },
     { key: "cenas", name: "Cenas", href: "/lv/cenas/" },
-    // 👇 новый пункт меню
     { key: "jaunumi", name: "Jaunumi", href: "/lv/jaunumi/" },
     {
       key: "galerija",
       name: "Galerija",
-      href: "/lv/galerija/",
+      href: "/lv/galerija/", // ← ссылка на кнопку
       hasDropdown: true,
       subItems: [
-        { name: "Visu galerija", href: "/lv/galerija/" },
         { name: "Pasākumi", href: "/lv/galerija/pasakumi/" },
         { name: "Jauno jātnieku skola", href: "/lv/galerija/jauno-jatnieku-skola/" },
       ],
@@ -48,6 +45,7 @@ const Header = () => {
     { key: "kontakti", name: "Kontakti", href: "/lv/kontakti/" },
     { key: "pasakumi", name: "Pasākumi", href: "/lv/pasakumi/" },
   ];
+
 
   const languages = [
     { code: "LV", active: true, href: "/lv/" },
