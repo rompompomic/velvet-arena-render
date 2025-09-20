@@ -215,7 +215,7 @@ const RidingSchoolAlbumDetail = () => {
                           key={index}
                           size="sm"
                           asChild
-                          className="border border-primary text-primary bg-transparent rounded-xl
+                          className="border border-primary text-primary rounded-xl 
                                      transition-all duration-300 hover:bg-primary hover:text-white hover:scale-105"
                         >
                           <a href={link.href}>{link.title}</a>
