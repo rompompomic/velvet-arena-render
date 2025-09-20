@@ -114,12 +114,12 @@ const JasanasTrenini = () => {
                     <span className="text-sm text-muted-foreground">{item}</span>
                   </div>)}
               </div>
+              {/* Filler image below card */}
+              <div className="rounded-2xl overflow-hidden">
+                <img src={winterImage} // замени на свой PNG
+              alt="Stable horses" className="w-full h-full object-cover" />
+              </div>
             </aside>
-            {/* Filler image below card */}
-            <div className="rounded-2xl overflow-hidden">
-              <img src={winterImage} // замени на свой PNG
-            alt="Stable horses" className="w-full h-full object-cover" />
-            </div>
           </div>
         </section>
 
