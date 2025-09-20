@@ -93,25 +93,25 @@ const Jaunumi = () => {
       <Header />
       
       {/* Hero Section */}
-        <section className="relative">
-          <div className="absolute inset-0">
-            <img
-              src={heroImage}
-              alt=""
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/20" />
-          </div>
-        
-          <div className="relative container mx-auto px-4 max-w-7xl py-20 md:py-28 text-center text-white">
-            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight drop-shadow-lg">
-              Jaunumi un raksti
-            </h1>
-            <p className="mt-5 text-base md:text-xl max-w-3xl mx-auto text-white/90 leading-relaxed">
-              Sekojiet līdzi jaunākajām ziņām no jāšanas sporta pasaules, mūsu audzēkņu panākumiem un gaidāmajiem pasākumiem
-            </p>
-          </div>
-        </section>
+      <section className="relative">
+        <div className="absolute inset-0">
+          <img
+            src={heroImage}
+            alt=""
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/45 backdrop-blur-[1px]" />
+        </div>
+
+        <div className="relative container mx-auto px-4 max-w-7xl py-20 md:py-28 text-center text-white">
+          <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight drop-shadow-sm">
+            Jaunumi un raksti
+          </h1>
+          <p className="mt-5 text-base md:text-xl max-w-3xl mx-auto text-white/90">
+            Sekojiet līdzi jaunākajām ziņām no jāšanas sporta pasaules, mūsu audzēkņu panākumiem un gaidāmajiem pasākumiem
+          </p>
+        </div>
+      </section>
 
       {/* News Grid */}
       <section className="py-24">

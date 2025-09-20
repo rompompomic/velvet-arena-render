@@ -89,18 +89,19 @@ const Cenas = () => {
       {/* Hero Section */}
       <section className="relative">
         <div className="absolute inset-0">
-          <div
-            className="w-full h-full bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: `url(${heroImage})` }}
+          <img
+            src={heroImage}
+            alt=""
+            className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/20" />
+          <div className="absolute inset-0 bg-black/45 backdrop-blur-[1px]" />
         </div>
-      
+
         <div className="relative container mx-auto px-4 max-w-7xl py-20 md:py-28 text-center text-white">
-          <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight drop-shadow-lg mb-6">
+          <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight drop-shadow-sm">
             Mūsu cenas un pakalpojumi
           </h1>
-          <p className="text-base md:text-xl leading-relaxed max-w-2xl mx-auto text-white/90">
+          <p className="mt-5 text-base md:text-xl max-w-3xl mx-auto text-white/90">
             Pielāgoti risinājumi visām vecuma grupām — no pirmās iepazīšanās ar zirgu 
             līdz profesionāliem treniņiem un korporatīviem pasākumiem.
           </p>
