@@ -5,29 +5,34 @@ import Footer from "@/components/Footer";
 import serviceRiding from "@/assets/service-riding-lessons.jpg";
 import excursionsImage from "@/assets/service-excursions.jpg";
 import { Gift, ShieldCheck, Sparkles, Clock, Wallet } from "lucide-react";
-
-type FixedCard = { amount: number; price: string; custom?: false };
-type CustomCard = { custom: true };
+type FixedCard = {
+  amount: number;
+  price: string;
+  custom?: false;
+};
+type CustomCard = {
+  custom: true;
+};
 type GiftCard = FixedCard | CustomCard;
-
 const DavanuKartes = () => {
   const [customAmount, setCustomAmount] = useState("");
   const customInputRef = useRef<HTMLInputElement | null>(null);
-
-  const giftCards: GiftCard[] = [
-    { amount: 25, price: "25.00€" },
-    { amount: 50, price: "50.00€" },
-    { amount: 100, price: "100.00€" },
-    { custom: true },
-  ];
+  const giftCards: GiftCard[] = [{
+    amount: 25,
+    price: "25.00€"
+  }, {
+    amount: 50,
+    price: "50.00€"
+  }, {
+    amount: 100,
+    price: "100.00€"
+  }, {
+    custom: true
+  }];
 
   // Унифицированные классы для «пилюли» цены и инпута
-  const fieldBase =
-    "w-full rounded-xl border border-gray-300 px-4 py-2.5 text-base bg-white " +
-    "text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary";
-
-  return (
-    <div className="min-h-screen bg-background">
+  const fieldBase = "w-full rounded-xl border border-gray-300 px-4 py-2.5 text-base bg-white " + "text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary";
+  return <div className="min-h-screen bg-background">
       <Header />
 
       <main className="pt-24">
@@ -54,25 +59,17 @@ const DavanuKartes = () => {
           <div className="container mx-auto px-4 max-w-6xl">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               {giftCards.map((card, index) => {
-                const isCustom = "custom" in card && card.custom;
-
-                return (
-                  <div key={index} className="rounded-2xl overflow-hidden shadow-sm bg-card flex flex-col">
+              const isCustom = "custom" in card && card.custom;
+              return <div key={index} className="rounded-2xl overflow-hidden shadow-sm bg-card flex flex-col">
                     {/* Кликабельная картинка */}
-                    {isCustom ? (
-                      <a
-                        href="#custom-amount"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          customInputRef.current?.focus();
-                          document.getElementById("custom-amount")?.scrollIntoView({
-                            behavior: "smooth",
-                            block: "center",
-                          });
-                        }}
-                        className="relative block aspect-[3/4]"
-                        aria-label="Savs apjoms"
-                      >
+                    {isCustom ? <a href="#custom-amount" onClick={e => {
+                  e.preventDefault();
+                  customInputRef.current?.focus();
+                  document.getElementById("custom-amount")?.scrollIntoView({
+                    behavior: "smooth",
+                    block: "center"
+                  });
+                }} className="relative block aspect-[3/4]" aria-label="Savs apjoms">
                         <img src={excursionsImage} alt="" className="absolute inset-0 w-full h-full object-cover" />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                         <div className="relative h-full px-6 py-5 flex flex-col justify-end">
@@ -83,13 +80,7 @@ const DavanuKartes = () => {
                             Savs apjoms
                           </div>
                         </div>
-                      </a>
-                    ) : (
-                      <a
-                        href={`/lv/checkout/?amount=${(card as FixedCard).amount}`}
-                        className="relative block aspect-[3/4]"
-                        aria-label={`Pirkt dāvanu karti ${(card as FixedCard).amount}€`}
-                      >
+                      </a> : <a href={`/lv/checkout/?amount=${(card as FixedCard).amount}`} className="relative block aspect-[3/4]" aria-label={`Pirkt dāvanu karti ${(card as FixedCard).amount}€`}>
                         <img src={excursionsImage} alt="" className="absolute inset-0 w-full h-full object-cover" />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                         <div className="relative h-full px-6 py-5 flex flex-col justify-end">
@@ -100,67 +91,40 @@ const DavanuKartes = () => {
                             {(card as FixedCard).amount}€
                           </div>
                         </div>
-                      </a>
-                    )}
+                      </a>}
 
                     {/* Низ карточки: одинаковый стек */}
                     <div className="p-5 border-t bg-white/60 dark:bg-black/20 backdrop-blur">
-                      {isCustom ? (
-                        <div id="custom-amount" className="flex flex-col gap-3">
-                          <input
-                            ref={customInputRef}
-                            type="number"
-                            min={5}
-                            step="1"
-                            inputMode="numeric"
-                            value={customAmount}
-                            onChange={(e) => {
-                              const v = e.target.value;
-                              if (Number(v) >= 0 || v === "") setCustomAmount(v);
-                            }}
-                            placeholder="Ievadiet summu (€)"
-                            className={fieldBase}
-                          />
-                          <Button
-                            asChild
-                            disabled={!customAmount || Number(customAmount) < 5}
-                            className="w-full rounded-xl px-6 py-2.5 text-base"
-                          >
-                            <a
-                              href={`/lv/checkout/?amount=${customAmount || 0}`}
-                              className="!text-white"
-                              aria-disabled={!customAmount || Number(customAmount) < 5}
-                            >
+                      {isCustom ? <div id="custom-amount" className="flex flex-col gap-3">
+                          <input ref={customInputRef} type="number" min={5} step="1" inputMode="numeric" value={customAmount} onChange={e => {
+                      const v = e.target.value;
+                      if (Number(v) >= 0 || v === "") setCustomAmount(v);
+                    }} placeholder="Ievadiet summu (€)" className={fieldBase} />
+                          <Button asChild disabled={!customAmount || Number(customAmount) < 5} className="w-full rounded-xl px-6 py-2.5 text-base">
+                            <a href={`/lv/checkout/?amount=${customAmount || 0}`} className="!text-white" aria-disabled={!customAmount || Number(customAmount) < 5}>
                               Pirkt
                             </a>
                           </Button>
-                        </div>
-                      ) : (
-                        <div className="flex flex-col gap-3">
+                        </div> : <div className="flex flex-col gap-3">
                           {/* ЦЕННИК как «инпут» (та же окантовка и размеры) */}
-                          <div className={`${fieldBase} select-none`}>
-                            {(card as FixedCard).price}
-                          </div>
+                          
                           <Button asChild className="w-full rounded-xl px-6 py-2.5 text-base">
-                            <a
-                              href={`/lv/checkout/?amount=${(card as FixedCard).amount}`}
-                              className="!text-white"
-                            >
+                            <a href={`/lv/checkout/?amount=${(card as FixedCard).amount}`} className="!text-white">
                               Pirkt
                             </a>
                           </Button>
-                        </div>
-                      )}
+                        </div>}
                     </div>
-                  </div>
-                );
-              })}
+                  </div>;
+            })}
             </div>
           </div>
         </section>
 
         {/* Advantages */}
-        <section className="py-16 md:py-24" style={{ backgroundColor: "#2f2f2f14" }}>
+        <section className="py-16 md:py-24" style={{
+        backgroundColor: "#2f2f2f14"
+      }}>
           <div className="container mx-auto px-4 max-w-6xl">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">
@@ -232,8 +196,6 @@ const DavanuKartes = () => {
       </main>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default DavanuKartes;
