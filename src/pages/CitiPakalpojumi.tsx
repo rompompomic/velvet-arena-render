@@ -120,7 +120,6 @@ const CitiPakalpojumi = () => {
                   </div>)}
               </div>
             </aside>
-            </div>
           </div>
         </section>
 
