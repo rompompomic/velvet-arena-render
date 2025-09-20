@@ -11,75 +11,63 @@ import serviceCorporate from "@/assets/service-corporate.jpg";
 import serviceOther from "@/assets/service-other-services.jpg";
 
 // Custom SVG Icons for each service
-const StableIcon = ({ className = "w-5 h-5" }) => (
-  <svg viewBox="0 0 24 24" fill="none" className={className} stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
-    {/* крыша + фронтон */}
-    <path d="M3 10.5 12 4l9 6.5" />
-    {/* стены сарая */}
-    <path d="M5 10v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-9" />
-    {/* дверь */}
-    <rect x="9" y="14" width="6" height="6" rx="1" />
-    {/* конек/окошко */}
-    <path d="M12 10.5v1.5" />
-    {/* силуэт головы лошади в дверном проеме (минимал) */}
-    <path d="M11 17.5c.6-.8 1.2-1.2 2-.9.7.2 1.1.8 1.2 1.9" />
+// Stable — конюшня с крышей и дверью
+const StableIcon = ({ className = "w-6 h-6" }) => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" 
+    strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <path d="M3 10.5L12 4l9 6.5v9.5a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-9.5z"/>
+    <rect x="9" y="14" width="6" height="6" rx="1"/>
   </svg>
 );
 
-const RidingIcon = ({ className = "w-5 h-5" }) => (
-  <svg viewBox="0 0 24 24" fill="none" className={className} stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
-    {/* всадник */}
-    <circle cx="8.5" cy="6.5" r="2" />
-    <path d="M7.5 9.5l2.2 1.3a2 2 0 0 1 .9 1.1l.6 1.6" />
-    {/* корпус лошади */}
-    <path d="M5 15.5c2.5-2.2 6.8-2.6 9.5-.9l2 .9" />
-    {/* ноги лошади */}
-    <path d="M9 15.5l-1.2 3.5M15 15.5l-.8 3.2" />
-    {/* уздечка/шея */}
-    <path d="M12 12.2c1-.6 2.4-.6 3.4.1" />
+// Riding — всадник на лошади
+const RidingIcon = ({ className = "w-6 h-6" }) => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <circle cx="8" cy="6" r="2"/>
+    <path d="M7 9l3 2 2 5"/>
+    <path d="M5 16c2-2 6-2 8 0l4 1"/>
   </svg>
 );
 
-const ArenaIcon = ({ className = "w-5 h-5" }) => (
-  <svg viewBox="0 0 24 24" fill="none" className={className} stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
-    {/* стойки препятствия */}
-    <path d="M5 6v12M19 6v12" />
-    {/* перекладины */}
-    <path d="M5 9h14M5 12h14M5 15h14" />
-    {/* основание/земля */}
-    <path d="M3.5 18.5H8M16 18.5h4.5" />
+// Arena — барьеры в манеже
+const ArenaIcon = ({ className = "w-6 h-6" }) => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <path d="M5 6v12M19 6v12"/>
+    <path d="M5 10h14M5 14h14"/>
   </svg>
 );
 
-const ExcursionIcon = ({ className = "w-5 h-5" }) => (
-  <svg viewBox="0 0 24 24" fill="none" className={className} stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
-    {/* сложенная карта */}
-    <path d="M4 6.5l6-2.5 4 2 6-2.5v13l-6 2.5-4-2-6 2.5z" />
-    {/* пин маркер */}
-    <path d="M12 10.2c1.5 0 2.7 1.2 2.7 2.7 0 1.4-1.2 3.3-2.7 4.6-1.5-1.3-2.7-3.2-2.7-4.6 0-1.5 1.2-2.7 2.7-2.7z" />
-    {/* подковообразный контур внутри пина (намёк на конный тур) */}
-    <path d="M12 12.2c.8 0 1.4.6 1.4 1.4" />
+// Excursion — карта с пином
+const ExcursionIcon = ({ className = "w-6 h-6" }) => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2V6z"/>
+    <circle cx="12" cy="12" r="2"/>
   </svg>
 );
 
-const CorporateIcon = ({ className = "w-5 h-5" }) => (
-  <svg viewBox="0 0 24 24" fill="none" className={className} stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
-    {/* группа людей */}
-    <path d="M7.5 10.5a2.7 2.7 0 1 0 0-5.4 2.7 2.7 0 0 0 0 5.4zM16.5 11.5a2.2 2.2 0 1 0 0-4.4 2.2 2.2 0 0 0 0 4.4z" />
-    <path d="M3.5 18.5c.6-2.6 2.8-4 4.8-4h1.4c2 0 4.2 1.4 4.8 4" />
-    {/* график роста (тимбилдинг/бизнес-ивент) */}
-    <path d="M13 18.5V14l2.2 1.8L20 12" />
+// Corporate — люди и график
+const CorporateIcon = ({ className = "w-6 h-6" }) => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <circle cx="7" cy="8" r="3"/>
+    <circle cx="17" cy="9" r="2.5"/>
+    <path d="M2 20c1.5-3 4-4 6-4h1c2 0 4 1 5 4"/>
+    <path d="M13 20v-4l2 2 4-4"/>
   </svg>
 );
 
-const ServicesIcon = ({ className = "w-5 h-5" }) => (
-  <svg viewBox="0 0 24 24" fill="none" className={className} stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
-    {/* классическая подкова */}
-    <path d="M12 3.5c4.4 0 8 3.6 8 8 0 2.7-1.3 5-3.3 6.5M12 3.5c-4.4 0-8 3.6-8 8 0 2.7 1.3 5 3.3 6.5" />
-    {/* заклёпки */}
-    <path d="M7.2 8.6h0M9.5 6.9h0M14.5 6.9h0M16.8 8.6h0M7.2 15.4h0M16.8 15.4h0" />
+// Services — подкова (универсальные услуги)
+const ServicesIcon = ({ className = "w-6 h-6" }) => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <path d="M6 8a6 6 0 0 1 12 0v4a6 6 0 0 1-12 0V8z"/>
+    <path d="M8 8v4M16 8v4"/>
   </svg>
 );
+
 
 const Pakalpojumi = () => {
   const services = [
