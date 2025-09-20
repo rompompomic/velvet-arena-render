@@ -17,6 +17,11 @@ import Jaunumi from "./pages/Jaunumi";
 import WinterPreparation from "./pages/WinterPreparation";
 import StudentSuccess from "./pages/StudentSuccess";
 import KidsPrograms from "./pages/KidsPrograms";
+import Galerija from "./pages/Galerija";
+import EventGallery from "./pages/EventGallery";
+import EventAlbumDetail from "./pages/EventAlbumDetail";
+import RidingSchoolGallery from "./pages/RidingSchoolGallery";
+import RidingSchoolAlbumDetail from "./pages/RidingSchoolAlbumDetail";
 
 const queryClient = new QueryClient();
 
@@ -40,6 +45,11 @@ const App = () => (
           <Route path="/lv/jaunumi/winter-preparation" element={<WinterPreparation />} />
           <Route path="/lv/jaunumi/student-success" element={<StudentSuccess />} />
           <Route path="/lv/jaunumi/kids-programs" element={<KidsPrograms />} />
+          <Route path="/lv/galerija/" element={<Galerija />} />
+          <Route path="/lv/galerija/pasakumi/" element={<EventGallery />} />
+          <Route path="/lv/galerija/pasakumi/:id/" element={<EventAlbumDetail />} />
+          <Route path="/lv/galerija/jauno-jatnieku-skola/" element={<RidingSchoolGallery />} />
+          <Route path="/lv/galerija/jauno-jatnieku-skola/:id/" element={<RidingSchoolAlbumDetail />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
