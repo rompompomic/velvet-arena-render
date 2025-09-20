@@ -133,6 +133,8 @@ const Pakalpojumi = () => {
               alt=""
               className="w-full h-full object-cover"
             />
+          </div>
+
           <div className="relative container mx-auto px-4 max-w-7xl py-20 md:py-28 text-center text-white">
             <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight drop-shadow-sm">
               Mūsu pakalpojumi
