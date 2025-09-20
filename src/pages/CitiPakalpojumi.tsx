@@ -18,7 +18,7 @@ const CitiPakalpojumi = () => {
       setSent(false);
     }, 1400);
   };
-  return <div className="min-h-screen bg-background">">
+  return <div className="min-h-screen bg-background">
       <Header />
       
       <main className="pt-24">
