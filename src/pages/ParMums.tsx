@@ -272,7 +272,7 @@ const ParMums = () => {
               <Button 
                 asChild 
                 size="lg"
-                className="bg-primary text-primary-foreground hover:bg-primary/90"
+                className="bg-[#963026] text-white hover:bg-[#7a2620]"
               >
                 <a href="/lv/pakalpojumi/jasanas-trenini/">
                   Sākt treniņus
@@ -286,6 +286,7 @@ const ParMums = () => {
                 asChild 
                 variant="outline" 
                 size="lg"
+                className="border-[#963026] text-[#963026] hover:bg-[#963026]/10"
               >
                 <a href="/lv/pasakumi/">
                   Skatīt pasākumus
