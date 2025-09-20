@@ -42,7 +42,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Index />} />
+          <Route path="/" element={<Navigate to="/lv/" replace />} />
           <Route path="/lv/pakalpojumi/" element={<Pakalpojumi />} />
           <Route path="/lv/pakalpojumi/jasanas-trenini/" element={<JasanasTrenini />} />
           <Route path="/lv/pakalpojumi/zirgu-uzturesana/" element={<ZirguUzturesana />} />
