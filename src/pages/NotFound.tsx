@@ -42,10 +42,11 @@ const NotFound = () => {
             </p>
             
             <Button
-              className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-3"
+              className="bg-primary text-white rounded-xl px-8 py-3
+                         transition-all duration-300 hover:bg-primary-700 hover:scale-105"
               asChild
             >
-              <a href="/lv/">
+              <a href="/lv/" className="!text-white">
                 Atgriezties uz sākumlapu
               </a>
             </Button>
