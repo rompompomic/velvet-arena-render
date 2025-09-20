@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { ChevronRight, Home, Shield, Heart, CheckCircle2, Users, Truck, Target, BookOpen } from "lucide-react";
 import serviceOther from "@/assets/service-other-services.jpg";
 import winterImage from "@/assets/winter-equestrian.jpg";
 import heroImage from "@/assets/hero-equestrian.jpg";
@@ -11,30 +12,43 @@ const CitiPakalpojumi = () => {
       
       <main className="pt-24">
         {/* Hero Section */}
-        <section className="relative h-96">
-          <div className="absolute inset-0">
-            <img
-              src={serviceOther}
-              alt=""
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-black/50" />
-          </div>
+        <section className="relative">
+          <img
+            src={serviceOther}
+            alt="Citi pakalpojumi"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/20" />
           
-          <div className="relative container mx-auto px-4 h-full flex items-center justify-center">
-            <h1 className="text-4xl md:text-6xl font-bold text-white text-center">
-              Citi pakalpojumi
-            </h1>
+          <div className="relative flex items-center justify-center text-center text-white min-h-[50vh] md:min-h-[60vh]">
+            <div className="container mx-auto px-4 max-w-6xl">
+              {/* Breadcrumbs */}
+              <nav className="flex items-center justify-center mb-6 text-sm text-white/80">
+                <Home className="w-4 h-4 mr-2" />
+                <span>Sākums</span>
+                <ChevronRight className="w-4 h-4 mx-2" />
+                <span>Pakalpojumi</span>
+                <ChevronRight className="w-4 h-4 mx-2" />
+                <span className="text-white font-medium">Citi pakalpojumi</span>
+              </nav>
+
+              <h1 className="text-hero text-white mb-4 drop-shadow-lg">
+                Citi pakalpojumi
+              </h1>
+              <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto text-white/90 leading-relaxed">
+                Specializēti pakalpojumi zirgu aprūpē, veselības uzraudzībā un terapijā.
+              </p>
+            </div>
           </div>
         </section>
 
         {/* Content Section */}
-        <section className="py-12">
-          <div className="container mx-auto px-4 max-w-5xl">
-            <div className="space-y-6">
-              <h2 className="text-3xl font-bold text-foreground">Specializēti pakalpojumi zirgu aprūpē</h2>
+        <section className="container mx-auto max-w-6xl px-4 py-16 md:py-20">
+          <div className="grid grid-cols-1 lg:grid-cols-[1.4fr,1fr] gap-12">
+            <div className="space-y-8">
+              <h2 className="text-section text-foreground">Specializēti pakalpojumi zirgu aprūpē</h2>
               
-              <div className="prose prose-lg max-w-none text-muted-foreground">
+              <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
                 <p>
                   Piedāvājam papildu pakalpojumus zirgu aprūpē, veselības uzraudzībā un specializētās terapijas. 
                   Mūsu komandā strādā pieredzējuši veterinārārsti, kausētāji un masieri, kas nodrošina 
@@ -46,20 +60,51 @@ const CitiPakalpojumi = () => {
                   un veselības uzraudzību. Mūsu mērķis ir nodrošināt, lai katrs zirgs būtu vesels, laimīgs 
                   un gatavs darbam vai atpūtai.
                 </p>
+              </div>
 
-                <h3 className="text-xl font-semibold text-foreground mt-8 mb-4">Pieejamie pakalpojumi:</h3>
-                <ul className="list-disc pl-6 space-y-2">
-                  <li>Veterinārā aprūpe un profilaktiskās pārbaudes</li>
-                  <li>Kausēšanas pakalpojumi un naglu aprūpe</li>
-                  <li>Zirgu masāža un fizioterapija</li>
-                  <li>Specializētā barības plānu izstrāde</li>
-                  <li>Zirgu pārvadāšanas pakalpojumi</li>
-                  <li>Konsultācijas zirgu aprūpē un treniņos</li>
-                  <li>Zirgu uzvedības korekcijas programmas</li>
-                  <li>Sezonālā aprūpe un ziemas sagatavošana</li>
-                </ul>
+              <div className="space-y-4">
+                <h3 className="text-xl font-semibold text-foreground">Pieejamie pakalpojumi:</h3>
+                <div className="grid gap-3">
+                  {[
+                    { text: "Veterinārā aprūpe un profilaktiskās pārbaudes", icon: Shield },
+                    { text: "Kausēšanas pakalpojumi un naglu aprūpe", icon: CheckCircle2 },
+                    { text: "Zirgu masāža un fizioterapija", icon: Heart },
+                    { text: "Specializētā barības plānu izstrāde", icon: Target },
+                    { text: "Zirgu pārvadāšanas pakalpojumi", icon: Truck },
+                    { text: "Konsultācijas zirgu aprūpē un treniņos", icon: BookOpen },
+                    { text: "Zirgu uzvedības korekcijas programmas", icon: Users },
+                    { text: "Sezonālā aprūpe un ziemas sagatavošana", icon: Shield },
+                  ].map((item, index) => (
+                    <div key={index} className="flex items-start gap-3 p-3 rounded-lg hover:bg-light transition-colors">
+                      <item.icon className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                      <span className="text-muted-foreground">{item.text}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
+
+            <aside className="glass-card p-8 h-fit">
+              <h3 className="text-card-title text-foreground mb-6 flex items-center gap-2">
+                <Heart className="w-5 h-5 text-primary" />
+                Mūsu speciālisti
+              </h3>
+              <div className="space-y-4">
+                {[
+                  "Pieredzējuši veterinārārsti",
+                  "Sertificēti kausētāji",
+                  "Profesionāli masieri",
+                  "Barošanas speciālisti",
+                  "Uzvedības eksperti",
+                  "Personalizēta aprūpe",
+                ].map((item, index) => (
+                  <div key={index} className="flex items-start gap-3">
+                    <CheckCircle2 className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
+                    <span className="text-sm text-muted-foreground">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </aside>
           </div>
         </section>
 
