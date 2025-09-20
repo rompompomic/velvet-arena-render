@@ -12,7 +12,10 @@ const GiftCardSection = () => {
   return (
     <section className="py-24 bg-background">
       <div className="container mx-auto px-4 max-w-7xl">
-        <div className="velvet-bg rounded-3xl p-12 md:p-16 text-center text-white relative overflow-hidden">
+        <div
+          className="rounded-3xl p-12 md:p-16 text-center text-white relative overflow-hidden"
+          style={{ backgroundColor: "#995856" }}
+        >
           {/* Background Horse Image */}
           <div className="absolute inset-0 flex items-end justify-end pointer-events-none">
             <img
@@ -26,17 +29,17 @@ const GiftCardSection = () => {
               "
             />
           </div>
-
+        
           {/* Content */}
           <div className="relative z-10 max-w-4xl mx-auto">
             <h2 className="text-section mb-6">
               Dāviniet emocijas — dāviniet braucienu pie zirgiem
             </h2>
-
+        
             <p className="text-xl mb-8 opacity-95 max-w-2xl mx-auto">
               Elektroniska vai drukāta, derīga 12 mēnešus
             </p>
-
+        
             {/* Trust Features */}
             <div className="flex flex-wrap justify-center gap-8 mb-10">
               {features.map((feature, index) => (
@@ -49,7 +52,7 @@ const GiftCardSection = () => {
                 </div>
               ))}
             </div>
-
+        
             {/* CTA Button */}
             <Button
               asChild
