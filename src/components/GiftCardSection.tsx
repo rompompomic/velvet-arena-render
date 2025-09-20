@@ -14,7 +14,9 @@ const GiftCardSection = () => {
       <div className="container mx-auto px-4 max-w-7xl">
         <div
           className="rounded-3xl p-12 md:p-16 text-center text-white relative overflow-hidden"
-          style={{ backgroundColor: "#995856" }}
+          style={{
+            background: "linear-gradient(135deg, #995856, #7D4647)",
+          }}
         >
           {/* Background Horse Image */}
           <div className="absolute inset-0 flex items-end justify-end pointer-events-none">
