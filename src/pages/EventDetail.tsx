@@ -247,11 +247,17 @@ const EventDetail = () => {
                         Reģistrēties
                       </Button>
                     )}
-                    <Button variant="outline" asChild>
-                      <a href={currentEvent.gallery}>
+                    <Button
+                      variant="outline"
+                      asChild
+                      className="border border-primary text-white rounded-xl 
+                                 transition-all duration-300 hover:bg-primary hover:scale-105"
+                    >
+                      <a href={currentEvent.gallery} className="flex items-center">
                         <Image className="w-4 h-4 mr-2" />
                         Foto galerija
                       </a>
+                    </Button>
                     </Button>
                   </div>
                 </CardContent>
