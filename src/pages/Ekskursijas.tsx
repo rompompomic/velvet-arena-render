@@ -122,41 +122,37 @@ const Ekskursijas = () => {
         </section>
 
         {/* Ekskursijas table */}
-        <section className="container mx-auto max-w-6xl px-4 py-12">
+        <section className="container mx-auto max-w-4xl px-4 py-12">
+          <h3 className="text-xl font-semibold mb-6 text-center">Ekskursijas</h3>
+        
           <div className="overflow-hidden rounded-2xl border bg-white shadow-sm">
             <table className="min-w-full text-sm">
-              <thead className="bg-neutral-50">
+              <thead className="bg-neutral-50 text-neutral-600">
                 <tr>
-                  <th className="text-left px-4 md:px-6 py-3 font-semibold uppercase tracking-wide">
-                    Ekskursijas
-                  </th>
-                  <th className="text-right px-4 md:px-6 py-3 font-semibold">
-                    Cena ar PVN
-                  </th>
+                  <th className="text-left px-6 py-4 font-semibold">Ekskursija</th>
+                  <th className="text-right px-6 py-4 font-semibold">Cena ar PVN</th>
                 </tr>
               </thead>
         
               <tbody className="divide-y">
                 {[
-                  {
-                    name:
-                      "Ekskursija pa teritoriju ar zirgu barošanu, līdz 4 personām (bērniem līdz 7 g.v. bez maksas)",
-                    price: "€ 20.00",
-                  },
-                  {
-                    name: "Papildus vizināšana ar zirgu/poniju, par personu",
-                    price: "€ 5.00",
-                  },
-                  {
-                    name:
-                      "Skolu un bērnudārza grupiņu ekskursijas ar zirgu barošanu un vizināšanos (cena par 1 personu, sākot no 10 personām)",
-                    price: "€ 3.00",
-                  },
-                ].map((row, i) => (
-                  <tr key={i} className="hover:bg-neutral-50/60">
-                    <td className="px-4 md:px-6 py-3 text-foreground">{row.name}</td>
-                    <td className="px-4 md:px-6 py-3 text-right font-medium">
-                      {row.price}
+                  [
+                    "Ekskursija pa teritoriju ar zirgu barošanu, līdz 4 personām (bērniem līdz 7 g.v. bez maksas)",
+                    "€20.00",
+                  ],
+                  ["Papildus vizināšana ar zirgu/poniju, par personu", "€5.00"],
+                  [
+                    "Skolu un bērnudārza grupiņu ekskursijas ar zirgu barošanu un vizināšanos (cena par 1 personu, sākot no 10 personām)",
+                    "€3.00",
+                  ],
+                ].map(([name, price], i) => (
+                  <tr
+                    key={i}
+                    className="hover:bg-neutral-50 transition-colors"
+                  >
+                    <td className="px-6 py-4 text-foreground">{name}</td>
+                    <td className="px-6 py-4 text-right font-semibold text-foreground">
+                      {price}
                     </td>
                   </tr>
                 ))}
@@ -164,7 +160,6 @@ const Ekskursijas = () => {
             </table>
           </div>
         </section>
-
 
         {/* Practical info + Contacts (light cards) */}
         <section className="bg-neutral-50 py-16">
