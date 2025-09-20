@@ -65,7 +65,7 @@ const ZirguUzturesana = () => {
         {/* CONTENT: 2 columns */}
         <section className="container mx-auto max-w-6xl px-4 py-16 md:py-20">
           {/* Breadcrumbs */}
-              <nav className="flex items-center justify-center mb-6 text-sm text-white/80">
+              <nav className="flex items-center justify-center mb-6 text-sm text-black/80">
                 <Home className="w-4 h-4 mr-2" />
                 <span>Sākums</span>
                 <ChevronRight className="w-4 h-4 mx-2" />
