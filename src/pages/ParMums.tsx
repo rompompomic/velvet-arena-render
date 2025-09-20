@@ -174,7 +174,7 @@ const ParMums = () => {
         </section>
 
         {/* Partnership Section */}
-        <section className="py-16 md:py-24">
+        <section className="py-16 md:py-0">
           <div className="container mx-auto px-4 max-w-7xl">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               {/* Текст слева */}
@@ -216,11 +216,7 @@ const ParMums = () => {
               {/* Фото справа */}
               <div className="order-1 lg:order-2">
                 <div className="glass-card overflow-hidden">
-                  <img
-                    src={partnershipImage}
-                    alt="Sadarbība un partnerība jāšanas sportā"
-                    className="w-full h-80 lg:h-96 object-cover"
-                  />
+                  <img src={partnershipImage} alt="Sadarbība un partnerība jāšanas sportā" className="w-full h-80 lg:h-96 object-cover" />
                 </div>
               </div>
             </div>
@@ -228,26 +224,13 @@ const ParMums = () => {
         </section>
         
         {/* CTA Section for Partnership */}
-        <section className="py-12">
-          <div className="container mx-auto px-4 max-w-7xl flex justify-center">
-            <Button
-              asChild
-              className="w-full sm:w-auto bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-4 text-lg font-semibold"
-            >
-              <a href="/lv/kontakti/">
+        <section className="py-0">
+          <div className="container mx-auto px-4 max-w-7xl flex justify-center py-[15px]">
+            <Button asChild className="w-full sm:w-auto bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-4 text-lg font-semibold">
+              <a href="/lv/kontakti/" className="py-0">
                 Sazināties par partnerību
-                <svg
-                  className="w-5 h-5 ml-2"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                  />
+                <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
               </a>
             </Button>
