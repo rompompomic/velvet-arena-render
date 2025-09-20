@@ -21,6 +21,11 @@ const DavanuKartes = () => {
     { custom: true },
   ];
 
+  // Унифицированные классы для «пилюли» цены и инпута
+  const fieldBase =
+    "w-full rounded-xl border border-gray-300 px-4 py-2.5 text-base bg-white " +
+    "text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary";
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -98,7 +103,7 @@ const DavanuKartes = () => {
                       </a>
                     )}
 
-                    {/* Действия под карточкой (единый стек для всех) */}
+                    {/* Низ карточки: одинаковый стек */}
                     <div className="p-5 border-t bg-white/60 dark:bg-black/20 backdrop-blur">
                       {isCustom ? (
                         <div id="custom-amount" className="flex flex-col gap-3">
@@ -114,9 +119,7 @@ const DavanuKartes = () => {
                               if (Number(v) >= 0 || v === "") setCustomAmount(v);
                             }}
                             placeholder="Ievadiet summu (€)"
-                            className="w-full rounded-xl border border-gray-300 px-4 py-2.5 text-base
-                                       bg-white text-gray-900 placeholder-gray-400
-                                       focus:outline-none focus:ring-2 focus:ring-primary"
+                            className={fieldBase}
                           />
                           <Button
                             asChild
@@ -134,7 +137,8 @@ const DavanuKartes = () => {
                         </div>
                       ) : (
                         <div className="flex flex-col gap-3">
-                          <div className="text-sm text-muted-foreground">
+                          {/* ЦЕННИК как «инпут» (та же окантовка и размеры) */}
+                          <div className={`${fieldBase} select-none`}>
                             {(card as FixedCard).price}
                           </div>
                           <Button asChild className="w-full rounded-xl px-6 py-2.5 text-base">
