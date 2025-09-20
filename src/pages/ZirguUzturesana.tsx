@@ -121,35 +121,7 @@ const ZirguUzturesana = () => {
         </section>
 
         {/* Facilities grid (light cards) */}
-        <section className="bg-neutral-50 py-16">
-          <div className="container mx-auto max-w-6xl px-4">
-            <h3 className="text-section text-foreground mb-12 text-center">Iekārtas un labiekārtojums</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[{
-              text: "Ventilācijas sistēmas",
-              icon: Shield
-            }, {
-              text: "Kvalitatīvi boksi",
-              icon: Building2
-            }, {
-              text: "Solāriji zirgiem",
-              icon: Heart
-            }, {
-              text: "Mazgāšanas vietas",
-              icon: CheckCircle2
-            }, {
-              text: "Apsildāmas garderobes",
-              icon: Users
-            }, {
-              text: "Āra laukumi un ganības",
-              icon: MapPin
-            }].map((item, i) => <div key={i} className="p-6 rounded-2xl border bg-white shadow-sm text-center transition-transform duration-200 hover:-translate-y-0.5">
-                  <item.icon className="w-8 h-8 text-primary mx-auto mb-4" />
-                  <p className="text-sm font-medium text-foreground">{item.text}</p>
-                </div>)}
-            </div>
-          </div>
-        </section>
+        
 
         {/* Pricing table */}
         <section className="container mx-auto max-w-6xl px-4 py-16">
