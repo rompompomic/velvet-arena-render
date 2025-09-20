@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Lightbox from "@/components/Lightbox";
+import { Home, ChevronRight, ArrowLeft } from "lucide-react";
 
 const EventAlbumDetail = () => {
   const { id } = useParams<{ id: string }>();
@@ -79,17 +80,32 @@ const EventAlbumDetail = () => {
         <section className="py-12 md:py-16">
           <div className="container mx-auto px-4 max-w-7xl">
             {/* Breadcrumb */}
-            <nav className="flex items-center space-x-2 text-sm text-muted-foreground mb-8">
+            <nav className="flex items-center justify-start mb-6 text-sm text-black/80">
+              <a href="/lv/" className="flex items-center hover:text-primary transition-colors">
+                <Home className="w-4 h-4 mr-2" />
+                Sākums
+              </a>
+              <ChevronRight className="w-4 h-4 mx-2" />
               <a href="/lv/galerija/" className="hover:text-primary transition-colors">
                 Galerija
               </a>
-              <span>/</span>
+              <ChevronRight className="w-4 h-4 mx-2" />
               <a href="/lv/galerija/pasakumi/" className="hover:text-primary transition-colors">
                 Pasākumi
               </a>
-              <span>/</span>
-              <span>{album.title}</span>
+              <ChevronRight className="w-4 h-4 mx-2" />
+              <span className="text-black font-medium">{album.title}</span>
             </nav>
+
+            <div className="mb-8">
+              <a 
+                href="/lv/galerija/pasakumi/" 
+                className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors mb-4"
+              >
+                <ArrowLeft className="w-4 h-4" />
+                Atgriezties pie pasākumu galerijas
+              </a>
+            </div>
 
             {/* Album Info */}
             <div className="glass-card p-8 mb-12">

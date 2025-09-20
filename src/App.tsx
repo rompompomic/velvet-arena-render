@@ -22,6 +22,8 @@ import EventGallery from "./pages/EventGallery";
 import EventAlbumDetail from "./pages/EventAlbumDetail";
 import RidingSchoolGallery from "./pages/RidingSchoolGallery";
 import RidingSchoolAlbumDetail from "./pages/RidingSchoolAlbumDetail";
+import Pasakumi from "./pages/Pasakumi";
+import EventDetail from "./pages/EventDetail";
 
 const queryClient = new QueryClient();
 
@@ -50,6 +52,8 @@ const App = () => (
           <Route path="/lv/galerija/pasakumi/:id/" element={<EventAlbumDetail />} />
           <Route path="/lv/galerija/jauno-jatnieku-skola/" element={<RidingSchoolGallery />} />
           <Route path="/lv/galerija/jauno-jatnieku-skola/:id/" element={<RidingSchoolAlbumDetail />} />
+          <Route path="/lv/pasakumi/" element={<Pasakumi />} />
+          <Route path="/lv/pasakumi/:event/" element={<EventDetail />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -2,16 +2,21 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { Home, ChevronRight } from "lucide-react";
 import heroImage from "@/assets/event-competition.jpg";
+import eventCompetition1 from "@/assets/event-competition-1.jpg";
+import youthChampionship from "@/assets/youth-championship-album.jpg";
+import eventShowjumping from "@/assets/event-showjumping.jpg";
+import youthCup from "@/assets/youth-cup.jpg";
 
 const EventGallery = () => {
-  // Mock data for event albums
+  // Mock data for event albums (only events, no training sessions)
   const eventAlbums = [
     {
       id: "jauniesu-kauss-2025",
       title: "Jauniešu kausa fināla posms 2025",
       date: "19-21 septembris, 2025",
-      coverImage: "/placeholder.svg?height=300&width=400",
+      coverImage: youthChampionship,
       photoCount: 24,
       description: "Gada lielākā jauniešu sacensība Inčukalna rajonā"
     },
@@ -19,7 +24,7 @@ const EventGallery = () => {
       id: "latvijas-zirgu-dienas-2025",
       title: "XVII Vislatvijas Zirgu dienas",
       date: "15-17 augusts, 2025", 
-      coverImage: "/placeholder.svg?height=300&width=400",
+      coverImage: eventCompetition1,
       photoCount: 45,
       description: "Krāšņs svētku pasākums visiem zirgu mīļotājiem"
     },
@@ -27,7 +32,7 @@ const EventGallery = () => {
       id: "yrs-open-2025",
       title: "YRS Open 2025",
       date: "4-6 jūlijs, 2025",
-      coverImage: "/placeholder.svg?height=300&width=400",
+      coverImage: eventShowjumping,
       photoCount: 32,
       description: "Starptautiskās šķēršļu pārvarēšanas sacensības"
     },
@@ -35,25 +40,9 @@ const EventGallery = () => {
       id: "pavasara-sacensibas-2025",
       title: "Pavasara šķēršļu pārvarēšanas sacensības",
       date: "17-18 maijs, 2025",
-      coverImage: "/placeholder.svg?height=300&width=400",
+      coverImage: youthCup,
       photoCount: 28,
       description: "Tradicionālās pavasara sacensības iekštelpu arēnā"
-    },
-    {
-      id: "treninosanas-seminārs",
-      title: "Treniņu sesija ar Aigaru Bregzi",
-      date: "6-8 jūnijs, 2025",
-      coverImage: "/placeholder.svg?height=300&width=400",
-      photoCount: 18,
-      description: "Motivācijas seminārs ar divkārtējo Latvijas čempionu"
-    },
-    {
-      id: "treninosanas-sacensibas-junijs",
-      title: "Treniņu sacensības jūnijā",
-      date: "7 jūnijs, 2025",
-      coverImage: "/placeholder.svg?height=300&width=400",
-      photoCount: 15,
-      description: "Ikgadējās treniņu sacensības 90×60 m arēnā"
     }
   ];
 
@@ -89,12 +78,17 @@ const EventGallery = () => {
         <section className="py-12 md:py-16">
           <div className="container mx-auto px-4 max-w-7xl">
             {/* Breadcrumb */}
-            <nav className="flex items-center space-x-2 text-sm text-muted-foreground mb-8">
+            <nav className="flex items-center justify-start mb-8 text-sm text-black/80">
+              <a href="/lv/" className="flex items-center hover:text-primary transition-colors">
+                <Home className="w-4 h-4 mr-2" />
+                Sākums
+              </a>
+              <ChevronRight className="w-4 h-4 mx-2" />
               <a href="/lv/galerija/" className="hover:text-primary transition-colors">
                 Galerija
               </a>
-              <span>/</span>
-              <span>Pasākumi</span>
+              <ChevronRight className="w-4 h-4 mx-2" />
+              <span className="text-black font-medium">Pasākumi</span>
             </nav>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

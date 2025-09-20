@@ -2,7 +2,12 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { Home, ChevronRight } from "lucide-react";
 import heroImage from "@/assets/service-riding-lessons.jpg";
+import ridingTraining from "@/assets/riding-school-training.jpg";
+import summerCamp from "@/assets/summer-camp-album.jpg";
+import horseCare from "@/assets/horse-care-album.jpg";
+import winterTraining from "@/assets/winter-training.jpg";
 
 const RidingSchoolGallery = () => {
   // Mock data for riding school albums
@@ -11,7 +16,7 @@ const RidingSchoolGallery = () => {
       id: "ikdienas-dzive-2025",
       title: "Ikdienas dzīve skolā",
       season: "2025. gads",
-      coverImage: "/placeholder.svg?height=300&width=400",
+      coverImage: ridingTraining,
       photoCount: 52,
       description: "Mūsu audzēkņu ikdienas aktivitātes, treniņi un brīvais laiks ar zirgiem"
     },
@@ -19,7 +24,7 @@ const RidingSchoolGallery = () => {
       id: "jaunie-jatniekki-2025",
       title: "Jaunie jātnieki",
       season: "Pavasaris 2025",
-      coverImage: "/placeholder.svg?height=300&width=400",
+      coverImage: ridingTraining,
       photoCount: 38,
       description: "Bērnu pirmie soļi jāšanas mākslā un draudzība ar zirgiem"
     },
@@ -27,7 +32,7 @@ const RidingSchoolGallery = () => {
       id: "ziemas-sagatavosana-2025",
       title: "Ziemas sagatavošanās",
       season: "Ziema 2024/2025",
-      coverImage: "/placeholder.svg?height=300&width=400",
+      coverImage: winterTraining,
       photoCount: 29,
       description: "Īpašā ziemas treniņu programma iekštelpu apstākļos"
     },
@@ -35,7 +40,7 @@ const RidingSchoolGallery = () => {
       id: "vasaras-nometne-2024",
       title: "Vasaras nometne",
       season: "Vasara 2024",
-      coverImage: "/placeholder.svg?height=300&width=400",
+      coverImage: summerCamp,
       photoCount: 67,
       description: "Nezarstamas vasaras atmiņas ar zirgiem dabas vidē"
     },
@@ -43,7 +48,7 @@ const RidingSchoolGallery = () => {
       id: "zirgu-apruupe-2024",
       title: "Zirgu aprūpe un ikdiena",
       season: "Visu gadu",
-      coverImage: "/placeholder.svg?height=300&width=400",
+      coverImage: horseCare,
       photoCount: 43,
       description: "Kā mēs rūpējamies par saviem četrkājainajiem draugiem"
     },
@@ -51,7 +56,7 @@ const RidingSchoolGallery = () => {
       id: "instruktoru-darbs-2024",
       title: "Instruktoru darbs",
       season: "2024. gads",
-      coverImage: "/placeholder.svg?height=300&width=400",
+      coverImage: ridingTraining,
       photoCount: 31,
       description: "Mūsu pieredzējušo instruktoru ikdienas darbs ar audzēkņiem"
     }
@@ -89,12 +94,17 @@ const RidingSchoolGallery = () => {
         <section className="py-12 md:py-16">
           <div className="container mx-auto px-4 max-w-7xl">
             {/* Breadcrumb */}
-            <nav className="flex items-center space-x-2 text-sm text-muted-foreground mb-8">
+            <nav className="flex items-center justify-start mb-8 text-sm text-black/80">
+              <a href="/lv/" className="flex items-center hover:text-primary transition-colors">
+                <Home className="w-4 h-4 mr-2" />
+                Sākums
+              </a>
+              <ChevronRight className="w-4 h-4 mx-2" />
               <a href="/lv/galerija/" className="hover:text-primary transition-colors">
                 Galerija
               </a>
-              <span>/</span>
-              <span>Jāšanas skola</span>
+              <ChevronRight className="w-4 h-4 mx-2" />
+              <span className="text-black font-medium">Jāšanas skola</span>
             </nav>
 
             {/* Story Layout - Featured Album */}
