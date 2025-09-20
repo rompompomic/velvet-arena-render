@@ -8,6 +8,10 @@ import eventCompetition1 from "@/assets/event-competition-1.jpg";
 import youthChampionship from "@/assets/youth-championship-album.jpg";
 import eventShowjumping from "@/assets/event-showjumping.jpg";
 import youthCup from "@/assets/youth-cup.jpg";
+import galleryJauniesukKauss from "@/assets/gallery-jauniesu-kauss-1.jpg";
+import galleryLatvijaZirguDienas from "@/assets/gallery-latvijas-zirgu-dienas-1.jpg";
+import galleryYrsOpen from "@/assets/gallery-yrs-open-1.jpg";
+import galleryPavasaraSacensibas from "@/assets/gallery-pavasara-sacensibas-1.jpg";
 
 const EventGallery = () => {
   // Mock data for event albums (only events, no training sessions)
@@ -16,7 +20,7 @@ const EventGallery = () => {
       id: "jauniesu-kauss-2025",
       title: "Jauniešu kausa fināla posms 2025",
       date: "19-21 septembris, 2025",
-      coverImage: youthChampionship,
+      coverImage: galleryJauniesukKauss,
       photoCount: 24,
       description: "Gada lielākā jauniešu sacensība Inčukalna rajonā"
     },
@@ -24,7 +28,7 @@ const EventGallery = () => {
       id: "latvijas-zirgu-dienas-2025",
       title: "XVII Vislatvijas Zirgu dienas",
       date: "15-17 augusts, 2025", 
-      coverImage: eventCompetition1,
+      coverImage: galleryLatvijaZirguDienas,
       photoCount: 45,
       description: "Krāšņs svētku pasākums visiem zirgu mīļotājiem"
     },
@@ -32,7 +36,7 @@ const EventGallery = () => {
       id: "yrs-open-2025",
       title: "YRS Open 2025",
       date: "4-6 jūlijs, 2025",
-      coverImage: eventShowjumping,
+      coverImage: galleryYrsOpen,
       photoCount: 32,
       description: "Starptautiskās šķēršļu pārvarēšanas sacensības"
     },
@@ -40,7 +44,7 @@ const EventGallery = () => {
       id: "pavasara-sacensibas-2025",
       title: "Pavasara šķēršļu pārvarēšanas sacensības",
       date: "17-18 maijs, 2025",
-      coverImage: youthCup,
+      coverImage: galleryPavasaraSacensibas,
       photoCount: 28,
       description: "Tradicionālās pavasara sacensības iekštelpu arēnā"
     }

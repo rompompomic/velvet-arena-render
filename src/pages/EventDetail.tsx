@@ -68,6 +68,64 @@ const EventDetail = () => {
         "Reģistrācija nav nepieciešama"
       ],
       fees: "Bezmaksas pasākums"
+    },
+    "yrs-open-2025": {
+      title: "YRS Open 2025",
+      date: "4-6 jūlijs, 2025",
+      time: "08:00 - 19:00",
+      location: "Starptautiskā arēna",
+      participants: "Līdz 100 dalībnieki",
+      description: "Starptautiskās šķēršļu pārvarēšanas sacensības ar augstu līmeni. Sacensības notiks trīs dienu garumā ar dažādām klasēm un augstuma kategorijām.",
+      image: eventShowjumping,
+      registrationAvailable: true,
+      gallery: "/lv/galerija/pasakumi/yrs-open-2025/",
+      program: [
+        { time: "08:00 - 09:00", activity: "Dalībnieku reģistrācija un zirgu veterinārā pārbaude" },
+        { time: "09:00 - 11:00", activity: "Siltināšanas laukums un treniņu sesijas" },
+        { time: "11:00 - 13:00", activity: "Jauniešu klases 80cm - 100cm" },
+        { time: "13:00 - 14:00", activity: "Pusdienu pārtraukums" },
+        { time: "14:00 - 16:00", activity: "Pieaugušo klases 110cm - 130cm" },
+        { time: "16:00 - 18:00", activity: "Augstākā līmeņa klases 140cm+" },
+        { time: "18:00 - 19:00", activity: "Apbalvošanas ceremonija" }
+      ],
+      requirements: [
+        "Federācijas licence vai starptautiskā atļauja",
+        "Zirga reģistrācijas dokumenti",
+        "Veterinārā pase ar vakcinācijām",
+        "Apdrošināšanas polise",
+        "Aizsargekipējuma komplekts",
+        "Iepriekšēja pieteikšanās līdz 20. jūnijam"
+      ],
+      fees: "€45 reģistrācija + €25 par katru klasi"
+    },
+    "pavasara-sacensibas-2025": {
+      title: "Pavasara šķēršļu pārvarēšanas sacensības",
+      date: "17-18 maijs, 2025",
+      time: "09:00 - 16:00",
+      location: "Iekštelpu arēna",
+      participants: "Līdz 30 dalībnieki",
+      description: "Tradicionālās pavasara sacensības iekštelpu arēnā visiem līmeņiem. Ideālas gan iesācējiem, gan pieredzējušiem jātniekiem.",
+      image: eventCompetition1,
+      registrationAvailable: false,
+      gallery: "/lv/galerija/pasakumi/pavasara-sacensibas-2025/",
+      program: [
+        { time: "09:00 - 09:30", activity: "Dalībnieku reģistrācija" },
+        { time: "09:30 - 10:30", activity: "Iesācēju grupa - šķēršļi līdz 60cm" },
+        { time: "10:30 - 11:30", activity: "Vidējā grupa - šķēršļi 70cm-80cm" },
+        { time: "11:30 - 12:00", activity: "Kafijas pauze" },
+        { time: "12:00 - 13:30", activity: "Augstākā grupa - šķēršļi 90cm-110cm" },
+        { time: "13:30 - 14:30", activity: "Pusdienu pārtraukums" },
+        { time: "14:30 - 15:30", activity: "Komandu sacensības" },
+        { time: "15:30 - 16:00", activity: "Apbalvošana un noslēguma ceremonija" }
+      ],
+      requirements: [
+        "Jāšanas pieredze vismaz 6 mēneši",
+        "Dalība grupas nodarbībās vai individuālās stundās",
+        "Aizsargķiveres un zābaku esamība",
+        "Vecāku atļauja (līdz 18 gadiem)",
+        "Reģistrācija līdz 10. maijam"
+      ],
+      fees: "€20 reģistrācijas maksa visām grupām"
     }
   };
 

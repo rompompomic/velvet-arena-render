@@ -199,7 +199,7 @@ const Pasakumi = () => {
                          event.date.getFullYear() === selectedDate.getFullYear())
                       )
                       .map((event) => (
-                        <Card key={event.id} className="overflow-hidden hover-lift cursor-pointer">
+                        <Card key={event.id} className="overflow-hidden hover-lift cursor-pointer group">
                           <a href={`/lv/pasakumi/${event.id}/`}>
                             <div className="grid grid-cols-1 md:grid-cols-[200px,1fr] gap-0">
                               <div className="relative h-48 md:h-32 overflow-hidden">

@@ -8,6 +8,12 @@ import ridingTraining from "@/assets/riding-school-training.jpg";
 import summerCamp from "@/assets/summer-camp-album.jpg";
 import horseCare from "@/assets/horse-care-album.jpg";
 import winterTraining from "@/assets/winter-training.jpg";
+import galleryIkdienasDzive from "@/assets/gallery-ikdienas-dzive-1.jpg";
+import galleryJaunieJatniekki from "@/assets/gallery-jaunie-jatniekki-1.jpg";
+import galleryZiemasSagatavosana from "@/assets/gallery-ziemas-sagatavosana-1.jpg";
+import galleryVasarasNometne from "@/assets/gallery-vasaras-nometne-1.jpg";
+import galleryZirguApruupe from "@/assets/gallery-zirgu-apruupe-1.jpg";
+import galleryInstruktoruDarbs from "@/assets/gallery-instruktoru-darbs-1.jpg";
 
 const RidingSchoolGallery = () => {
   // Mock data for riding school albums
@@ -16,7 +22,7 @@ const RidingSchoolGallery = () => {
       id: "ikdienas-dzive-2025",
       title: "Ikdienas dzīve skolā",
       season: "2025. gads",
-      coverImage: ridingTraining,
+      coverImage: galleryIkdienasDzive,
       photoCount: 52,
       description: "Mūsu audzēkņu ikdienas aktivitātes, treniņi un brīvais laiks ar zirgiem"
     },
@@ -24,7 +30,7 @@ const RidingSchoolGallery = () => {
       id: "jaunie-jatniekki-2025",
       title: "Jaunie jātnieki",
       season: "Pavasaris 2025",
-      coverImage: ridingTraining,
+      coverImage: galleryJaunieJatniekki,
       photoCount: 38,
       description: "Bērnu pirmie soļi jāšanas mākslā un draudzība ar zirgiem"
     },
@@ -32,7 +38,7 @@ const RidingSchoolGallery = () => {
       id: "ziemas-sagatavosana-2025",
       title: "Ziemas sagatavošanās",
       season: "Ziema 2024/2025",
-      coverImage: winterTraining,
+      coverImage: galleryZiemasSagatavosana,
       photoCount: 29,
       description: "Īpašā ziemas treniņu programma iekštelpu apstākļos"
     },
@@ -40,7 +46,7 @@ const RidingSchoolGallery = () => {
       id: "vasaras-nometne-2024",
       title: "Vasaras nometne",
       season: "Vasara 2024",
-      coverImage: summerCamp,
+      coverImage: galleryVasarasNometne,
       photoCount: 67,
       description: "Nezarstamas vasaras atmiņas ar zirgiem dabas vidē"
     },
@@ -48,7 +54,7 @@ const RidingSchoolGallery = () => {
       id: "zirgu-apruupe-2024",
       title: "Zirgu aprūpe un ikdiena",
       season: "Visu gadu",
-      coverImage: horseCare,
+      coverImage: galleryZirguApruupe,
       photoCount: 43,
       description: "Kā mēs rūpējamies par saviem četrkājainajiem draugiem"
     },
@@ -56,7 +62,7 @@ const RidingSchoolGallery = () => {
       id: "instruktoru-darbs-2024",
       title: "Instruktoru darbs",
       season: "2024. gads",
-      coverImage: ridingTraining,
+      coverImage: galleryInstruktoruDarbs,
       photoCount: 31,
       description: "Mūsu pieredzējušo instruktoru ikdienas darbs ar audzēkņiem"
     }
