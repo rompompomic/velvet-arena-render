@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { ChevronRight, Home, Users, Trophy, Shield, Heart, X, User, CheckCircle2, Phone, Mail, BookOpen, Target } from "lucide-react";
+import { ChevronRight, Home, Users, Trophy, Shield, Heart, X, User, CheckCircle2, CalendarClock, Phone, Mail, BookOpen, Target } from "lucide-react";
 import serviceRiding from "@/assets/service-riding-lessons.jpg";
 import heroImage from "@/assets/hero-equestrian.jpg";
 import eventImage from "@/assets/event-showjumping.jpg";
