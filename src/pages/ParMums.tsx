@@ -8,21 +8,15 @@ import trainersImage from "@/assets/about-trainers.jpg";
 import horsesImage from "@/assets/about-horses.jpg";
 import facilitiesImage from "@/assets/about-facilities.jpg";
 import partnershipImage from "@/assets/about-partnership.jpg";
-
 const ParMums = () => {
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       <Header />
 
       <main className="pt-24">
         {/* HERO Section matching Pakalpojumi style */}
         <section className="relative">
           <div className="absolute inset-0">
-            <img
-              src={heroImage}
-              alt="Jauno Jātnieku skola - moderna zirgu sporta centrs"
-              className="w-full h-full object-cover"
-            />
+            <img src={heroImage} alt="Jauno Jātnieku skola - moderna zirgu sporta centrs" className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-black/45 backdrop-blur-[1px]" />
           </div>
 
@@ -83,11 +77,7 @@ const ParMums = () => {
               
               <div className="order-1 lg:order-2">
                 <div className="glass-card overflow-hidden">
-                  <img
-                    src={trainersImage}
-                    alt="Profesionāli treneri Jauno Jātnieku skolā"
-                    className="w-full h-80 lg:h-96 object-cover"
-                  />
+                  <img src={trainersImage} alt="Profesionāli treneri Jauno Jātnieku skolā" className="w-full h-80 lg:h-96 object-cover" />
                 </div>
               </div>
             </div>
@@ -100,11 +90,7 @@ const ParMums = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <div className="glass-card overflow-hidden">
-                  <img
-                    src={horsesImage}
-                    alt="Skolas zirgi un poniji Jauno Jātnieku skolā"
-                    className="w-full h-80 lg:h-96 object-cover"
-                  />
+                  <img src={horsesImage} alt="Skolas zirgi un poniji Jauno Jātnieku skolā" className="w-full h-80 lg:h-96 object-cover" />
                 </div>
               </div>
               
@@ -124,10 +110,7 @@ const ParMums = () => {
                   </p>
                 </div>
 
-                <Button 
-                  asChild
-                  className="mt-8 bg-primary text-primary-foreground hover:bg-primary/90"
-                >
+                <Button asChild className="mt-8 bg-primary text-primary-foreground hover:bg-primary/90">
                   <a href="/lv/pakalpojumi/jasanas-trenini/">
                     Uzzināt par treniņiem
                     <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -154,11 +137,7 @@ const ParMums = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
               <div>
                 <div className="glass-card overflow-hidden">
-                  <img
-                    src={facilitiesImage}
-                    alt="Nacionālā sporta bāze - jāšanas centrs"
-                    className="w-full h-80 lg:h-96 object-cover"
-                  />
+                  <img src={facilitiesImage} alt="Nacionālā sporta bāze - jāšanas centrs" className="w-full h-80 lg:h-96 object-cover" />
                 </div>
               </div>
               
@@ -226,10 +205,7 @@ const ParMums = () => {
                 </div>
 
                 <div className="space-y-4">
-                  <Button 
-                    asChild
-                    className="w-full sm:w-auto bg-primary text-primary-foreground hover:bg-primary/90"
-                  >
+                  <Button asChild className="w-full sm:w-auto bg-primary text-primary-foreground hover:bg-primary/90">
                     <a href="mailto:marketing@latvianhorses.lv">
                       Sazināties par partnerību
                       <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -247,11 +223,7 @@ const ParMums = () => {
               
               <div className="order-1 lg:order-2">
                 <div className="glass-card overflow-hidden">
-                  <img
-                    src={partnershipImage}
-                    alt="Sadarbība un partnerība jāšanas sportā"
-                    className="w-full h-80 lg:h-96 object-cover"
-                  />
+                  <img src={partnershipImage} alt="Sadarbība un partnerība jāšanas sportā" className="w-full h-80 lg:h-96 object-cover" />
                 </div>
               </div>
             </div>
@@ -259,7 +231,7 @@ const ParMums = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-16 md:py-20 bg-background">
+        <section className="py-16 md:py-20 bg-gray-100">
           <div className="container mx-auto px-4 max-w-4xl text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Pievienojies mūsu komandai
@@ -269,10 +241,7 @@ const ParMums = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                asChild 
-                size="lg"
-              >
+              <Button asChild size="lg">
                 <a href="/lv/pakalpojumi/jasanas-trenini/">
                   Sākt treniņus
                   <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -281,11 +250,7 @@ const ParMums = () => {
                 </a>
               </Button>
               
-              <Button 
-                asChild 
-                variant="outline" 
-                size="lg"
-              >
+              <Button asChild variant="outline" size="lg">
                 <a href="/lv/pasakumi/">
                   Skatīt pasākumus
                 </a>
@@ -296,8 +261,6 @@ const ParMums = () => {
       </main>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default ParMums;
