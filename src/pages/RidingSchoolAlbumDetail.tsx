@@ -211,7 +211,13 @@ const RidingSchoolAlbumDetail = () => {
                     <h4 className="text-sm font-medium text-muted-foreground">Saistītās lapas:</h4>
                     <div className="flex flex-wrap gap-2">
                       {album.relatedLinks.map((link: any, index: number) => (
-                        <Button key={index} variant="outline" size="sm" asChild>
+                        <Button
+                          key={index}
+                          size="sm"
+                          asChild
+                          className="border border-primary text-primary rounded-xl 
+                                     transition-all duration-300 hover:bg-primary hover:text-white hover:scale-105"
+                        >
                           <a href={link.href}>{link.title}</a>
                         </Button>
                       ))}
