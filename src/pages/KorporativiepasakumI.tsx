@@ -107,6 +107,42 @@ const KorporativiepasakumI = () => {
           </div>
         </section>
 
+        {/* Nomas izmaksas */}
+        <section className="container mx-auto max-w-4xl px-4 py-12">
+          <h3 className="text-xl font-semibold mb-6 text-center">Nomas izmaksas</h3>
+        
+          <div className="overflow-hidden rounded-2xl border bg-white shadow-sm">
+            <table className="min-w-full text-sm">
+              <thead className="bg-neutral-50 text-neutral-600">
+                <tr>
+                  <th className="text-left px-6 py-4 font-semibold">Pakalpojums</th>
+                  <th className="text-right px-6 py-4 font-semibold">Cena ar PVN</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y">
+                {[
+                  ["Konferenču zāle", "no 100 €"],
+                  ["VIP terase", "150 €", "Ar grila zonu un banketa zāli"],
+                  ["Āra telts", "220 €"],
+                  ["2 jāšanas laukumi", "25 € / stundā"],
+                  ["2 jāšanas laukumi, VIP terase, tribīnes", "no 650 €"],
+                  ["Visa teritorija, ieskaitot konferenču zāli", "no 850 €"],
+                ].map(([name, price, note], i) => (
+                  <tr key={i} className="hover:bg-neutral-50 transition-colors">
+                    <td className="px-6 py-4 text-foreground">
+                      <div className="flex flex-col">
+                        <span>{name}</span>
+                        {note && <span className="text-xs italic text-muted-foreground">{note}</span>}
+                      </div>
+                    </td>
+                    <td className="px-6 py-4 text-right font-semibold text-foreground">{price}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+
         {/* Gallery Section */}
         
       </main>
