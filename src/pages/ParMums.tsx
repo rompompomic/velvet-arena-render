@@ -9,6 +9,15 @@ import horsesImage from "@/assets/about-horses.jpg";
 import facilitiesImage from "@/assets/about-facilities.jpg";
 import partnershipImage from "@/assets/about-partnership.jpg";
 
+// Import horse images
+import horseTims from "@/assets/horse-tims.jpg";
+import horseAmber from "@/assets/horse-amber.jpg";
+import horseBure from "@/assets/horse-bure.jpg";
+import horseDiora from "@/assets/horse-diora.jpg";
+import horseKriksis from "@/assets/horse-kriksis.jpg";
+import horseLatte from "@/assets/horse-latte.jpg";
+import horseTadis from "@/assets/horse-tadis.jpg";
+
 const ParMums = () => {
   return (
     <div className="min-h-screen bg-background">
@@ -117,61 +126,87 @@ const ParMums = () => {
         {/* Horses */}
         <section className="py-16 md:py-24 bg-[#2f2f2f]/[0.08]">
           <div className="container mx-auto px-4 max-w-7xl">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <div className="glass-card overflow-hidden">
-                  <img
-                    src={horsesImage}
-                    alt="Skolas zirgi un poniji Jauno Jātnieku skolā"
-                    className="w-full h-80 lg:h-96 object-cover"
-                  />
+            <div className="text-center mb-12">
+              <h2 className="text-section mb-6">Zirgi</h2>
+              <div className="section-divider mx-auto mb-8" />
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              <div className="glass-card overflow-hidden">
+                <img
+                  src={horseTims}
+                  alt="Tims - skolas zirgs"
+                  className="w-full h-64 object-cover"
+                />
+                <div className="p-4 text-center">
+                  <h3 className="font-semibold text-lg">Tims</h3>
                 </div>
               </div>
 
-              <div>
-                <h2 className="text-section mb-6">Zirgi</h2>
-                <div className="section-divider mb-8" />
-
-                <div className="space-y-6 text-muted-foreground">
-                  <p>
-                    Pašlaik piedāvājam treniņus ar 11 skolas zirgiem un
-                    ponijiem – visi apmācīti tā, lai jaunie jātnieki jūtos
-                    droši un pārliecināti, sākot savu sporta ceļu.
-                  </p>
-                  <p>
-                    Mīlestība un rūpes par zirgiem ir galvenā vērtība Jauno
-                    Jātnieku skolā, tāpēc rūpīgi sekojam viņu labsajūtai un
-                    nodrošinām iespējami labākos apstākļus.
-                  </p>
-                  <p>
-                    Katrs no mūsu zirgiem ir rūpīgi atlasīts un apmācīts, lai
-                    nodrošinātu drošu un izglītojošu pieredzi visiem mūsu
-                    studentiem neatkarīgi no prasmju līmeņa.
-                  </p>
+              <div className="glass-card overflow-hidden">
+                <img
+                  src={horseAmber}
+                  alt="Amber - skolas zirgs"
+                  className="w-full h-64 object-cover"
+                />
+                <div className="p-4 text-center">
+                  <h3 className="font-semibold text-lg">Amber</h3>
                 </div>
+              </div>
 
-                <Button
-                  className="group mt-8 bg-primary text-white rounded-xl 
-                             transition-all duration-300 hover:bg-primary-700 hover:scale-105"
-                  asChild
-                >
-                  <a href="/lv/pakalpojumi/jasanas-trenini/" className="flex items-center">
-                    Uzzināt par treniņiem
-                    <svg
-                      className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9 5l7 7-7 7"
-                      />
-                    </svg>
-                  </a>
-                </Button>
+              <div className="glass-card overflow-hidden">
+                <img
+                  src={horseBure}
+                  alt="Bure - skolas zirgs"
+                  className="w-full h-64 object-cover"
+                />
+                <div className="p-4 text-center">
+                  <h3 className="font-semibold text-lg">Bure</h3>
+                </div>
+              </div>
+
+              <div className="glass-card overflow-hidden">
+                <img
+                  src={horseDiora}
+                  alt="Diora - skolas zirgs"
+                  className="w-full h-64 object-cover"
+                />
+                <div className="p-4 text-center">
+                  <h3 className="font-semibold text-lg">Diora</h3>
+                </div>
+              </div>
+
+              <div className="glass-card overflow-hidden">
+                <img
+                  src={horseKriksis}
+                  alt="Kriksis - skolas zirgs"
+                  className="w-full h-64 object-cover"
+                />
+                <div className="p-4 text-center">
+                  <h3 className="font-semibold text-lg">Kriksis</h3>
+                </div>
+              </div>
+
+              <div className="glass-card overflow-hidden">
+                <img
+                  src={horseLatte}
+                  alt="Latte - skolas zirgs"
+                  className="w-full h-64 object-cover"
+                />
+                <div className="p-4 text-center">
+                  <h3 className="font-semibold text-lg">Latte</h3>
+                </div>
+              </div>
+
+              <div className="glass-card overflow-hidden">
+                <img
+                  src={horseTadis}
+                  alt="Tadis - skolas zirgs"
+                  className="w-full h-64 object-cover"
+                />
+                <div className="p-4 text-center">
+                  <h3 className="font-semibold text-lg">Tadis</h3>
+                </div>
               </div>
             </div>
           </div>
