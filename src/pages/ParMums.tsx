@@ -124,51 +124,60 @@ const ParMums = () => {
               <h2 className="text-section mb-6">Treneri</h2>
               <div className="section-divider mx-auto mb-8" />
             </div>
-
+        
             {/* Krista Daukšte */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
               <div>
                 <div className="glass-card overflow-hidden">
-                  <img src={trainerKrista} alt="Krista Daukšte - trenere" className="w-full h-80 lg:h-96 object-cover" />
+                  <img
+                    src={trainerKrista}
+                    alt="Krista Daukšte - trenere"
+                    className="w-full h-64 lg:h-80 object-cover"
+                  />
                 </div>
               </div>
-
+        
               <div>
                 <h3 className="text-2xl font-bold mb-4">Krista Daukšte</h3>
                 <div className="text-muted-foreground leading-relaxed">
                   <p>
-                    Ar zirgiem saistīta visa dzīve. Darbs Vācijā, vairāku gadu garumā, 
-                    augstas klases sporta staļļos un darbs ar sporta zirgiem ir devis 
-                    rūdījumu dzīvei un lielu mīlestību pret darbu. Katrs zirgs un audzēknis 
-                    ir īpašs un atrast vispiemērotāko pieeju abu sadarbībai ir pats 
-                    svarīgākais. Audzēkņi veiksmīgi startē Latvijas un ārvalstu sacensībās 
-                    konkūrā, bet pašas disciplīna ir iejāde. C kategorijas sporta 
-                    speciālista apliecība. Zināšanas un pieredze tiek nemitīgi papildinātas 
-                    dažādu semināru un online mācību veidā, lai mainītos līdz ar laikiem 
-                    un sekotu jaunākajām tendencēm.
+                    Ar zirgiem saistīta visa dzīve. Darbs Vācijā, vairāku gadu garumā,
+                    augstas klases sporta staļļos un darbs ar sporta zirgiem ir devis
+                    rūdījumu dzīvei un lielu mīlestību pret darbu. Katrs zirgs un
+                    audzēknis ir īpašs un atrast vispiemērotāko pieeju abu sadarbībai ir
+                    pats svarīgākais. Audzēkņi veiksmīgi startē Latvijas un ārvalstu
+                    sacensībās konkūrā, bet pašas disciplīna ir iejāde. C kategorijas
+                    sporta speciālista apliecība. Zināšanas un pieredze tiek nemitīgi
+                    papildinātas dažādu semināru un online mācību veidā, lai mainītos
+                    līdz ar laikiem un sekotu jaunākajām tendencēm.
                   </p>
                 </div>
               </div>
             </div>
-
+        
             {/* Guna Lazda */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <div className="glass-card overflow-hidden">
-                  <img src={trainerGuna} alt="Guna Lazda - trenere" className="w-full h-80 lg:h-96 object-cover" />
+                  <img
+                    src={trainerGuna}
+                    alt="Guna Lazda - trenere"
+                    className="w-full h-64 lg:h-80 object-cover"
+                  />
                 </div>
               </div>
-
+        
               <div>
                 <h3 className="text-2xl font-bold mb-4">Guna Lazda</h3>
                 <div className="text-muted-foreground leading-relaxed">
                   <p>
-                    Jauno jātnieku skolas trenere. Ir C kategorijas sporta speciālista 
-                    sertifikāts. Ar zirgiem un jāšanas sportu saistīta kopš bērnības, 
-                    trenējoties dažādos staļļos. Specializējas bērnu un iesācēju apmācībā 
-                    konkūra un iejādes pamatos. Veiksmīgi sagatavo audzēkņus sacensībām. 
-                    Uzskata, ka panākumu pamatā ir cieņpilna sadarbība starp zirgu un 
-                    jātnieku, kā arī laba komunikācija starp audzēkni, treneri un vecākiem.
+                    Jauno jātnieku skolas trenere. Ir C kategorijas sporta speciālista
+                    sertifikāts. Ar zirgiem un jāšanas sportu saistīta kopš bērnības,
+                    trenējoties dažādos staļļos. Specializējas bērnu un iesācēju
+                    apmācībā konkūra un iejādes pamatos. Veiksmīgi sagatavo audzēkņus
+                    sacensībām. Uzskata, ka panākumu pamatā ir cieņpilna sadarbība starp
+                    zirgu un jātnieku, kā arī laba komunikācija starp audzēkni, treneri
+                    un vecākiem.
                   </p>
                 </div>
               </div>
