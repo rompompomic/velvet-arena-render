@@ -21,21 +21,15 @@ import horseDiora from "@/assets/horse-diora.jpg";
 import horseKriksis from "@/assets/horse-kriksis.jpg";
 import horseLatte from "@/assets/horse-latte.jpg";
 import horseTadis from "@/assets/horse-tadis.jpg";
-
 const ParMums = () => {
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       <Header />
 
       <main className="pt-24">
         {/* HERO Section (как было) */}
         <section className="relative">
           <div className="absolute inset-0">
-            <img
-              src={heroImage}
-              alt="Jauno Jātnieku skola - moderna zirgu sporta centrs"
-              className="w-full h-full object-cover"
-            />
+            <img src={heroImage} alt="Jauno Jātnieku skola - moderna zirgu sporta centrs" className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-black/45 backdrop-blur-[1px]" />
           </div>
 
@@ -88,11 +82,7 @@ const ParMums = () => {
               {/* Treneru foto */}
               <div>
                 <div className="glass-card overflow-hidden">
-                  <img
-                    src={trainersImage}
-                    alt="Profesionāli treneri Jauno Jātnieku skolā"
-                    className="w-full h-80 lg:h-96 object-cover"
-                  />
+                  <img src={trainersImage} alt="Profesionāli treneri Jauno Jātnieku skolā" className="w-full h-80 lg:h-96 object-cover" />
                 </div>
               </div>
             </div>
@@ -128,7 +118,7 @@ const ParMums = () => {
         </section>
 
         {/* Treneri */}
-        <section className="py-16 md:py-24">
+        <section className="py-16 md:py-24 bg-[#2f2f2f]/[0.08]">
           <div className="container mx-auto px-4 max-w-7xl">
             <div className="text-center mb-12">
               <h2 className="text-section mb-6">Treneri</h2>
@@ -139,11 +129,7 @@ const ParMums = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
               <div>
                 <div className="glass-card overflow-hidden">
-                  <img
-                    src={trainerKrista}
-                    alt="Krista Daukšte - trenere"
-                    className="w-full h-80 lg:h-96 object-cover"
-                  />
+                  <img src={trainerKrista} alt="Krista Daukšte - trenere" className="w-full h-80 lg:h-96 object-cover" />
                 </div>
               </div>
 
@@ -169,11 +155,7 @@ const ParMums = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <div className="glass-card overflow-hidden">
-                  <img
-                    src={trainerGuna}
-                    alt="Guna Lazda - trenere"
-                    className="w-full h-80 lg:h-96 object-cover"
-                  />
+                  <img src={trainerGuna} alt="Guna Lazda - trenere" className="w-full h-80 lg:h-96 object-cover" />
                 </div>
               </div>
 
@@ -195,7 +177,7 @@ const ParMums = () => {
         </section>
 
         {/* Horses */}
-        <section className="py-16 md:py-24 bg-[#2f2f2f]/[0.08]">
+        <section className="py-16 md:py-24 bg-[#000a0e]/0">
           <div className="container mx-auto px-4 max-w-7xl">
             <div className="text-center mb-12">
               <h2 className="text-section mb-6">Zirgi</h2>
@@ -204,77 +186,49 @@ const ParMums = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
               <div className="glass-card overflow-hidden">
-                <img
-                  src={horseTims}
-                  alt="Tims - skolas zirgs"
-                  className="w-full h-64 object-cover"
-                />
+                <img src={horseTims} alt="Tims - skolas zirgs" className="w-full h-64 object-cover" />
                 <div className="p-4 text-center">
                   <h3 className="font-semibold text-lg">Tims</h3>
                 </div>
               </div>
 
               <div className="glass-card overflow-hidden">
-                <img
-                  src={horseAmber}
-                  alt="Amber - skolas zirgs"
-                  className="w-full h-64 object-cover"
-                />
+                <img src={horseAmber} alt="Amber - skolas zirgs" className="w-full h-64 object-cover" />
                 <div className="p-4 text-center">
                   <h3 className="font-semibold text-lg">Amber</h3>
                 </div>
               </div>
 
               <div className="glass-card overflow-hidden">
-                <img
-                  src={horseBure}
-                  alt="Bure - skolas zirgs"
-                  className="w-full h-64 object-cover"
-                />
+                <img src={horseBure} alt="Bure - skolas zirgs" className="w-full h-64 object-cover" />
                 <div className="p-4 text-center">
                   <h3 className="font-semibold text-lg">Bure</h3>
                 </div>
               </div>
 
               <div className="glass-card overflow-hidden">
-                <img
-                  src={horseDiora}
-                  alt="Diora - skolas zirgs"
-                  className="w-full h-64 object-cover"
-                />
+                <img src={horseDiora} alt="Diora - skolas zirgs" className="w-full h-64 object-cover" />
                 <div className="p-4 text-center">
                   <h3 className="font-semibold text-lg">Diora</h3>
                 </div>
               </div>
 
               <div className="glass-card overflow-hidden">
-                <img
-                  src={horseKriksis}
-                  alt="Kriksis - skolas zirgs"
-                  className="w-full h-64 object-cover"
-                />
+                <img src={horseKriksis} alt="Kriksis - skolas zirgs" className="w-full h-64 object-cover" />
                 <div className="p-4 text-center">
                   <h3 className="font-semibold text-lg">Kriksis</h3>
                 </div>
               </div>
 
               <div className="glass-card overflow-hidden">
-                <img
-                  src={horseLatte}
-                  alt="Latte - skolas zirgs"
-                  className="w-full h-64 object-cover"
-                />
+                <img src={horseLatte} alt="Latte - skolas zirgs" className="w-full h-64 object-cover" />
                 <div className="p-4 text-center">
                   <h3 className="font-semibold text-lg">Latte</h3>
                 </div>
               </div>
 
               <div className="glass-card overflow-hidden">
-                <img
-                  src={horseTadis}
-                  alt="Tadis - skolas zirgs"
-                  className="w-full h-64 object-cover"
-                />
+                <img src={horseTadis} alt="Tadis - skolas zirgs" className="w-full h-64 object-cover" />
                 <div className="p-4 text-center">
                   <h3 className="font-semibold text-lg">Tadis</h3>
                 </div>
@@ -284,7 +238,7 @@ const ParMums = () => {
         </section>
 
         {/* National Sports Base */}
-        <section className="py-16 md:py-24">
+        <section className="py-16 md:py-24 bg-[#2f2f2f]/[0.08]">
           <div className="container mx-auto px-4 max-w-7xl">
             <div className="text-center mb-12">
               <h2 className="text-section mb-6">Nacionālā sporta bāze</h2>
@@ -298,11 +252,7 @@ const ParMums = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
               <div>
                 <div className="glass-card overflow-hidden">
-                  <img
-                    src={facilitiesImage}
-                    alt="Nacionālā sporta bāze - jāšanas centrs"
-                    className="w-full h-80 lg:h-96 object-cover"
-                  />
+                  <img src={facilitiesImage} alt="Nacionālā sporta bāze - jāšanas centrs" className="w-full h-80 lg:h-96 object-cover" />
                 </div>
               </div>
 
@@ -386,22 +336,15 @@ const ParMums = () => {
               {/* Фото */}
               <div>
                 <div className="glass-card overflow-hidden">
-                  <img
-                    src={partnershipImage}
-                    alt="Sadarbība un partnerība jāšanas sportā"
-                    className="w-full h-80 lg:h-96 object-cover"
-                  />
+                  <img src={partnershipImage} alt="Sadarbība un partnerība jāšanas sportā" className="w-full h-80 lg:h-96 object-cover" />
                 </div>
               </div>
             </div>
           </div>
           <div className="container mx-auto px-4 max-w-7xl flex justify-center py-[15px]">
-            <Button
-              asChild
-              className="w-full sm:w-auto bg-primary text-white rounded-xl 
+            <Button asChild className="w-full sm:w-auto bg-primary text-white rounded-xl 
                          px-8 py-4 text-lg font-semibold 
-                         transition-all duration-300 hover:bg-primary-700 hover:scale-105"
-            >
+                         transition-all duration-300 hover:bg-primary-700 hover:scale-105">
               <a href="/lv/kontakti/">
                 Sazināties par partnerību
               </a>
@@ -423,37 +366,19 @@ const ParMums = () => {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               {/* Primary button */}
-              <Button
-                asChild
-                size="lg"
-                className="group bg-primary text-white rounded-xl 
-                           transition-all duration-300 hover:bg-primary-700 hover:scale-105"
-              >
+              <Button asChild size="lg" className="group bg-primary text-white rounded-xl 
+                           transition-all duration-300 hover:bg-primary-700 hover:scale-105">
                 <a href="/lv/pakalpojumi/jasanas-trenini/" className="flex items-center">
                   Sākt treniņus
-                  <svg
-                    className="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
-                    />
+                  <svg className="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </a>
               </Button>
             
               {/* Outline button */}
-              <Button
-                asChild
-                size="lg"
-                className="border border-primary text-white rounded-xl 
-                           transition-all duration-300 hover:bg-primary hover:scale-105"
-              >
+              <Button asChild size="lg" className="border border-primary text-white rounded-xl 
+                           transition-all duration-300 hover:bg-primary hover:scale-105">
                 <a href="/lv/pasakumi/" className="!text-white">
                   Skatīt pasākumus
                 </a>
@@ -464,8 +389,6 @@ const ParMums = () => {
       </main>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default ParMums;
