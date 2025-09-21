@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 
 // Import images
 import heroImage from "@/assets/about-hero-bg.jpg";
-import trainersImage from "@/assets/about-trainers.jpg";
+import trainersImage from "@/assets/about-trainers-new.jpg";
 import horsesImage from "@/assets/about-horses.jpg";
 import facilitiesImage from "@/assets/about-facilities.jpg";
 import partnershipImage from "@/assets/about-partnership.jpg";
